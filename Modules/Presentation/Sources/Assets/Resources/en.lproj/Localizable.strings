@@ -1,0 +1,13 @@
+"Welcome.Prompt" = "Welcome! Please enter your information.";
+"Welcome.Placeholder.name" = "Full Name";
+"Welcome.Placeholder.email" = "Email Address";
+"Welcome.Title.login" = "Log In";
+"Welcome.Error.email" = "Email address is invalid.";
+
+"Todo.List.title" = "%@’s Todos";
+"Todo.List.Title.Button.newTodo" = "New Todo";
+"Todo.List.Message.emptyState" = "No Todos";
+
+"Todo.Edit.title" = "Edit";
+"Todo.Edit.Title.Button.save" = "Save";
+"Todo.Edit.Placeholder.title" = "Title";

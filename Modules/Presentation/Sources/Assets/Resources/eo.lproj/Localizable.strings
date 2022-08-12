@@ -1,0 +1,13 @@
+"Welcome.Prompt" = "Bonvenon! Bonvolu enigi vian nomon.";
+"Welcome.Placeholder.name" = "Plena Nomo";
+"Welcome.Placeholder.email" = "Retpoŝta Adreso";
+"Welcome.Title.login" = "Ensaluti";
+"Welcome.Error.email" = "Retpoŝta adreso estas nevalida.";
+
+"Todo.List.title" = "Taskoj de %@";
+"Todo.List.Title.Button.newTodo" = "Nova Tasko";
+"Todo.List.Message.emptyState" = "Neniuj Taskoj";
+
+"Todo.Edit.title" = "Redakti";
+"Todo.Edit.Title.Button.save" = "Konservi";
+"Todo.Edit.Placeholder.title" = "Titolo";
