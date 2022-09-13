@@ -19,21 +19,7 @@ extension Todo.App.Delegate: UIApplicationDelegate {
 		window = .init(frame: UIScreen.main.bounds)
 		window?.rootViewController = ContainerViewController(
 			workflow: Todo.Workflow(
-				name: "Jordan",
-				initialTodos: [
-//					.init(
-//						title: "Book flights",
-//						note: ""
-//					),
-//					.init(
-//						title: "Add trip dates to calendar",
-//						note: ""
-//					),
-//					.init(
-//						title: "Buy travel guide",
-//						note: ""
-//					)
-				]
+				name: "Jordan"
 			).mapRendering(BackStackScreen.init)
 		)
 		window?.makeKeyAndVisible()

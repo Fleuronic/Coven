@@ -1,6 +1,11 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import struct Foundation.UUID
+import protocol Identity.Identifiable
+
 public struct Todo {
+	public let id: ID
+
 	public var title: String
 	public var note: String
 
@@ -8,6 +13,8 @@ public struct Todo {
 		title: String = "New Todo",
 		note: String = "A note describing this todo."
 	) {
+		id = .init(rawValue: UUID().uuidString)
+
 		self.title = title
 		self.note = note
 	}
@@ -15,3 +22,7 @@ public struct Todo {
 
 // MARK: -
 extension Todo: Equatable {}
+
+extension Todo: Codable {}
+
+extension Todo: Identifiable {}

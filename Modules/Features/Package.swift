@@ -29,7 +29,6 @@ let package = Package(
 		.package(url: "https://github.com/Lighter-swift/Lighter", from: "1.0.0"),
 		.package(name: "Model", path: "../Model"),
 		.package(name: "EmailableAPI", path: "../Emailable API"),
-		.package(url: "https://github.com/mergesort/Boutique.git", .upToNextMajor(from: "2.0.0")),
 		.package(name: "Presentation", path: "../Presentation")
 	],
 	targets: [

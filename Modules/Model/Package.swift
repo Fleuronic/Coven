@@ -12,11 +12,13 @@ let package = Package(
 			targets: ["Model"]
 		)
 	],
-	dependencies: [],
+	dependencies: [
+		.package(url: "https://github.com/JohnSundell/Identity", from: "0.1.0")
+	],
 	targets: [
 		.target(
 			name: "Model",
-			dependencies: []
+			dependencies: ["Identity"]
 		),
 		.testTarget(
 			name: "ModelTests",

@@ -2,16 +2,21 @@
 
 import Workflow
 import BackStackContainer
+
+import protocol Ergo.Storable
+
+import struct Ergo.Stored
 import struct Model.Todo
 
 public extension Todo {
 	struct Workflow {
 		private let name: String
-		private let initialTodos: [Model.Todo]
+		private let initialTodos: [Model.Todo]?
+		@Stored private var storedTodos: [Model.Todo]
 
 		public init(
 			name: String,
-			initialTodos: [Model.Todo] = []
+			initialTodos: [Model.Todo]? = nil
 		) {
 			self.name = name
 			self.initialTodos = initialTodos
@@ -48,7 +53,7 @@ extension Todo.Workflow: Workflow {
 
 	public func makeInitialState() -> State {
 		.init(
-			todos: initialTodos,
+			todos: initialTodos ?? storedTodos,
 			step: .list
 		)
 	}
@@ -118,7 +123,8 @@ extension Todo.Workflow.ListAction: WorkflowAction {
 		case let .editTodo(index):
 			state.step = .editTodo(index: index)
 		case .createTodo:
-			state.todos.append(.init())
+			let todo = Model.Todo()
+			state.todos.append(todo.stored)
 		case .finish:
 			return .end
 		}
@@ -133,7 +139,7 @@ extension Todo.Workflow.EditAction: WorkflowAction {
 	func apply(toState state: inout Todo.Workflow.State) -> Todo.Workflow.Output? {
 		switch self {
 		case let .saveTodo(todo, index):
-			state.todos[index] = todo
+			state.todos[index] = todo.stored
 			fallthrough
 		case .cancel:
 			state.step = .list
@@ -147,3 +153,6 @@ extension Todo.Workflow.State: Equatable {}
 
 // MARK: -
 extension Todo.Workflow.State.Step: Equatable {}
+
+// MARK: -
+extension Model.Todo: Storable {}

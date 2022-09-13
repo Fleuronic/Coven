@@ -2,30 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "Bodega",
-        "repositoryURL": "https://github.com/mergesort/Bodega.git",
-        "state": {
-          "branch": null,
-          "revision": "8e240838b37f2596026b23934e3b87a36354b728",
-          "version": "2.0.0"
-        }
-      },
-      {
         "package": "Bond",
         "repositoryURL": "https://github.com/DeclarativeHub/Bond",
         "state": {
           "branch": null,
           "revision": "146943c0bc03a93c48fb6c57db4e39f4b38ba74b",
           "version": "7.8.1"
-        }
-      },
-      {
-        "package": "Boutique",
-        "repositoryURL": "https://github.com/mergesort/Boutique.git",
-        "state": {
-          "branch": null,
-          "revision": "bf357967f46adeabae95c06e6125cb6cf8fdcb37",
-          "version": "2.0.0"
         }
       },
       {
@@ -44,6 +26,15 @@
           "branch": null,
           "revision": "d9beca13ca85baa50ee29832d0db5129fba69630",
           "version": "5.0.1"
+        }
+      },
+      {
+        "package": "Identity",
+        "repositoryURL": "https://github.com/JohnSundell/Identity",
+        "state": {
+          "branch": null,
+          "revision": "c3c9102e8d5c2cfcc44a8c7c4bbb7cf3f7c12be9",
+          "version": "0.3.0"
         }
       },
       {
@@ -83,21 +74,12 @@
         }
       },
       {
-        "package": "SQLite.swift",
-        "repositoryURL": "https://github.com/stephencelis/SQLite.swift.git",
+        "package": "Stores",
+        "repositoryURL": "https://github.com/omaralbeik/Stores",
         "state": {
           "branch": null,
-          "revision": "4d543d811ee644fa4cc4bfa0be996b4dd6ba0f54",
-          "version": "0.13.3"
-        }
-      },
-      {
-        "package": "swift-collections",
-        "repositoryURL": "https://github.com/apple/swift-collections",
-        "state": {
-          "branch": null,
-          "revision": "48254824bb4248676bf7ce56014ff57b142b77eb",
-          "version": "1.0.2"
+          "revision": "2b0c610476be03b53d075e0ea29681b6cc3a63e3",
+          "version": "0.3.2"
         }
       },
       {
