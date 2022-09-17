@@ -14,7 +14,7 @@ class TodoListWorkflowTests: XCTestCase {
 			}
 			.send(action: .selectTodo(index: index))
 			.verifyOutput { output in
-				XCTAssertEqual(output, .selectedTodo(index: index))
+				XCTAssertEqual(output, .todoSelection(index: index))
 			}
 			.send(action: .createTodo)
 			.verifyOutput { output in

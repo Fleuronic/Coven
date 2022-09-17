@@ -10,49 +10,24 @@ import enum Welcome.Welcome
 extension Emailable.API: MockAPI {
 	public func mockJSONObject(path: String, method: String) -> [String: Any]? {
 		let (_, email) = path.firstMatch(of: /email=([^&]*)/)!.output
-		let validEmailJSONObject = validEmailJSONObject(for: email)
-		let invalidEmailJSONObject = invalidEmailJSONObject(for: email)
-		let somethingWentWrongJSONObject = somethingWentWrongJSONObject(for: email)
-		let jsonObjects = [
-			validEmailJSONObject,
-			invalidEmailJSONObject,
-			somethingWentWrongJSONObject
-		]
 
 		return Configuration.value.map {
 			switch $0 {
 			case .validEmail:
-				return validEmailJSONObject
+				return [
+					"email": email,
+					"reason": "accepted_email"
+				]
 			case .invalidEmail:
-				return invalidEmailJSONObject
+				return [
+					"email": email,
+					"reason": "invalid_domain"
+				]
 			case .somethingWentWrong:
-				return somethingWentWrongJSONObject
-			case .random:
-				return jsonObjects.randomElement()!
+				return [
+					"message": "Something went wrong."
+				]
 			}
 		}
-	}
-}
-
-// MARK: -
-private extension Emailable.API {
-	func validEmailJSONObject(for email: Substring) -> [String: Any] {
-		[
-			"email": email,
-			"reason": "accepted_email"
-		]
-	}
-
-	func invalidEmailJSONObject(for email: Substring) -> [String: Any] {
-		[
-			"email": email,
-			"reason": "invalid_domain"
-		]
-	}
-
-	func somethingWentWrongJSONObject(for email: Substring) -> [String: Any] {
-		[
-			"message": "Something went wrong."
-		]
 	}
 }

@@ -7,7 +7,7 @@ import struct Model.Todo
 @testable import enum Todo.Todo
 
 class TodoWorkflowTests: XCTestCase {
-	func testSelectedTodo() throws {
+	func testtodoSelection() throws {
 		let name = "Jordan"
 		let title = "Title"
 		let note = "Note"
@@ -26,10 +26,11 @@ class TodoWorkflowTests: XCTestCase {
 				producingRendering: .init(
 					screen: Todo.List.Screen(
 						todoTitles: [],
-						rowSelected: { _ in }
+						rowSelected: { _ in },
+						rowDeleted: { _ in }
 					).asAnyScreen()
 				),
-				producingOutput: .selectedTodo(index: index)
+				producingOutput: .todoSelection(index: index)
 			)
 			.render { items in
 				XCTAssertEqual(items.count, 1)
@@ -63,7 +64,8 @@ class TodoWorkflowTests: XCTestCase {
 				producingRendering: .init(
 					screen: Todo.List.Screen(
 						todoTitles: [],
-						rowSelected: { _ in }
+						rowSelected: { _ in },
+						rowDeleted: { _ in }
 					).asAnyScreen()
 				)
 			)

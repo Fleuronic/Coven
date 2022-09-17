@@ -43,15 +43,13 @@ extension Welcome.View: Stacking {
 				.tap(screen.loginTapped)
 				.height(.element)
 		}.insetBy(horizontalInsets: .element).centeringVerticallyInParent()
-		UIView.containing(
-			UIStackView.vertical(spacing: .element) {
-				UILabel.style(.error)
-					.isVisible(screen.hasInvalidEmail)
-					.text(screen.invalidEmailErrorMessage)
-				UILabel.style(.error)
-					.text(screen.errorMessage)
-			}.insetBy(insets: .element).centeringHorizontallyInParent()
-		)
+		UIStackView.vertical(spacing: .element) {
+			UILabel.style(.error)
+				.isVisible(screen.hasInvalidEmail)
+				.text(screen.invalidEmailErrorMessage)
+			UILabel.style(.error)
+				.text(screen.errorMessage)
+		}.insetBy(insets: .element)
 		UIView.spacer
 	}
 }

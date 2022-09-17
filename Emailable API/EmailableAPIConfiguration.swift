@@ -8,7 +8,6 @@ extension Emailable.API {
 		case validEmail
 		case invalidEmail
 		case somethingWentWrong
-		case random
 	}
 }
 

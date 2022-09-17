@@ -2,6 +2,9 @@
 
 import UIKit
 
+import protocol Storable.Storable
+import protocol Storable.Prestored
+import protocol Storable.Keyed
 import enum Welcome.Welcome
 
 extension Welcome.App {

@@ -6,6 +6,8 @@ import BackStackContainer
 import Welcome
 import Todo
 
+import struct Model.User
+
 import enum EmailableAPI.Emailable
 
 public extension Root {
@@ -21,7 +23,7 @@ public extension Root {
 // MARK: -
 extension Root.Workflow {
 	enum Action {
-		case logIn(name: String)
+		case logIn(User)
 		case logOut
 	}
 }
@@ -36,7 +38,7 @@ extension Root.Workflow: Workflow {
 	}
 
 	public func makeInitialState() -> State {
-		.welcome
+		(User.stored?.name).map(State.todo) ?? .welcome
 	}
 
 	public func render(state: State, context: RenderContext<Self>) -> Rendering {
@@ -65,21 +67,21 @@ private extension Root.Workflow {
 	}
 
 	func todoItems(with name: String, in context: RenderContext<Self>) -> [BackStackItem] {
-		Todo.Workflow(name: name)
+		Todo.Workflow(name: name, canLogOut: true)
 			.mapOutput(action)
 			.rendered(in: context)
 	}
 
 	func action(for welcomeOutput: Welcome.Workflow.Output) -> Action {
 		switch welcomeOutput {
-		case let .user(name):
-			return .logIn(name: name)
+		case let .user(user):
+			return .logIn(user)
 		}
 	}
 
 	func action(for todoOutput: Todo.Workflow.Output) -> Action {
 		switch todoOutput {
-		case .end:
+		case .logout:
 			return .logOut
 		}
 	}
@@ -91,9 +93,10 @@ extension Root.Workflow.Action: WorkflowAction {
 
 	func apply(toState state: inout Root.Workflow.State) -> Never? {
 		switch self {
-		case let .logIn(name):
-			state = .todo(name: name)
+		case let .logIn(user):
+			state = .todo(name: user.name)
 		case .logOut:
+			User.removeFromStorage()
 			state = .welcome
 		}
 		return nil

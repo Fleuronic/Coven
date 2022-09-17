@@ -7,6 +7,7 @@ extension Todo.List {
 	struct Screen {
 		let todoTitles: [String]
 		let rowSelected: Event<Int>
+		let rowDeleted: Event<Int>
 	}
 }
 

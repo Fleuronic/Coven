@@ -2,7 +2,9 @@
 
 import UIKit
 import BackStackContainer
+import Workflow
 import WorkflowUI
+import Model
 
 import enum Todo.Todo
 
@@ -14,15 +16,20 @@ extension Todo.App {
 }
 
 // MARK: -
-extension Todo.App.Delegate: UIApplicationDelegate {
+extension Todo.App.Delegate: AppDelegate {
+	// MARK: AppDelegate
+	var workflow: AnyWorkflow<BackStackScreen<AnyScreen>, Todo.Workflow.Output> {
+		Todo.Workflow(
+			name: User.stored!.name,
+			canLogOut: false
+		).mapRendering(BackStackScreen.init)
+	}
+
+	// MARK: UIApplicationDelegate
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-		window = .init(frame: UIScreen.main.bounds)
-		window?.rootViewController = ContainerViewController(
-			workflow: Todo.Workflow(
-				name: "Jordan"
-			).mapRendering(BackStackScreen.init)
-		)
-		window?.makeKeyAndVisible()
+		User.prestore()
+		Model.Todo.prestore()
+		window = makeWindow()
 		return true
 	}
 }

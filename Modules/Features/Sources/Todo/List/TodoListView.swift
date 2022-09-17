@@ -26,6 +26,7 @@ extension Todo.List.View: Stacking {
 		UITableView.plain
 			.isHidden(screen.isEmpty)
 			.rowSelected(screen.rowSelected)
+			.rowDeleted(screen.rowDeleted)
 			.cellsText(screen.todoTitles)
 	}
 }

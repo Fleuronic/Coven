@@ -19,6 +19,8 @@
 		178AAEAE28CBC04D00CBFC52 /* RootAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178AAEAD28CBC04D00CBFC52 /* RootAppEnvironment.swift */; };
 		178AAEB428CE285900CBFC52 /* EmailableAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178AAEB228CE22F600CBFC52 /* EmailableAPI.swift */; };
 		178AAEB928CE552000CBFC52 /* EmailableAPIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178AAEB728CE53E100CBFC52 /* EmailableAPIConfiguration.swift */; };
+		17D1329E28D4F8FE00F2D229 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1329D28D4F8FE00F2D229 /* Todo.swift */; };
+		17D132A028D5448E00F2D229 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1329F28D5448E00F2D229 /* User.swift */; };
 		17D85FD928BBEF9900C42970 /* Welcome in Frameworks */ = {isa = PBXBuildFile; productRef = 17D85FD828BBEF9900C42970 /* Welcome */; };
 		17D85FF028BBF64600C42970 /* Todo in Frameworks */ = {isa = PBXBuildFile; productRef = 17D85FEF28BBF64600C42970 /* Todo */; };
 		17D8601228BBF84B00C42970 /* TodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8600528BBF80500C42970 /* TodoApp.swift */; };
@@ -108,6 +110,9 @@
 		178AAEB028CCEBA000CBFC52 /* Emissary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Emissary; path = Modules/Emissary; sourceTree = "<group>"; };
 		178AAEB228CE22F600CBFC52 /* EmailableAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailableAPI.swift; sourceTree = "<group>"; };
 		178AAEB728CE53E100CBFC52 /* EmailableAPIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailableAPIConfiguration.swift; sourceTree = "<group>"; };
+		17C6632328D0BCCB0002570C /* Storable */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Storable; path = Modules/Storable; sourceTree = "<group>"; };
+		17D1329D28D4F8FE00F2D229 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		17D1329F28D5448E00F2D229 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		17D85FC228BBED8200C42970 /* Presentation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Presentation; path = Modules/Presentation; sourceTree = "<group>"; };
 		17D85FC328BBED8200C42970 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Features; path = Modules/Features; sourceTree = "<group>"; };
 		17D85FC428BBED8200C42970 /* Model */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Model; path = Modules/Model; sourceTree = "<group>"; };
@@ -203,6 +208,7 @@
 		1749DCCE28BB886300C4AFC9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				17C6632328D0BCCB0002570C /* Storable */,
 				178AAEB028CCEBA000CBFC52 /* Emissary */,
 				178AAEAF28CCEB2200CBFC52 /* Emailable API */,
 				17D85FC328BBED8200C42970 /* Features */,
@@ -279,8 +285,10 @@
 		17D85FE628BBF5F100C42970 /* Todo App */ = {
 			isa = PBXGroup;
 			children = (
+				17D1329D28D4F8FE00F2D229 /* Todo.swift */,
 				17D8600528BBF80500C42970 /* TodoApp.swift */,
 				17D8600428BBF80500C42970 /* TodoAppDelegate.swift */,
+				17D1329F28D5448E00F2D229 /* User.swift */,
 				1764FE4528BC1F74004AAD5E /* Resources */,
 			);
 			path = "Todo App";
@@ -620,6 +628,8 @@
 				178AAEAB28CBC01700CBFC52 /* AppDelegate.swift in Sources */,
 				17D8601228BBF84B00C42970 /* TodoApp.swift in Sources */,
 				17D8601328BBF84D00C42970 /* TodoAppDelegate.swift in Sources */,
+				17D132A028D5448E00F2D229 /* User.swift in Sources */,
+				17D1329E28D4F8FE00F2D229 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

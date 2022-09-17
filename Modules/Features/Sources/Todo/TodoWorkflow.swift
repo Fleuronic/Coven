@@ -3,23 +3,19 @@
 import Workflow
 import BackStackContainer
 
-import protocol Ergo.Storable
-
-import struct Ergo.Stored
 import struct Model.Todo
 
 public extension Todo {
 	struct Workflow {
 		private let name: String
-		private let initialTodos: [Model.Todo]?
-		@Stored private var storedTodos: [Model.Todo]
+		private let canLogOut: Bool
 
 		public init(
 			name: String,
-			initialTodos: [Model.Todo]? = nil
+			canLogOut: Bool
 		) {
 			self.name = name
-			self.initialTodos = initialTodos
+			self.canLogOut = canLogOut
 		}
 	}
 }
@@ -29,7 +25,8 @@ extension Todo.Workflow {
 	enum ListAction {
 		case editTodo(index: Int)
 		case createTodo
-		case finish
+		case deleteTodo(index: Int)
+		case logOut
 	}
 
 	enum EditAction {
@@ -48,12 +45,12 @@ extension Todo.Workflow: Workflow {
 	}
 	
 	public enum Output {
-		case end
+		case logout
 	}
 
 	public func makeInitialState() -> State {
 		.init(
-			todos: initialTodos ?? storedTodos,
+			todos: .stored ?? [],
 			step: .list
 		)
 	}
@@ -74,7 +71,7 @@ extension Todo.Workflow: Workflow {
 // MARK: -
 private extension Todo.Workflow {
 	func listItem(with state: State, in context: RenderContext<Self>) -> BackStackItem {
-		Todo.List.Workflow(name: name, todos: state.todos)
+		Todo.List.Workflow(name: name, todos: state.todos, canLogOut: canLogOut)
 			.mapOutput(action)
 			.rendered(in: context)
 	}
@@ -87,12 +84,14 @@ private extension Todo.Workflow {
 
 	func action(for listOutput: Todo.List.Workflow.Output) -> ListAction {
 		switch listOutput {
-		case let .selectedTodo(index: index):
+		case let .todoSelection(index: index):
 			return .editTodo(index: index)
 		case .todoCreation:
 			return .createTodo
-		case .end:
-			return .finish
+		case let .todoDeletion(index: index):
+			return .deleteTodo(index: index)
+		case .logout:
+			return .logOut
 		}
 	}
 
@@ -123,10 +122,12 @@ extension Todo.Workflow.ListAction: WorkflowAction {
 		case let .editTodo(index):
 			state.step = .editTodo(index: index)
 		case .createTodo:
-			let todo = Model.Todo()
-			state.todos.append(todo.stored)
-		case .finish:
-			return .end
+			state.todos.append(Model.Todo().store())
+		case let .deleteTodo(index):
+			state.todos.remove(at: index).removeFromStorage()
+		case .logOut:
+			state.todos.removeFromStorage()
+			return .logout
 		}
 		return nil
 	}
@@ -139,7 +140,7 @@ extension Todo.Workflow.EditAction: WorkflowAction {
 	func apply(toState state: inout Todo.Workflow.State) -> Todo.Workflow.Output? {
 		switch self {
 		case let .saveTodo(todo, index):
-			state.todos[index] = todo.stored
+			state.todos[index] = todo.store()
 			fallthrough
 		case .cancel:
 			state.step = .list
@@ -153,6 +154,3 @@ extension Todo.Workflow.State: Equatable {}
 
 // MARK: -
 extension Todo.Workflow.State.Step: Equatable {}
-
-// MARK: -
-extension Model.Todo: Storable {}

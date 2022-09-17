@@ -1,10 +1,11 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Foundation.UUID
+import protocol Storable.Storable
 import protocol Identity.Identifiable
 
 public struct Todo {
-	public let id: ID
+	public let id: Todo.ID
 
 	public var title: String
 	public var note: String
@@ -25,4 +26,6 @@ extension Todo: Equatable {}
 
 extension Todo: Codable {}
 
-extension Todo: Identifiable {}
+extension Todo: Identifiable, Swift.Identifiable {}
+
+extension Todo: Storable {}

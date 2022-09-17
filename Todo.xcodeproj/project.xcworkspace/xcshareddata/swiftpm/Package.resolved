@@ -75,11 +75,11 @@
       },
       {
         "package": "Stores",
-        "repositoryURL": "https://github.com/omaralbeik/Stores",
+        "repositoryURL": "https://github.com/Fleuronic/Stores",
         "state": {
-          "branch": null,
-          "revision": "2b0c610476be03b53d075e0ea29681b6cc3a63e3",
-          "version": "0.3.2"
+          "branch": "keychain",
+          "revision": "2196d4abfba46be1497f88e22ac86f96fa3281a5",
+          "version": null
         }
       },
       {

@@ -13,12 +13,16 @@ let package = Package(
 		)
 	],
 	dependencies: [
+		.package(name: "Storable", path: "../Storable"),
 		.package(url: "https://github.com/JohnSundell/Identity", from: "0.1.0")
 	],
 	targets: [
 		.target(
 			name: "Model",
-			dependencies: ["Identity"]
+			dependencies: [
+				"Identity",
+				"Storable"
+			]
 		),
 		.testTarget(
 			name: "ModelTests",

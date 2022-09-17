@@ -3,6 +3,7 @@
 import Foundation
 import Workflow
 
+import struct Model.User
 import struct Ergo.RequestWorker
 import struct Ergo.DelayedWorker
 
@@ -38,7 +39,7 @@ extension Welcome.Workflow: Workflow {
 	}
 
 	public enum Output {
-		case user(name: String)
+		case user(User)
 	}
 
 	public func makeInitialState() -> State {
@@ -107,9 +108,10 @@ extension Welcome.Workflow.Action {
 			state.emailVerificationState = .idle
 		case .verifyEmail:
 			state.emailVerificationState = .requesting
-		case let .finishEmailVerification(.success(verification)) where verification.reason == .acceptedEmail:
+		case let .finishEmailVerification(.success(verification)) where
+			verification.reason == .acceptedEmail:
 			state.emailVerificationState = .retrieved(verification)
-			return .user(name: state.name)
+			return .user(state.user.store())
 		case let .finishEmailVerification(.success(verification)) where verification.reason == .invalidDomain:
 			state.invalidEmails.append(verification.email)
 			state.emailVerificationState = .retrieved(verification)
@@ -124,6 +126,13 @@ extension Welcome.Workflow.Action {
 
 // MARK: -
 private extension Welcome.Workflow.State {
+	var user: User {
+		.init(
+			name: name,
+			email: email
+		)
+	}
+
 	var isVerifyingEmail: Bool {
 		emailVerificationState.isRequesting
 	}

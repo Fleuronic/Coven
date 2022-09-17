@@ -5,7 +5,7 @@ import Workflow
 import WorkflowUI
 
 protocol AppDelegate: UIApplicationDelegate {
-	associatedtype AppWorkflow: Workflow where AppWorkflow.Rendering: Screen
+	associatedtype AppWorkflow: AnyWorkflowConvertible where AppWorkflow.Rendering: Screen
 
 	var workflow: AppWorkflow { get }
 }

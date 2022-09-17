@@ -90,13 +90,13 @@
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "apiConfiguration"
-            value = "random"
+            value = "invalidEmail"
             isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "apiConfiguration"
-            value = "invalidEmail"
-            isEnabled = "NO">
+            value = "somethingWentWrong"
+            isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "initialEmail"
