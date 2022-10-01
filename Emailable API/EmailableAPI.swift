@@ -1,11 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Foundation
-import protocol Emissary.MockAPI
 import enum Emissary.Request
 import enum EmailableAPI.Emailable
-
 import enum Welcome.Welcome
+import protocol Emissary.MockAPI
 
 extension Emailable.API: MockAPI {
 	public func mockJSONObject(path: String, method: String) -> [String: Any]? {

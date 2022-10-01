@@ -1,20 +1,26 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Workflow
-import BackStackContainer
-
 import struct Model.Todo
+import struct Workflow.Sink
+import class Workflow.RenderContext
+import protocol Workflow.Workflow
+import protocol Workflow.WorkflowAction
+
+import BackStackContainer
 
 public extension Todo {
 	struct Workflow {
 		private let name: String
+		private let initialTodos: [Model.Todo]?
 		private let canLogOut: Bool
 
 		public init(
 			name: String,
-			canLogOut: Bool
+			initialTodos: [Model.Todo]? = nil,
+			canLogOut: Bool = true
 		) {
 			self.name = name
+			self.initialTodos = initialTodos
 			self.canLogOut = canLogOut
 		}
 	}
@@ -50,7 +56,7 @@ extension Todo.Workflow: Workflow {
 
 	public func makeInitialState() -> State {
 		.init(
-			todos: .stored ?? [],
+			todos: .stored ?? initialTodos ?? [],
 			step: .list
 		)
 	}

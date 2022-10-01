@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
-import Telemetric
-
+import class UIKit.UILabel
+import class UIKit.UIFont
+import struct Telemetric.Styled
 import protocol Metric.TextStyle
 import protocol Metric.TextStyled
 

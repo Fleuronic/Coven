@@ -1,13 +1,14 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Foundation
-import Workflow
 
+import enum EmailableAPI.Emailable
 import struct Model.User
 import struct Ergo.RequestWorker
 import struct Ergo.DelayedWorker
-
-import enum EmailableAPI.Emailable
+import struct Workflow.Sink
+import class Workflow.RenderContext
+import protocol Workflow.Workflow
+import protocol Workflow.WorkflowAction
 
 public extension Welcome {
 	struct Workflow {

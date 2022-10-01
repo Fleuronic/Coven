@@ -1,11 +1,11 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
-
-import protocol Storable.Storable
-import protocol Storable.Prestored
-import protocol Storable.Keyed
 import enum Welcome.Welcome
+import class UIKit.UIApplication
+import class UIKit.UIWindow
+import class UIKit.UIResponder
+import protocol Storable.Storable
+import protocol Storable.Keyed
 
 extension Welcome.App {
 	@UIApplicationMain

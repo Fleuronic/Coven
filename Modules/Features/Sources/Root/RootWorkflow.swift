@@ -1,14 +1,15 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Workflow
-import WorkflowUI
-import BackStackContainer
-import Welcome
-import Todo
-
-import struct Model.User
-
+import enum Welcome.Welcome
+import enum Todo.Todo
 import enum EmailableAPI.Emailable
+import class Workflow.RenderContext
+import struct Model.User
+import struct WorkflowUI.AnyScreen
+import protocol Workflow.Workflow
+import protocol Workflow.WorkflowAction
+
+import BackStackContainer
 
 public extension Root {
 	struct Workflow {
@@ -67,7 +68,7 @@ private extension Root.Workflow {
 	}
 
 	func todoItems(with name: String, in context: RenderContext<Self>) -> [BackStackItem] {
-		Todo.Workflow(name: name, canLogOut: true)
+		Todo.Workflow(name: name)
 			.mapOutput(action)
 			.rendered(in: context)
 	}

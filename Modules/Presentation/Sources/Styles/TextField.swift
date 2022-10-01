@@ -1,9 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
-import Metrics
-import Assets
-import Telemetric
+import class UIKit.UITextField
+import struct Telemetric.Styled
 
 public extension UITextField {
 	enum Style {

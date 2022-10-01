@@ -1,7 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
-import Telemetric
+import class UIKit.UIButton
+import struct Telemetric.Styled
 
 public extension UIButton {
 	enum Style {
@@ -18,4 +18,3 @@ public extension UIButton {
 		}
 	}
 }
-

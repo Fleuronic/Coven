@@ -1,10 +1,14 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
-import Layoutless
-import Ergo
-import Geometric
-import Telemetric
+import class UIKit.UIView
+import class UIKit.UILabel
+import class UIKit.UIStackView
+import class UIKit.UITableView
+import struct Layoutless.Layout
+import struct Ergo.VerticallyStacked
+import protocol Ergo.Stacking
+import protocol Ergo.ScreenProxy
+import protocol Ergo.ReactiveScreen
 
 extension Todo.List {
 	final class View: UIView {}

@@ -20,61 +20,37 @@ public extension Keyed {
 // MARK: -
 public extension Storable where Self: Keyed {
 	static func stored(key: Key) -> Self? {
-		store(for: key).object()
+		store(for: key)?.object()
 	}
 
 	// MARK: Storable
 	@discardableResult
 	func store() -> Self {
-		try! Self.store(for: key).save(self)
+		try! Self.store(for: key)?.save(self)
 		return self
 	}
 
 	@discardableResult
 	func removeFromStorage() -> Self {
-		try? Self.store(for: key).remove()
+		try? Self.store(for: key)?.remove()
 		return self
 	}
 
 	static func removeFromStorage() {
 		for key in Key.allCases {
-			try? store(for: key).remove()
+			try? store(for: key)?.remove()
 		}
 	}
 }
 
 // MARK: -
 private extension Storable where Self: Keyed {
-	static func store(for key: Key) -> AnySingleObjectStore<Self> {
+	static func store(for key: Key) -> AnySingleObjectStore<Self>? {
+		if self is Ephemeral.Type { return nil }
+		
 		let identifier = key.rawValue
 		return usesSecureStorage ?
 			SingleKeychainStore<Self>(identifier: identifier).eraseToAnyStore() :
 			SingleUserDefaultsStore<Self>(identifier: identifier).eraseToAnyStore()
-	}
-}
-
-// MARK: -
-public extension Prestored where Self: Keyed {
-	// MARK: Storable
-	static func stored(key: Key) -> Self? {
-		store[key.rawValue]
-	}
-
-	@discardableResult
-	func store() -> Self {
-		universalStore[key.rawValue] = self
-		return self
-	}
-
-	@discardableResult
-	func removeFromStorage() -> Self {
-		universalStore.removeValue(forKey: key.rawValue)
-		return self
-	}
-
-	static func removeFromStorage() {
-		for key in Key.allCases {
-			universalStore.removeValue(forKey: key.rawValue)
-		}
 	}
 }

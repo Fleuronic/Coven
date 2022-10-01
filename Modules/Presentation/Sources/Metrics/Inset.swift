@@ -1,6 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Metric
+import struct Metric.Insets
 
 public extension Insets {
 	static let element: Self = 12

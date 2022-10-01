@@ -12,29 +12,30 @@ public protocol Storable: Codable {
 // MARK: -
 public extension Storable {
 	static var stored: Self? {
-		store.object()
+		return store?.object()
 	}
 
 	@discardableResult
 	func store() -> Self {
-		try! Self.store.save(self)
+		try! Self.store?.save(self)
 		return self
 	}
 
 	@discardableResult
 	func removeFromStorage() -> Self {
-		try? Self.store.remove()
+		try? Self.store?.remove()
 		return self
 	}
 
 	static func removeFromStorage() {
-		try? store.remove()
+		try? store?.remove()
 	}
 }
 
 // MARK: -
 private extension Storable {
-	static var store: SingleFileSystemStore<Self> {
-		.init(identifier: .init(describing: self))
+	static var store: SingleFileSystemStore<Self>? {
+		if self is Ephemeral.Type { return nil }
+		return .init(identifier: .init(describing: self))
 	}
 }

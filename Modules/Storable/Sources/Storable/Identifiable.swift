@@ -5,37 +5,38 @@ import class Stores.MultiFileSystemStore
 
 public extension Storable where Self: Identifiable {
 	static func stored(id: ID) -> Self? {
-		store.object(withId: id)
+		store?.object(withId: id)
 	}
 
 	// MARK: Storable
 	func store() -> Self {
-		try! Self.store.save(self)
+		try! Self.store?.save(self)
 		return self
 	}
 
 	@discardableResult
 	func removeFromStorage() -> Self {
-		try? Self.store.remove(withId: id)
+		try? Self.store?.remove(withId: id)
 		return self
 	}
 
 	static func removeFromStorage() {
-		try? Self.store.removeAll()
+		try? Self.store?.removeAll()
 	}
 }
 
 // MARK: -
 private extension Storable where Self: Identifiable {
-	static var store: MultiFileSystemStore<Self> {
-		.init(identifier: .init(describing: self))
+	static var store: MultiFileSystemStore<Self>? {
+		if self is Ephemeral.Type { return nil }
+		return .init(identifier: .init(describing: self))
 	}
 }
 
 // MARK: -
 public extension Array where Element: Storable & Identifiable {
 	static var storedCount: Int {
-		store.objectsCount
+		store?.objectsCount ?? 0
 	}
 }
 
@@ -43,76 +44,29 @@ public extension Array where Element: Storable & Identifiable {
 extension Array: Storable where Element: Storable & Identifiable {
 	// MARK: Storable
 	public static var stored: Self? {
-		if let elementType = Element.self as? Prestored.Type {
-			return elementType
-				.store
-				.values
-				.compactMap { $0 as? Element }
-		}
-
-		return store.allObjects()
+		store?.allObjects()
 	}
 
 	@discardableResult
 	public func store() -> Self {
-		try! forEach(Self.store.save)
+		forEach { try! Self.store?.save($0) }
 		return self
 	}
 
 	@discardableResult
 	public func removeFromStorage() -> Self {
-		try? Self.store.remove(withIds: map(\.id))
+		try? Self.store?.remove(withIds: map(\.id))
 		return self
 	}
 
 	static func removeFromStorage() {
-		try? store.removeAll()
+		try? store?.removeAll()
 	}
 }
 
 // MARK: -
 private extension Array where Element: Storable & Identifiable {
-	static var store: MultiFileSystemStore<Element> {
+	static var store: MultiFileSystemStore<Element>? {
 		Element.store
-	}
-}
-
-// MARK: -
-public extension Prestored where Self: Identifiable {
-	// MARK: Prestored
-	static var prestoredDictionary: [String: Self] {
-		.init(
-			uniqueKeysWithValues: prestoredValues.map {
-				(UUID().description, $0)
-			}
-		)
-	}
-
-	// MARK: Storable
-	static func stored(id: ID) -> Self? {
-		store[key(for: id)]
-	}
-
-	@discardableResult
-	func store() -> Self {
-		universalStore[key] = self
-		return self
-	}
-
-	@discardableResult
-	func removeFromStorage() -> Self {
-		universalStore.removeValue(forKey: key)
-		return self
-	}
-}
-
-// MARK: -
-private extension Prestored where Self: Identifiable {
-	var key: String {
-		.init(describing: id)
-	}
-
-	static func key(for id: ID) -> String {
-		.init(describing: id)
 	}
 }

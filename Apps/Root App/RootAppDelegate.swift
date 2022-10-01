@@ -1,7 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
-import WorkflowUI
+import class UIKit.UIApplication
+import class UIKit.UIWindow
+import class UIKit.UIResponder
 
 import enum Root.Root
 

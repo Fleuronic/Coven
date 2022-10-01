@@ -1,9 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
-import Metrics
 import Assets
-import Telemetric
+import Metrics
+import class UIKit.UITextView
+import struct Telemetric.Styled
 
 public extension UITextView {
 	enum Style {

@@ -1,8 +1,13 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
-import Metric
-import Telemetric
+import class UIKit.UIView
+import class UIKit.UILabel
+import class UIKit.UIButton
+import class UIKit.UIColor
+import struct Metric.Percentage
+import struct Metric.Opacity
+import struct Telemetric.Styled
+import protocol Metric.TextStyled
 
 public typealias SharedString = (Strings.Type) -> String
 

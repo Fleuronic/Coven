@@ -1,12 +1,17 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
-import Layoutless
-import Ergo
-import Metric
 import Geometric
-import Telemetric
 import Styles
+import enum Metric.Spacing
+import class UIKit.UIView
+import class UIKit.UIStackView
+import class UIKit.UITextField
+import class UIKit.UITextView
+import struct Layoutless.Layout
+import struct Ergo.VerticallyStacked
+import protocol Ergo.Stacking
+import protocol Ergo.ScreenProxy
+import protocol Ergo.ReactiveScreen
 
 extension Todo.Edit {
 	final class View: UIView {}

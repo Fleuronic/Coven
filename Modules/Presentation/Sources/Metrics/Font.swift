@@ -1,6 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Metric
+import enum Metric.Font
 
 public extension Font.Size {
 	static let small: Self = 18
