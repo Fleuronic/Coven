@@ -21,15 +21,14 @@ let package = Package(
 		)
 	],
 	dependencies: [
+		.package(name: "Model", path: "../Model"),
+		.package(name: "EmailableAPI", path: "../APIs/Emailable API"),
+		.package(name: "Presentation", path: "../Presentation"),
 		.package(url: "https://github.com/square/workflow-swift", from: "1.0.0-rc.1"),
 		.package(url: "https://github.com/Fleuronic/BackStackContainer", .branch("main")),
 		.package(url: "https://github.com/Fleuronic/Ergo", .branch("main")),
 		.package(url: "https://github.com/Fleuronic/Geometric", .branch("main")),
 		.package(url: "https://github.com/Fleuronic/Telemetric", .branch("main")),
-		.package(url: "https://github.com/Lighter-swift/Lighter", from: "1.0.0"),
-		.package(name: "Model", path: "../Model"),
-		.package(name: "EmailableAPI", path: "../Emailable API"),
-		.package(name: "Presentation", path: "../Presentation")
 	],
 	targets: [
 		.target(
@@ -70,7 +69,6 @@ let package = Package(
 			dependencies: [
 				"Ergo",
 				"BackStackContainer",
-				"Lighter",
 				"Geometric",
 				"Telemetric",
 				"Model",

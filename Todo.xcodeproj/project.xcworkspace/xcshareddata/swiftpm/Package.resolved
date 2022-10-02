@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "Coffin",
+        "repositoryURL": "https://github.com/Fleuronic/Coffin",
+        "state": {
+          "branch": "main",
+          "revision": "d6e07208e441a529955180c89a3c14b074bf5ae2",
+          "version": null
+        }
+      },
+      {
         "package": "Differ",
         "repositoryURL": "https://github.com/tonyarnold/Differ.git",
         "state": {
@@ -29,12 +38,48 @@
         }
       },
       {
+        "package": "Emissary",
+        "repositoryURL": "https://github.com/Fleuronic/Emissary",
+        "state": {
+          "branch": "main",
+          "revision": "c6cbd191b304db37ca64ededa4eb858a4adb713b",
+          "version": null
+        }
+      },
+      {
+        "package": "Ergo",
+        "repositoryURL": "https://github.com/Fleuronic/Ergo",
+        "state": {
+          "branch": "main",
+          "revision": "80013f9c5cf4333e8296aab3b8d5c60e9d59204f",
+          "version": null
+        }
+      },
+      {
+        "package": "Geometric",
+        "repositoryURL": "https://github.com/Fleuronic/Geometric",
+        "state": {
+          "branch": "main",
+          "revision": "ea82a6d316adfa577b31cdd339add530a727e72b",
+          "version": null
+        }
+      },
+      {
         "package": "Identity",
         "repositoryURL": "https://github.com/JohnSundell/Identity",
         "state": {
           "branch": null,
           "revision": "c3c9102e8d5c2cfcc44a8c7c4bbb7cf3f7c12be9",
           "version": "0.3.0"
+        }
+      },
+      {
+        "package": "Inject",
+        "repositoryURL": "https://github.com/Fleuronic/Inject.git",
+        "state": {
+          "branch": "main",
+          "revision": "630dcabd46c09fb14b9f6a0ab3257523c499f395",
+          "version": null
         }
       },
       {
@@ -47,12 +92,12 @@
         }
       },
       {
-        "package": "Lighter",
-        "repositoryURL": "https://github.com/Lighter-swift/Lighter",
+        "package": "Metric",
+        "repositoryURL": "https://github.com/Fleuronic/Metric.git",
         "state": {
-          "branch": null,
-          "revision": "fb35fea93597293041ec84854d86edec052547b4",
-          "version": "1.0.12"
+          "branch": "main",
+          "revision": "5570cdd9d11b5ec5efb49cc4007e3394799ca0fd",
+          "version": null
         }
       },
       {
@@ -75,10 +120,19 @@
       },
       {
         "package": "Stores",
-        "repositoryURL": "https://github.com/Fleuronic/Stores",
+        "repositoryURL": "https://github.com/omaralbeik/Stores",
         "state": {
-          "branch": "keychain",
-          "revision": "2196d4abfba46be1497f88e22ac86f96fa3281a5",
+          "branch": null,
+          "revision": "db625cfdd3812a7a46352dd8367ca5074c770889",
+          "version": "0.3.3"
+        }
+      },
+      {
+        "package": "Telemetric",
+        "repositoryURL": "https://github.com/Fleuronic/Telemetric.git",
+        "state": {
+          "branch": "main",
+          "revision": "bd2bba54ed1135819f3ce857a39401d177ed6679",
           "version": null
         }
       },

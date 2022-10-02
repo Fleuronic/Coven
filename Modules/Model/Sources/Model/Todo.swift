@@ -1,7 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Foundation.UUID
-import protocol Storable.Storable
+import protocol Coffin.Storable
 import protocol Identity.Identifiable
 
 public struct Todo {

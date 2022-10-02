@@ -2,7 +2,7 @@
 
 import struct Model.Todo
 
-import protocol Storable.Ephemeral
+import protocol Coffin.Ephemeral
 
 extension Model.Todo: Ephemeral {}
 

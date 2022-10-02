@@ -13,15 +13,15 @@ let package = Package(
 		)
 	],
 	dependencies: [
-		.package(name: "Storable", path: "../Storable"),
+		.package(url: "https://github.com/Fleuronic/Coffin", .branch("main")),
 		.package(url: "https://github.com/JohnSundell/Identity", from: "0.1.0")
 	],
 	targets: [
 		.target(
 			name: "Model",
 			dependencies: [
-				"Identity",
-				"Storable"
+				"Coffin",
+				"Identity"
 			]
 		),
 		.testTarget(

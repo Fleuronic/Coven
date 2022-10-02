@@ -1,6 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import protocol Storable.Storable
+import protocol Coffin.Storable
 
 public struct User {
 	public let name: String

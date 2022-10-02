@@ -13,7 +13,7 @@ let package = Package(
 		)
 	],
 	dependencies: [
-		.package(name: "Emissary", path: "../Emissary"),
+		.package(url: "https://github.com/Fleuronic/Emissary", .branch("main"))
 	],
 	targets: [
 		.target(

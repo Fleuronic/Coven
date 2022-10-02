@@ -1,7 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import Model
-
 import enum Todo.Todo
 
 extension [Model.Todo] {

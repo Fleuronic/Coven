@@ -2,7 +2,7 @@
 
 import struct Model.User
 
-import protocol Storable.Ephemeral
+import protocol Coffin.Ephemeral
 
 // MARK: -
 extension User: Ephemeral {}

@@ -90,11 +90,8 @@
 		1730DB8328E7932E00D317A8 /* TodoConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoConfiguration.swift; sourceTree = "<group>"; };
 		1730DB8628E794D400D317A8 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		1730DB8A28E7951900D317A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		173DD26628C1151400FF6E7D /* Inject */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Inject; path = ../Inject; sourceTree = "<group>"; };
+		1730DB9028E8E96700D317A8 /* Emailable API */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Emailable API"; path = "Modules/APIs/Emailable API"; sourceTree = "<group>"; };
 		173DD26728C11A7000FF6E7D /* BackStackContainer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BackStackContainer; path = ../BackStackContainer; sourceTree = "<group>"; };
-		173DD26828C1327E00FF6E7D /* Telemetric */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Telemetric; path = ../Metric/Submodules/Telemetric; sourceTree = "<group>"; };
-		173DD26928C1333400FF6E7D /* Geometric */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Geometric; path = ../Metric/Submodules/Geometric; sourceTree = "<group>"; };
-		173DD26A28C1333E00FF6E7D /* Metric */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Metric; path = ../Metric; sourceTree = "<group>"; };
 		1764FDF728BC043B004AAD5E /* RootUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUITests.swift; sourceTree = "<group>"; };
 		1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlowTests.swift; sourceTree = "<group>"; };
 		1764FE4A28BC2130004AAD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,13 +107,9 @@
 		176EF45828E76D37003CF32D /* TodoAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAppEnvironment.swift; sourceTree = "<group>"; };
 		1787621128C0F2BD0079A32C /* WelcomeAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeAppEnvironment.swift; path = "Apps/Welcome App/WelcomeAppEnvironment.swift"; sourceTree = "<group>"; };
 		1787621728C0F81A0079A32C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1787621928C106110079A32C /* Ergo */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Ergo; path = ../Ergo; sourceTree = "<group>"; };
 		178AAEAD28CBC04D00CBFC52 /* RootAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAppEnvironment.swift; sourceTree = "<group>"; };
-		178AAEAF28CCEB2200CBFC52 /* Emailable API */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Emailable API"; path = "Modules/Emailable API"; sourceTree = "<group>"; };
-		178AAEB028CCEBA000CBFC52 /* Emissary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Emissary; path = Modules/Emissary; sourceTree = "<group>"; };
 		178AAEB228CE22F600CBFC52 /* EmailableAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailableAPI.swift; sourceTree = "<group>"; };
 		178AAEB728CE53E100CBFC52 /* EmailableAPIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailableAPIConfiguration.swift; sourceTree = "<group>"; };
-		17C6632328D0BCCB0002570C /* Storable */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Storable; path = Modules/Storable; sourceTree = "<group>"; };
 		17D85FC228BBED8200C42970 /* Presentation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Presentation; path = Modules/Presentation; sourceTree = "<group>"; };
 		17D85FC328BBED8200C42970 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Features; path = Modules/Features; sourceTree = "<group>"; };
 		17D85FC428BBED8200C42970 /* Model */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Model; path = Modules/Model; sourceTree = "<group>"; };
@@ -190,12 +183,7 @@
 		170B0CF428A6DDF40033029D = {
 			isa = PBXGroup;
 			children = (
-				173DD26A28C1333E00FF6E7D /* Metric */,
-				173DD26928C1333400FF6E7D /* Geometric */,
-				173DD26828C1327E00FF6E7D /* Telemetric */,
 				173DD26728C11A7000FF6E7D /* BackStackContainer */,
-				173DD26628C1151400FF6E7D /* Inject */,
-				1787621928C106110079A32C /* Ergo */,
 				1749DCCE28BB886300C4AFC9 /* Modules */,
 				17D85FEB28BBF62100C42970 /* Apps */,
 				1764FE4D28BC2908004AAD5E /* Tests */,
@@ -229,9 +217,7 @@
 		1749DCCE28BB886300C4AFC9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				17C6632328D0BCCB0002570C /* Storable */,
-				178AAEB028CCEBA000CBFC52 /* Emissary */,
-				178AAEAF28CCEB2200CBFC52 /* Emailable API */,
+				1730DB9028E8E96700D317A8 /* Emailable API */,
 				17D85FC328BBED8200C42970 /* Features */,
 				17D85FC228BBED8200C42970 /* Presentation */,
 				17D85FC428BBED8200C42970 /* Model */,
