@@ -1,7 +1,10 @@
-"Welcome.Prompt" = "Bonvenon! Bonvolu enigi vian nomon.";
-"Welcome.Placeholder.name" = "Plena Nomo";
+"Welcome.Header" = "Bonvenon al Coven";
+"Welcome.Prompt" = "Kreu novan konton sube.";
+"Welcome.Placeholder.username" = "Uzantnomo";
 "Welcome.Placeholder.email" = "Retpoŝta Adreso";
-"Welcome.Title.login" = "Ensaluti";
+"Welcome.Placeholder.password" = "Pasvorto";
+"Welcome.Title.signup" = "Registriĝi";
+"Welcome.Footer" = "Ĉu vi jam havas konton? Ensalutu per viaj akreditaĵoj anstataŭe.";
 "Welcome.Error.email" = "Retpoŝta adreso estas nevalida.";
 
 "Todo.List.title" = "Taskoj de %@";

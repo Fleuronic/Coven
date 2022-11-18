@@ -12,6 +12,8 @@ public enum Text {}
 public extension Text {
 	enum Style {
 		case header
+		case prompt
+		case footer
 		case emptyState
 		case error
 	}
@@ -23,12 +25,17 @@ public extension UILabel {
 		let styled = Styled(UILabel()).font(style.font)
 
 		switch style {
-		case .header:
+		case .header, .prompt:
 			return styled
 				.centered
 				.multiline
 		case .emptyState:
 			return styled
+				.textColor { $0.secondary }
+		case .footer:
+			return styled
+				.centered
+				.multiline
 				.textColor { $0.secondary }
 		case .error:
 			return styled
@@ -53,7 +60,7 @@ extension Text.Style: TextStyle {
 				.size(.large)
 				.weight(.light)
 				.italic
-		case .error:
+		case .prompt, .footer, .error:
 			return
 				.size(.small)
 		}

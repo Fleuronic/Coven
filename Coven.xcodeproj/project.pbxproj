@@ -110,7 +110,6 @@
 		178AAEB228CE22F600CBFC52 /* EmailableAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailableAPI.swift; sourceTree = "<group>"; };
 		178AAEB728CE53E100CBFC52 /* EmailableAPIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailableAPIConfiguration.swift; sourceTree = "<group>"; };
 		17B1603628F606DD00131C50 /* TodoIdentified.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoIdentified.swift; sourceTree = "<group>"; };
-		17CA0ED928E9F11F00144E52 /* Coffin */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Coffin; path = ../Coffin; sourceTree = "<group>"; };
 		17D85FC228BBED8200C42970 /* Presentation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Presentation; path = Modules/Presentation; sourceTree = "<group>"; };
 		17D85FC328BBED8200C42970 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Features; path = Modules/Features; sourceTree = "<group>"; };
 		17D85FC428BBED8200C42970 /* Model */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Model; path = Modules/Model; sourceTree = "<group>"; };
@@ -184,7 +183,6 @@
 		170B0CF428A6DDF40033029D = {
 			isa = PBXGroup;
 			children = (
-				17CA0ED928E9F11F00144E52 /* Coffin */,
 				173DD26728C11A7000FF6E7D /* BackStackContainer */,
 				1749DCCE28BB886300C4AFC9 /* Modules */,
 				17D85FEB28BBF62100C42970 /* Apps */,
@@ -515,7 +513,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 170B0CF828A6DDF40033029D /* Build configuration list for PBXProject "Todo" */;
+			buildConfigurationList = 170B0CF828A6DDF40033029D /* Build configuration list for PBXProject "Coven" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1186,7 +1184,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		170B0CF828A6DDF40033029D /* Build configuration list for PBXProject "Todo" */ = {
+		170B0CF828A6DDF40033029D /* Build configuration list for PBXProject "Coven" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				170B0D2528A6DDF60033029D /* Debug */,

@@ -3,15 +3,18 @@
 import protocol Coffin.Storable
 
 public struct User {
-	public let name: String
+	public let username: String
 	public let email: String
+	public let password: String
 
 	public init(
-		name: String,
-		email: String
+		username: String,
+		email: String,
+		password: String
 	) {
-		self.name = name
+		self.username = username
 		self.email = email
+		self.password = password
 	}
 }
 

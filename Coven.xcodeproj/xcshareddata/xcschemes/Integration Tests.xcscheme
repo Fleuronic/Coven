@@ -20,7 +20,7 @@
                BlueprintIdentifier = "1764FE0028BC05FD004AAD5E"
                BuildableName = "IntegrationTests.xctest"
                BlueprintName = "IntegrationTests"
-               ReferencedContainer = "container:Todo.xcodeproj">
+               ReferencedContainer = "container:Coven.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

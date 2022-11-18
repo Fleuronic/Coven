@@ -17,7 +17,7 @@
                BlueprintIdentifier = "17D85FDA28BBF5C700C42970"
                BuildableName = "TodoApp.app"
                BlueprintName = "TodoApp"
-               ReferencedContainer = "container:Todo.xcodeproj">
+               ReferencedContainer = "container:Coven.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,7 +46,7 @@
                BlueprintIdentifier = "1764FE2F28BC0A1E004AAD5E"
                BuildableName = "TodoUITests.xctest"
                BlueprintName = "TodoUITests"
-               ReferencedContainer = "container:Todo.xcodeproj">
+               ReferencedContainer = "container:Coven.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -68,7 +68,7 @@
             BlueprintIdentifier = "17D85FDA28BBF5C700C42970"
             BuildableName = "TodoApp.app"
             BlueprintName = "TodoApp"
-            ReferencedContainer = "container:Todo.xcodeproj">
+            ReferencedContainer = "container:Coven.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -108,7 +108,7 @@
             BlueprintIdentifier = "17D85FDA28BBF5C700C42970"
             BuildableName = "TodoApp.app"
             BlueprintName = "TodoApp"
-            ReferencedContainer = "container:Todo.xcodeproj">
+            ReferencedContainer = "container:Coven.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

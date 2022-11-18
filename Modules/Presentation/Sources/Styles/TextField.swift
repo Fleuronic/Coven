@@ -5,8 +5,9 @@ import struct Telemetric.Styled
 
 public extension UITextField {
 	enum Style {
-		case name
+		case username
 		case email
+		case password
 		case title
 	}
 }
@@ -15,7 +16,7 @@ public extension UITextField {
 public extension UITextField {
 	static func style(_ style: Style) -> Styled<UITextField> {
 		switch style {
-		case .name:
+		case .username:
 			return .init()
 				.autocorrectionType(.no)
 				.autocapitalizationType(.words)
@@ -26,6 +27,13 @@ public extension UITextField {
 				.keyboardType(.emailAddress)
 				.autocorrectionType(.no)
 				.autocapitalizationType(.none)
+				.backgroundColor { $0.TextField.info }
+				.borderStyle(.roundedRect)
+		case .password:
+			return .init()
+				.autocorrectionType(.no)
+				.autocapitalizationType(.none)
+				.isSecureTextEntry(true)
 				.backgroundColor { $0.TextField.info }
 				.borderStyle(.roundedRect)
 		case .title:

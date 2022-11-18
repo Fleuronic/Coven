@@ -59,7 +59,7 @@
                BlueprintIdentifier = "1764FE0028BC05FD004AAD5E"
                BuildableName = "IntegrationTests.xctest"
                BlueprintName = "IntegrationTests"
-               ReferencedContainer = "container:Todo.xcodeproj">
+               ReferencedContainer = "container:Coven.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -69,7 +69,7 @@
                BlueprintIdentifier = "1764FE0F28BC07CB004AAD5E"
                BuildableName = "RootUITests.xctest"
                BlueprintName = "RootUITests"
-               ReferencedContainer = "container:Todo.xcodeproj">
+               ReferencedContainer = "container:Coven.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -79,7 +79,7 @@
                BlueprintIdentifier = "1764FE2F28BC0A1E004AAD5E"
                BuildableName = "TodoUITests.xctest"
                BlueprintName = "TodoUITests"
-               ReferencedContainer = "container:Todo.xcodeproj">
+               ReferencedContainer = "container:Coven.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -89,7 +89,7 @@
                BlueprintIdentifier = "1764FE2028BC0A19004AAD5E"
                BuildableName = "WelcomeUITests.xctest"
                BlueprintName = "WelcomeUITests"
-               ReferencedContainer = "container:Todo.xcodeproj">
+               ReferencedContainer = "container:Coven.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

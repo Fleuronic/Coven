@@ -13,17 +13,20 @@ import protocol Workflow.WorkflowAction
 public extension Welcome {
 	struct Workflow {
 		private let api: Emailable.API
-		private let initialName: String
+		private let initialUsername: String
 		private let initialEmail: String
+		private let initialPassword: String
 
 		public init(
 			api: Emailable.API,
-			initialName: String? = nil,
-			initialEmail: String? = nil
+			initialUsername: String? = nil,
+			initialEmail: String? = nil,
+			initialPassword: String? = nil
 		) {
 			self.api = api
-			self.initialName = initialName ?? ""
+			self.initialUsername = initialUsername ?? ""
 			self.initialEmail = initialEmail ?? ""
+			self.initialPassword = initialPassword ?? ""
 		}
 	}
 }
@@ -33,8 +36,9 @@ extension Welcome.Workflow: Workflow {
 	public typealias Rendering = Welcome.Screen
 
 	public struct State {
-		var name: String
+		var username: String
 		var email: String
+		var password: String
 		var invalidEmails: [String] = []
 		var emailVerificationState: Emailable.Email.Verification.State = .idle
 	}
@@ -45,8 +49,9 @@ extension Welcome.Workflow: Workflow {
 
 	public func makeInitialState() -> State {
 		.init(
-			name: initialName,
-			email: initialEmail
+			username: initialUsername,
+			email: initialEmail,
+			password: initialPassword
 		)
 	}
 
@@ -70,8 +75,9 @@ extension Welcome.Workflow: Workflow {
 // MARK: -
 extension Welcome.Workflow {
 	enum Action: WorkflowAction {
-		case updateName(String)
+		case updateUsername(String)
 		case updateEmail(String)
+		case updatePassword(String)
 		case verifyEmail
 		case finishEmailVerification(Emailable.Email.Verification.Result)
 		case resetEmailVerification(Void)
@@ -82,14 +88,16 @@ extension Welcome.Workflow {
 private extension Welcome.Workflow {
 	func screen(state: State, sink: Sink<Action>) -> Welcome.Screen {
 		.init(
-			name: state.name,
+			username: state.username,
 			email: state.email,
+			password: state.password,
 			isVerifyingEmail: state.isVerifyingEmail,
 			hasInvalidEmail: state.hasInvalidEmail,
 			errorMessage: state.errorMessage,
-			nameTextEdited: { sink.send(.updateName($0)) },
+			usernameTextEdited: { sink.send(.updateUsername($0)) },
 			emailTextEdited: { sink.send(.updateEmail($0)) },
-			loginTapped: { sink.send(.verifyEmail) }
+			passwordTextEdited: { sink.send(.updatePassword($0)) },
+			signupTapped: { sink.send(.verifyEmail) }
 		)
 	}
 }
@@ -100,8 +108,10 @@ extension Welcome.Workflow.Action {
 
 	func apply(toState state: inout Welcome.Workflow.State) -> Welcome.Workflow.Output? {
 		switch self {
-		case let .updateName(name):
-			state.name = name
+		case let .updateUsername(username):
+			state.username = username
+		case let .updatePassword(password):
+			state.password = password
 		case let .updateEmail(email):
 			state.email = email
 			fallthrough
@@ -129,8 +139,9 @@ extension Welcome.Workflow.Action {
 private extension Welcome.Workflow.State {
 	var user: User {
 		.init(
-			name: name,
-			email: email
+			username: username,
+			email: email,
+			password: password
 		)
 	}
 

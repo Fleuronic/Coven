@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "17D8601428BBF9F300C42970"
-               BuildableName = "RootApp.app"
-               BlueprintName = "RootApp"
-               ReferencedContainer = "container:Todo.xcodeproj">
+               BlueprintIdentifier = "WelcomeApp"
+               BuildableName = "WelcomeApp"
+               BlueprintName = "WelcomeApp"
+               ReferencedContainer = "container:Packages/Apps">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,9 +32,9 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Root"
-            BuildableName = "Root"
-            BlueprintName = "Root"
+            BlueprintIdentifier = "Welcome"
+            BuildableName = "Welcome"
+            BlueprintName = "Welcome"
             ReferencedContainer = "container:Modules/Components">
          </BuildableReference>
       </CodeCoverageTargets>
@@ -43,10 +43,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1764FE0F28BC07CB004AAD5E"
-               BuildableName = "RootUITests.xctest"
-               BlueprintName = "RootUITests"
-               ReferencedContainer = "container:Todo.xcodeproj">
+               BlueprintIdentifier = "1764FE2028BC0A19004AAD5E"
+               BuildableName = "WelcomeUITests.xctest"
+               BlueprintName = "WelcomeUITests"
+               ReferencedContainer = "container:Coven.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,10 +65,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "17D8601428BBF9F300C42970"
-            BuildableName = "RootApp.app"
-            BlueprintName = "RootApp"
-            ReferencedContainer = "container:Todo.xcodeproj">
+            BlueprintIdentifier = "17D85FAC28BBECA800C42970"
+            BuildableName = "WelcomeApp.app"
+            BlueprintName = "WelcomeApp"
+            ReferencedContainer = "container:Coven.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -83,6 +83,31 @@
             value = "live_cd5dd6f2fc90ce9455de"
             isEnabled = "YES">
          </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "apiConfiguration"
+            value = "validEmail"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "apiConfiguration"
+            value = "invalidEmail"
+            isEnabled = "NO">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "apiConfiguration"
+            value = "somethingWentWrong"
+            isEnabled = "NO">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "initialEmail"
+            value = "jordanekay@mac.com"
+            isEnabled = "NO">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "initialName"
+            value = "Jordan Kay"
+            isEnabled = "NO">
+         </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
@@ -91,16 +116,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "17D8601428BBF9F300C42970"
-            BuildableName = "RootApp.app"
-            BlueprintName = "RootApp"
-            ReferencedContainer = "container:Todo.xcodeproj">
+            BlueprintIdentifier = "WelcomeApp"
+            BuildableName = "WelcomeApp"
+            BlueprintName = "WelcomeApp"
+            ReferencedContainer = "container:Packages/Apps">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -13,8 +13,9 @@ extension Welcome.App {
 		var window: UIWindow?
 
 		@Environment(.apiKey) private var apiKey
-		@Environment(.initialName) private var initialName
+		@Environment(.initialUsername) private var initialUsername
 		@Environment(.initialEmail) private var initialEmail
+		@Environment(.initialPassword) private var initialPassword
 	}
 }
 
@@ -24,8 +25,9 @@ extension Welcome.App.Delegate: AppDelegate {
 	var workflow: Welcome.Workflow {
 		.init(
 			api: .init(apiKey: apiKey ?? .defaultAPIKey),
-			initialName: initialName,
-			initialEmail: initialEmail
+			initialUsername: initialUsername,
+			initialEmail: initialEmail,
+			initialPassword: initialPassword
 		)
 	}
 
