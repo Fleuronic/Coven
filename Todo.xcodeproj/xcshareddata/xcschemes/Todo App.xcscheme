@@ -86,12 +86,12 @@
          <EnvironmentVariable
             key = "initialTodosConfiguration"
             value = "single"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "initialTodosConfiguration"
             value = "many"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>

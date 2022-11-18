@@ -1,8 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import class Workflow.RenderContext
 import struct Model.Todo
 import struct Workflow.Sink
-import class Workflow.RenderContext
+import struct Coffin.Identified
 import protocol Workflow.Workflow
 import protocol Workflow.WorkflowAction
 
@@ -11,12 +12,12 @@ import BackStackContainer
 public extension Todo {
 	struct Workflow {
 		private let name: String
-		private let initialTodos: [Model.Todo]?
+		private let initialTodos: [Model.Todo.Identified]?
 		private let canLogOut: Bool
 
 		public init(
 			name: String,
-			initialTodos: [Model.Todo]? = nil,
+			initialTodos: [Model.Todo.Identified]? = nil,
 			canLogOut: Bool = true
 		) {
 			self.name = name
@@ -36,7 +37,7 @@ extension Todo.Workflow {
 	}
 
 	enum EditAction {
-		case saveTodo(Model.Todo, index: Int)
+		case saveTodo(Model.Todo.Identified, index: Int)
 		case cancel
 	}
 }
@@ -46,7 +47,7 @@ extension Todo.Workflow: Workflow {
 	public typealias Rendering = [BackStackItem]
 
 	public struct State {
-		var todos: [Model.Todo]
+		var todos: [Model.Todo.Identified]
 		var step: Step
 	}
 	
@@ -77,7 +78,7 @@ extension Todo.Workflow: Workflow {
 // MARK: -
 private extension Todo.Workflow {
 	func listItem(with state: State, in context: RenderContext<Self>) -> BackStackItem {
-		Todo.List.Workflow(name: name, todos: state.todos, canLogOut: canLogOut)
+		Todo.List.Workflow(name: name, todos: state.todos.map(\.value), canLogOut: canLogOut)
 			.mapOutput(action)
 			.rendered(in: context)
 	}
@@ -128,7 +129,7 @@ extension Todo.Workflow.ListAction: WorkflowAction {
 		case let .editTodo(index):
 			state.step = .editTodo(index: index)
 		case .createTodo:
-			state.todos.append(Model.Todo().store())
+			state.todos.append(Model.Todo.Identified().store())
 		case let .deleteTodo(index):
 			state.todos.remove(at: index).removeFromStorage()
 		case .logOut:

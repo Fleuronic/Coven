@@ -86,7 +86,7 @@
          <EnvironmentVariable
             key = "apiConfiguration"
             value = "validEmail"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "apiConfiguration"
@@ -96,7 +96,7 @@
          <EnvironmentVariable
             key = "apiConfiguration"
             value = "somethingWentWrong"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "initialEmail"

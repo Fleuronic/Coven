@@ -1,9 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import enum Assets.Strings
-import struct Model.Todo
-import struct Workflow.Sink
 import class Workflow.RenderContext
+import struct Workflow.Sink
+import struct Model.Todo
 import protocol Workflow.Workflow
 import protocol Workflow.WorkflowAction
 
@@ -11,7 +11,7 @@ import BackStackContainer
 
 extension Todo.Edit {
 	struct Workflow {
-		let initialTodo: Model.Todo
+		let initialTodo: Model.Todo.Identified
 	}
 }
 
@@ -30,11 +30,11 @@ extension Todo.Edit.Workflow: Workflow {
 	typealias Rendering = BackStackItem
 
 	struct State {
-		var todo: Model.Todo
+		var todo: Model.Todo.Identified
 	}
 
 	enum Output {
-		case editedTodo(Model.Todo)
+		case editedTodo(Model.Todo.Identified)
 		case cancellation
 	}
 
@@ -66,17 +66,13 @@ private extension Todo.Edit.Workflow {
 			screen: screen(state: state, sink: sink).asAnyScreen(),
 			barContent: .init(
 				title: Strings.Todo.Edit.title,
-				leftItem: .button(
-					.back { sink.send(.discardChanges) }
-				),
-				rightItem: .button(
-					.init(
-						content: .text(Strings.Todo.Edit.Title.Button.save),
-						isEnabled: state.todo != initialTodo && !state.todo.title.isEmpty
-					) {
-						sink.send(.saveChanges)
-					}
-				)
+				leftItem: .init(content: .back(title: nil)) { sink.send(.discardChanges) },
+				rightItem: .init(
+					content: .text(Strings.Todo.Edit.Title.Button.save),
+					isEnabled: state.todo != initialTodo && !state.todo.title.isEmpty
+				) {
+					sink.send(.saveChanges)
+				}
 			)
 		)
 	}

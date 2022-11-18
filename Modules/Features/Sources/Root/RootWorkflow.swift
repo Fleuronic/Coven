@@ -31,7 +31,7 @@ extension Root.Workflow {
 
 // MARK: -
 extension Root.Workflow: Workflow {
-	public typealias Rendering = BackStackScreen<AnyScreen>
+	public typealias Rendering = BackStack.Screen<AnyScreen>
 
 	public enum State {
 		case welcome

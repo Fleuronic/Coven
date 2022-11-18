@@ -2,9 +2,12 @@
 
 import struct Model.Todo
 
-import protocol Coffin.Ephemeral
-
-extension Model.Todo: Ephemeral {}
+extension [Model.Todo] {
+	enum Configuration: String {
+		case single
+		case many
+	}
+}
 
 // MARK: -
 extension [Model.Todo] {

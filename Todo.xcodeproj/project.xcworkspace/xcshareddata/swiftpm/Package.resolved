@@ -11,15 +11,6 @@
         }
       },
       {
-        "package": "Coffin",
-        "repositoryURL": "https://github.com/Fleuronic/Coffin",
-        "state": {
-          "branch": "main",
-          "revision": "d6e07208e441a529955180c89a3c14b074bf5ae2",
-          "version": null
-        }
-      },
-      {
         "package": "Differ",
         "repositoryURL": "https://github.com/tonyarnold/Differ.git",
         "state": {
@@ -129,7 +120,7 @@
       },
       {
         "package": "Telemetric",
-        "repositoryURL": "https://github.com/Fleuronic/Telemetric.git",
+        "repositoryURL": "https://github.com/Fleuronic/Telemetric",
         "state": {
           "branch": "main",
           "revision": "bd2bba54ed1135819f3ce857a39401d177ed6679",

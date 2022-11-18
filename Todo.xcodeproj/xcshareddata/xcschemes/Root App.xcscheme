@@ -74,7 +74,7 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "-AppleLanguages (eo)"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <EnvironmentVariables>

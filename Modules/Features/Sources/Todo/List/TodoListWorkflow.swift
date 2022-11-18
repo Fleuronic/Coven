@@ -77,17 +77,8 @@ private extension Todo.List.Workflow {
 			screen: screen(state: state, sink: sink).asAnyScreen(),
 			barContent: .init(
 				title: Strings.Todo.List.title(name),
-				leftItem: .button(
-					.init(
-						content: .text("Log Out"),
-						isEnabled: canLogOut
-					) {
-						sink.send(.logOut)
-					}
-				),
-				rightItem: .button(
-					.init(content: .text(Strings.Todo.List.Title.Button.newTodo)) { sink.send(.createTodo) }
-				)
+				leftItem: .init(content: .text("Log Out"), isEnabled: canLogOut) { sink.send(.logOut) },
+				rightItem: .init(content: .text(Strings.Todo.List.Title.Button.newTodo)) { sink.send(.createTodo) }
 			)
 		)
 	}
