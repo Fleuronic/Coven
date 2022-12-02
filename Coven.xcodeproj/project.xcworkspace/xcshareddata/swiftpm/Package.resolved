@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/Fleuronic/Coffin",
         "state": {
           "branch": "main",
-          "revision": "7d7f99cf3061fbfea1bfd39f7f22521b83f774dc",
+          "revision": "b445f605f9bfcdd2f0589cf75333329df5ef50f6",
           "version": null
         }
       },
@@ -141,8 +141,8 @@
         "repositoryURL": "https://github.com/square/workflow-swift",
         "state": {
           "branch": null,
-          "revision": "02f353831930c35c03649d5a66cd173883119442",
-          "version": "1.0.6"
+          "revision": "7d0a88826898f85b940ab1f904ba7e1b74bad511",
+          "version": "1.1.0"
         }
       }
     ]
