@@ -4,18 +4,16 @@ import enum Welcome.Welcome
 import class UIKit.UIApplication
 import class UIKit.UIWindow
 import class UIKit.UIResponder
-import protocol Coffin.Storable
-import protocol Coffin.Keyed
+import struct Model.User
+import struct Model.PhoneNumber
 
 extension Welcome.App {
 	@UIApplicationMain
 	final class Delegate: UIResponder {
 		var window: UIWindow?
 
-		@Environment(.apiKey) private var apiKey
 		@Environment(.initialUsername) private var initialUsername
-		@Environment(.initialEmail) private var initialEmail
-		@Environment(.initialPassword) private var initialPassword
+		@Environment(.initialPhoneNumber) private var initialPhoneNumber
 	}
 }
 
@@ -24,10 +22,8 @@ extension Welcome.App.Delegate: AppDelegate {
 	// MARK: AppDelegate
 	var workflow: Welcome.Workflow {
 		.init(
-			api: .init(apiKey: apiKey ?? .defaultAPIKey),
-			initialUsername: initialUsername,
-			initialEmail: initialEmail,
-			initialPassword: initialPassword
+			initialUsername: initialUsername.map(User.Username.init),
+			initialPhoneNumber: initialPhoneNumber.map(PhoneNumber.init)
 		)
 	}
 

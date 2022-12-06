@@ -1,8 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-
-import enum EmailableAPI.Emailable
 import struct Model.User
+import struct Model.PhoneNumber
 import struct Ergo.RequestWorker
 import struct Ergo.DelayedWorker
 import struct Workflow.Sink
@@ -12,21 +11,15 @@ import protocol Workflow.WorkflowAction
 
 public extension Welcome {
 	struct Workflow {
-		private let api: Emailable.API
-		private let initialUsername: String
-		private let initialEmail: String
-		private let initialPassword: String
+		private let initialUsername: User.Username
+		private let initialPhoneNumber: PhoneNumber
 
 		public init(
-			api: Emailable.API,
-			initialUsername: String? = nil,
-			initialEmail: String? = nil,
-			initialPassword: String? = nil
+			initialUsername: User.Username? = nil,
+			initialPhoneNumber: PhoneNumber? = nil
 		) {
-			self.api = api
-			self.initialUsername = initialUsername ?? ""
-			self.initialEmail = initialEmail ?? ""
-			self.initialPassword = initialPassword ?? ""
+			self.initialUsername = initialUsername ?? .empty
+			self.initialPhoneNumber = initialPhoneNumber ?? .empty
 		}
 	}
 }
@@ -36,11 +29,8 @@ extension Welcome.Workflow: Workflow {
 	public typealias Rendering = Welcome.Screen
 
 	public struct State {
-		var username: String
-		var email: String
-		var password: String
-		var invalidEmails: [String] = []
-		var emailVerificationState: Emailable.Email.Verification.State = .idle
+		var username: User.Username
+		var phoneNumber: PhoneNumber
 	}
 
 	public enum Output {
@@ -50,22 +40,12 @@ extension Welcome.Workflow: Workflow {
 	public func makeInitialState() -> State {
 		.init(
 			username: initialUsername,
-			email: initialEmail,
-			password: initialPassword
+			phoneNumber: initialPhoneNumber
 		)
 	}
 
 	public func render(state: State, context: RenderContext<Self>) -> Rendering {
-		context.run(
-			state
-				.emailVerificationWorker(using: api)?
-				.mapOutput(Action.finishEmailVerification),
-			state
-				.emailVerificationResetWorker?
-				.mapOutput(Action.resetEmailVerification)
-		)
-
-		return screen(
+		screen(
 			state: state,
 			sink: context.makeSink(of: Action.self)
 		)
@@ -75,12 +55,8 @@ extension Welcome.Workflow: Workflow {
 // MARK: -
 extension Welcome.Workflow {
 	enum Action: WorkflowAction {
-		case updateUsername(String)
-		case updateEmail(String)
-		case updatePassword(String)
-		case verifyEmail
-		case finishEmailVerification(Emailable.Email.Verification.Result)
-		case resetEmailVerification(Void)
+		case updateUsername(User.Username)
+		case updatePhoneNumber(PhoneNumber)
 	}
 }
 
@@ -89,15 +65,10 @@ private extension Welcome.Workflow {
 	func screen(state: State, sink: Sink<Action>) -> Welcome.Screen {
 		.init(
 			username: state.username,
-			email: state.email,
-			password: state.password,
-			isVerifyingEmail: state.isVerifyingEmail,
-			hasInvalidEmail: state.hasInvalidEmail,
-			errorMessage: state.errorMessage,
-			usernameTextEdited: { sink.send(.updateUsername($0)) },
-			emailTextEdited: { sink.send(.updateEmail($0)) },
-			passwordTextEdited: { sink.send(.updatePassword($0)) },
-			signupTapped: { sink.send(.verifyEmail) }
+			phoneNumber: state.phoneNumber,
+			usernameTextEdited: { sink.send(.updateUsername(.init(text: $0))) },
+			phoneNumberTextEdited: { sink.send(.updatePhoneNumber(.init(text: $0))) },
+			submitTapped: {}
 		)
 	}
 }
@@ -110,26 +81,8 @@ extension Welcome.Workflow.Action {
 		switch self {
 		case let .updateUsername(username):
 			state.username = username
-		case let .updatePassword(password):
-			state.password = password
-		case let .updateEmail(email):
-			state.email = email
-			fallthrough
-		case .resetEmailVerification:
-			state.emailVerificationState = .idle
-		case .verifyEmail:
-			state.emailVerificationState = .requesting
-		case let .finishEmailVerification(.success(verification)) where
-			verification.reason == .acceptedEmail:
-			state.emailVerificationState = .retrieved(verification)
-			return .user(state.user.store())
-		case let .finishEmailVerification(.success(verification)) where verification.reason == .invalidDomain:
-			state.invalidEmails.append(verification.email)
-			state.emailVerificationState = .retrieved(verification)
-		case let .finishEmailVerification(.failure(error)):
-			state.emailVerificationState = .failed(error)
-		default:
-			break
+		case let .updatePhoneNumber(phoneNumber):
+			state.phoneNumber = phoneNumber
 		}
 		return nil
 	}
@@ -140,29 +93,8 @@ private extension Welcome.Workflow.State {
 	var user: User {
 		.init(
 			username: username,
-			email: email,
-			password: password
+			phoneNumber: phoneNumber
 		)
-	}
-
-	var isVerifyingEmail: Bool {
-		emailVerificationState.isRequesting
-	}
-
-	var hasInvalidEmail: Bool {
-		invalidEmails.contains(email.lowercased())
-	}
-
-	var errorMessage: String? {
-		emailVerificationState.mapError(\.message)
-	}
-
-	var emailVerificationResetWorker: DelayedWorker? {
-		emailVerificationState.mapError(.init(delay: .reset))
-	}
-
-	func emailVerificationWorker(using api: Emailable.API) -> RequestWorker<Emailable.Email.Verification.Result>? {
-		emailVerificationState.mapRequesting(.init { await api.verify(email) })
 	}
 }
 

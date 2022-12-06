@@ -1,7 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Geometric
-import Styles
+import enum Styles.UI
+import enum Geometric.UI
 import class UIKit.UIView
 import class UIKit.UILabel
 import class UIKit.UIButton
@@ -33,36 +33,21 @@ extension Welcome.View: Stacking {
 		)
 		UIStackView.vertical(spacing: .element) {
 			UITextField.style(.username)
-				.text(screen.username)
+				.text(screen.usernameDisplayValue)
 				.placeholder(screen.usernamePlaceholder)
 				.edited(screen.usernameTextEdited)
 				.height(.element)
-			UITextField.style(.email)
-				.text(screen.email)
-				.placeholder(screen.emailPlaceholder)
-				.edited(screen.emailTextEdited)
-				.height(.element)
-			UITextField.style(.password)
-				.text(screen.password)
-				.placeholder(screen.passwordPlaceholder)
-				.edited(screen.emailTextEdited)
+			UITextField.style(.phoneNumber)
+				.text(screen.phoneNumberDisplayValue)
+				.placeholder(screen.phoneNumberPlaceholder)
+				.edited(screen.phoneNumberTextEdited)
 				.height(.element)
 			UIButton.style(.primary)
-				.title(screen.signupTitle)
-				.isEnabled(screen.canSignUp)
-				.showsActivity(screen.isVerifyingEmail)
-				.tap(screen.signupTapped)
+				.title(screen.submitTitle)
+				.isEnabled(screen.canSubmit)
+				.tap(screen.submitTapped)
 				.height(.element)
 		}.insetBy(horizontalInsets: .element).centeringVerticallyInParent()
-		UIStackView.vertical(spacing: .element) {
-			UILabel.style(.footer)
-				.text(screen.footer)
-			UILabel.style(.error)
-				.isVisible(screen.hasInvalidEmail)
-				.text(screen.invalidEmailErrorMessage)
-			UILabel.style(.error)
-				.text(screen.errorMessage)
-		}.insetBy(insets: .element)
 		UIView.spacer
 	}
 }

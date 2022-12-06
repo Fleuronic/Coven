@@ -1,20 +1,18 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import struct SwiftPhoneNumberFormatter.PhoneNumber
 import protocol Coffin.Storable
 
 public struct User {
-	public let username: String
-	public let email: String
-	public let password: String
+	public let username: Username
+	public let phoneNumber: PhoneNumber
 
 	public init(
-		username: String,
-		email: String,
-		password: String
+		username: Username,
+		phoneNumber: PhoneNumber
 	) {
 		self.username = username
-		self.email = email
-		self.password = password
+		self.phoneNumber = phoneNumber
 	}
 }
 

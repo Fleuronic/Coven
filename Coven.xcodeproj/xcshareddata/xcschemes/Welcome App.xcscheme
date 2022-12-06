@@ -81,12 +81,12 @@
          <EnvironmentVariable
             key = "apiKey"
             value = "live_cd5dd6f2fc90ce9455de"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "apiConfiguration"
             value = "validEmail"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "apiConfiguration"
@@ -99,14 +99,14 @@
             isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
-            key = "initialEmail"
-            value = "jordanekay@mac.com"
-            isEnabled = "NO">
+            key = "initialPhoneNumber"
+            value = "678-910-9326"
+            isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
-            key = "initialName"
-            value = "Jordan Kay"
-            isEnabled = "NO">
+            key = "initialUsername"
+            value = "jordanekay"
+            isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
