@@ -13,16 +13,12 @@ let package = Package(
 		)
 	],
 	dependencies: [
-		.package(url: "https://github.com/Fleuronic/Coffin", branch: "main"),
-		.package(url: "https://github.com/JohnSundell/Identity", from: "0.1.0"),
 		.package(url: "https://github.com/benspratling4/SwiftPhoneNumberFormatter", from: "3.0.0")
 	],
 	targets: [
 		.target(
 			name: "Model",
 			dependencies: [
-				"Coffin",
-				"Identity",
 				"SwiftPhoneNumberFormatter"
 			]
 		),

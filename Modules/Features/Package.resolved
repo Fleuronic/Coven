@@ -2,8 +2,8 @@
   "object": {
     "pins": [
       {
-        "package": "BackStackContainer",
-        "repositoryURL": "https://github.com/Fleuronic/BackStackContainer",
+        "package": "WorkflowContainers",
+        "repositoryURL": "https://github.com/Fleuronic/WorkflowContainers",
         "state": {
           "branch": "main",
           "revision": "a979df9005dce069a3c643a23a2ec5ebccb68ea0",

@@ -87,8 +87,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1764FE2028BC0A19004AAD5E"
-               BuildableName = "WelcomeUITests.xctest"
-               BlueprintName = "WelcomeUITests"
+               BuildableName = "AuthenticationUITests.xctest"
+               BlueprintName = "AuthenticationUITests"
                ReferencedContainer = "container:Coven.xcodeproj">
             </BuildableReference>
          </TestableReference>

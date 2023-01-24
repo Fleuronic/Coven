@@ -28,6 +28,7 @@
 
     public static let error = UIColor(named: "Text/Error", in: Bundle.module, compatibleWith: nil)!
     public static let light = UIColor(named: "Text/Light", in: Bundle.module, compatibleWith: nil)!
+    public static let primary = UIColor(named: "Text/Primary", in: Bundle.module, compatibleWith: nil)!
     public static let secondary = UIColor(named: "Text/Secondary", in: Bundle.module, compatibleWith: nil)!
   }
 }

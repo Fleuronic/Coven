@@ -4,6 +4,36 @@ import Foundation
 
 public enum Strings {
 
+  public enum Alert {
+    /// Dismiss
+    public static let dismiss = Strings.tr("Localizable", "Alert.Dismiss")
+    public enum Error {
+      /// Network Error
+      public static let network = Strings.tr("Localizable", "Alert.Error.Network")
+    }
+  }
+
+  public enum Authentication {
+    /// Welcome to Coven
+    public static let header = Strings.tr("Localizable", "Authentication.Header")
+    /// Choose a username or enter your existing one, along with your phone number.
+    public static let prompt = Strings.tr("Localizable", "Authentication.Prompt")
+    public enum Error {
+      /// Email address is invalid.
+      public static let email = Strings.tr("Localizable", "Authentication.Error.email")
+    }
+    public enum Placeholder {
+      /// Phone Number
+      public static let phoneNumber = Strings.tr("Localizable", "Authentication.Placeholder.phoneNumber")
+      /// Username
+      public static let username = Strings.tr("Localizable", "Authentication.Placeholder.username")
+    }
+    public enum Title {
+      /// Submit
+      public static let submit = Strings.tr("Localizable", "Authentication.Title.submit")
+    }
+  }
+
   public enum Todo {
     public enum Edit {
       /// Edit
@@ -34,27 +64,6 @@ public enum Strings {
           public static let newTodo = Strings.tr("Localizable", "Todo.List.Title.Button.newTodo")
         }
       }
-    }
-  }
-
-  public enum Welcome {
-    /// Welcome to Coven
-    public static let header = Strings.tr("Localizable", "Welcome.Header")
-    /// Choose a username or enter your existing one, along with your phone number.
-    public static let prompt = Strings.tr("Localizable", "Welcome.Prompt")
-    public enum Error {
-      /// Email address is invalid.
-      public static let email = Strings.tr("Localizable", "Welcome.Error.email")
-    }
-    public enum Placeholder {
-      /// Phone Number
-      public static let phoneNumber = Strings.tr("Localizable", "Welcome.Placeholder.phoneNumber")
-      /// Username
-      public static let username = Strings.tr("Localizable", "Welcome.Placeholder.username")
-    }
-    public enum Title {
-      /// Submit
-      public static let submit = Strings.tr("Localizable", "Welcome.Title.submit")
     }
   }
 }

@@ -7,7 +7,7 @@ class RootWorkflowActionTests: XCTestCase {
 	func testActions() throws {
 		let name = "Jordan"
 		Root.Workflow.Action
-			.tester(withState: .welcome)
+			.tester(withState: .authentication)
 			.send(action: .logIn(name: name))
 			.assertNoOutput()
 			.verifyState { state in
@@ -16,7 +16,7 @@ class RootWorkflowActionTests: XCTestCase {
 			.send(action: .logOut)
 			.assertNoOutput()
 			.verifyState { state in
-				XCTAssertEqual(state, .welcome)
+				XCTAssertEqual(state, .authentication)
 			}
 	}
 }

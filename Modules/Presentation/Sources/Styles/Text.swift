@@ -13,7 +13,6 @@ public extension Text {
 		case header
 		case prompt
 		case emptyState
-		case error
 	}
 }
 
@@ -30,11 +29,6 @@ public extension UILabel {
 		case .emptyState:
 			return styled
 				.textColor { $0.secondary }
-		case .error:
-			return styled
-				.centered
-				.multiline
-				.textColor { $0.error }
 		}
 	}
 }
@@ -53,7 +47,7 @@ private extension Text.Style {
 				.size(.large)
 				.weight(.light)
 				.italic
-		case .prompt, .error:
+		case .prompt:
 			return
 				.size(.small)
 		}

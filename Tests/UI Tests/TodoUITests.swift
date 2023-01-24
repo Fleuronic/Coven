@@ -7,8 +7,8 @@ class TodoUITests: XCTestCase {
 	}
 
 	func testViewContents() {
-		let welcomeText = app.staticTexts["What do you have to do?"]
-		XCTAssert(welcomeText.exists)
+		let authenticationText = app.staticTexts["What do you have to do?"]
+		XCTAssert(authenticationText.exists)
 	}
 
 	private let app = XCUIApplication()

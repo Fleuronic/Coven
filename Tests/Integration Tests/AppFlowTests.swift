@@ -3,10 +3,10 @@ import Workflow
 import enum Assets.Strings
 
 @testable import WorkflowUI
-@testable import BackStackContainer
+@testable import WorkflowContainers
 @testable import Todo
 @testable import enum Root.Root
-@testable import enum Welcome.Welcome
+@testable import enum Authentication.Authentication
 @testable import enum Todo.Todo
 
 class AppFlowTests: XCTestCase {
@@ -43,14 +43,14 @@ private extension AppFlowTests {
 	func logIn(with name: String) throws {
 		XCTAssertEqual(items.count, 1)
 
-		let welcomeScreen = try XCTUnwrap(items[0].screen.wrappedScreen as? Welcome.Screen)
-		welcomeScreen.nameTextEdited(name)
-		welcomeScreen.loginTapped(())
+		let authenticationScreen = try XCTUnwrap(items[0].screen.wrappedScreen as? Authentication.Screen)
+		authenticationScreen.nameTextEdited(name)
+		authenticationScreen.loginTapped(())
 	}
 
 	func selectFirstTodo() throws {
 		XCTAssertEqual(items.count, 2)
-		XCTAssertNotNil(items[0].screen.wrappedScreen as? Welcome.Screen)
+		XCTAssertNotNil(items[0].screen.wrappedScreen as? Authentication.Screen)
 
 		let todoListScreen = try XCTUnwrap(items[1].screen.wrappedScreen as? Todo.List.Screen)
 		XCTAssertFalse(todoListScreen.todoTitles.isEmpty)
@@ -60,7 +60,7 @@ private extension AppFlowTests {
 
 	func editTodoTitle(to title: String) throws {
 		XCTAssertEqual(items.count, 3)
-		XCTAssertNotNil(items[0].screen.wrappedScreen as? Welcome.Screen)
+		XCTAssertNotNil(items[0].screen.wrappedScreen as? Authentication.Screen)
 		XCTAssertNotNil(items[1].screen.wrappedScreen as? Todo.List.Screen)
 
 		let todoEditScreen = try XCTUnwrap(items[2].screen.wrappedScreen as? Todo.Edit.Screen)
@@ -69,7 +69,7 @@ private extension AppFlowTests {
 
 	func editTodoNote(to note: String) throws {
 		XCTAssertEqual(items.count, 3)
-		XCTAssertNotNil(items[0].screen.wrappedScreen as? Welcome.Screen)
+		XCTAssertNotNil(items[0].screen.wrappedScreen as? Authentication.Screen)
 		XCTAssertNotNil(items[1].screen.wrappedScreen as? Todo.List.Screen)
 
 		let todoEditScreen = try XCTUnwrap(items[2].screen.wrappedScreen as? Todo.Edit.Screen)
@@ -78,7 +78,7 @@ private extension AppFlowTests {
 
 	func saveChanges() throws {
 		XCTAssertEqual(items.count, 3)
-		XCTAssertNotNil(items[0].screen.wrappedScreen as? Welcome.Screen)
+		XCTAssertNotNil(items[0].screen.wrappedScreen as? Authentication.Screen)
 		XCTAssertNotNil(items[1].screen.wrappedScreen as? Todo.List.Screen)
 		XCTAssertNotNil(items[2].screen.wrappedScreen as? Todo.Edit.Screen)
 
@@ -93,7 +93,7 @@ private extension AppFlowTests {
 
 	func discardChanges() throws {
 		XCTAssertEqual(items.count, 3)
-		XCTAssertNotNil(items[0].screen.wrappedScreen as? Welcome.Screen)
+		XCTAssertNotNil(items[0].screen.wrappedScreen as? Authentication.Screen)
 		XCTAssertNotNil(items[1].screen.wrappedScreen as? Todo.List.Screen)
 		XCTAssertNotNil(items[2].screen.wrappedScreen as? Todo.Edit.Screen)
 
@@ -106,7 +106,7 @@ private extension AppFlowTests {
 
 	func verifyTodoTitleUpdated(to title: String) throws {
 		XCTAssertEqual(items.count, 2)
-		XCTAssertNotNil(items[0].screen.wrappedScreen as? Welcome.Screen)
+		XCTAssertNotNil(items[0].screen.wrappedScreen as? Authentication.Screen)
 
 		let todoListScreen = try XCTUnwrap(items[1].screen.wrappedScreen as? Todo.List.Screen)
 		XCTAssertFalse(todoListScreen.todoTitles.isEmpty)
@@ -115,7 +115,7 @@ private extension AppFlowTests {
 
 	func addNewTodo() throws {
 		XCTAssertEqual(items.count, 2)
-		XCTAssertNotNil(items[0].screen.wrappedScreen as? Welcome.Screen)
+		XCTAssertNotNil(items[0].screen.wrappedScreen as? Authentication.Screen)
 		XCTAssertNotNil(items[1].screen.wrappedScreen as? Todo.List.Screen)
 
 		guard case let .visible(barContent) = items[1].barVisibility else { XCTFail(); return }
@@ -129,7 +129,7 @@ private extension AppFlowTests {
 
 	func verifyTodoAdded() throws {
 		XCTAssertEqual(items.count, 2)
-		XCTAssertNotNil(items[0].screen.wrappedScreen as? Welcome.Screen)
+		XCTAssertNotNil(items[0].screen.wrappedScreen as? Authentication.Screen)
 
 		let todoListScreen = try XCTUnwrap(items[1].screen.wrappedScreen as? Todo.List.Screen)
 		XCTAssertEqual(todoListScreen.todoTitles.count, 1)
@@ -137,7 +137,7 @@ private extension AppFlowTests {
 
 	func logOut() throws {
 		XCTAssertEqual(items.count, 2)
-		XCTAssertNotNil(items[0].screen.wrappedScreen as? Welcome.Screen)
+		XCTAssertNotNil(items[0].screen.wrappedScreen as? Authentication.Screen)
 		XCTAssertNotNil(items[1].screen.wrappedScreen as? Todo.List.Screen)
 
 		guard case let .visible(barContent) = items[1].barVisibility else { XCTFail(); return }
@@ -149,7 +149,7 @@ private extension AppFlowTests {
 
 	func verifyLoggedOut() throws {
 		XCTAssertEqual(items.count, 1)
-		XCTAssertNotNil(items[0].screen.wrappedScreen as? Welcome.Screen)
+		XCTAssertNotNil(items[0].screen.wrappedScreen as? Authentication.Screen)
 	}
 }
 

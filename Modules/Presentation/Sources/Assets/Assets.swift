@@ -8,6 +8,7 @@ import struct Metric.Percentage
 import struct Metric.Opacity
 import struct Telemetric.Styled
 import protocol Telemetric.TextStylable
+import protocol ReactiveKit.SignalProtocol
 
 public typealias SharedString = (Strings.Type) -> String
 
@@ -45,5 +46,9 @@ public extension Styled where Value: UIButton {
 public extension Styled where Value: TextStylable {
 	func textColor(color: @escaping (Colors.Text.Type) -> UIColor) -> Self {
 		textColorAsset(color)
+	}
+
+	func textColor<Source: SignalProtocol>(_ source: Source) -> Self where Source.Element == (Colors.Text.Type) -> UIColor, Source.Error == Never {
+		textColorAssetFromSource(source)
 	}
 }

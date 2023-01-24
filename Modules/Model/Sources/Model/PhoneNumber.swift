@@ -4,26 +4,39 @@ import RegexBuilder
 import struct SwiftPhoneNumberFormatter.PhoneNumber
 
 public struct PhoneNumber {
-	public let value: String
+	public let rawValue: String
 
 	public init(text: String) {
-		value = text.digits
+		rawValue = text.digits
 	}
 }
 
 // MARK: -
 extension PhoneNumber: Equatable {}
 
-extension PhoneNumber: Codable {}
+extension PhoneNumber: Hashable {}
+
+extension PhoneNumber: Decodable {
+	public init(from decoder: Decoder) throws {
+		let container = try decoder.singleValueContainer()
+		rawValue = try container.decode(String.self)
+	}
+}
+
+extension PhoneNumber: ExpressibleByStringLiteral {
+	public init(stringLiteral: StringLiteralType) {
+		rawValue = stringLiteral.digits
+	}
+}
 
 // MARK: -
 public extension PhoneNumber {
 	var isValid: Bool {
-		value.count == .phoneNumberLength
+		rawValue.count == .phoneNumberLength
 	}
 
 	var displayValue: String {
-		let phoneNumber = SwiftPhoneNumberFormatter.PhoneNumber(countryCode: .usAndCanada, digits: value)
+		let phoneNumber = SwiftPhoneNumberFormatter.PhoneNumber(countryCode: .usAndCanada, digits: rawValue)
 		return Self.formatter.formattedNumber(phoneNumber)!
 	}
 

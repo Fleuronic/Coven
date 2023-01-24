@@ -4,10 +4,10 @@ import RegexBuilder
 
 public extension User {
 	struct Username {
-		public let value: String
+		public let rawValue: String
 
 		public init(text: String) {
-			value = text.replacing(Self.regex, with: \.output.1)
+			rawValue = text.replacing(Self.regex, with: \.output.1)
 		}
 	}
 }
@@ -15,11 +15,11 @@ public extension User {
 // MARK: -
 public extension User.Username {
 	var isValid: Bool {
-		!value.isEmpty
+		!rawValue.isEmpty
 	}
 
 	var displayValue: String {
-		value.isEmpty ? .init() : .prefix + value
+		rawValue.isEmpty ? .init() : .prefix + rawValue
 	}
 
 	static var empty: Self {
@@ -38,7 +38,20 @@ public extension User.Username {
 // MARK: -
 extension User.Username: Equatable {}
 
-extension User.Username: Codable {}
+extension User.Username: Decodable {
+	public init(from decoder: Decoder) throws {
+		let container = try decoder.singleValueContainer()
+		rawValue = try container.decode(String.self)
+	}
+}
+
+extension User.Username: Hashable {}
+
+extension User.Username: ExpressibleByStringLiteral {
+	public init(stringLiteral: StringLiteralType) {
+		self.init(text: stringLiteral)
+	}
+}
 
 // MARK: -
 private extension User.Username {

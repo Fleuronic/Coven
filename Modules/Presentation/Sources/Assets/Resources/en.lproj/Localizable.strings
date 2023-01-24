@@ -1,9 +1,12 @@
-"Welcome.Header" = "Welcome to Coven";
-"Welcome.Prompt" = "Choose a username or enter your existing one, along with your phone number.";
-"Welcome.Placeholder.username" = "Username";
-"Welcome.Placeholder.phoneNumber" = "Phone Number";
-"Welcome.Title.submit" = "Submit";
-"Welcome.Error.email" = "Email address is invalid.";
+"Alert.Dismiss" = "Dismiss";
+"Alert.Error.Network" = "Network Error";
+
+"Authentication.Header" = "Welcome to Coven";
+"Authentication.Prompt" = "Choose a username or enter your existing one, along with your phone number.";
+"Authentication.Placeholder.username" = "Username";
+"Authentication.Placeholder.phoneNumber" = "Phone Number";
+"Authentication.Title.submit" = "Submit";
+"Authentication.Error.email" = "Email address is invalid.";
 
 "Todo.List.title" = "%@’s Todos";
 "Todo.List.Title.Button.newTodo" = "New Todo";

@@ -1,21 +1,21 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Welcome.Welcome
+import enum Authentication.Authentication
 import enum Todo.Todo
-import enum EmailableAPI.Emailable
+import enum API.Coven
 import class Workflow.RenderContext
 import struct Model.User
 import struct WorkflowUI.AnyScreen
 import protocol Workflow.Workflow
 import protocol Workflow.WorkflowAction
 
-import BackStackContainer
+import WorkflowContainers
 
 public extension Root {
 	struct Workflow {
-		private let api: Emailable.API
+		private let api: Coven.API
 
-		public init(api: Emailable.API) {
+		public init(api: Coven.API) {
 			self.api = api
 		}
 	}
@@ -34,32 +34,32 @@ extension Root.Workflow: Workflow {
 	public typealias Rendering = BackStack.Screen<AnyScreen>
 
 	public enum State {
-		case welcome
+		case authentication
 		case todo(name: String)
 	}
 
 	public func makeInitialState() -> State {
-		(User.stored?.name).map(State.todo) ?? .welcome
+		(User.stored?.name).map(State.todo) ?? .authentication
 	}
 
 	public func render(state: State, context: RenderContext<Self>) -> Rendering {
-		let welcomeItem = welcomeItem(in: context)
+		let authenticationItem = authenticationItem(in: context)
 
 		switch state {
-		case .welcome:
-			return .init(items: [welcomeItem])
+		case .authentication:
+			return .init(items: [authenticationItem])
 		case let .todo(name):
 			let todoItems = todoItems(with: name, in: context)
-			return .init(items: [welcomeItem] + todoItems)
+			return .init(items: [authenticationItem] + todoItems)
 		}
 	}
 }
 
 // MARK: -
 private extension Root.Workflow {
-	func welcomeItem(in context: RenderContext<Self>) -> BackStackItem {
+	func authenticationItem(in context: RenderContext<Self>) -> BackStackItem {
 		.init(
-			screen: Welcome.Workflow(api: api)
+			screen: Authentication.Workflow(api: api)
 				.mapOutput(action)
 				.rendered(in: context)
 				.asAnyScreen(),
@@ -73,8 +73,8 @@ private extension Root.Workflow {
 			.rendered(in: context)
 	}
 
-	func action(for welcomeOutput: Welcome.Workflow.Output) -> Action {
-		switch welcomeOutput {
+	func action(for authenticationOutput: Authentication.Workflow.Output) -> Action {
+		switch authenticationOutput {
 		case let .user(user):
 			return .logIn(user)
 		}
@@ -98,7 +98,7 @@ extension Root.Workflow.Action: WorkflowAction {
 			state = .todo(name: user.name)
 		case .logOut:
 			User.removeFromStorage()
-			state = .welcome
+			state = .authentication
 		}
 		return nil
 	}

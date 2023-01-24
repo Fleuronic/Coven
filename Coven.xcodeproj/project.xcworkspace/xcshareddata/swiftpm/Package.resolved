@@ -11,15 +11,6 @@
         }
       },
       {
-        "package": "Coffin",
-        "repositoryURL": "https://github.com/Fleuronic/Coffin",
-        "state": {
-          "branch": "main",
-          "revision": "b445f605f9bfcdd2f0589cf75333329df5ef50f6",
-          "version": null
-        }
-      },
-      {
         "package": "Differ",
         "repositoryURL": "https://github.com/tonyarnold/Differ.git",
         "state": {
@@ -35,15 +26,6 @@
           "branch": null,
           "revision": "d9beca13ca85baa50ee29832d0db5129fba69630",
           "version": "5.0.1"
-        }
-      },
-      {
-        "package": "Emissary",
-        "repositoryURL": "https://github.com/Fleuronic/Emissary",
-        "state": {
-          "branch": "main",
-          "revision": "c6cbd191b304db37ca64ededa4eb858a4adb713b",
-          "version": null
         }
       },
       {
@@ -86,18 +68,27 @@
         "package": "ReactiveSwift",
         "repositoryURL": "https://github.com/ReactiveCocoa/ReactiveSwift.git",
         "state": {
-          "branch": null,
-          "revision": "c43bae3dac73fdd3cb906bd5a1914686ca71ed3c",
-          "version": "6.7.0"
+          "branch": "swift-concurrency",
+          "revision": "3d40187c982346352d0adbe6b38e0e3d53fddc95",
+          "version": null
         }
       },
       {
-        "package": "Stores",
-        "repositoryURL": "https://github.com/omaralbeik/Stores",
+        "package": "Schemata",
+        "repositoryURL": "https://github.com/Fleuronic/Schemata",
+        "state": {
+          "branch": "master",
+          "revision": "781162892f5f9da4a155a25dc47ff948e26b3960",
+          "version": null
+        }
+      },
+      {
+        "package": "SociableWeaver",
+        "repositoryURL": "https://github.com/NicholasBellucci/SociableWeaver.git",
         "state": {
           "branch": null,
-          "revision": "b835f7e9edb32163418caa533e1cf9d832b23326",
-          "version": "0.4.1"
+          "revision": "dd8368fcf1f8fef5d672ea64775dc6f7b02d7a92",
+          "version": "0.1.12"
         }
       },
       {
@@ -123,8 +114,8 @@
         "repositoryURL": "https://github.com/square/workflow-swift",
         "state": {
           "branch": null,
-          "revision": "7d0a88826898f85b940ab1f904ba7e1b74bad511",
-          "version": "1.1.0"
+          "revision": "c8ac380348fde689cd96491fb2dd1d72f3c01e43",
+          "version": "1.3.1"
         }
       }
     ]
