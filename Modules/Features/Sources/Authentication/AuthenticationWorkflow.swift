@@ -64,7 +64,7 @@ extension Authentication.Workflow: Workflow {
 // MARK: -
 private extension Authentication.Workflow {
 	enum Action {
-		case confirmIdentity(Account, String)
+		case confirm(Account, String)
 		case authenticate(Account)
 		case cancel
 	}
@@ -77,7 +77,7 @@ private extension Authentication.Workflow {
 		)
 
 		return workflow
-			.mapOutput(Action.confirmIdentity)
+			.mapOutput(Action.confirm)
 			.rendered(in: context)
 	}
 
@@ -88,11 +88,11 @@ private extension Authentication.Workflow {
 		)
 
 		return workflow
-			.mapOutput { pinAction(for: $0, authenticating: account) }
+			.mapOutput { pinAction(for: $0, confirming: account) }
 			.rendered(in: context)
 	}
 
-	func pinAction(for output: Authentication.PIN.Workflow.Output, authenticating account: Account) -> Action {
+	func pinAction(for output: Authentication.PIN.Workflow.Output, confirming account: Account) -> Action {
 		switch output {
 		case .confirmation:
 			return .authenticate(account)
@@ -106,7 +106,7 @@ private extension Authentication.Workflow {
 extension Authentication.Workflow.State {
 	enum Input {
 		case credentials
-		case pin(String, authenticating: Account)
+		case pin(String, confirming: Account)
 	}
 }
 
@@ -116,8 +116,8 @@ extension Authentication.Workflow.Action: WorkflowAction {
 
 	func apply(toState state: inout Authentication.Workflow.State) -> Authentication.Workflow.Output? {
 		switch self {
-		case let .confirmIdentity(account, pin):
-			state.input = .pin(pin, authenticating: account)
+		case let .confirm(account, pin):
+			state.input = .pin(pin, confirming: account)
 		case .authenticate:
 			break
 		case .cancel:
