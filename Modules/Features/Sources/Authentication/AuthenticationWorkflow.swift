@@ -4,6 +4,7 @@ import enum WorkflowContainers.BackStack
 import struct Model.Account
 import struct Model.User
 import struct Model.PhoneNumber
+import struct Model.PIN
 import struct Coven.API
 import struct Coven.Database
 import struct Coven.AccountPhoneNumberFields
@@ -18,12 +19,12 @@ import PersistDB
 
 public extension Authentication {
 	struct Workflow {
-		private let api: Coven.API
+		private let api: API
 		private let initialUsername: User.Username
 		private let initialPhoneNumber: PhoneNumber
 
 		public init(
-			api: Coven.API,
+			api: API,
 			initialUsername: User.Username,
 			initialPhoneNumber: PhoneNumber
 		) {
@@ -64,7 +65,7 @@ extension Authentication.Workflow: Workflow {
 // MARK: -
 private extension Authentication.Workflow {
 	enum Action {
-		case confirm(Account, String)
+		case confirm(Account, PIN)
 		case authenticate(Account)
 		case cancel
 	}
@@ -81,7 +82,7 @@ private extension Authentication.Workflow {
 			.rendered(in: context)
 	}
 
-	func pinItem(with state: State, in context: RenderContext<Self>, for account: Account, matching pin: String) -> BackStack.Item {
+	func pinItem(with state: State, in context: RenderContext<Self>, for account: Account, matching pin: PIN) -> BackStack.Item {
 		let workflow = Authentication.PIN.Workflow(
 			api: api,
 			pin: pin
@@ -106,7 +107,7 @@ private extension Authentication.Workflow {
 extension Authentication.Workflow.State {
 	enum Input {
 		case credentials
-		case pin(String, confirming: Account)
+		case pin(PIN, confirming: Account)
 	}
 }
 

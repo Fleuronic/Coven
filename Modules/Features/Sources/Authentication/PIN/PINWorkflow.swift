@@ -1,22 +1,24 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Ergo
-import Catenoid
-import Schemata
-import PersistDB
-import Coven
-import Model
-import Workflow
-import WorkflowContainers
+import enum Assets.Strings
+import enum WorkflowContainers.BackStack
+import struct Model.PIN
+import struct Coven.API
+import struct Ergo.RequestWorker
+import struct Workflow.Sink
+import struct WorkflowContainers.Alert
+import class Workflow.RenderContext
+import protocol Workflow.Workflow
+import protocol Workflow.WorkflowAction
 
 extension Authentication.PIN {
 	struct Workflow {
-		private let api: Coven.API
-		private let pin: String
+		private let api: API
+		private let pin: PIN
 
 		init(
-			api: Coven.API,
-			pin: String
+			api: API,
+			pin: PIN
 		) {
 			self.api = api
 			self.pin = pin
@@ -34,12 +36,12 @@ extension Authentication.PIN.Workflow: Workflow {
 	}
 
 	struct State {
-		var pin: String
+		var pin: PIN
 	}
 
 	func makeInitialState() -> State {
 		.init(
-			pin: .init()
+			pin: .empty
 		)
 	}
 
@@ -54,7 +56,7 @@ extension Authentication.PIN.Workflow: Workflow {
 // MARK: -
 extension Authentication.PIN.Workflow {
 	enum Action: WorkflowAction {
-		case confirm(String)
+		case confirm(PIN)
 		case cancel
 	}
 }

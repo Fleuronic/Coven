@@ -12,8 +12,6 @@ public struct PhoneNumber {
 }
 
 // MARK: -
-extension PhoneNumber: Equatable {}
-
 extension PhoneNumber: Hashable {}
 
 extension PhoneNumber: Decodable {

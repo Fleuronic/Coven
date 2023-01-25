@@ -5,6 +5,7 @@ import enum WorkflowContainers.BackStack
 import struct Model.Account
 import struct Model.User
 import struct Model.PhoneNumber
+import struct Model.PIN
 import struct Coven.API
 import struct Ergo.RequestWorker
 import struct Workflow.Sink
@@ -34,7 +35,7 @@ extension Authentication.Credentials {
 // MARK: -
 extension Authentication.Credentials.Workflow: Workflow {
 	typealias Rendering = BackStack.Item
-	typealias Output = (Account, String)
+	typealias Output = (Account, PIN)
 
 	struct State {
 		var username: User.Username
@@ -115,7 +116,7 @@ extension Authentication.Credentials.Workflow.Action {
 			state.credentialsVerificationState = .retrieved(verification)
 			switch verification {
 			case .match, .creation:
-				return (state.account, "9999")
+				return (state.account, .empty)
 			case let .mismatch(mismatch):
 				state.handle(mismatch)
 			}
