@@ -1,6 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Model.Todo
+import struct Coven.Todo
 
 extension [Model.Todo] {
 	enum Configuration: String {
