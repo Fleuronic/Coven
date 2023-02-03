@@ -1,17 +1,10 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Styles.UI
-import enum Geometric.UI
-import class UIKit.UIView
-import class UIKit.UILabel
-import class UIKit.UIButton
-import class UIKit.UIStackView
-import class UIKit.UITextField
-import struct Layoutless.Layout
-import struct Ergo.VerticallyStacked
-import protocol Ergo.Stacking
-import protocol Ergo.ScreenProxy
-import protocol Ergo.ReactiveScreen
+import UIKit
+import Geometric
+import Elements
+import Layoutless
+import Ergo
 
 public extension Authentication.Credentials {
 	final class View: UIView {}
@@ -24,31 +17,34 @@ extension Authentication.Credentials.View: Stacking {
 	@VerticallyStacked<Self>
 	public func content(screen: some ScreenProxy<Screen>) -> Layout<UIStackView> {
 		UIView.containing(
-			UIStackView.vertical(spacing: .element) {
+			UIStackView.style(.element) {
 				UILabel.style(.header)
 					.text(screen.header)
 				UILabel.style(.prompt)
 					.text(screen.prompt)
-			}.margins(.element).centeringInParent()
+			}.margins { $0.element }.centeringInParent()
 		)
-		UIStackView.vertical(spacing: .element) {
-			UITextField.style(.init(input: .username, hasError: screen.hasInvalidUsername))
+		UIStackView.style(.element) {
+			UITextField.style(.username)
 				.text(screen.usernameDisplayValue)
+				.hasError(screen.hasInvalidUsername)
 				.placeholder(screen.usernamePlaceholder)
 				.edited(screen.usernameTextEdited)
-				.height(.element)
-			UITextField.style(.init(input: .phoneNumber, hasError: screen.hasInvalidPhoneNumber))
+				.height { $0.element }
+			UITextField.style(.phoneNumber)
 				.text(screen.phoneNumberDisplayValue)
+				.hasError(screen.hasInvalidPhoneNumber)
 				.placeholder(screen.phoneNumberPlaceholder)
+				.isFocused(screen.needsPhoneNumberReinput)
 				.edited(screen.phoneNumberTextEdited)
-				.height(.element)
+				.height { $0.element }
 			UIButton.style(.primary)
 				.title(screen.submitTitle)
 				.isEnabled(screen.canSubmit)
 				.showsActivity(screen.isVerifyingCredentials)
 				.tap(screen.submitTapped)
-				.height(.element)
-		}.insetBy(horizontalInsets: .element).centeringVerticallyInParent()
+				.height { $0.element }
+		}.horizontalInsets { $0.element }.centeringVerticallyInParent()
 		UIView.spacer
 	}
 }

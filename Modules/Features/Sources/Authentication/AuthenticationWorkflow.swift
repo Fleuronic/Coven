@@ -1,80 +1,106 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum WorkflowContainers.BackStack
-import struct Model.Account
-import struct Model.User
-import struct Model.PhoneNumber
-import struct Model.PIN
-import struct Coven.API
-import struct Coven.Database
-import struct Coven.AccountPhoneNumberFields
-import struct Coven.UserUsernameFields
-import struct Coven.AccountUsernameFields
-import class Workflow.RenderContext
-import protocol Workflow.Workflow
-import protocol Workflow.WorkflowAction
+import Workflow
+import WorkflowUI
+import WorkflowContainers
+import Ergo
+import CovenAPI
+import TextbeltAPI
 
-import Schemata
-import PersistDB
+import struct Coven.Credentials
+import struct Coven.User
+import struct Coven.PhoneNumber
+import struct Coven.Account
+import struct Textbelt.OTP
+import protocol CovenService.AuthenticationSpec
+import protocol CovenService.CredentialsSpec
+import protocol TextbeltService.OTPSpec
 
 public extension Authentication {
-	struct Workflow {
-		private let api: API
-		private let initialUsername: User.Username
-		private let initialPhoneNumber: PhoneNumber
+	struct Workflow<
+		AuthenticationService: AuthenticationSpec,
+		CredentialsService: CredentialsSpec,
+		OTPService: OTPSpec
+	> where
+		AuthenticationService.Result == Account.Authentication.Result,
+		CredentialsService.VerificationResult == Coven.Credentials.Verification.Result,
+		OTPService.DeliveryResult == OTP.Delivery.Result,
+		OTPService.VerificationResult == OTP.Verification.Result {
+		private let initialUsername: Coven.User.Username
+		private let initialPhoneNumber: Coven.PhoneNumber
+		private let authenticationService: AuthenticationService
+		private let credentialsService: CredentialsService
+		private let otpService: OTPService
 
 		public init(
-			api: API,
-			initialUsername: User.Username,
-			initialPhoneNumber: PhoneNumber
+			initialUsername: Coven.User.Username = .empty,
+			initialPhoneNumber: Coven.PhoneNumber = .empty,
+			authenticationService: AuthenticationService,
+			credentialsService: CredentialsService,
+			otpService: OTPService
 		) {
-			self.api = api
 			self.initialUsername = initialUsername
 			self.initialPhoneNumber = initialPhoneNumber
+			self.authenticationService = authenticationService
+			self.credentialsService = credentialsService
+			self.otpService = otpService
 		}
 	}
 }
 
 // MARK: -
 extension Authentication.Workflow: Workflow {
-	public typealias Rendering = [BackStack.Item]
+	public typealias Rendering = AnyScreen
+	public typealias Output = Account.Identified.ID
 
 	public struct State {
 		var input: Input
+		var authenticationState: Authentication.State = .idle
 	}
 
 	public func makeInitialState() -> State {
-		.init(
-			input: .credentials
-		)
+		.init(input: .credentials())
 	}
 
-	public func render(state: State, context: RenderContext<Authentication.Workflow>) -> Rendering {
-		let credentialsItem = credentialsItem(with: state, in: context)
-
-		switch state.input {
-		case .credentials:
-			return [credentialsItem]
-		case let .pin(pin, account):
-			let pinItem = pinItem(with: state, in: context, for: account, matching: pin)
-			return [credentialsItem, pinItem]
-		}
+	public func render(state: State, context: RenderContext<Self>) -> Rendering {
+		let sink = context.makeSink(of: Action.self)
+		return Alert.Screen(
+			baseScreen: BackStack.Screen(
+				items: items(with: state, in: context)
+			), alert: state.alert {
+				sink.send(.authenticate)
+			}
+		).asAnyScreen()
 	}
 }
 
 // MARK: -
 private extension Authentication.Workflow {
 	enum Action {
-		case confirm(Account, PIN)
-		case authenticate(Account)
-		case cancel
+		case confirm(Credentials)
+		case authenticate
+		case finishAuthentication(Account.Authentication.Result)
+		case cancel(switchPhoneNumber: Bool)
 	}
 
-	func credentialsItem(with state: State, in context: RenderContext<Self>) -> BackStack.Item {
+	func items(with state: State, in context: RenderContext<Self>) -> [BackStack.Item] {
+		switch state.input {
+		case let .credentials(needsPhoneNumberReinput):
+			return [credentialsItem(with: state, in: context, needingPhoneNumberReinput: needsPhoneNumberReinput)]
+		case let .confirmationCode(credentials):
+			return [
+				credentialsItem(with: state, in: context, needingPhoneNumberReinput: false),
+				confirmationItem(with: state, in: context, for: credentials)
+			]
+		}
+	}
+
+	func credentialsItem(with state: State, in context: RenderContext<Self>, needingPhoneNumberReinput: Bool) -> BackStack.Item {
 		let workflow = Authentication.Credentials.Workflow(
-			api: api,
 			initialUsername: initialUsername,
-			initialPhoneNumber: initialPhoneNumber
+			initialPhoneNumber: initialPhoneNumber,
+			needsPhoneNumberReinput: needingPhoneNumberReinput,
+			service: credentialsService
 		)
 
 		return workflow
@@ -82,47 +108,85 @@ private extension Authentication.Workflow {
 			.rendered(in: context)
 	}
 
-	func pinItem(with state: State, in context: RenderContext<Self>, for account: Account, matching pin: PIN) -> BackStack.Item {
-		let workflow = Authentication.PIN.Workflow(
-			api: api,
-			pin: pin
+	func confirmationItem(with state: State, in context: RenderContext<Self>, for credentials: Credentials) -> BackStack.Item {
+		let workflow = Authentication.Confirmation.Workflow(
+			credentials: credentials,
+			otpService: otpService
+		)
+
+		context.run(
+			state
+				.worker(authenticating: credentials.account, for: credentials.user, using: authenticationService)?
+				.mapOutput(Action.finishAuthentication)
 		)
 
 		return workflow
-			.mapOutput { pinAction(for: $0, confirming: account) }
+			.mapOutput(confirmationAction)
 			.rendered(in: context)
 	}
 
-	func pinAction(for output: Authentication.PIN.Workflow.Output, confirming account: Account) -> Action {
+	func confirmationAction(for output: Authentication.Confirmation.Workflow<OTPService>.Output) -> Action {
 		switch output {
 		case .confirmation:
-			return .authenticate(account)
-		case .cancellation:
-			return .cancel
+			return .authenticate
+		case let .cancellation(switchPhoneNumber):
+			return .cancel(switchPhoneNumber: switchPhoneNumber)
 		}
 	}
 }
 
 // MARK: -
 extension Authentication.Workflow.State {
+	typealias Authentication = Account.Authentication
+
 	enum Input {
-		case credentials
-		case pin(PIN, confirming: Account)
+		case credentials(needsPhoneNumberReinput: Bool = false)
+		case confirmationCode(Credentials)
+	}
+}
+
+// MARK: -
+private extension Authentication.Workflow.State {
+	func worker(authenticating account: Account, for user: User, using service: AuthenticationService) -> RequestWorker<Authentication.Result>? {
+		authenticationState.mapRequesting(
+			.init {
+				await service.authenticate(account, for: user)
+			}
+		)
+	}
+
+	func alert(tryAgainHandler: @escaping () -> Void) -> Alert? {
+		authenticationState.mapError { error in
+			.init(
+				title: "Authentication Error",
+				message: "We were unable to authenticate your account. Please try again.",
+				actions: [
+					.init(
+						title: "Try Again",
+						handler: tryAgainHandler
+					)
+				]
+			)
+		}
 	}
 }
 
 // MARK: -
 extension Authentication.Workflow.Action: WorkflowAction {
-	typealias WorkflowType = Authentication.Workflow
+	typealias WorkflowType = Authentication.Workflow<AuthenticationService, CredentialsService, OTPService>
 
-	func apply(toState state: inout Authentication.Workflow.State) -> Authentication.Workflow.Output? {
+	func apply(toState state: inout WorkflowType.State) -> WorkflowType.Output? {
 		switch self {
-		case let .confirm(account, pin):
-			state.input = .pin(pin, confirming: account)
+		case let .confirm(credentials):
+			state.input = .confirmationCode(credentials)
 		case .authenticate:
-			break
-		case .cancel:
-			state.input = .credentials
+			state.authenticationState = .requesting
+		case let .finishAuthentication(.success(accountID)):
+			return accountID
+		case let .finishAuthentication(.failure(error)):
+			state.authenticationState = .failed(error)
+		case let .cancel(switchPhoneNumber):
+			state.input = .credentials(needsPhoneNumberReinput: switchPhoneNumber)
 		}
 		return nil
 	}

@@ -1,22 +1,49 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Authentication.Authentication
-import enum Todo.Todo
-import enum API.Coven
-import class Workflow.RenderContext
-import struct Model.User
-import struct WorkflowUI.AnyScreen
-import protocol Workflow.Workflow
-import protocol Workflow.WorkflowAction
-
+import Workflow
+import WorkflowUI
 import WorkflowContainers
+import CovenAPI
+import TextbeltAPI
+
+import enum Main.Main
+import enum Authentication.Authentication
+import struct Coven.Credentials
+import struct Coven.User
+import struct Coven.PhoneNumber
+import struct Coven.Account
+import struct Textbelt.OTP
+import protocol CovenService.LaunchSpec
+import protocol CovenService.AuthenticationSpec
+import protocol CovenService.CredentialsSpec
+import protocol TextbeltService.OTPSpec
 
 public extension Root {
-	struct Workflow {
-		private let api: Coven.API
+	struct Workflow<
+		LaunchService: LaunchSpec,
+		AuthenticationService: AuthenticationSpec,
+		CredentialsService: CredentialsSpec,
+		OTPService: OTPSpec>
+	where
+		AuthenticationService.Result == Account.Authentication.Result,
+		CredentialsService.VerificationResult == Coven.Credentials.Verification.Result,
+		OTPService.DeliveryResult == OTP.Delivery.Result,
+		OTPService.VerificationResult == OTP.Verification.Result {
+		private let launchService: LaunchService
+		private let authenticationService: AuthenticationService
+		private let credentialsService: CredentialsService
+		private let otpService: OTPService
 
-		public init(api: Coven.API) {
-			self.api = api
+		public init(
+			launchService: LaunchService,
+			authenticationService: AuthenticationService,
+			credentialsService: CredentialsService,
+			otpService: OTPService
+		) {
+			self.launchService = launchService
+			self.authenticationService = authenticationService
+			self.credentialsService = credentialsService
+			self.otpService = otpService
 		}
 	}
 }
@@ -24,85 +51,92 @@ public extension Root {
 // MARK: -
 extension Root.Workflow {
 	enum Action {
-		case logIn(User)
-		case logOut
+		case authenticate
+		case activate(Account.Identified.ID)
 	}
 }
 
 // MARK: -
 extension Root.Workflow: Workflow {
-	public typealias Rendering = BackStack.Screen<AnyScreen>
+	public typealias Rendering = AnyScreen
 
 	public enum State {
+		case launch
+		case main
 		case authentication
-		case todo(name: String)
 	}
 
 	public func makeInitialState() -> State {
-		(User.stored?.name).map(State.todo) ?? .authentication
+		.launch
 	}
 
 	public func render(state: State, context: RenderContext<Self>) -> Rendering {
-		let authenticationItem = authenticationItem(in: context)
-
 		switch state {
+		case .launch:
+			return launchScreen(in: context)
+		case .main:
+			return mainScreen(in: context)
 		case .authentication:
-			return .init(items: [authenticationItem])
-		case let .todo(name):
-			let todoItems = todoItems(with: name, in: context)
-			return .init(items: [authenticationItem] + todoItems)
+			return authenticationScreen(in: context)
 		}
 	}
 }
 
 // MARK: -
 private extension Root.Workflow {
-	func authenticationItem(in context: RenderContext<Self>) -> BackStackItem {
-		.init(
-			screen: Authentication.Workflow(api: api)
-				.mapOutput(action)
-				.rendered(in: context)
-				.asAnyScreen(),
-			barVisibility: .hidden
+	func launchScreen(in context: RenderContext<Self>) -> AnyScreen {
+		let workflow = Root.Launch.Workflow(
+			service: launchService
 		)
-	}
 
-	func todoItems(with name: String, in context: RenderContext<Self>) -> [BackStackItem] {
-		Todo.Workflow(name: name)
-			.mapOutput(action)
+		return workflow
+			.mapOutput(authenticationAction)
 			.rendered(in: context)
+			.asAnyScreen()
 	}
 
-	func action(for authenticationOutput: Authentication.Workflow.Output) -> Action {
-		switch authenticationOutput {
-		case let .user(user):
-			return .logIn(user)
-		}
+	func mainScreen(in context: RenderContext<Self>) -> AnyScreen {
+		let workflow = Main.Workflow()
+
+		return workflow
+			.rendered(in: context)
+			.asAnyScreen()
 	}
 
-	func action(for todoOutput: Todo.Workflow.Output) -> Action {
-		switch todoOutput {
-		case .logout:
-			return .logOut
+	func authenticationScreen(in context: RenderContext<Self>) -> AnyScreen {
+		let workflow = Authentication.Workflow(
+			authenticationService: authenticationService,
+			credentialsService: credentialsService,
+			otpService: otpService
+		)
+
+		return workflow
+			.mapOutput(Action.activate)
+			.rendered(in: context)
+			.asAnyScreen()
+	}
+
+	func authenticationAction(for output: Root.Launch.Workflow<LaunchService>.Output) -> Action {
+		switch output {
+		case .unauthenticated:
+			return .authenticate
+		case let .authenticated(accountID):
+			return .activate(accountID)
 		}
 	}
 }
 
 // MARK: -
 extension Root.Workflow.Action: WorkflowAction {
-	typealias WorkflowType = Root.Workflow
+	typealias WorkflowType = Root.Workflow<LaunchService, AuthenticationService, CredentialsService, OTPService>
 
-	func apply(toState state: inout Root.Workflow.State) -> Never? {
+	func apply(toState state: inout WorkflowType.State) -> Never? {
 		switch self {
-		case let .logIn(user):
-			state = .todo(name: user.name)
-		case .logOut:
-			User.removeFromStorage()
+		case .authenticate:
 			state = .authentication
+		case .activate:
+			state = .main
 		}
 		return nil
 	}
 }
-
-// MARK: -
-extension Root.Workflow.State: Equatable {}

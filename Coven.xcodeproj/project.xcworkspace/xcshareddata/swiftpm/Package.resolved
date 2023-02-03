@@ -1,124 +1,221 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Bond",
-        "repositoryURL": "https://github.com/DeclarativeHub/Bond",
-        "state": {
-          "branch": null,
-          "revision": "146943c0bc03a93c48fb6c57db4e39f4b38ba74b",
-          "version": "7.8.1"
-        }
-      },
-      {
-        "package": "Differ",
-        "repositoryURL": "https://github.com/tonyarnold/Differ.git",
-        "state": {
-          "branch": null,
-          "revision": "5520fda947f1f9777a806389c2ba587219bc0538",
-          "version": "1.4.6"
-        }
-      },
-      {
-        "package": "DynamicColor",
-        "repositoryURL": "https://github.com/yannickl/DynamicColor",
-        "state": {
-          "branch": null,
-          "revision": "d9beca13ca85baa50ee29832d0db5129fba69630",
-          "version": "5.0.1"
-        }
-      },
-      {
-        "package": "Identity",
-        "repositoryURL": "https://github.com/JohnSundell/Identity",
-        "state": {
-          "branch": null,
-          "revision": "c3c9102e8d5c2cfcc44a8c7c4bbb7cf3f7c12be9",
-          "version": "0.3.0"
-        }
-      },
-      {
-        "package": "Inject",
-        "repositoryURL": "https://github.com/Fleuronic/Inject.git",
-        "state": {
-          "branch": "main",
-          "revision": "630dcabd46c09fb14b9f6a0ab3257523c499f395",
-          "version": null
-        }
-      },
-      {
-        "package": "Layoutless",
-        "repositoryURL": "https://github.com/DeclarativeHub/Layoutless",
-        "state": {
-          "branch": null,
-          "revision": "50ae5ab4cb9bf676c1901f4ba0f267f27e68d0a7",
-          "version": "0.4.3"
-        }
-      },
-      {
-        "package": "ReactiveKit",
-        "repositoryURL": "https://github.com/DeclarativeHub/ReactiveKit.git",
-        "state": {
-          "branch": null,
-          "revision": "dfb63f820aa54946c4cbcbe1b6024863a143d3a2",
-          "version": "3.19.1"
-        }
-      },
-      {
-        "package": "ReactiveSwift",
-        "repositoryURL": "https://github.com/ReactiveCocoa/ReactiveSwift.git",
-        "state": {
-          "branch": "swift-concurrency",
-          "revision": "3d40187c982346352d0adbe6b38e0e3d53fddc95",
-          "version": null
-        }
-      },
-      {
-        "package": "Schemata",
-        "repositoryURL": "https://github.com/Fleuronic/Schemata",
-        "state": {
-          "branch": "master",
-          "revision": "781162892f5f9da4a155a25dc47ff948e26b3960",
-          "version": null
-        }
-      },
-      {
-        "package": "SociableWeaver",
-        "repositoryURL": "https://github.com/NicholasBellucci/SociableWeaver.git",
-        "state": {
-          "branch": null,
-          "revision": "dd8368fcf1f8fef5d672ea64775dc6f7b02d7a92",
-          "version": "0.1.12"
-        }
-      },
-      {
-        "package": "SwiftPatterns",
-        "repositoryURL": "https://github.com/benspratling4/SwiftPatterns.git",
-        "state": {
-          "branch": null,
-          "revision": "c2631f7c4b22440f70cb82d1d6edb801c30dd292",
-          "version": "4.3.0"
-        }
-      },
-      {
-        "package": "SwiftPhoneNumberFormatter",
-        "repositoryURL": "https://github.com/benspratling4/SwiftPhoneNumberFormatter",
-        "state": {
-          "branch": null,
-          "revision": "7e26dc2a9846ff9296a0808a6f24d0c67ba2acbc",
-          "version": "3.0.1"
-        }
-      },
-      {
-        "package": "Workflow",
-        "repositoryURL": "https://github.com/square/workflow-swift",
-        "state": {
-          "branch": null,
-          "revision": "c8ac380348fde689cd96491fb2dd1d72f3c01e43",
-          "version": "1.3.1"
-        }
+  "pins" : [
+    {
+      "identity" : "bond",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DeclarativeHub/Bond",
+      "state" : {
+        "revision" : "146943c0bc03a93c48fb6c57db4e39f4b38ba74b",
+        "version" : "7.8.1"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "caesura",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Caesura",
+      "state" : {
+        "branch" : "main",
+        "revision" : "23165de4336b18fea558721a7982b11a2ff18888"
+      }
+    },
+    {
+      "identity" : "catena",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Catena",
+      "state" : {
+        "branch" : "main",
+        "revision" : "6fdb628d6ea348e3c45bb25ae3ec0ccf6b43aa09"
+      }
+    },
+    {
+      "identity" : "catenary",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Catenary",
+      "state" : {
+        "branch" : "main",
+        "revision" : "748190a614675482ff0afc035c0a9ed087eeb71c"
+      }
+    },
+    {
+      "identity" : "catenoid",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Catenoid",
+      "state" : {
+        "branch" : "main",
+        "revision" : "80b5a19e0650219928f7df5353ff683c09304e60"
+      }
+    },
+    {
+      "identity" : "collectionconcurrencykit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JohnSundell/CollectionConcurrencyKit.git",
+      "state" : {
+        "revision" : "b4f23e24b5a1bff301efc5e70871083ca029ff95",
+        "version" : "0.2.0"
+      }
+    },
+    {
+      "identity" : "differ",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tonyarnold/Differ.git",
+      "state" : {
+        "revision" : "5520fda947f1f9777a806389c2ba587219bc0538",
+        "version" : "1.4.6"
+      }
+    },
+    {
+      "identity" : "dynamiccolor",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yannickl/DynamicColor",
+      "state" : {
+        "revision" : "d9beca13ca85baa50ee29832d0db5129fba69630",
+        "version" : "5.0.1"
+      }
+    },
+    {
+      "identity" : "ergo",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Ergo",
+      "state" : {
+        "branch" : "main",
+        "revision" : "49d4a108cbb8b786a289c6ca80b277514ee4f029"
+      }
+    },
+    {
+      "identity" : "geometric",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Geometric",
+      "state" : {
+        "branch" : "main",
+        "revision" : "47b050969b9911207c1d83df73bd6d5650fbcc8f"
+      }
+    },
+    {
+      "identity" : "identity",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JohnSundell/Identity",
+      "state" : {
+        "revision" : "c3c9102e8d5c2cfcc44a8c7c4bbb7cf3f7c12be9",
+        "version" : "0.3.0"
+      }
+    },
+    {
+      "identity" : "inject",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Inject.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "630dcabd46c09fb14b9f6a0ab3257523c499f395"
+      }
+    },
+    {
+      "identity" : "layoutless",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DeclarativeHub/Layoutless",
+      "state" : {
+        "revision" : "50ae5ab4cb9bf676c1901f4ba0f267f27e68d0a7",
+        "version" : "0.4.3"
+      }
+    },
+    {
+      "identity" : "metric",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Metric.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "7f3b15e3f4a940363c7fa561f3e490396e0012e5"
+      }
+    },
+    {
+      "identity" : "persistdb",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/PersistDB",
+      "state" : {
+        "branch" : "master",
+        "revision" : "e9ee082e3da39e3e3f7eacf95a6302ffb5c64b94"
+      }
+    },
+    {
+      "identity" : "reactivekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DeclarativeHub/ReactiveKit.git",
+      "state" : {
+        "revision" : "57a902a1b4f7aeafcb7b5cfec0c15635d0fd2b63",
+        "version" : "3.19.2"
+      }
+    },
+    {
+      "identity" : "reactiveswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveCocoa/ReactiveSwift.git",
+      "state" : {
+        "branch" : "swift-concurrency",
+        "revision" : "3d40187c982346352d0adbe6b38e0e3d53fddc95"
+      }
+    },
+    {
+      "identity" : "schemata",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Schemata",
+      "state" : {
+        "branch" : "master",
+        "revision" : "781162892f5f9da4a155a25dc47ff948e26b3960"
+      }
+    },
+    {
+      "identity" : "sociableweaver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NicholasBellucci/SociableWeaver.git",
+      "state" : {
+        "revision" : "dd8368fcf1f8fef5d672ea64775dc6f7b02d7a92",
+        "version" : "0.1.12"
+      }
+    },
+    {
+      "identity" : "swiftpatterns",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/benspratling4/SwiftPatterns.git",
+      "state" : {
+        "revision" : "c2631f7c4b22440f70cb82d1d6edb801c30dd292",
+        "version" : "4.3.0"
+      }
+    },
+    {
+      "identity" : "swiftphonenumberformatter",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/benspratling4/SwiftPhoneNumberFormatter",
+      "state" : {
+        "revision" : "7e26dc2a9846ff9296a0808a6f24d0c67ba2acbc",
+        "version" : "3.0.1"
+      }
+    },
+    {
+      "identity" : "telemetric",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Telemetric",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d659cd4ab0dbdb1eb89ae8d4a1046b0f8b9b5192"
+      }
+    },
+    {
+      "identity" : "workflow-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/square/workflow-swift",
+      "state" : {
+        "revision" : "c8ac380348fde689cd96491fb2dd1d72f3c01e43",
+        "version" : "1.3.1"
+      }
+    },
+    {
+      "identity" : "workflowcontainers",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/WorkflowContainers",
+      "state" : {
+        "branch" : "main",
+        "revision" : "590f6620fbe6954440dab824ead30cb1c40a644a"
+      }
+    }
+  ],
+  "version" : 2
 }

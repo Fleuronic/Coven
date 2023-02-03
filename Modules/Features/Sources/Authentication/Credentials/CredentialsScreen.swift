@@ -1,9 +1,10 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Model.User
-import struct Model.PhoneNumber
+import Ergo
+
 import enum Assets.Strings
-import typealias Ergo.Event
+import struct Coven.User
+import struct Coven.PhoneNumber
 
 public extension Authentication.Credentials {
 	struct Screen {
@@ -15,12 +16,13 @@ public extension Authentication.Credentials {
 		let isVerifyingCredentials: Bool
 		let hasInvalidUsername: Bool
 		let hasInvalidPhoneNumber: Bool
+		let needsPhoneNumberReinput: Bool
 	}
 }
 
 // MARK: -
 extension Authentication.Credentials.Screen {
-	public typealias Strings = Assets.Strings.Authentication
+	public typealias Strings = Assets.Strings.Authentication.Credentials
 
 	var header: ScreenString {
 		{ $0.header }

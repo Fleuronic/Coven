@@ -3,5 +3,5 @@
 import struct Metric.Opacity
 
 public extension Opacity {
-	static let disabled: Self = 0.5
+	static let disabled: Self = .translucent
 }

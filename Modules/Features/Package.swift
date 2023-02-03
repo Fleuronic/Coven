@@ -12,16 +12,15 @@ let package = Package(
 			targets: ["Root"]
 		),
 		.library(
-			name: "Authentication",
-			targets: ["Authentication"]
+			name: "Main",
+			targets: ["Main"]
 		),
 		.library(
-			name: "Todo",
-			targets: ["Todo"]
+			name: "Authentication",
+			targets: ["Authentication"]
 		)
 	],
 	dependencies: [
-		.package(name: "Model", path: "../Model"),
 		.package(name: "Services", path: "../Services"),
 		.package(name: "Presentation", path: "../Presentation"),
 		.package(url: "https://github.com/square/workflow-swift", from: "1.0.0-rc.1"),
@@ -34,53 +33,36 @@ let package = Package(
 		.target(
 			name: "Root",
 			dependencies: [
-				"WorkflowContainers",
-				"Todo",
+				"Main",
 				"Authentication"
 			]
 		),
-		.testTarget(
-			name: "RootTests",
+		.target(
+			name: "Main",
 			dependencies: [
-				.product(name: "WorkflowTesting", package: "workflow-swift"),
-				"Root"
+				"Geometric",
+				"Ergo",
+				"Presentation",
+				"WorkflowContainers"
 			]
 		),
 		.target(
 			name: "Authentication",
 			dependencies: [
-				"Ergo",
 				"Geometric",
 				"Telemetric",
-				"Model",
-				"Services",
+				"Ergo",
 				"Presentation",
-				"WorkflowContainers"
-			]
-		),
-		.testTarget(
-			name: "AuthenticationTests",
-			dependencies: [
-				.product(name: "WorkflowTesting", package: "workflow-swift"),
-				"Authentication"
-			]
-		),
-		.target(
-			name: "Todo",
-			dependencies: [
-				"Ergo",
 				"WorkflowContainers",
-				"Geometric",
-				"Telemetric",
-				"Model",
-				"Presentation"
+				.product(name: "CovenService", package: "Services"),
+				.product(name: "TextbeltService", package: "Services")
 			]
 		),
 		.testTarget(
-			name: "TodoTests",
+			name: "RootTests",
 			dependencies: [
+				"Root",
 				.product(name: "WorkflowTesting", package: "workflow-swift"),
-				"Todo"
 			]
 		)
 	]

@@ -23,6 +23,12 @@
       public static let primary = UIColor(named: "Border/Text Field/Primary", in: Bundle.module, compatibleWith: nil)!
       public static let secondary = UIColor(named: "Border/Text Field/Secondary", in: Bundle.module, compatibleWith: nil)!
     }
+    public enum View {
+      public enum Cursor {
+        public static let active = UIColor(named: "Border/View/Cursor/Active", in: Bundle.module, compatibleWith: nil)!
+        public static let inactive = UIColor(named: "Border/View/Cursor/Inactive", in: Bundle.module, compatibleWith: nil)!
+      }
+    }
   }
   public enum Text {
 
