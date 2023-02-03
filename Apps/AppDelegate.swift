@@ -1,11 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import class UIKit.UIWindow
-import class UIKit.UIScreen
-import class WorkflowUI.WorkflowHostingController
-import protocol UIKit.UIApplicationDelegate
-import protocol Workflow.AnyWorkflowConvertible
-import protocol WorkflowUI.Screen
+import UIKit
+import Workflow
+import WorkflowUI
 
 protocol AppDelegate: UIApplicationDelegate {
 	associatedtype AppWorkflow: AnyWorkflowConvertible where AppWorkflow.Rendering: Screen

@@ -5,4 +5,5 @@ import enum Metric.Font
 public extension Font.Size {
 	static let small: Self = 18
 	static let large: Self = 32
+	static let extraLarge: Self = 44
 }

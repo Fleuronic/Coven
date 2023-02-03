@@ -1,27 +1,42 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import class UIKit.UIApplication
-import class UIKit.UIWindow
-import class UIKit.UIResponder
+import UIKit
+import Workflow
+import WorkflowUI
+import WorkflowContainers
 
 import enum Root.Root
+import struct CovenService.Service
+import struct CovenAPI.API
+import struct TextbeltAPI.API
+import struct CovenDatabase.Database
 
 extension Root.App {
 	@UIApplicationMain
 	final class Delegate: UIResponder {
 		var window: UIWindow?
-
-		@Environment(.apiKey) var apiKey
 	}
 }
 
 // MARK: -
 extension Root.App.Delegate: AppDelegate {
 	// MARK: AppDelegate
-	var workflow: Root.Workflow {
-		.init(
-			api: .init(apiKey: apiKey!)
-		)
+	var workflow: AnyWorkflow<AnyScreen, Never> {
+		get async {
+			let database = await Database()
+			let covenAPI = CovenAPI.API(apiKey: .covenAPIKey)
+			let textbeltAPI = TextbeltAPI.API(apiKey: .textbeltAPIKey)
+
+			return Root.Workflow(
+				launchService: database,
+				authenticationService: Service(
+					api: covenAPI,
+					database: database
+				),
+				credentialsService: covenAPI,
+				otpService: textbeltAPI
+			).asAnyWorkflow()
+		}
 	}
 
 	// MARK: UIApplicationDelegate
@@ -29,4 +44,10 @@ extension Root.App.Delegate: AppDelegate {
 		window = makeWindow()
 		return true
 	}
+}
+
+// MARK: -
+private extension String {
+	static let covenAPIKey = "N32FEDGy6CEmYyIQQqNOV8Ch54TqEsIYZy7hu4MHUsMbZYnrb5dh8mbyBYaeV2qx"
+	static let textbeltAPIKey = "b00e9a1085813963aeafd607f55dfb802829221fjECWQ5nzvAZdybfITn0oaQGpc"
 }

@@ -14,55 +14,30 @@ public enum Strings {
   }
 
   public enum Authentication {
-    /// Welcome to Coven
-    public static let header = Strings.tr("Localizable", "Authentication.Header")
-    /// Choose a username or enter your existing one, along with your phone number.
-    public static let prompt = Strings.tr("Localizable", "Authentication.Prompt")
-    public enum Error {
-      /// Email address is invalid.
-      public static let email = Strings.tr("Localizable", "Authentication.Error.email")
+    public enum Confirmation {
+      /// Almost there!
+      public static let header = Strings.tr("Localizable", "Authentication.Confirmation.Header")
+      /// Enter the confirmation code sent to this device. You may need to wait a few seconds for it to be delivered.
+      public static let prompt = Strings.tr("Localizable", "Authentication.Confirmation.Prompt")
     }
-    public enum Placeholder {
-      /// Phone Number
-      public static let phoneNumber = Strings.tr("Localizable", "Authentication.Placeholder.phoneNumber")
-      /// Username
-      public static let username = Strings.tr("Localizable", "Authentication.Placeholder.username")
-    }
-    public enum Title {
-      /// Submit
-      public static let submit = Strings.tr("Localizable", "Authentication.Title.submit")
-    }
-  }
-
-  public enum Todo {
-    public enum Edit {
-      /// Edit
-      public static let title = Strings.tr("Localizable", "Todo.Edit.title")
+    public enum Credentials {
+      /// Welcome to Coven
+      public static let header = Strings.tr("Localizable", "Authentication.Credentials.Header")
+      /// Choose a username or enter your existing one, along with your phone number.
+      public static let prompt = Strings.tr("Localizable", "Authentication.Credentials.Prompt")
+      public enum Error {
+        /// Email address is invalid.
+        public static let email = Strings.tr("Localizable", "Authentication.Credentials.Error.email")
+      }
       public enum Placeholder {
-        /// Title
-        public static let title = Strings.tr("Localizable", "Todo.Edit.Placeholder.title")
+        /// Phone Number
+        public static let phoneNumber = Strings.tr("Localizable", "Authentication.Credentials.Placeholder.phoneNumber")
+        /// Username
+        public static let username = Strings.tr("Localizable", "Authentication.Credentials.Placeholder.username")
       }
       public enum Title {
-        public enum Button {
-          /// Save
-          public static let save = Strings.tr("Localizable", "Todo.Edit.Title.Button.save")
-        }
-      }
-    }
-    public enum List {
-      /// %@’s Todos
-      public static func title(_ p1: Any) -> String {
-        return Strings.tr("Localizable", "Todo.List.title", String(describing: p1))
-      }
-      public enum Message {
-        /// No Todos
-        public static let emptyState = Strings.tr("Localizable", "Todo.List.Message.emptyState")
-      }
-      public enum Title {
-        public enum Button {
-          /// New Todo
-          public static let newTodo = Strings.tr("Localizable", "Todo.List.Title.Button.newTodo")
-        }
+        /// Submit
+        public static let submit = Strings.tr("Localizable", "Authentication.Credentials.Title.submit")
       }
     }
   }

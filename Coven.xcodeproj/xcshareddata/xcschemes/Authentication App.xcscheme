@@ -79,26 +79,6 @@
       </CommandLineArguments>
       <EnvironmentVariables>
          <EnvironmentVariable
-            key = "apiKey"
-            value = "live_cd5dd6f2fc90ce9455de"
-            isEnabled = "NO">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "apiConfiguration"
-            value = "validEmail"
-            isEnabled = "NO">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "apiConfiguration"
-            value = "invalidEmail"
-            isEnabled = "NO">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "apiConfiguration"
-            value = "somethingWentWrong"
-            isEnabled = "NO">
-         </EnvironmentVariable>
-         <EnvironmentVariable
             key = "initialPhoneNumber"
             value = "678-910-9326"
             isEnabled = "YES">

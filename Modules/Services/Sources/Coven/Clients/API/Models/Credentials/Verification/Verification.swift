@@ -1,10 +1,12 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Catenary.Request
-import struct Model.User
-import struct Model.PhoneNumber
+import Catenary
 
-public extension API.Credentials {
+import struct Coven.User
+import struct Coven.PhoneNumber
+import struct Coven.Credentials
+
+public extension Credentials {
 	enum Verification {
 		case match
 		case creation
@@ -13,14 +15,14 @@ public extension API.Credentials {
 }
 
 // MARK: -
-public extension API.Credentials.Verification {
+public extension Credentials.Verification {
 	typealias Result = Swift.Result<Self, Error>
 	typealias State = Request.State<Self, Error>
 	typealias Error = Request.Error<API.Error>
 }
 
 // MARK: -
-extension API.Credentials.Verification {
+extension Credentials.Verification {
 	init(
 		username: User.Username,
 		phoneNumber: PhoneNumber,

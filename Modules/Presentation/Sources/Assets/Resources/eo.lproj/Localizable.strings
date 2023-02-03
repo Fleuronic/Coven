@@ -1,14 +1,12 @@
-"Authentication.Header" = "Bonvenon al Coven";
-"Authentication.Prompt" = "Elektu uzantnomon aŭ enigu vian ekzistantan, plus vian telefonnumeron.";
-"Authentication.Placeholder.username" = "Uzantnomo";
-"Authentication.Placeholder.phoneNumber" = "Telefonnumero";
-"Authentication.Title.submit" = "Submeti";
-"Authentication.Error.email" = "Retpoŝta adreso estas nevalida.";
+"Alert.Dismiss" = "Dismiss";
+"Alert.Error.Network" = "Network Error";
 
-"Todo.List.title" = "Taskoj de %@";
-"Todo.List.Title.Button.newTodo" = "Nova Tasko";
-"Todo.List.Message.emptyState" = "Neniuj Taskoj";
+"Authentication.Credentials.Header" = "Bonvenon al Coven";
+"Authentication.Credentials.Prompt" = "Elektu uzantnomon aŭ enigu vian ekzistantan, plus vian telefonnumeron.";
+"Authentication.Credentials.Placeholder.username" = "Uzantnomo";
+"Authentication.Credentials.Placeholder.phoneNumber" = "Telefonnumero";
+"Authentication.Credentials.Title.submit" = "Submeti";
+"Authentication.Credentials.Error.email" = "Retpoŝta adreso estas nevalida.";
 
-"Todo.Edit.title" = "Redakti";
-"Todo.Edit.Title.Button.save" = "Konservi";
-"Todo.Edit.Placeholder.title" = "Titolo";
+"Authentication.Confirmation.Header" = "Almost there!";
+"Authentication.Confirmation.Prompt" = "Enter the confirmation code sent to this device. You may need to wait a few seconds for it to be delivered.";

@@ -1,21 +1,22 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import UIKit
+import Workflow
+import WorkflowUI
+import WorkflowContainers
+
 import enum Authentication.Authentication
-import enum WorkflowContainers.BackStack
-import struct Model.User
-import struct Model.PhoneNumber
-import struct Workflow.AnyWorkflow
-import struct WorkflowUI.AnyScreen
-import class UIKit.UIApplication
-import class UIKit.UIWindow
-import class UIKit.UIResponder
+import struct Coven.User
+import struct Coven.PhoneNumber
+import struct CovenService.Service
+import struct CovenAPI.API
+import struct CovenDatabase.Database
 
 extension Authentication.App {
 	@UIApplicationMain
 	final class Delegate: UIResponder {
 		var window: UIWindow?
 
-		@Environment(.apiKey) private var apiKey
 		@Environment(.initialUsername) private var initialUsername
 		@Environment(.initialPhoneNumber) private var initialPhoneNumber
 	}
@@ -24,13 +25,19 @@ extension Authentication.App {
 // MARK: -
 extension Authentication.App.Delegate: AppDelegate {
 	// MARK: AppDelegate
-	var workflow: AnyWorkflow<BackStack.Screen<AnyScreen>, Authentication.Workflow.Output> {
+	var workflow: AnyWorkflow<AnyScreen, Authentication.Workflow.Output> {
 		get async {
-			Authentication.Workflow(
-				api: .init(apiKey: apiKey ?? .defaultAPIKey),
-				initialUsername: initialUsername.map(User.Username.init(text:)) ?? .empty,
-				initialPhoneNumber: initialPhoneNumber.map(PhoneNumber.init(text:)) ?? .empty
-			).mapRendering(BackStack.Screen.init)
+			let covenAPI = CovenAPI.API(apiKey: .covenAPIKey)
+			let service = Service(
+				api: covenAPI,
+				database: await Database()
+			)
+
+			return Authentication.Workflow(
+				service: service,
+				initialUsername: initialUsername.map(User.Username.init) ?? .empty,
+				initialPhoneNumber: initialPhoneNumber.map(PhoneNumber.init) ?? .empty
+			).asAnyWorkflow()
 		}
 	}
 
@@ -43,5 +50,6 @@ extension Authentication.App.Delegate: AppDelegate {
 
 // MARK: -
 private extension String {
-	static let defaultAPIKey = "DEFAULT_API_KEY"
+	static let covenAPIKey = "N32FEDGy6CEmYyIQQqNOV8Ch54TqEsIYZy7hu4MHUsMbZYnrb5dh8mbyBYaeV2qx"
+	static let textbeltAPIKey = "b00e9a1085813963aeafd607f55dfb802829221fjECWQ5nzvAZdybfITn0oaQGpc"
 }

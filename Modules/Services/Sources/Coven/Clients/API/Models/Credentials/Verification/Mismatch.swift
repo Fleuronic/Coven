@@ -1,6 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public extension API.Credentials.Verification {
+import struct Coven.Credentials
+
+public extension Credentials.Verification {
 	enum Mismatch {
 		case username
 		case phoneNumber

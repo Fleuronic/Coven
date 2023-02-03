@@ -1,11 +1,11 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum PersistDB.ReadWrite
-import class PersistDB.Store
-import struct Model.Account
-import struct Model.User
-import protocol Schemata.AnyModel
-import protocol Catenoid.Database
+import Schemata
+import PersistDB
+import Catenoid
+
+import struct Coven.Account
+import struct Coven.User
 
 public struct Database {
 	public private(set) var store: Store<ReadWrite>

@@ -8,23 +8,45 @@ let package = Package(
 	],
 	products: [
 		.library(
-			name: "Services",
-			targets: ["Coven"]
+			name: "CovenService",
+			targets: [
+				"CovenService",
+				"CovenAPI",
+				"CovenDatabase"
+			]
 		)
 	],
 	dependencies: [
-		.package(name: "Model", path: "../Model"),
+		.package(name: "Models", path: "../Models"),
 		.package(url: "https://github.com/Fleuronic/Catenoid", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Catenary", branch: "main"),
+		.package(url: "https://github.com/Fleuronic/Caesura", branch: "main")
 	],
 	targets: [
 		.target(
-			name: "Coven",
+			name: "CovenService",
 			dependencies: [
-				"Model",
+				"Catenary",
 				"Catenoid",
-				"Catenary"
-			]
+				.product(name: "Coven", package: "Models")
+			],
+			path: "Sources/Coven/Service"
+		),
+		.target(
+			name: "CovenAPI",
+			dependencies: [
+				"Caesura",
+				"CovenService"
+			],
+			path: "Sources/Coven/Clients/API"
+		),
+		.target(
+			name: "CovenDatabase",
+			dependencies: [
+				"Catenoid",
+				"CovenService"
+			],
+			path: "Sources/Coven/Clients/Database"
 		)
 	]
 )

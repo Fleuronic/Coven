@@ -1,7 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import Foundation
+
 import enum Root.Root
-import class Foundation.ProcessInfo
 
 extension Root.App {
 	@propertyWrapper

@@ -13,13 +13,14 @@ let package = Package(
 			targets: [
 				"Metrics",
 				"Assets",
-				"Styles"
+				"Elements"
 			]
 		)
 	],
 	dependencies: [
-		.package(name: "Model", path: "../Model"),
+		.package(name: "Models", path: "../Models"),
 		.package(url: "https://github.com/Fleuronic/Metric.git", branch: "main"),
+		.package(url: "https://github.com/Fleuronic/Geometric.git", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Telemetric.git", branch: "main")
 	],
 	targets: [
@@ -38,12 +39,13 @@ let package = Package(
 			resources: [.process("Resources")]
 		),
 		.target(
-			name: "Styles",
+			name: "Elements",
 			dependencies: [
-				"Model",
+				"Geometric",
 				"Telemetric",
+				"Metrics",
 				"Assets",
-				"Metrics"
+				.product(name: "Coven", package: "Models")
 			]
 		)
 	]

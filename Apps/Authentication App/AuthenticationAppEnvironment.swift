@@ -1,7 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import Foundation
+
 import enum Authentication.Authentication
-import class Foundation.ProcessInfo
 
 extension Authentication.App {
 	@propertyWrapper
@@ -23,7 +24,5 @@ extension Authentication.App.Environment {
 	enum Key: String {
 		case initialUsername
 		case initialPhoneNumber
-		case apiKey
-		case apiConfiguration
 	}
 }
