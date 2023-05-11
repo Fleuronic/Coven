@@ -44,7 +44,8 @@ let package = Package(
 				"Geometric",
 				"Ergo",
 				"Presentation",
-				"WorkflowContainers"
+				"WorkflowContainers",
+				.product(name: "WorkflowReactiveSwift", package: "workflow-swift")
 			]
 		),
 		.target(

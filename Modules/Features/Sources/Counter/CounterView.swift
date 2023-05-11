@@ -1,8 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import UIKit
-import Geometric
 import Layoutless
+import Telemetric
+import Elements
 import Ergo
 
 public extension Counter {
@@ -10,12 +11,15 @@ public extension Counter {
 }
 
 // MARK: -
-extension Counter.View: Stacking {
+extension Counter.View: Layoutable {
 	public typealias Screen = Counter.Screen
 
-	@VerticallyStacked<Self>
-	public func content(screen: some ScreenProxy<Screen>) -> Layout<UIStackView> {
-		UIView.spacer
+	public func layout(with screen: some ScreenProxy<Screen>) -> AnyLayout {
+		UIStackView.style(.element) {
+			UIButton.style(.primary)
+				.tap(screen.increment)
+				.height { $0.element }
+		}.margins { $0.element }.centeringVerticallyInParent()
 	}
 }
 

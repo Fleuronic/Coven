@@ -19,15 +19,6 @@
       }
     },
     {
-      "identity" : "catenary",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Catenary",
-      "state" : {
-        "branch" : "main",
-        "revision" : "748190a614675482ff0afc035c0a9ed087eeb71c"
-      }
-    },
-    {
       "identity" : "catenoid",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Fleuronic/Catenoid",
@@ -64,12 +55,12 @@
       }
     },
     {
-      "identity" : "geometric",
+      "identity" : "enumkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Geometric",
+      "location" : "https://github.com/gringoireDM/EnumKit.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "47b050969b9911207c1d83df73bd6d5650fbcc8f"
+        "revision" : "ae639dfac5c7116abb64c5f62124915f627140e4",
+        "version" : "1.1.3"
       }
     },
     {
@@ -97,15 +88,6 @@
       "state" : {
         "revision" : "50ae5ab4cb9bf676c1901f4ba0f267f27e68d0a7",
         "version" : "0.4.3"
-      }
-    },
-    {
-      "identity" : "metric",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Metric.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "7f3b15e3f4a940363c7fa561f3e490396e0012e5"
       }
     },
     {
@@ -160,24 +142,6 @@
       "state" : {
         "revision" : "dd8368fcf1f8fef5d672ea64775dc6f7b02d7a92",
         "version" : "0.1.12"
-      }
-    },
-    {
-      "identity" : "swiftpatterns",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/benspratling4/SwiftPatterns.git",
-      "state" : {
-        "revision" : "c2631f7c4b22440f70cb82d1d6edb801c30dd292",
-        "version" : "4.3.0"
-      }
-    },
-    {
-      "identity" : "swiftphonenumberformatter",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/benspratling4/SwiftPhoneNumberFormatter",
-      "state" : {
-        "revision" : "7e26dc2a9846ff9296a0808a6f24d0c67ba2acbc",
-        "version" : "3.0.1"
       }
     },
     {

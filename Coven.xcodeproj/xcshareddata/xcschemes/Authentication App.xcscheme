@@ -79,8 +79,8 @@
       </CommandLineArguments>
       <EnvironmentVariables>
          <EnvironmentVariable
-            key = "initialPhoneNumber"
-            value = "678-910-9326"
+            key = "initialPassword"
+            value = "password"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable

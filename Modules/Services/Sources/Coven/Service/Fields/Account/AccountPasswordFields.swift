@@ -4,20 +4,18 @@ import Identity
 import Schemata
 
 import struct Coven.Account
-import struct Coven.PhoneNumber
-import struct Schemata.Projection
 
-public struct AccountPhoneNumberFields {
+public struct AccountPasswordFields {
 	public let id: Account.Identified.ID
-	public let phoneNumber: PhoneNumber
+	public let password: String
 }
 
 // MARK: -
-extension AccountPhoneNumberFields: AccountFields {
+extension AccountPasswordFields: AccountFields {
 	// MARK: ModelProjection
 	public static let projection = Projection<Account.Identified, Self>(
 		Self.init,
 		Account.Identified.idKeyPath,
-		\.value.phoneNumber
+		\.value.password
 	)
 }

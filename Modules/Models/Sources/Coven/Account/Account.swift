@@ -1,13 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct SwiftPhoneNumberFormatter.PhoneNumber
-
 public struct Account {
-	public let phoneNumber: PhoneNumber
+	public let password: String
 
-	public init(
-		phoneNumber: PhoneNumber
-	) {
-		self.phoneNumber = phoneNumber
+	public init(password: String) {
+		self.password = password
 	}
 }

@@ -8,7 +8,6 @@ import Catena
 
 import struct Coven.Account
 import struct Coven.User
-import struct Coven.PhoneNumber
 
 public struct IdentifiedAccount {
 	public let id: Self.ID
@@ -52,13 +51,13 @@ extension Account.Identified: Catena.Model {
 	public static let schema = Schema(
 		Self.init ~ "accounts",
 		idProperty,
-		\.value.phoneNumber ~ "phone_number",
+		\.value.password ~ "password",
 		\.user ~ "user"
 	)
 
 	public var valueSet: ValueSet<Self> {
 		[
-			\.value.phoneNumber == value.phoneNumber,
+			\.value.password == value.password,
 			\.user.id == user.id
 		]
 	}
@@ -74,14 +73,14 @@ extension Account.Identified: Catena.Model {
 private extension Account.Identified {
 	init(
 		id: ID,
-		phoneNumber: PhoneNumber,
+		password: String,
 		user: User.Identified
 	) {
 		self.id = id
 		self.user = user
 
 		value = .init(
-			phoneNumber: phoneNumber
+			password: password
 		)
 	}
 }

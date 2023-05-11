@@ -3,7 +3,6 @@
 import Catenary
 
 import struct Coven.User
-import struct Coven.PhoneNumber
 import struct Coven.Credentials
 
 public extension Credentials {
@@ -18,20 +17,20 @@ public extension Credentials {
 extension Credentials.Verification {
 	init(
 		username: User.Username,
-		phoneNumber: PhoneNumber,
+		password: String,
 		existingUsernames: [User.Username],
-		existingPhoneNumbers: [PhoneNumber]
+		existingPasswords: [String]
 	) {
 		let usernameMatches = existingUsernames.contains(username)
-		let phoneNumberMatches = existingPhoneNumbers.contains(phoneNumber)
-		if usernameMatches && phoneNumberMatches {
+		let passwordMatches = existingPasswords.contains(password)
+		if usernameMatches && passwordMatches {
 			self = .match
-		} else if existingUsernames.isEmpty && existingPhoneNumbers.isEmpty {
+		} else if existingUsernames.isEmpty && existingPasswords.isEmpty {
 			self = .creation
-		} else if existingPhoneNumbers.isEmpty {
+		} else if existingPasswords.isEmpty {
 			self = .mismatch(.username)
 		} else {
-			self = .mismatch(.phoneNumber)
+			self = .mismatch(.password)
 		}
 	}
 }

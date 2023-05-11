@@ -12,15 +12,9 @@ let package = Package(
 			targets: ["Coven"]
 		)
 	],
-	dependencies: [
-		.package(url: "https://github.com/benspratling4/SwiftPhoneNumberFormatter", from: "3.0.0")
-	],
 	targets: [
 		.target(
-			name: "Coven",
-			dependencies: [
-				"SwiftPhoneNumberFormatter"
-			]
+			name: "Coven"
 		),
 		.testTarget(
 			name: "CovenTests",

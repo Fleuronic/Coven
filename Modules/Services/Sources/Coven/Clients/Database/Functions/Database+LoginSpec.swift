@@ -3,7 +3,6 @@
 import struct Coven.Credentials
 import struct Coven.Account
 import struct Coven.User
-import struct Coven.PhoneNumber
 import protocol CovenService.LoginSpec
 
 extension Database: LoginSpec {

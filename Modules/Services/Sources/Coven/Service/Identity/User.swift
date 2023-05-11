@@ -8,7 +8,6 @@ import Catena
 
 import struct Coven.User
 import struct Coven.Account
-import struct Coven.PhoneNumber
 
 public struct IdentifiedUser: Equatable, Hashable {
 	public let id: Self.ID

@@ -7,7 +7,6 @@ import WorkflowContainers
 
 import enum Authentication.Authentication
 import struct Coven.User
-import struct Coven.PhoneNumber
 import struct CovenService.Service
 import struct CovenAPI.API
 import struct CovenDatabase.Database
@@ -18,7 +17,7 @@ extension Authentication.App {
 		var window: UIWindow?
 
 		@Environment(.initialUsername) private var initialUsername
-		@Environment(.initialPhoneNumber) private var initialPhoneNumber
+		@Environment(.initialPassword) private var initialPassword
 	}
 }
 
@@ -38,7 +37,7 @@ extension Authentication.App.Delegate: AppDelegate {
 				credentialsService: api,
 				initialCredentials: .init(
 					username: initialUsername.map(User.Username.init),
-					phoneNumber: initialPhoneNumber.map(PhoneNumber.init)
+					password: initialPassword
 				)
 			).asAnyWorkflow()
 		}

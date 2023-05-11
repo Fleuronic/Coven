@@ -4,25 +4,27 @@ import Ergo
 
 import enum Assets.Strings
 import struct Coven.User
-import struct Coven.PhoneNumber
 
 public extension Authentication {
 	struct Screen {
 		let username: User.Username
-		let phoneNumber: PhoneNumber
+		let password: String
 		let usernameTextEdited: Event<String>
-		let phoneNumberTextEdited: Event<String>
+		let passwordEdited: Event<String>
 		let submitTapped: Event<Void>
-		let isVerifyingCredentials: Bool
+		let isAuthenticating: Bool
 		let hasInvalidUsername: Bool
-		let hasInvalidPhoneNumber: Bool
+		let hasInvalidPassword: Bool
 	}
 }
 
 // MARK: -
-extension Authentication.Screen {
-	public typealias Strings = Assets.Strings.Authentication.Credentials
+public extension Authentication.Screen {
+	typealias Strings = Assets.Strings.Authentication.Credentials
+}
 
+// MARK: -
+extension Authentication.Screen {
 	var header: ScreenString {
 		{ $0.header }
 	}
@@ -39,12 +41,8 @@ extension Authentication.Screen {
 		{ $0.Placeholder.username }
 	}
 
-	var phoneNumberDisplayValue: String {
-		phoneNumber.displayValue
-	}
-
-	var phoneNumberPlaceholder: ScreenString {
-		{ $0.Placeholder.phoneNumber }
+	var passwordPlaceholder: ScreenString {
+		{ $0.Placeholder.password }
 	}
 
 	var submitTitle: ScreenString {
@@ -53,9 +51,9 @@ extension Authentication.Screen {
 
 	var canSubmit: Bool {
 		username.isValid &&
-		phoneNumber.isValid &&
+		!password.isEmpty &&
 		!hasInvalidUsername &&
-		!hasInvalidPhoneNumber &&
-		!isVerifyingCredentials
+		!hasInvalidPassword &&
+		!isAuthenticating
 	}
 }

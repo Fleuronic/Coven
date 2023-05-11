@@ -9,36 +9,35 @@ import enum Counter.Counter
 import enum Authentication.Authentication
 import struct Coven.Credentials
 import struct Coven.User
-import struct Coven.PhoneNumber
 import struct Coven.Account
 import protocol CovenService.LaunchSpec
 import protocol CovenService.LoginSpec
+import protocol CovenService.CredentialsSpec
 
 public extension Root {
 	struct Workflow<
 		LaunchService: LaunchSpec,
-		AuthenticationService: LoginSpec
-	>
-	where
-		AuthenticationService.AuthenticationResult == Account.Authentication.Result,
-		AuthenticationService.VerificationResult == Coven.Credentials.Verification.Result {
+		LoginService: LoginSpec,
+		CredentialsService: CredentialsSpec
+	> where
+		LoginService.LoginResult == Login.Result,
+		CredentialsService.VerificationResult == Coven.Credentials.Verification.Result {
 		private let launchService: LaunchService
-		private let authenticationService: AuthenticationService
-		private let initialUsername: Coven.User.Username
-		private let initialPhoneNumber: Coven.PhoneNumber
+		private let loginService: LoginService
+		private let credentialsService: CredentialsService
+		private let initialCredentials: Credentials
 
 
 		public init(
 			launchService: LaunchService,
-			authenticationService: AuthenticationService,
-			initialUsername: Coven.User.Username,
-			initialPhoneNumber: Coven.PhoneNumber
-
+			loginService: LoginService,
+			credentialsService: CredentialsService,
+			initialCredentials: Credentials
 		) {
 			self.launchService = launchService
-			self.authenticationService = authenticationService
-			self.initialUsername = initialUsername
-			self.initialPhoneNumber = initialPhoneNumber
+			self.loginService = loginService
+			self.credentialsService = credentialsService
+			self.initialCredentials = initialCredentials
 		}
 	}
 }
@@ -100,9 +99,9 @@ private extension Root.Workflow {
 
 	func authenticationScreen(in context: RenderContext<Self>) -> AnyScreen {
 		let workflow = Authentication.Workflow(
-			service: authenticationService,
-			initialUsername: initialUsername,
-			initialPhoneNumber: initialPhoneNumber
+			loginService: loginService,
+			credentialsService: credentialsService,
+			initialCredentials: initialCredentials
 		)
 
 		return workflow
@@ -123,7 +122,7 @@ private extension Root.Workflow {
 
 // MARK: -
 extension Root.Workflow.Action: WorkflowAction {
-	typealias WorkflowType = Root.Workflow<LaunchService, AuthenticationService>
+	typealias WorkflowType = Root.Workflow<LaunchService, LoginService, CredentialsService>
 
 	func apply(toState state: inout WorkflowType.State) -> Never? {
 		switch self {

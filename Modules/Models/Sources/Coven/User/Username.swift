@@ -3,7 +3,7 @@
 import RegexBuilder
 
 public extension User {
-	struct Username: Equatable {
+	struct Username {
 		public let rawValue: String
 
 		public init(text: String) {

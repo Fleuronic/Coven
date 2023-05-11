@@ -10,7 +10,7 @@ public extension UILabel {
 	enum Style {
 		case header
 		case prompt
-		case emptyState
+		case counter
 	}
 }
 
@@ -32,14 +32,11 @@ private extension UILabel.Style {
 				.size { $0.large }
 				.weight(.semibold)
 				.design(.rounded)
-		case .emptyState:
-			return
-				.size { $0.large }
-				.weight(.light)
-				.italic
 		case .prompt:
 			return
 				.size { $0.small }
+		case .counter:
+			return .init()
 		}
 	}
 }
@@ -52,9 +49,8 @@ private extension Styled where Base: UILabel {
 			return self
 				.centered
 				.multiline
-		case .emptyState:
+		case .counter:
 			return self
-				.textColor { $0.secondary }
 		}
 	}
 }

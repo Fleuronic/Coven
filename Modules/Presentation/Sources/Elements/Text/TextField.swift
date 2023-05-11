@@ -6,13 +6,12 @@ import struct Metric.Styled
 import struct Metric.Insets
 import struct Metric.Kerning
 import struct Coven.User
-import struct Coven.PhoneNumber
 import protocol Metric.Text
 
 public extension UITextField {
 	enum Style {
 		case username
-		case phoneNumber
+		case password
 	}
 
 	static func style(_ style: Style) -> Styled<TextField> {
@@ -33,11 +32,9 @@ private extension Styled where Base: TextField {
 			return self
 				.maxLength(User.Username.maxLength)
 				.acceptedCharacter(User.Username.validCharacter)
-		case .phoneNumber:
+		case .password:
 			return self
-				.keyboardType(.phonePad)
-				.maxLength(PhoneNumber.validLength)
-				.acceptedCharacter(PhoneNumber.validCharacter)
+				.isSecureTextEntry(true)
 		}
 	}
 }

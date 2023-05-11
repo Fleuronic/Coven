@@ -5,20 +5,20 @@ import PersistDB
 import enum Catenary.Request
 import struct Coven.Credentials
 import struct CovenService.AccountUsernameFields
-import struct CovenService.AccountPhoneNumberFields
+import struct CovenService.AccountPasswordFields
 import protocol CovenService.CredentialsSpec
 
 extension API: CredentialsSpec {
 	public func verify(_ credentials: Credentials) async -> Credentials.Verification.Result {
 		let username = credentials.username
-		let phoneNumber = credentials.phoneNumber
+		let password = credentials.password
 
-		let usernames = await fetch(\.value.phoneNumber == phoneNumber, returning: AccountUsernameFields.self).map { $0.map(\.username) }
-		let phoneNumbers = await fetch(\.user.value.username == username, returning: AccountPhoneNumberFields.self).map { $0.map(\.phoneNumber) }
+		let usernames = await fetch(\.value.password == password, returning: AccountUsernameFields.self).map { $0.map(\.username) }
+		let passwords = await fetch(\.user.value.username == username, returning: AccountPasswordFields.self).map { $0.map(\.password) }
 
 		return usernames.flatMap { usernames in
-			phoneNumbers.map { phoneNumbers in
-				(username, phoneNumber, usernames, phoneNumbers)
+			passwords.map { passwords in
+				(username, password, usernames, passwords)
 			}.map(Credentials.Verification.init)
 		}
 	}

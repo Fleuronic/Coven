@@ -4,7 +4,7 @@
 "Authentication.Credentials.Header" = "Bonvenon al Coven";
 "Authentication.Credentials.Prompt" = "Elektu uzantnomon aŭ enigu vian ekzistantan, plus vian telefonnumeron.";
 "Authentication.Credentials.Placeholder.username" = "Uzantnomo";
-"Authentication.Credentials.Placeholder.phoneNumber" = "Telefonnumero";
+"Authentication.Credentials.Placeholder.password" = "Telefonnumero";
 "Authentication.Credentials.Title.submit" = "Submeti";
 "Authentication.Credentials.Error.email" = "Retpoŝta adreso estas nevalida.";
 

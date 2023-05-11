@@ -23,6 +23,6 @@ extension Authentication.App {
 extension Authentication.App.Environment {
 	enum Key: String {
 		case initialUsername
-		case initialPhoneNumber
+		case initialPassword
 	}
 }

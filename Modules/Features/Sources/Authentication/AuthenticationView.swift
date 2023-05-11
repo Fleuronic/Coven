@@ -1,9 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import UIKit
-import Geometric
-import Elements
 import Layoutless
+import Telemetric
+import Elements
 import Ergo
 
 public extension Authentication {
@@ -31,16 +31,16 @@ extension Authentication.View: Stacking {
 				.placeholder(screen.usernamePlaceholder)
 				.edited(screen.usernameTextEdited)
 				.height { $0.element }
-			UITextField.style(.phoneNumber)
-				.text(screen.phoneNumberDisplayValue)
-				.hasError(screen.hasInvalidPhoneNumber)
-				.placeholder(screen.phoneNumberPlaceholder)
-				.edited(screen.phoneNumberTextEdited)
+			UITextField.style(.password)
+				.text(screen.password)
+				.hasError(screen.hasInvalidPassword)
+				.placeholder(screen.passwordPlaceholder)
+				.edited(screen.passwordEdited)
 				.height { $0.element }
 			UIButton.style(.primary)
 				.title(screen.submitTitle)
 				.isEnabled(screen.canSubmit)
-				.showsActivity(screen.isVerifyingCredentials)
+				.showsActivity(screen.isAuthenticating)
 				.tap(screen.submitTapped)
 				.height { $0.element }
 		}.horizontalInsets { $0.element }.centeringVerticallyInParent()

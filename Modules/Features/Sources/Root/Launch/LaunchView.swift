@@ -14,7 +14,7 @@ extension Root.Launch.View: Stacking {
 	public typealias Screen = Root.Launch.Screen
 
 	@VerticallyStacked<Self>
-	public func content(screen: some ScreenProxy<Screen>) -> Layout<UIStackView> {
+	public func layout(with screen: some ScreenProxy<Screen>) -> Layout<UIStackView> {
 		UIView.spacer
 	}
 }

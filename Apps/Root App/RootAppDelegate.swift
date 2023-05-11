@@ -8,7 +8,6 @@ import WorkflowContainers
 import enum Root.Root
 import struct CovenService.Service
 import struct CovenAPI.API
-import struct TextbeltAPI.API
 import struct CovenDatabase.Database
 
 extension Root.App {
@@ -25,16 +24,15 @@ extension Root.App.Delegate: AppDelegate {
 		get async {
 			let database = await Database()
 			let covenAPI = CovenAPI.API(apiKey: .covenAPIKey)
-			let textbeltAPI = TextbeltAPI.API(apiKey: .textbeltAPIKey)
 
 			return Root.Workflow(
 				launchService: database,
-				authenticationService: Service(
+				loginService: Service(
 					api: covenAPI,
 					database: database
 				),
 				credentialsService: covenAPI,
-				otpService: textbeltAPI
+				initialCredentials: .empty
 			).asAnyWorkflow()
 		}
 	}

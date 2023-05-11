@@ -31,7 +31,7 @@ public enum Strings {
       }
       public enum Placeholder {
         /// Phone Number
-        public static let phoneNumber = Strings.tr("Localizable", "Authentication.Credentials.Placeholder.phoneNumber")
+        public static let password = Strings.tr("Localizable", "Authentication.Credentials.Placeholder.password")
         /// Username
         public static let username = Strings.tr("Localizable", "Authentication.Credentials.Placeholder.username")
       }

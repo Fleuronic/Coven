@@ -6,7 +6,6 @@ import Catenary
 import struct Coven.Credentials
 import struct Coven.Account
 import struct Coven.User
-import struct Coven.PhoneNumber
 
 extension Service: LoginSpec where
 	API: LoginSpec,

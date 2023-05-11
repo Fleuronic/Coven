@@ -4,7 +4,7 @@
 "Authentication.Credentials.Header" = "Welcome to Coven";
 "Authentication.Credentials.Prompt" = "Choose a username or enter your existing one, along with your phone number.";
 "Authentication.Credentials.Placeholder.username" = "Username";
-"Authentication.Credentials.Placeholder.phoneNumber" = "Phone Number";
+"Authentication.Credentials.Placeholder.password" = "Phone Number";
 "Authentication.Credentials.Title.submit" = "Submit";
 "Authentication.Credentials.Error.email" = "Email address is invalid.";
 

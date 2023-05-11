@@ -2,18 +2,14 @@
 
 import Workflow
 import WorkflowUI
-import WorkflowReactiveSwift
 import WorkflowContainers
-import ReactiveSwift
 import Ergo
 import CovenAPI
 
 import enum Assets.Strings
-import enum Catenary.Request
 import struct Coven.Credentials
 import struct Coven.User
 import struct Coven.Account
-import struct Coven.PhoneNumber
 import protocol CovenService.LoginSpec
 import protocol CovenService.CredentialsSpec
 
@@ -22,7 +18,7 @@ public extension Authentication {
 		LoginService: LoginSpec,
 		CredentialsService: CredentialsSpec
 	> where
-		LoginService.LoginResult == Account.Login.Result,
+		LoginService.LoginResult == Login.Result,
 		CredentialsService.VerificationResult == Credentials.Verification.Result {
 		private let loginService: LoginService
 		private let credentialsService: CredentialsService
@@ -46,20 +42,18 @@ extension Authentication.Workflow: Workflow {
 	public typealias Output = Account.Identified.ID
 
 	public struct State {
-		var credentials: Credentials
-		var verificationWorker: VerificationWorker
-		var invalidPhoneNumbers: [User.Username: [PhoneNumber]] = [:]
-		var invalidUsernames: [PhoneNumber: [User.Username]] = [:]
+		fileprivate var credentials: Credentials
+		fileprivate var loginWorker: LoginWorker
+		fileprivate var verificationWorker: VerificationWorker
+		fileprivate var invalidPasswords: [User.Username: [String]] = [:]
+		fileprivate var invalidUsernames: [String: [User.Username]] = [:]
 	}
 
 	public func makeInitialState() -> State {
 		.init(
 			credentials: initialCredentials,
-			verificationWorker: .init(
-				work: credentialsService.verify,
-				succeed: Action.finishVerification,
-				fail: Action.handleError
-			)
+			loginWorker: .ready(to: loginService.logIn),
+			verificationWorker: .ready(to: credentialsService.verify)
 		)
 	}
 
@@ -68,38 +62,34 @@ extension Authentication.Workflow: Workflow {
 			Alert.Screen<Authentication.Screen>(
 				baseScreen: .init(
 					username: state.username,
-					phoneNumber: state.phoneNumber,
+					password: state.password,
 					usernameTextEdited: { sink.send(.updateUsername(.init(text: $0))) },
-					phoneNumberTextEdited: { sink.send(.updatePhoneNumber(.init(text: $0))) },
+					passwordEdited: { sink.send(.updatePassword($0)) },
 					submitTapped: { sink.send(.verifyCredentials) },
-					isVerifyingCredentials: state.isVerifyingCredentials,
+					isAuthenticating: state.isAuthenticating,
 					hasInvalidUsername: state.hasInvalidUsername,
-					hasInvalidPhoneNumber: state.hasInvalidPhoneNumber
+					hasInvalidPassword: state.hasInvalidPassword
 				),
-				alert: state.alert {
-					sink.send(.dismissAlert)
-				}
+				alert: state.alert
 			)
-		} workers: {
-			state.verificationWorker.asAnyWorkflow()
+		} running: {
+			state.loginWorker.mapSuccess(Action.finish)
+			state.verificationWorker.mapSuccess(Action.logIn)
 		}
 	}
 }
 
 // MARK: -
-extension Authentication.Workflow {
-	typealias Login = Account.Login
-	typealias LoginWorker = ActionWorker<Action, Credentials, Login, Login.Result.Error>
-	typealias Verification = Credentials.Verification
-	typealias VerificationWorker = ActionWorker<Action, Credentials, Verification, Verification.Result.Error>
+private extension Authentication.Workflow {
+	typealias LoginWorker = Worker<(Account, User), Login.Result>
+	typealias VerificationWorker = Worker<Credentials, Credentials.Verification.Result>
 
 	enum Action {
 		case updateUsername(User.Username)
-		case updatePhoneNumber(PhoneNumber)
+		case updatePassword(String)
 		case verifyCredentials
-		case finishVerification(Credentials.Verification)
-		case handleError(Request.Error<API.Error>)
-		case dismissAlert
+		case logIn(Credentials.Verification?)
+		case finish(Account.Identified.ID?)
 	}
 }
 
@@ -111,21 +101,14 @@ extension Authentication.Workflow.Action: WorkflowAction {
 		switch self {
 		case let .updateUsername(username):
 			state.credentials.username = username
-		case let .updatePhoneNumber(phoneNumber):
-			state.credentials.phoneNumber = phoneNumber
+		case let .updatePassword(password):
+			state.credentials.password = password
 		case .verifyCredentials:
-			state.verificationWorker.work(with: state.credentials)
-		case let .finishVerification(verification):
-			switch verification {
-			case .match, .creation:
-				break
-			case let .mismatch(mismatch):
-				state.handle(mismatch)
-			}
-		case let .handleError(error):
-			break
-		case .dismissAlert:
-			break
+			state.verifyCredentials()
+		case let .logIn(verification):
+			state.logIn(with: verification)
+		case let .finish(accountID):
+			return accountID
 		}
 		return nil
 	}
@@ -137,45 +120,68 @@ private extension Authentication.Workflow.State {
 		credentials.username
 	}
 
-	var phoneNumber: PhoneNumber {
-		credentials.phoneNumber
+	var password: String {
+		credentials.password
 	}
 
-	var isVerifyingCredentials: Bool {
-		verificationWorker.isExecuting
+	var account: Account {
+		.init(password: password)
+	}
+
+	var user: User {
+		.init(username: username)
+	}
+
+	var isAuthenticating: Bool {
+		loginWorker.isWorking || verificationWorker.isWorking
 	}
 
 	var hasInvalidUsername: Bool {
-		invalidUsernames[credentials.phoneNumber]?.contains(username) ?? false
+		invalidUsernames[credentials.password]?.contains(username) ?? false
 	}
 
-	var hasInvalidPhoneNumber: Bool {
-		invalidPhoneNumbers[username]?.contains(phoneNumber) ?? false
+	var hasInvalidPassword: Bool {
+		invalidPasswords[username]?.contains(password) ?? false
 	}
 
-	func alert(dismissHandler: @escaping () -> Void) -> Alert? {
-//		let strings = Strings.Alert.self
-//		return verificationState.mapError { error in
-//			.init(
-//				title: strings.Error.network,
-//				message: error.message,
-//				actions: [
-//					.init(
-//						title: strings.dismiss,
-//						handler: dismissHandler
-//					)
-//				]
-//			)
-//		}
-		nil
+	var alert: Alert? {
+		let context =
+			loginWorker.errorContext ??
+			verificationWorker.errorContext
+		return context
+			.map { ($0.0.message, $0.1) }
+			.map(makeAlert)
 	}
 
-	mutating func handle(_ mismatch: Credentials.Verification.Mismatch) {
-		switch mismatch {
-		case .username:
-			invalidUsernames[phoneNumber, default: []].append(username)
-		case .phoneNumber:
-			invalidPhoneNumbers[username, default: []].append(phoneNumber)
+	func verifyCredentials() {
+		verificationWorker.work(with: credentials)
+	}
+
+	mutating func logIn(with verification: Credentials.Verification?) {
+		switch verification {
+		case .match, .creation:
+			loginWorker.work(with: (account, user))
+		case .mismatch(.username):
+			invalidUsernames[password, default: []].append(username)
+		case .mismatch(.password):
+			invalidPasswords[username, default: []].append(password)
+		default:
+			break
 		}
+	}
+
+	func makeAlert(message: String, dismissHandler: @escaping () -> Void) -> Alert {
+		let strings = Strings.Alert.self
+
+		return .init(
+			title: strings.Error.network,
+			message: message,
+			actions: [
+				.init(
+					title: strings.dismiss,
+					handler: dismissHandler
+				)
+			]
+		)
 	}
 }

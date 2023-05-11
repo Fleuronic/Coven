@@ -30,7 +30,7 @@
     {
       "identity" : "swiftphonenumberformatter",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/benspratling4/SwiftPhoneNumberFormatter",
+      "location" : "https://github.com/benspratling4/SwiftStringFormatter",
       "state" : {
         "revision" : "7e26dc2a9846ff9296a0808a6f24d0c67ba2acbc",
         "version" : "3.0.1"

@@ -16,6 +16,6 @@ public struct API {
 extension API: HasuraAPI {
 	// MARK: API
 	public var baseURL: URL {
-		URL(string: "https://coven-dev.hasura.app/v1/graphql")!
+		URL(string: "https://modo.hasura.app/v1/graphql")!
 	}
 }
