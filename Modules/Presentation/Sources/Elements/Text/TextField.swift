@@ -91,8 +91,6 @@ extension TextField: UITextFieldDelegate {
 	}
 }
 
-extension TextField: Text {}
-
 // MARK: -
 public extension Styled where Base: TextField {
 	func horizontalInsets(named name: Insets.Horizontal.Name) -> Self {

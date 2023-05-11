@@ -55,6 +55,7 @@ let package = Package(
 				"Ergo",
 				"Presentation",
 				"WorkflowContainers",
+				.product(name: "WorkflowReactiveSwift", package: "workflow-swift"),
 				.product(name: "Coven", package: "Models"),
 				.product(name: "CovenService", package: "Services")
 			]

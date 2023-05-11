@@ -10,7 +10,7 @@ import struct Coven.User
 import struct Coven.Account
 import struct Coven.PhoneNumber
 
-public struct IdentifiedUser {
+public struct IdentifiedUser: Equatable, Hashable {
 	public let id: Self.ID
 	public let value: User
 
@@ -36,10 +36,6 @@ public extension User {
 }
 
 // MARK: -
-extension User.Identified: Equatable {}
-
-extension User.Identified: Hashable {}
-
 extension User.Identified: Identifiable {
 	public typealias RawIdentifier = UUID
 }

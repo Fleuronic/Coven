@@ -12,12 +12,12 @@ import struct Coven.User
 import struct Coven.PhoneNumber
 import struct Coven.Account
 import protocol CovenService.LaunchSpec
-import protocol CovenService.AuthenticationSpec
+import protocol CovenService.LoginSpec
 
 public extension Root {
 	struct Workflow<
 		LaunchService: LaunchSpec,
-		AuthenticationService: AuthenticationSpec
+		AuthenticationService: LoginSpec
 	>
 	where
 		AuthenticationService.AuthenticationResult == Account.Authentication.Result,

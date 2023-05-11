@@ -1,9 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import UIKit
-import ReactiveKit
 import Geometric
 import Telemetric
+import ReactiveSwift
 
 import struct Metric.Percentage
 import struct Metric.Opacity
@@ -42,11 +42,11 @@ public extension Styled where Base: Text {
 		textColorAsset(color)
 	}
 
-	func textColor<Source: SignalProtocol>(_ source: Source) -> Self where Source.Element == (Colors.Text.Type) -> UIColor, Source.Error == Never {
-		textColorAssetFromSource(source)
+	func textColor(_ property: Property<(Colors.Text.Type) -> UIColor>) -> Self  {
+		textColorAsset(property)
 	}
 
-	func hasError<Source: SignalProtocol>(_ source: Source) -> Self where Source.Element == Bool, Source.Error == Never {
-		textColor(source.map { $0 ? { $0.error } : { $0.primary } })
+	func hasError(_ property: Property<Bool>) -> Self {
+		textColor(property.map { $0 ? { $0.error } : { $0.primary } })
 	}
 }

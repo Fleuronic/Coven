@@ -81,6 +81,8 @@
 
 /* Begin PBXFileReference section */
 		170048072A07211300C4ECAB /* Telemetric */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Telemetric; path = ../Metric/Submodules/Telemetric; sourceTree = "<group>"; };
+		170048082A08062100C4ECAB /* Ergo */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Ergo; path = ../Ergo; sourceTree = "<group>"; };
+		170048092A0BE4A600C4ECAB /* Caesura */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Caesura; path = ../Caesura; sourceTree = "<group>"; };
 		17209CD329BBC8D800C224A6 /* CounterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17209CD429BBC8D800C224A6 /* CounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		174749DA29888BBC00D66463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -169,6 +171,8 @@
 		170B0CF428A6DDF40033029D = {
 			isa = PBXGroup;
 			children = (
+				170048092A0BE4A600C4ECAB /* Caesura */,
+				170048082A08062100C4ECAB /* Ergo */,
 				170048072A07211300C4ECAB /* Telemetric */,
 				1749DCCE28BB886300C4AFC9 /* Modules */,
 				17D85FEB28BBF62100C42970 /* Apps */,

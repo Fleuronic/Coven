@@ -1,14 +1,15 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public struct Credentials {
-	public let account: Account
-	public let user: User
+public struct Credentials: Equatable {
+	public var username: User.Username
+	public var phoneNumber: PhoneNumber
 
 	public init(
-		account: Account,
-		user: User
+		username: User.Username?,
+		phoneNumber: PhoneNumber?
 	) {
-		self.account = account
-		self.user = user
+		self.username = username ?? .empty
+		self.phoneNumber = phoneNumber ?? .empty
 	}
 }
+

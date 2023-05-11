@@ -15,13 +15,6 @@ public extension Credentials {
 }
 
 // MARK: -
-public extension Credentials.Verification {
-	typealias Result = Swift.Result<Self, Error>
-	typealias State = Request.State<Self, Error>
-	typealias Error = Request.Error<API.Error>
-}
-
-// MARK: -
 extension Credentials.Verification {
 	init(
 		username: User.Username,

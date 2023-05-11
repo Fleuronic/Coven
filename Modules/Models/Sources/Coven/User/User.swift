@@ -2,7 +2,7 @@
 
 import SwiftPhoneNumberFormatter
 
-public struct User {
+public struct User: Equatable, Hashable {
 	public var username: Username
 
 	public init(
@@ -11,8 +11,3 @@ public struct User {
 		self.username = username
 	}
 }
-
-// MARK: -
-extension User: Equatable {}
-
-extension User: Hashable {}

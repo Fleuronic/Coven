@@ -10,15 +10,6 @@
       }
     },
     {
-      "identity" : "caesura",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Caesura",
-      "state" : {
-        "branch" : "main",
-        "revision" : "23165de4336b18fea558721a7982b11a2ff18888"
-      }
-    },
-    {
       "identity" : "catena",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Fleuronic/Catena",
@@ -73,18 +64,9 @@
       }
     },
     {
-      "identity" : "ergo",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Ergo",
-      "state" : {
-        "branch" : "main",
-        "revision" : "49d4a108cbb8b786a289c6ca80b277514ee4f029"
-      }
-    },
-    {
       "identity" : "geometric",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Geometric.git",
+      "location" : "https://github.com/Fleuronic/Geometric",
       "state" : {
         "branch" : "main",
         "revision" : "47b050969b9911207c1d83df73bd6d5650fbcc8f"
@@ -133,6 +115,15 @@
       "state" : {
         "branch" : "master",
         "revision" : "e9ee082e3da39e3e3f7eacf95a6302ffb5c64b94"
+      }
+    },
+    {
+      "identity" : "reactivecocoa",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveCocoa/ReactiveCocoa",
+      "state" : {
+        "revision" : "8a5b07b18c6abb8e12fb845bf742675dc4914ed8",
+        "version" : "12.0.0"
       }
     },
     {

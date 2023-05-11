@@ -27,16 +27,19 @@ extension Authentication.App.Delegate: AppDelegate {
 	// MARK: AppDelegate
 	var workflow: AnyWorkflow<AnyScreen, Authentication.Workflow.Output> {
 		get async {
-			let covenAPI = CovenAPI.API(apiKey: .covenAPIKey)
-			let service = Service(
-				api: covenAPI,
-				database: await Database()
-			)
+			let api = CovenAPI.API(apiKey: .covenAPIKey)
+			let database = await Database()
 
 			return Authentication.Workflow(
-				service: service,
-				initialUsername: initialUsername.map(User.Username.init) ?? .empty,
-				initialPhoneNumber: initialPhoneNumber.map(PhoneNumber.init) ?? .empty
+				loginService: Service(
+					api: api,
+					database: database
+				),
+				credentialsService: api,
+				initialCredentials: .init(
+					username: initialUsername.map(User.Username.init),
+					phoneNumber: initialPhoneNumber.map(PhoneNumber.init)
+				)
 			).asAnyWorkflow()
 		}
 	}

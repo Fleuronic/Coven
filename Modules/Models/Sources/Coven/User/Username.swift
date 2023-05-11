@@ -3,7 +3,7 @@
 import RegexBuilder
 
 public extension User {
-	struct Username {
+	struct Username: Equatable {
 		public let rawValue: String
 
 		public init(text: String) {
@@ -36,8 +36,6 @@ public extension User.Username {
 }
 
 // MARK: -
-extension User.Username: Equatable {}
-
 extension User.Username: Decodable {
 	public init(from decoder: Decoder) throws {
 		let container = try decoder.singleValueContainer()
