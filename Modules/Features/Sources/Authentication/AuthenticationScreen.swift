@@ -1,10 +1,12 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Ergo
-
 import enum Assets.Strings
 import struct Coven.User
+import typealias Ergo.Event
 
+public enum Authentication {}
+
+// MARK: -
 public extension Authentication {
 	struct Screen {
 		let username: User.Username
@@ -20,7 +22,7 @@ public extension Authentication {
 
 // MARK: -
 public extension Authentication.Screen {
-	typealias Strings = Assets.Strings.Authentication.Credentials
+	typealias Strings = Assets.Strings.Authentication
 }
 
 // MARK: -

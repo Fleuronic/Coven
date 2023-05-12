@@ -1,7 +1,5 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Catenary
-
 import struct Coven.User
 import struct Coven.Credentials
 

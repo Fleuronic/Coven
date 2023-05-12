@@ -7,12 +7,12 @@ import struct Metric.Styled
 public extension UIButton {
 	enum Style {
 		case primary
+		case counter
 	}
 
 	static func style(_ style: Style) -> Styled<UIButton> {
 		.init()
 			.style(style)
-			.cornerRadius { $0.button }
 	}
 }
 
@@ -24,6 +24,10 @@ private extension Styled where Base: UIButton {
 			return self
 				.titleColor { $0.light }
 				.backgroundColor(darkenedBy: .highlighted, fadedTo: .disabled) { $0.primary }
+				.cornerRadius { $0.button }
+		case .counter:
+			return self
+				.titleColor { $0.primary }
 		}
 	}
 }

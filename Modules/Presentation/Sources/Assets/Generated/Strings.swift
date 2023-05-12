@@ -15,9 +15,9 @@ public enum Strings {
 
   public enum Authentication {
     /// Welcome to Coven
-    public static let header = Strings.tr("Localizable", "Authentication.Header")
+    public static let header = Strings.tr("Localizable", "Authentication.header")
     /// Choose a username or enter your existing one, along with your phone number.
-    public static let prompt = Strings.tr("Localizable", "Authentication.Prompt")
+    public static let prompt = Strings.tr("Localizable", "Authentication.prompt")
     public enum Error {
       /// Email address is invalid.
       public static let email = Strings.tr("Localizable", "Authentication.Error.email")
@@ -31,6 +31,13 @@ public enum Strings {
     public enum Title {
       /// Submit
       public static let submit = Strings.tr("Localizable", "Authentication.Title.submit")
+    }
+  }
+
+  public enum Counter {
+    /// The value is %d
+    public static func value(_ p1: Int) -> String {
+      return Strings.tr("Localizable", "Counter.value", p1)
     }
   }
 }

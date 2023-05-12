@@ -1,9 +1,11 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Ergo
-
 import enum Assets.Strings
+import typealias Ergo.Event
 
+public enum Counter {}
+
+// MARK: -
 public extension Counter {
 	struct Screen {
 		let value: Int
@@ -14,11 +16,19 @@ public extension Counter {
 
 // MARK: -
 public extension Counter.Screen {
-	typealias Strings = Assets.Strings
+	typealias Strings = Assets.Strings.Counter
 }
 
 extension Counter.Screen {
-	var text: String {
-		"The value "
+	var valueText: ScreenString {
+		{ $0.value(value) }
+	}
+
+	var incrementTitle: String {
+		"+"
+	}
+
+	var decrementTitle: String {
+		"-"
 	}
 }

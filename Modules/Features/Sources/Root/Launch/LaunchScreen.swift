@@ -1,9 +1,12 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Ergo
-
 import enum Assets.Strings
 
+public extension Root {
+	enum Launch {}
+}
+
+// MARK: -
 public extension Root.Launch {
 	struct Screen {}
 }

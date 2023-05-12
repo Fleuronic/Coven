@@ -1,8 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import Foundation
-import Catenary
-import Caesura
+
+import protocol Caesura.HasuraAPI
+import protocol Catenary.APIError
 
 public struct API {
 	let apiKey: String

@@ -10,30 +10,30 @@ public extension UIStackView {
 	enum Style {
 		case element
 		case outline
+		case counter
 	}
 }
 
 // MARK: -
 public extension UIStackView {
-	static func style(_ style: Style, alignedBy alignment: Alignment = .fill, @LayoutBuilder content: () -> [AnyLayout]) -> Layout<UIStackView> {
+	static func style(_ style: Style, @LayoutBuilder content: () -> [AnyLayout]) -> Layout<UIStackView> {
 		self
-			.style(style, alignedBy: alignment)
+			.style(style)
 			.content(content())
 	}
 
-	static func style(_ style: Style, alignedBy alignment: Alignment = .fill, arranging views: [Styled<UIView>]) -> Layout<UIStackView> {
+	static func style(_ style: Style, arranging views: [Styled<UIView>]) -> Layout<UIStackView> {
 		self
-			.style(style, alignedBy: alignment)
+			.style(style)
 			.content(views.map(\.layout))
 	}
 }
 
 // MARK: -
 private extension UIStackView {
-	static func style(_ style: Style, alignedBy alignment: Alignment = .fill) -> Styled<UIStackView> {
+	static func style(_ style: Style) -> Styled<UIStackView> {
 		.init()
 			.style(style)
-			.alignment(alignment)
 	}
 }
 
@@ -50,6 +50,10 @@ private extension Styled where Base: UIStackView {
 				.distribution(.fillEqually)
 				.horizontalInsets { $0.outline }
 				.horizontalSpacing { $0.outline }
+		case .counter:
+			return self
+				.axis(.vertical)
+				.alignment(.center)
 		}
 	}
 }

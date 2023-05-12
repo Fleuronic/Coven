@@ -2,7 +2,6 @@
 
 import UIKit
 import Layoutless
-import Telemetric
 import Elements
 import Ergo
 

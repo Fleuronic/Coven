@@ -15,7 +15,7 @@ public extension Counter {
 extension Counter.Workflow: Workflow {
 	public typealias State = Int
 	public typealias Rendering = AnyScreen
-	public typealias Output = Never
+	public typealias Output = Void
 
 	public func makeInitialState() -> State {
 		.init()
@@ -31,7 +31,13 @@ extension Counter.Workflow: Workflow {
 							increment: { sink.send(.increment) },
 							decrement: { sink.send(.decrement) }
 						),
-						barContent: .init(title: "Counter")
+						barContent: .init(
+							title: "Counter",
+							rightItem: .init(
+								content: .text("Log Out"),
+								handler: { sink.send(.finish) }
+							)
+						)
 					)
 				]
 			)
@@ -44,8 +50,8 @@ private extension Counter.Workflow {
 	enum Action {
 		case increment
 		case decrement
+		case finish
 	}
-
 }
 
 // MARK: -
@@ -58,6 +64,8 @@ extension Counter.Workflow.Action: WorkflowAction {
 			state += 1
 		case .decrement:
 			state -= 1
+		case .finish:
+			return ()
 		}
 		return nil
 	}

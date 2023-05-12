@@ -7,9 +7,9 @@ import Ergo
 import CovenAPI
 
 import enum Assets.Strings
-import struct Coven.Credentials
 import struct Coven.User
 import struct Coven.Account
+import struct Coven.Credentials
 import protocol CovenService.LoginSpec
 import protocol CovenService.CredentialsSpec
 
@@ -74,7 +74,7 @@ extension Authentication.Workflow: Workflow {
 			)
 		} running: {
 			state.loginWorker.mapSuccess(Action.finish)
-			state.verificationWorker.mapSuccess(Action.logIn)
+			state.verificationWorker.mapSuccess(Action.attemptLogin)
 		}
 	}
 }
@@ -88,7 +88,7 @@ private extension Authentication.Workflow {
 		case updateUsername(User.Username)
 		case updatePassword(String)
 		case verifyCredentials
-		case logIn(Credentials.Verification?)
+		case attemptLogin(Credentials.Verification?)
 		case finish(Account.Identified.ID?)
 	}
 }
@@ -105,8 +105,8 @@ extension Authentication.Workflow.Action: WorkflowAction {
 			state.credentials.password = password
 		case .verifyCredentials:
 			state.verifyCredentials()
-		case let .logIn(verification):
-			state.logIn(with: verification)
+		case let .attemptLogin(verification):
+			state.attemptLogin(with: verification)
 		case let .finish(accountID):
 			return accountID
 		}
@@ -157,7 +157,7 @@ private extension Authentication.Workflow.State {
 		verificationWorker.work(with: credentials)
 	}
 
-	mutating func logIn(with verification: Credentials.Verification?) {
+	mutating func attemptLogin(with verification: Credentials.Verification?) {
 		switch verification {
 		case .match, .creation:
 			loginWorker.work(with: (account, user))

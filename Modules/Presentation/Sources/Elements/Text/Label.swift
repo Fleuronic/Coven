@@ -36,7 +36,8 @@ private extension UILabel.Style {
 			return
 				.size { $0.small }
 		case .counter:
-			return .init()
+			return
+				.size { $0.default }
 		}
 	}
 }

@@ -1,7 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import UIKit
-import Geometric
 import Layoutless
 import Ergo
 
@@ -10,12 +9,11 @@ public extension Root.Launch {
 }
 
 // MARK: -
-extension Root.Launch.View: Stacking {
+extension Root.Launch.View: Layoutable {
 	public typealias Screen = Root.Launch.Screen
 
-	@VerticallyStacked<Self>
-	public func layout(with screen: some ScreenProxy<Screen>) -> Layout<UIStackView> {
-		UIView.spacer
+	public func layout(with screen: some ScreenProxy<Screen>) -> AnyLayout {
+		EmptyLayout()
 	}
 }
 

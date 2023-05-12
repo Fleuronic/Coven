@@ -2,7 +2,6 @@
 
 import UIKit
 import Layoutless
-import Telemetric
 import Elements
 import Ergo
 
@@ -15,11 +14,18 @@ extension Counter.View: Layoutable {
 	public typealias Screen = Counter.Screen
 
 	public func layout(with screen: some ScreenProxy<Screen>) -> AnyLayout {
-		UIStackView.style(.element) {
-			UIButton.style(.primary)
+		UIStackView.style(.counter) {
+			UILabel.style(.counter)
+				.text(screen.valueText)
+			UIButton.style(.counter)
+				.title(screen.incrementTitle)
 				.tap(screen.increment)
 				.height { $0.element }
-		}.margins { $0.element }.centeringVerticallyInParent()
+			UIButton.style(.counter)
+				.title(screen.decrementTitle)
+				.tap(screen.decrement)
+				.height { $0.element }
+		}.margins { $0.element }.centeringInParent()
 	}
 }
 

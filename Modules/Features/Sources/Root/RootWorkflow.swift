@@ -14,6 +14,9 @@ import protocol CovenService.LaunchSpec
 import protocol CovenService.LoginSpec
 import protocol CovenService.CredentialsSpec
 
+public enum Root {}
+
+// MARK: -
 public extension Root {
 	struct Workflow<
 		LaunchService: LaunchSpec,
@@ -26,7 +29,6 @@ public extension Root {
 		private let loginService: LoginService
 		private let credentialsService: CredentialsService
 		private let initialCredentials: Credentials
-
 
 		public init(
 			launchService: LaunchService,
@@ -46,6 +48,7 @@ public extension Root {
 extension Root.Workflow {
 	enum Action {
 		case authenticate
+		case deauthenticate
 		case activate(Account.Identified.ID)
 	}
 }
@@ -93,6 +96,7 @@ private extension Root.Workflow {
 		let workflow = Counter.Workflow()
 
 		return workflow
+			.mapOutput { Action.deauthenticate }
 			.rendered(in: context)
 			.asAnyScreen()
 	}
@@ -127,6 +131,8 @@ extension Root.Workflow.Action: WorkflowAction {
 	func apply(toState state: inout WorkflowType.State) -> Never? {
 		switch self {
 		case .authenticate:
+			state = .authentication
+		case .deauthenticate:
 			state = .authentication
 		case .activate:
 			state = .main

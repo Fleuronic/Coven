@@ -1,9 +1,11 @@
 "Alert.Dismiss" = "Dismiss";
 "Alert.Error.Network" = "Network Error";
 
-"Authentication.Header" = "Bonvenon al Coven";
-"Authentication.Prompt" = "Elektu uzantnomon aŭ enigu vian ekzistantan, plus vian telefonnumeron.";
+"Authentication.header" = "Bonvenon al Coven";
+"Authentication.prompt" = "Elektu uzantnomon aŭ enigu vian ekzistantan, plus vian telefonnumeron.";
 "Authentication.Placeholder.username" = "Uzantnomo";
 "Authentication.Placeholder.password" = "Telefonnumero";
 "Authentication.Title.submit" = "Submeti";
 "Authentication.Error.email" = "Retpoŝta adreso estas nevalida.";
+
+"Counter.value" = "The value is %d";
