@@ -14,31 +14,23 @@ public enum Strings {
   }
 
   public enum Authentication {
-    public enum Confirmation {
-      /// Almost there!
-      public static let header = Strings.tr("Localizable", "Authentication.Confirmation.Header")
-      /// Enter the confirmation code sent to this device. You may need to wait a few seconds for it to be delivered.
-      public static let prompt = Strings.tr("Localizable", "Authentication.Confirmation.Prompt")
+    /// Welcome to Coven
+    public static let header = Strings.tr("Localizable", "Authentication.Header")
+    /// Choose a username or enter your existing one, along with your phone number.
+    public static let prompt = Strings.tr("Localizable", "Authentication.Prompt")
+    public enum Error {
+      /// Email address is invalid.
+      public static let email = Strings.tr("Localizable", "Authentication.Error.email")
     }
-    public enum Credentials {
-      /// Welcome to Coven
-      public static let header = Strings.tr("Localizable", "Authentication.Credentials.Header")
-      /// Choose a username or enter your existing one, along with your phone number.
-      public static let prompt = Strings.tr("Localizable", "Authentication.Credentials.Prompt")
-      public enum Error {
-        /// Email address is invalid.
-        public static let email = Strings.tr("Localizable", "Authentication.Credentials.Error.email")
-      }
-      public enum Placeholder {
-        /// Phone Number
-        public static let password = Strings.tr("Localizable", "Authentication.Credentials.Placeholder.password")
-        /// Username
-        public static let username = Strings.tr("Localizable", "Authentication.Credentials.Placeholder.username")
-      }
-      public enum Title {
-        /// Submit
-        public static let submit = Strings.tr("Localizable", "Authentication.Credentials.Title.submit")
-      }
+    public enum Placeholder {
+      /// Phone Number
+      public static let password = Strings.tr("Localizable", "Authentication.Placeholder.password")
+      /// Username
+      public static let username = Strings.tr("Localizable", "Authentication.Placeholder.username")
+    }
+    public enum Title {
+      /// Submit
+      public static let submit = Strings.tr("Localizable", "Authentication.Title.submit")
     }
   }
 }

@@ -1,12 +1,9 @@
 "Alert.Dismiss" = "Dismiss";
 "Alert.Error.Network" = "Network Error";
 
-"Authentication.Credentials.Header" = "Bonvenon al Coven";
-"Authentication.Credentials.Prompt" = "Elektu uzantnomon aŭ enigu vian ekzistantan, plus vian telefonnumeron.";
-"Authentication.Credentials.Placeholder.username" = "Uzantnomo";
-"Authentication.Credentials.Placeholder.password" = "Telefonnumero";
-"Authentication.Credentials.Title.submit" = "Submeti";
-"Authentication.Credentials.Error.email" = "Retpoŝta adreso estas nevalida.";
-
-"Authentication.Confirmation.Header" = "Almost there!";
-"Authentication.Confirmation.Prompt" = "Enter the confirmation code sent to this device. You may need to wait a few seconds for it to be delivered.";
+"Authentication.Header" = "Bonvenon al Coven";
+"Authentication.Prompt" = "Elektu uzantnomon aŭ enigu vian ekzistantan, plus vian telefonnumeron.";
+"Authentication.Placeholder.username" = "Uzantnomo";
+"Authentication.Placeholder.password" = "Telefonnumero";
+"Authentication.Title.submit" = "Submeti";
+"Authentication.Error.email" = "Retpoŝta adreso estas nevalida.";
