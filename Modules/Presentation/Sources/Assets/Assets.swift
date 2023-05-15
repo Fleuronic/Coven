@@ -1,7 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import UIKit
-import Geometric
 import Telemetric
 import ReactiveSwift
 

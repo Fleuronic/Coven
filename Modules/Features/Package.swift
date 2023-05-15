@@ -42,9 +42,9 @@ let package = Package(
 			name: "Counter",
 			dependencies: [
 				"Geometric",
-				"Ergo",
 				"Presentation",
 				"WorkflowContainers",
+				.product(name: "ErgoSwiftUI", package: "Ergo"),
 				.product(name: "WorkflowReactiveSwift", package: "workflow-swift")
 			]
 		),

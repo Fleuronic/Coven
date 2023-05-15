@@ -2,12 +2,12 @@
 
 import UIKit
 
+import enum Assets.Colors
 import struct Metric.Styled
 
 public extension UIButton {
 	enum Style {
 		case primary
-		case counter
 	}
 
 	static func style(_ style: Style) -> Styled<UIButton> {
@@ -25,9 +25,6 @@ private extension Styled where Base: UIButton {
 				.titleColor { $0.light }
 				.backgroundColor(darkenedBy: .highlighted, fadedTo: .disabled) { $0.primary }
 				.cornerRadius { $0.button }
-		case .counter:
-			return self
-				.titleColor { $0.primary }
 		}
 	}
 }

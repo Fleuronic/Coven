@@ -167,17 +167,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B8DA9D75-2994-41EB-B92A-28DB098C6CEA"
+            uuid = "1868E0F3-EAD5-4CFD-81B4-FA2797C93E8D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Modules/Features/Sources/Counter/CounterScreen.swift"
+            filePath = "../Ergo/Sources/Ergo/Layout/Stacking.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "valueText"
-            landmarkType = "24">
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "layout(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "269A7F1E-2EDB-4BDD-A920-88127A4198DA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/Features/Sources/Counter/CounterWorkflow.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "apply(toState:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

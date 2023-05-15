@@ -8,5 +8,5 @@ public protocol LoginSpec {
 	associatedtype LoginResult
 
 	func logIn(_ account: Account, for user: User) async -> LoginResult
-	func logOut(_ account: Account) async
+	func logOut(_ account: Account) async -> LoginResult
 }

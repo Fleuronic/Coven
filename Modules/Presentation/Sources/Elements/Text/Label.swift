@@ -10,7 +10,6 @@ public extension UILabel {
 	enum Style {
 		case header
 		case prompt
-		case counter
 	}
 }
 
@@ -35,9 +34,6 @@ private extension UILabel.Style {
 		case .prompt:
 			return
 				.size { $0.small }
-		case .counter:
-			return
-				.size { $0.default }
 		}
 	}
 }
@@ -50,8 +46,6 @@ private extension Styled where Base: UILabel {
 			return self
 				.centered
 				.multiline
-		case .counter:
-			return self
 		}
 	}
 }

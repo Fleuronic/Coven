@@ -1,7 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import enum Assets.Strings
-import typealias Ergo.Event
 
 public enum Counter {}
 
@@ -9,8 +8,8 @@ public enum Counter {}
 public extension Counter {
 	struct Screen {
 		let value: Int
-		let increment: Event<Void>
-		let decrement: Event<Void>
+		let increment: () -> Void
+		let decrement: () -> Void
 	}
 }
 
@@ -20,8 +19,12 @@ public extension Counter.Screen {
 }
 
 extension Counter.Screen {
-	var valueText: ScreenString {
-		{ $0.value(value) }
+//	var valueText: ScreenString {
+//		{ $0.value(value) }
+//	}
+
+	var valueText: String {
+		"The value is \(value)"
 	}
 
 	var incrementTitle: String {

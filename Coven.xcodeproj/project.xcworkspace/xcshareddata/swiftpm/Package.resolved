@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "bond",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/DeclarativeHub/Bond",
-      "state" : {
-        "revision" : "146943c0bc03a93c48fb6c57db4e39f4b38ba74b",
-        "version" : "7.8.1"
-      }
-    },
-    {
       "identity" : "catena",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Fleuronic/Catena",
@@ -106,15 +97,6 @@
       "state" : {
         "revision" : "8a5b07b18c6abb8e12fb845bf742675dc4914ed8",
         "version" : "12.0.0"
-      }
-    },
-    {
-      "identity" : "reactivekit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/DeclarativeHub/ReactiveKit.git",
-      "state" : {
-        "revision" : "57a902a1b4f7aeafcb7b5cfec0c15635d0fd2b63",
-        "version" : "3.19.2"
       }
     },
     {

@@ -19,6 +19,8 @@ extension Service: LoginSpec where
 	}
 
 	public func logOut(_ account: Account) async {
-		await api.logOut(account)
+		await api.logOut(account).map { _ in
+			await database.logOut(account)
+		}
 	}
 }

@@ -1,11 +1,35 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
-import Layoutless
-import Elements
-import Ergo
+import SwiftUI
+//import UIKit
+
+import ErgoSwiftUI
 
 public extension Counter {
+	struct View {
+		public init() {}
+	}
+}
+
+extension Counter.View: Bodied {
+	public func body(with screen: Counter.Screen) -> some View {
+		VStack {
+			Text(screen.valueText)
+			Button(action: screen.increment) {
+				Text(screen.incrementTitle)
+			}
+			Button(action: screen.decrement) {
+				Text(screen.decrementTitle)
+			}
+		}
+	}
+}
+
+extension Counter.Screen: PublishedScreen {
+	public typealias View = Counter.View
+}
+
+/*public extension Counter {
 	final class View: UIView {}
 }
 
@@ -14,22 +38,20 @@ extension Counter.View: Layoutable {
 	public typealias Screen = Counter.Screen
 
 	public func layout(with screen: some ScreenProxy<Screen>) -> AnyLayout {
-		UIStackView.style(.counter) {
-			UILabel.style(.counter)
+		UIStackView.vertical.layout {
+			UILabel.default
 				.text(screen.valueText)
-			UIButton.style(.counter)
+			UIButton.default
 				.title(screen.incrementTitle)
-				.tap(screen.increment)
-				.height { $0.element }
-			UIButton.style(.counter)
+				.action(screen.increment)
+			UIButton.default
 				.title(screen.decrementTitle)
-				.tap(screen.decrement)
-				.height { $0.element }
-		}.margins { $0.element }.centeringInParent()
+				.action(screen.decrement)
+		}.centeringInParent()
 	}
 }
 
 // MARK: -
 extension Counter.Screen: ReactiveScreen {
 	public typealias View = Counter.View
-}
+}*/

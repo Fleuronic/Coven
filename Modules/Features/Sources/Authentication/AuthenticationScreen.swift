@@ -2,7 +2,6 @@
 
 import enum Assets.Strings
 import struct Coven.User
-import typealias Ergo.Event
 
 public enum Authentication {}
 
@@ -11,9 +10,9 @@ public extension Authentication {
 	struct Screen {
 		let username: User.Username
 		let password: String
-		let usernameTextEdited: Event<String>
-		let passwordEdited: Event<String>
-		let submitTapped: Event<Void>
+		let usernameTextEdited: (String) -> Void
+		let passwordEdited: (String) -> Void
+		let submitTapped: () -> Void
 		let isAuthenticating: Bool
 		let hasInvalidUsername: Bool
 		let hasInvalidPassword: Bool

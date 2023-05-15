@@ -38,15 +38,15 @@ public extension Authentication {
 
 // MARK: -
 extension Authentication.Workflow: Workflow {
-	public typealias Rendering = AnyScreen
 	public typealias Output = Account.Identified.ID
 
 	public struct State {
 		fileprivate var credentials: Credentials
-		fileprivate var loginWorker: LoginWorker
-		fileprivate var verificationWorker: VerificationWorker
 		fileprivate var invalidPasswords: [User.Username: [String]] = [:]
 		fileprivate var invalidUsernames: [String: [User.Username]] = [:]
+
+		fileprivate let loginWorker: LoginWorker
+		fileprivate let verificationWorker: VerificationWorker
 	}
 
 	public func makeInitialState() -> State {
@@ -57,7 +57,7 @@ extension Authentication.Workflow: Workflow {
 		)
 	}
 
-	public func render(state: State, context: RenderContext<Self>) -> Rendering {
+	public func render(state: State, context: RenderContext<Self>) -> AnyScreen {
 		context.render { (sink: Sink<Action>) in
 			Alert.Screen<Authentication.Screen>(
 				baseScreen: .init(

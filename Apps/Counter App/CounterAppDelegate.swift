@@ -16,8 +16,8 @@ extension Counter.App {
 // MARK: -
 extension Counter.App.Delegate: AppDelegate {
 	// MARK: AppDelegate
-	var workflow: AnyWorkflow<AnyScreen, Never> {
-		Counter.Workflow().asAnyWorkflow()
+	var workflow: Counter.Workflow {
+		.init()
 	}
 
 	// MARK: UIApplicationDelegate

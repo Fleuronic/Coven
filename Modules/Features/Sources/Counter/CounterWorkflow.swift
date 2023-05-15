@@ -13,15 +13,13 @@ public extension Counter {
 
 // MARK: -
 extension Counter.Workflow: Workflow {
-	public typealias State = Int
-	public typealias Rendering = AnyScreen
 	public typealias Output = Void
 
-	public func makeInitialState() -> State {
-		.init()
+	public func makeInitialState() -> Int {
+		0
 	}
 
-	public func render(state: State, context: RenderContext<Self>) -> AnyScreen {
+	public func render(state: Int, context: RenderContext<Self>) -> AnyScreen {
 		context.render { (sink: Sink<Action>) in
 			BackStack.Screen(
 				items: [
@@ -58,7 +56,7 @@ private extension Counter.Workflow {
 extension Counter.Workflow.Action: WorkflowAction {
 	typealias WorkflowType = Counter.Workflow
 
-	func apply(toState state: inout WorkflowType.State) -> WorkflowType.Output? {
+	func apply(toState state: inout Int) -> Void? {
 		switch self {
 		case .increment:
 			state += 1

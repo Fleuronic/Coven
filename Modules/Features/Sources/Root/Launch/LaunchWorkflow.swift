@@ -3,6 +3,7 @@
 import Workflow
 import WorkflowUI
 import Ergo
+import EnumKit
 
 import struct Coven.Account
 import protocol CovenService.LaunchSpec
@@ -18,36 +19,33 @@ extension Root.Launch {
 }
 
 // MARK: -
-extension Root.Launch.Workflow: Workflow {
-	typealias Rendering = AnyScreen
+extension Root.Launch.Workflow {
+	typealias Worker = Ergo.Worker<Void, Account.Identified.ID?>
+}
 
+// MARK: -
+extension Root.Launch.Workflow: Workflow {
 	enum Output {
 		case unauthenticated
 		case authenticated(Account.Identified.ID)
 	}
 
-	struct State {
-		fileprivate var worker: Worker
+	func makeInitialState() -> Worker {
+		.working { await service.authenticatedAccountID }
 	}
 
-	func makeInitialState() -> State {
-		.init(worker: .working(by: { await service.authenticatedAccountID } ))
-	}
-
-	func render(state: State, context: RenderContext<Self>) -> Rendering {
-		context.render { (sink: Sink<Action>) in
+	func render(state worker: Worker, context: RenderContext<Self>) -> AnyScreen {
+		context.render { _ in
 			Root.Launch.Screen()
 		} running: {
-			state.worker.mapOutput(Action.finish)
+			worker.mapOutput(Action.finish)
 		}
 	}
 }
 
 // MARK: -
 private extension Root.Launch.Workflow {
-	typealias Worker = Ergo.Worker<Void, Account.Identified.ID?>
-
-	enum Action {
+	enum Action: CaseAccessible {
 		case finish(Account.Identified.ID?)
 	}
 }
@@ -56,10 +54,7 @@ private extension Root.Launch.Workflow {
 extension Root.Launch.Workflow.Action: WorkflowAction {
 	typealias WorkflowType = Root.Launch.Workflow<Service>
 
-	func apply(toState state: inout WorkflowType.State) -> WorkflowType.Output? {
-		switch self {
-		case let .finish(accountID):
-			return accountID.map(WorkflowType.Output.authenticated) ?? .unauthenticated
-		}
+	func apply(toState _: inout WorkflowType.State) -> WorkflowType.Output? {
+		associatedValue().flatMap(WorkflowType.Output.authenticated) ?? .unauthenticated
 	}
 }
