@@ -44,8 +44,7 @@ let package = Package(
 				"Geometric",
 				"Presentation",
 				"WorkflowContainers",
-				.product(name: "ErgoSwiftUI", package: "Ergo"),
-				.product(name: "WorkflowReactiveSwift", package: "workflow-swift")
+				.product(name: "ErgoSwiftUI", package: "Ergo")
 			]
 		),
 		.target(
@@ -53,10 +52,9 @@ let package = Package(
 			dependencies: [
 				"Geometric",
 				"Telemetric",
-				"Ergo",
 				"Presentation",
 				"WorkflowContainers",
-				.product(name: "WorkflowReactiveSwift", package: "workflow-swift"),
+				.product(name: "ErgoUIKit", package: "Ergo"),
 				.product(name: "Coven", package: "Models"),
 				.product(name: "CovenService", package: "Services")
 			]

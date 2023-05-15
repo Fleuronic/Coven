@@ -1,12 +1,30 @@
 {
   "pins" : [
     {
+      "identity" : "caesura",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Caesura",
+      "state" : {
+        "branch" : "main",
+        "revision" : "23165de4336b18fea558721a7982b11a2ff18888"
+      }
+    },
+    {
       "identity" : "catena",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Fleuronic/Catena",
       "state" : {
         "branch" : "main",
         "revision" : "6fdb628d6ea348e3c45bb25ae3ec0ccf6b43aa09"
+      }
+    },
+    {
+      "identity" : "catenary",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Catenary",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2f87e36baa2e0148c3b2e4d56a03f5a793b24d3e"
       }
     },
     {
@@ -55,6 +73,24 @@
       }
     },
     {
+      "identity" : "ergo",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Ergo",
+      "state" : {
+        "branch" : "main",
+        "revision" : "75a7b60712fae2188f3bf452a81ec14a415aa1ed"
+      }
+    },
+    {
+      "identity" : "geometric",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Geometric",
+      "state" : {
+        "branch" : "main",
+        "revision" : "23750936d4b2037d6dce76ed4a00c1d6fa1d7d8e"
+      }
+    },
+    {
       "identity" : "identity",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/JohnSundell/Identity",
@@ -79,6 +115,15 @@
       "state" : {
         "revision" : "50ae5ab4cb9bf676c1901f4ba0f267f27e68d0a7",
         "version" : "0.4.3"
+      }
+    },
+    {
+      "identity" : "metric",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Metric",
+      "state" : {
+        "branch" : "main",
+        "revision" : "93d7e56a8dd665d877c0caeba71db049fc04ae12"
       }
     },
     {
@@ -124,6 +169,15 @@
       "state" : {
         "revision" : "dd8368fcf1f8fef5d672ea64775dc6f7b02d7a92",
         "version" : "0.1.12"
+      }
+    },
+    {
+      "identity" : "telemetric",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Telemetric",
+      "state" : {
+        "branch" : "main",
+        "revision" : "bd1b0f99be080c97c56b2f06b78b5bf081de5ed9"
       }
     },
     {

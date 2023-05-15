@@ -80,14 +80,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		170048072A07211300C4ECAB /* Telemetric */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Telemetric; path = ../Metric/Submodules/Telemetric; sourceTree = "<group>"; };
-		170048082A08062100C4ECAB /* Ergo */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Ergo; path = ../Ergo; sourceTree = "<group>"; };
-		170048092A0BE4A600C4ECAB /* Caesura */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Caesura; path = ../Caesura; sourceTree = "<group>"; };
 		17209CD329BBC8D800C224A6 /* CounterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17209CD429BBC8D800C224A6 /* CounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		174576342A0DCC2A00455F7C /* Geometric */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Geometric; path = ../Metric/Submodules/Geometric; sourceTree = "<group>"; };
 		174749DA29888BBC00D66463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		175FB10C2A0D7B7400F4EF4D /* Metric */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Metric; path = ../Metric; sourceTree = "<group>"; };
 		17638CD42947FA3300068086 /* Services */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Services; path = Modules/Services; sourceTree = "<group>"; };
 		1764FDF728BC043B004AAD5E /* RootUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUITests.swift; sourceTree = "<group>"; };
 		1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlowTests.swift; sourceTree = "<group>"; };
@@ -101,7 +96,6 @@
 		1787621728C0F81A0079A32C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		178AAEAD28CBC04D00CBFC52 /* RootAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAppEnvironment.swift; sourceTree = "<group>"; };
 		17A4661929899339006402EC /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Models; path = Modules/Models; sourceTree = "<group>"; };
-		17C45B262A0D5C270020A864 /* Catenary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Catenary; path = ../Catena/Submodules/Catenary; sourceTree = "<group>"; };
 		17D00CB729FC79D900325B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17D00CB829FC8DCB00325B4E /* CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterApp.swift; sourceTree = "<group>"; };
 		17D00CBA29FC8DD100325B4E /* CounterAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppDelegate.swift; sourceTree = "<group>"; };
@@ -174,12 +168,6 @@
 		170B0CF428A6DDF40033029D = {
 			isa = PBXGroup;
 			children = (
-				174576342A0DCC2A00455F7C /* Geometric */,
-				175FB10C2A0D7B7400F4EF4D /* Metric */,
-				17C45B262A0D5C270020A864 /* Catenary */,
-				170048092A0BE4A600C4ECAB /* Caesura */,
-				170048082A08062100C4ECAB /* Ergo */,
-				170048072A07211300C4ECAB /* Telemetric */,
 				1749DCCE28BB886300C4AFC9 /* Modules */,
 				17D85FEB28BBF62100C42970 /* Apps */,
 				1764FE4D28BC2908004AAD5E /* Tests */,

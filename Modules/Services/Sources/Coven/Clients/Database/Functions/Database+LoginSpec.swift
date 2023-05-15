@@ -11,7 +11,7 @@ extension Database: LoginSpec {
 		return await insert(account.identified(for: user, with: id)).value
 	}
 
-	public func logOut(_ account: Account) async {
-
+	public func logOut(_ account: Account) async -> Account.Identified.ID {
+		fatalError()
 	}
 }
