@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "dynamiccolor",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/yannickl/DynamicColor",
-      "state" : {
-        "revision" : "d9beca13ca85baa50ee29832d0db5129fba69630",
-        "version" : "5.0.1"
-      }
-    },
-    {
       "identity" : "enumkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/gringoireDM/EnumKit",
@@ -34,15 +25,6 @@
       "state" : {
         "branch" : "main",
         "revision" : "630dcabd46c09fb14b9f6a0ab3257523c499f395"
-      }
-    },
-    {
-      "identity" : "metric",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Metric.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "93d7e56a8dd665d877c0caeba71db049fc04ae12"
       }
     },
     {
