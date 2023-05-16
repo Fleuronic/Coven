@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		170048062A06957B00C4ECAB /* Counter in Frameworks */ = {isa = PBXBuildFile; productRef = 170048052A06957B00C4ECAB /* Counter */; };
 		1764FE0B28BC067B004AAD5E /* Root in Frameworks */ = {isa = PBXBuildFile; productRef = 1764FE0A28BC067B004AAD5E /* Root */; };
-		1764FE4828BC1FF1004AAD5E /* AppFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */; };
 		17D00CBE29FC8E4E00325B4E /* CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D00CB829FC8DCB00325B4E /* CounterApp.swift */; };
 		17D00CBF29FC8E5200325B4E /* CounterAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D00CBA29FC8DD100325B4E /* CounterAppDelegate.swift */; };
 		17D00CC429FD426A00325B4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787621728C0F81A0079A32C /* AppDelegate.swift */; };
@@ -27,20 +26,13 @@
 
 /* Begin PBXFileReference section */
 		17209CD329BBC8D800C224A6 /* CounterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		17209CD429BBC8D800C224A6 /* CounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1764FDF728BC043B004AAD5E /* RootUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUITests.swift; sourceTree = "<group>"; };
-		1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlowTests.swift; sourceTree = "<group>"; };
-		1764FE4A28BC2130004AAD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1764FE7328BC6C59004AAD5E /* IntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17209CD429BBC8D800C224A6 /* CounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CounterUITests.xctest; path = "/Users/jordan/Files/Development/Coven/build/Debug-iphoneos/CounterUITests.xctest"; sourceTree = "<absolute>"; };
+		1764FE7328BC6C59004AAD5E /* IntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = IntegrationTests.xctest; path = "/Users/jordan/Files/Development/Coven/build/Debug-iphoneos/IntegrationTests.xctest"; sourceTree = "<absolute>"; };
 		1787621728C0F81A0079A32C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		178AAEAD28CBC04D00CBFC52 /* RootAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAppEnvironment.swift; sourceTree = "<group>"; };
 		17D00CB729FC79D900325B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17D00CB829FC8DCB00325B4E /* CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterApp.swift; sourceTree = "<group>"; };
 		17D00CBA29FC8DD100325B4E /* CounterAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppDelegate.swift; sourceTree = "<group>"; };
 		17D85FC328BBED8200C42970 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Features; path = Modules/Features; sourceTree = "<group>"; };
-		17D8600E28BBF83400C42970 /* AuthenticationUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationUITests.swift; sourceTree = "<group>"; };
-		17D8602A28BBFAD000C42970 /* RootApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootApp.swift; sourceTree = "<group>"; };
-		17D8602B28BBFAD000C42970 /* RootAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +67,7 @@
 			children = (
 				1749DCCE28BB886300C4AFC9 /* Modules */,
 				17D85FEB28BBF62100C42970 /* Apps */,
-				1764FE4D28BC2908004AAD5E /* Tests */,
-				1764FE7328BC6C59004AAD5E /* IntegrationTests.xctest */,
 				17209CD329BBC8D800C224A6 /* CounterApp.app */,
-				17209CD429BBC8D800C224A6 /* CounterUITests.xctest */,
-				17D00CC129FC8F1E00325B4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,31 +77,6 @@
 				17D85FC328BBED8200C42970 /* Features */,
 			);
 			name = Modules;
-			sourceTree = "<group>";
-		};
-		1764FDF628BC042F004AAD5E /* Integration Tests */ = {
-			isa = PBXGroup;
-			children = (
-				1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */,
-			);
-			path = "Integration Tests";
-			sourceTree = "<group>";
-		};
-		1764FE4628BC1F76004AAD5E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1764FE4A28BC2130004AAD5E /* Info.plist */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		1764FE4D28BC2908004AAD5E /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				17D85FF928BBF7A000C42970 /* UI Tests */,
-				1764FDF628BC042F004AAD5E /* Integration Tests */,
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 		17D00CB529FC79C200325B4E /* Counter App */ = {
@@ -134,41 +97,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		17D00CC129FC8F1E00325B4E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		17D85FEB28BBF62100C42970 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
 				1787621728C0F81A0079A32C /* AppDelegate.swift */,
-				17D8602028BBFA1C00C42970 /* Root App */,
 				17D00CB529FC79C200325B4E /* Counter App */,
 			);
 			path = Apps;
-			sourceTree = "<group>";
-		};
-		17D85FF928BBF7A000C42970 /* UI Tests */ = {
-			isa = PBXGroup;
-			children = (
-				1764FDF728BC043B004AAD5E /* RootUITests.swift */,
-				17D8600E28BBF83400C42970 /* AuthenticationUITests.swift */,
-			);
-			path = "UI Tests";
-			sourceTree = "<group>";
-		};
-		17D8602028BBFA1C00C42970 /* Root App */ = {
-			isa = PBXGroup;
-			children = (
-				17D8602A28BBFAD000C42970 /* RootApp.swift */,
-				17D8602B28BBFAD000C42970 /* RootAppDelegate.swift */,
-				178AAEAD28CBC04D00CBFC52 /* RootAppEnvironment.swift */,
-				1764FE4628BC1F76004AAD5E /* Resources */,
-			);
-			path = "Root App";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,7 +237,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1764FE4828BC1FF1004AAD5E /* AppFlowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,11 +13,7 @@ public extension Counter {
 
 // MARK: -
 extension Counter.Workflow: Workflow {
-	public typealias Output = Never
-
-	public func makeInitialState() -> Int {
-		0
-	}
+	public func makeInitialState() -> Int { 0 }
 
 	public func render(state: Int, context: RenderContext<Self>) -> AnyScreen {
 		context.render { (sink: Sink<Action>) in
@@ -57,12 +53,9 @@ extension Counter.Workflow.Action: WorkflowAction {
 
 	func apply(toState state: inout Int) -> Never? {
 		switch self {
-		case .increment:
-			state += 1
-		case .decrement:
-			state -= 1
-		case .reset:
-			state = 0
+		case .increment: state += 1
+		case .decrement: state -= 1
+		case .reset: state = 0
 		}
 		return nil
 	}

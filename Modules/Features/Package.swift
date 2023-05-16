@@ -8,10 +8,6 @@ let package = Package(
 	],
 	products: [
 		.library(
-			name: "Root",
-			targets: ["Root"]
-		),
-		.library(
 			name: "Counter",
 			targets: ["Counter"]
 		)
@@ -21,12 +17,6 @@ let package = Package(
 		.package(url: "https://github.com/Fleuronic/WorkflowContainers", branch: "main")
 	],
 	targets: [
-		.target(
-			name: "Root",
-			dependencies: [
-				"Counter"
-			]
-		),
 		.target(
 			name: "Counter",
 			dependencies: [
