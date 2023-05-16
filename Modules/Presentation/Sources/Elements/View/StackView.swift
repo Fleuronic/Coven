@@ -1,7 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import UIKit
-import Geometric
 import Layoutless
 
 import struct Metric.Styled
@@ -9,7 +8,6 @@ import struct Metric.Styled
 public extension UIStackView {
 	enum Style {
 		case element
-		case outline
 	}
 }
 
@@ -27,12 +25,6 @@ private extension Styled where Base: UIStackView {
 		case .element:
 			return self
 				.verticalSpacing { $0.element }
-		case .outline:
-			return self
-				.axis(.horizontal)
-				.distribution(.fillEqually)
-				.horizontalInsets { $0.outline }
-				.horizontalSpacing { $0.outline }
 		}
 	}
 }

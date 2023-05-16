@@ -8,68 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		170048062A06957B00C4ECAB /* Counter in Frameworks */ = {isa = PBXBuildFile; productRef = 170048052A06957B00C4ECAB /* Counter */; };
-		172DB19D29550DE7001BB2AD /* Authentication in Frameworks */ = {isa = PBXBuildFile; productRef = 172DB19C29550DE7001BB2AD /* Authentication */; };
 		1764FE0B28BC067B004AAD5E /* Root in Frameworks */ = {isa = PBXBuildFile; productRef = 1764FE0A28BC067B004AAD5E /* Root */; };
-		1764FE1928BC07EC004AAD5E /* RootUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764FDF728BC043B004AAD5E /* RootUITests.swift */; };
-		1764FE2828BC0A19004AAD5E /* AuthenticationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8600E28BBF83400C42970 /* AuthenticationUITests.swift */; };
 		1764FE4828BC1FF1004AAD5E /* AppFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */; };
-		1787621228C0F2BD0079A32C /* AuthenticationAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787621128C0F2BD0079A32C /* AuthenticationAppEnvironment.swift */; };
-		178AAEAE28CBC04D00CBFC52 /* RootAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178AAEAD28CBC04D00CBFC52 /* RootAppEnvironment.swift */; };
 		17D00CBE29FC8E4E00325B4E /* CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D00CB829FC8DCB00325B4E /* CounterApp.swift */; };
 		17D00CBF29FC8E5200325B4E /* CounterAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D00CBA29FC8DD100325B4E /* CounterAppDelegate.swift */; };
 		17D00CC429FD426A00325B4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787621728C0F81A0079A32C /* AppDelegate.swift */; };
-		17D00CC529FD426B00325B4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787621728C0F81A0079A32C /* AppDelegate.swift */; };
-		17D00CC629FD426C00325B4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787621728C0F81A0079A32C /* AppDelegate.swift */; };
-		17D8602528BBFAA100C42970 /* AuthenticationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8602328BBFAA100C42970 /* AuthenticationApp.swift */; };
-		17D8602628BBFAA100C42970 /* AuthenticationAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8602428BBFAA100C42970 /* AuthenticationAppDelegate.swift */; };
-		17D8602928BBFAB700C42970 /* Root in Frameworks */ = {isa = PBXBuildFile; productRef = 17D8602828BBFAB700C42970 /* Root */; };
-		17D8602C28BBFB0C00C42970 /* RootApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8602A28BBFAD000C42970 /* RootApp.swift */; };
-		17D8602D28BBFB0E00C42970 /* RootAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8602B28BBFAD000C42970 /* RootAppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1764FE1C28BC09A9004AAD5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 170B0CF528A6DDF40033029D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 17D8601428BBF9F300C42970;
-			remoteInfo = RootApp;
-		};
-		1764FE1E28BC09AD004AAD5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 170B0CF528A6DDF40033029D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 17D85FAC28BBECA800C42970;
-			remoteInfo = WelcomeApp;
-		};
-		1764FE2228BC0A19004AAD5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 170B0CF528A6DDF40033029D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 17D8601428BBF9F300C42970;
-			remoteInfo = RootApp;
-		};
-		1764FE2428BC0A19004AAD5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 170B0CF528A6DDF40033029D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 17D85FAC28BBECA800C42970;
-			remoteInfo = WelcomeApp;
-		};
-		1764FE3128BC0A1E004AAD5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 170B0CF528A6DDF40033029D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 17D8601428BBF9F300C42970;
-			remoteInfo = RootApp;
-		};
-		1764FE3328BC0A1E004AAD5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 170B0CF528A6DDF40033029D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 17D85FAC28BBECA800C42970;
-			remoteInfo = WelcomeApp;
-		};
 		1764FE3E28BC0A35004AAD5E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 170B0CF528A6DDF40033029D /* Project object */;
@@ -82,28 +28,18 @@
 /* Begin PBXFileReference section */
 		17209CD329BBC8D800C224A6 /* CounterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17209CD429BBC8D800C224A6 /* CounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		174749DA29888BBC00D66463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17638CD42947FA3300068086 /* Services */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Services; path = Modules/Services; sourceTree = "<group>"; };
 		1764FDF728BC043B004AAD5E /* RootUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUITests.swift; sourceTree = "<group>"; };
 		1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlowTests.swift; sourceTree = "<group>"; };
 		1764FE4A28BC2130004AAD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1764FE6D28BC6C59004AAD5E /* RootApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RootApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1764FE6E28BC6C59004AAD5E /* AuthenticationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthenticationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1764FE7028BC6C59004AAD5E /* RootUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RootUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1764FE7128BC6C59004AAD5E /* AuthenticationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1764FE7328BC6C59004AAD5E /* IntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1787621128C0F2BD0079A32C /* AuthenticationAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationAppEnvironment.swift; path = "Apps/Authentication App/AuthenticationAppEnvironment.swift"; sourceTree = "<group>"; };
 		1787621728C0F81A0079A32C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		178AAEAD28CBC04D00CBFC52 /* RootAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAppEnvironment.swift; sourceTree = "<group>"; };
-		17A4661929899339006402EC /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Models; path = Modules/Models; sourceTree = "<group>"; };
 		17D00CB729FC79D900325B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17D00CB829FC8DCB00325B4E /* CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterApp.swift; sourceTree = "<group>"; };
 		17D00CBA29FC8DD100325B4E /* CounterAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppDelegate.swift; sourceTree = "<group>"; };
 		17D85FC228BBED8200C42970 /* Presentation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Presentation; path = Modules/Presentation; sourceTree = "<group>"; };
 		17D85FC328BBED8200C42970 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Features; path = Modules/Features; sourceTree = "<group>"; };
 		17D8600E28BBF83400C42970 /* AuthenticationUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationUITests.swift; sourceTree = "<group>"; };
-		17D8602328BBFAA100C42970 /* AuthenticationApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationApp.swift; path = "Apps/Authentication App/AuthenticationApp.swift"; sourceTree = "<group>"; };
-		17D8602428BBFAA100C42970 /* AuthenticationAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationAppDelegate.swift; path = "Apps/Authentication App/AuthenticationAppDelegate.swift"; sourceTree = "<group>"; };
 		17D8602A28BBFAD000C42970 /* RootApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootApp.swift; sourceTree = "<group>"; };
 		17D8602B28BBFAD000C42970 /* RootAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,32 +53,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1764FE0D28BC07CB004AAD5E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1764FE2928BC0A19004AAD5E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1764FE3828BC0A1E004AAD5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		17D85FAA28BBECA800C42970 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				172DB19D29550DE7001BB2AD /* Authentication in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,14 +65,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				170048062A06957B00C4ECAB /* Counter in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		17D8601928BBF9F300C42970 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				17D8602928BBFAB700C42970 /* Root in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,10 +77,6 @@
 				1749DCCE28BB886300C4AFC9 /* Modules */,
 				17D85FEB28BBF62100C42970 /* Apps */,
 				1764FE4D28BC2908004AAD5E /* Tests */,
-				1764FE6D28BC6C59004AAD5E /* RootApp.app */,
-				1764FE6E28BC6C59004AAD5E /* AuthenticationApp.app */,
-				1764FE7028BC6C59004AAD5E /* RootUITests.xctest */,
-				1764FE7128BC6C59004AAD5E /* AuthenticationUITests.xctest */,
 				1764FE7328BC6C59004AAD5E /* IntegrationTests.xctest */,
 				17209CD329BBC8D800C224A6 /* CounterApp.app */,
 				17209CD429BBC8D800C224A6 /* CounterUITests.xctest */,
@@ -182,19 +84,9 @@
 			);
 			sourceTree = "<group>";
 		};
-		174749D929888BBC00D66463 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				174749DA29888BBC00D66463 /* Info.plist */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		1749DCCE28BB886300C4AFC9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				17A4661929899339006402EC /* Models */,
-				17638CD42947FA3300068086 /* Services */,
 				17D85FC228BBED8200C42970 /* Presentation */,
 				17D85FC328BBED8200C42970 /* Features */,
 			);
@@ -224,18 +116,6 @@
 				1764FDF628BC042F004AAD5E /* Integration Tests */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		17C8C5A728BBAD710029868C /* Authentication App */ = {
-			isa = PBXGroup;
-			children = (
-				174749D929888BBC00D66463 /* Resources */,
-				17D8602328BBFAA100C42970 /* AuthenticationApp.swift */,
-				17D8602428BBFAA100C42970 /* AuthenticationAppDelegate.swift */,
-				1787621128C0F2BD0079A32C /* AuthenticationAppEnvironment.swift */,
-			);
-			name = "Authentication App";
-			path = ..;
 			sourceTree = "<group>";
 		};
 		17D00CB529FC79C200325B4E /* Counter App */ = {
@@ -269,7 +149,6 @@
 				1787621728C0F81A0079A32C /* AppDelegate.swift */,
 				17D8602028BBFA1C00C42970 /* Root App */,
 				17D00CB529FC79C200325B4E /* Counter App */,
-				17C8C5A728BBAD710029868C /* Authentication App */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -317,44 +196,6 @@
 			productReference = 1764FE7328BC6C59004AAD5E /* IntegrationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1764FE0F28BC07CB004AAD5E /* RootUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1764FE1628BC07CB004AAD5E /* Build configuration list for PBXNativeTarget "RootUITests" */;
-			buildPhases = (
-				1764FE0C28BC07CB004AAD5E /* Sources */,
-				1764FE0D28BC07CB004AAD5E /* Frameworks */,
-				1764FE0E28BC07CB004AAD5E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1764FE1D28BC09A9004AAD5E /* PBXTargetDependency */,
-				1764FE1F28BC09AD004AAD5E /* PBXTargetDependency */,
-			);
-			name = RootUITests;
-			productName = UITests;
-			productReference = 1764FE7028BC6C59004AAD5E /* RootUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		1764FE2028BC0A19004AAD5E /* AuthenticationUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1764FE2B28BC0A19004AAD5E /* Build configuration list for PBXNativeTarget "AuthenticationUITests" */;
-			buildPhases = (
-				1764FE2528BC0A19004AAD5E /* Sources */,
-				1764FE2928BC0A19004AAD5E /* Frameworks */,
-				1764FE2A28BC0A19004AAD5E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1764FE2128BC0A19004AAD5E /* PBXTargetDependency */,
-				1764FE2328BC0A19004AAD5E /* PBXTargetDependency */,
-			);
-			name = AuthenticationUITests;
-			productName = UITests;
-			productReference = 1764FE7128BC6C59004AAD5E /* AuthenticationUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		1764FE2F28BC0A1E004AAD5E /* CounterUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1764FE3A28BC0A1E004AAD5E /* Build configuration list for PBXNativeTarget "CounterUITests" */;
@@ -366,34 +207,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				1764FE3028BC0A1E004AAD5E /* PBXTargetDependency */,
-				1764FE3228BC0A1E004AAD5E /* PBXTargetDependency */,
 				1764FE3F28BC0A35004AAD5E /* PBXTargetDependency */,
 			);
 			name = CounterUITests;
 			productName = UITests;
 			productReference = 17209CD429BBC8D800C224A6 /* CounterUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		17D85FAC28BBECA800C42970 /* AuthenticationApp */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 17D85FC028BBECA900C42970 /* Build configuration list for PBXNativeTarget "AuthenticationApp" */;
-			buildPhases = (
-				17D85FA928BBECA800C42970 /* Sources */,
-				17D85FAA28BBECA800C42970 /* Frameworks */,
-				17D85FAB28BBECA800C42970 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AuthenticationApp;
-			packageProductDependencies = (
-				172DB19C29550DE7001BB2AD /* Authentication */,
-			);
-			productName = WelcomeApp;
-			productReference = 1764FE6E28BC6C59004AAD5E /* AuthenticationApp.app */;
-			productType = "com.apple.product-type.application";
 		};
 		17D85FDA28BBF5C700C42970 /* CounterApp */ = {
 			isa = PBXNativeTarget;
@@ -415,26 +234,6 @@
 			productReference = 17209CD329BBC8D800C224A6 /* CounterApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		17D8601428BBF9F300C42970 /* RootApp */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 17D8601C28BBF9F300C42970 /* Build configuration list for PBXNativeTarget "RootApp" */;
-			buildPhases = (
-				17D8601628BBF9F300C42970 /* Sources */,
-				17D8601928BBF9F300C42970 /* Frameworks */,
-				17D8601B28BBF9F300C42970 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RootApp;
-			packageProductDependencies = (
-				17D8602828BBFAB700C42970 /* Root */,
-			);
-			productName = WelcomeApp;
-			productReference = 1764FE6D28BC6C59004AAD5E /* RootApp.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -449,19 +248,8 @@
 						CreatedOnToolsVersion = 14.0;
 						LastSwiftMigration = 1400;
 					};
-					1764FE0F28BC07CB004AAD5E = {
-						CreatedOnToolsVersion = 14.0;
-						TestTargetID = 17D8601428BBF9F300C42970;
-					};
-					1764FE2028BC0A19004AAD5E = {
-						TestTargetID = 17D85FAC28BBECA800C42970;
-					};
 					1764FE2F28BC0A1E004AAD5E = {
 						TestTargetID = 17D85FDA28BBF5C700C42970;
-					};
-					17D85FAC28BBECA800C42970 = {
-						CreatedOnToolsVersion = 14.0;
-						LastSwiftMigration = 1400;
 					};
 				};
 			};
@@ -480,11 +268,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				17D8601428BBF9F300C42970 /* RootApp */,
-				17D85FAC28BBECA800C42970 /* AuthenticationApp */,
 				17D85FDA28BBF5C700C42970 /* CounterApp */,
-				1764FE0F28BC07CB004AAD5E /* RootUITests */,
-				1764FE2028BC0A19004AAD5E /* AuthenticationUITests */,
 				1764FE2F28BC0A1E004AAD5E /* CounterUITests */,
 				1764FE0028BC05FD004AAD5E /* IntegrationTests */,
 			);
@@ -499,20 +283,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1764FE0E28BC07CB004AAD5E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1764FE2A28BC0A19004AAD5E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1764FE3928BC0A1E004AAD5E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -520,21 +290,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17D85FAB28BBECA800C42970 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		17D85FE128BBF5C700C42970 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		17D8601B28BBF9F300C42970 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -552,37 +308,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1764FE0C28BC07CB004AAD5E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1764FE1928BC07EC004AAD5E /* RootUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1764FE2528BC0A19004AAD5E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1764FE2828BC0A19004AAD5E /* AuthenticationUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1764FE3428BC0A1E004AAD5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		17D85FA928BBECA800C42970 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				17D00CC529FD426B00325B4E /* AppDelegate.swift in Sources */,
-				17D8602528BBFAA100C42970 /* AuthenticationApp.swift in Sources */,
-				17D8602628BBFAA100C42970 /* AuthenticationAppDelegate.swift in Sources */,
-				1787621228C0F2BD0079A32C /* AuthenticationAppEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,50 +325,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17D8601628BBF9F300C42970 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				17D00CC629FD426C00325B4E /* AppDelegate.swift in Sources */,
-				178AAEAE28CBC04D00CBFC52 /* RootAppEnvironment.swift in Sources */,
-				17D8602D28BBFB0E00C42970 /* RootAppDelegate.swift in Sources */,
-				17D8602C28BBFB0C00C42970 /* RootApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1764FE1D28BC09A9004AAD5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 17D8601428BBF9F300C42970 /* RootApp */;
-			targetProxy = 1764FE1C28BC09A9004AAD5E /* PBXContainerItemProxy */;
-		};
-		1764FE1F28BC09AD004AAD5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 17D85FAC28BBECA800C42970 /* AuthenticationApp */;
-			targetProxy = 1764FE1E28BC09AD004AAD5E /* PBXContainerItemProxy */;
-		};
-		1764FE2128BC0A19004AAD5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 17D8601428BBF9F300C42970 /* RootApp */;
-			targetProxy = 1764FE2228BC0A19004AAD5E /* PBXContainerItemProxy */;
-		};
-		1764FE2328BC0A19004AAD5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 17D85FAC28BBECA800C42970 /* AuthenticationApp */;
-			targetProxy = 1764FE2428BC0A19004AAD5E /* PBXContainerItemProxy */;
-		};
-		1764FE3028BC0A1E004AAD5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 17D8601428BBF9F300C42970 /* RootApp */;
-			targetProxy = 1764FE3128BC0A1E004AAD5E /* PBXContainerItemProxy */;
-		};
-		1764FE3228BC0A1E004AAD5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 17D85FAC28BBECA800C42970 /* AuthenticationApp */;
-			targetProxy = 1764FE3328BC0A1E004AAD5E /* PBXContainerItemProxy */;
-		};
 		1764FE3F28BC0A35004AAD5E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 17D85FDA28BBF5C700C42970 /* CounterApp */;
@@ -811,82 +499,6 @@
 			};
 			name = Release;
 		};
-		1764FE1728BC07CB004AAD5E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.CovenRootUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RootApp;
-			};
-			name = Debug;
-		};
-		1764FE1828BC07CB004AAD5E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.CovenRootUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RootApp;
-			};
-			name = Release;
-		};
-		1764FE2C28BC0A19004AAD5E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.CovenAuthenticationUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = AuthenticationApp;
-			};
-			name = Debug;
-		};
-		1764FE2D28BC0A19004AAD5E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.CovenAuthenticationUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = AuthenticationApp;
-			};
-			name = Release;
-		};
 		1764FE3B28BC0A1E004AAD5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -922,75 +534,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = AuthenticationApp;
-			};
-			name = Release;
-		};
-		17D85FBE28BBECA900C42970 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Apps/Authentication App/Resources/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Modo Auth";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"-Xlinker",
-					"-interposable",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.CovenAuthentication;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		17D85FBF28BBECA900C42970 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Apps/Authentication App/Resources/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Modo Auth";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"-Xlinker",
-					"-interposable",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.CovenAuthentication;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1060,72 +603,6 @@
 			};
 			name = Release;
 		};
-		17D8601D28BBF9F300C42970 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Apps/Root App/Resources/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Modo;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"-Xlinker",
-					"-interposable",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.Coven;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		17D8601E28BBF9F300C42970 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Apps/Root App/Resources/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Modo;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"-Xlinker",
-					"-interposable",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.Coven;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1147,38 +624,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1764FE1628BC07CB004AAD5E /* Build configuration list for PBXNativeTarget "RootUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1764FE1728BC07CB004AAD5E /* Debug */,
-				1764FE1828BC07CB004AAD5E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1764FE2B28BC0A19004AAD5E /* Build configuration list for PBXNativeTarget "AuthenticationUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1764FE2C28BC0A19004AAD5E /* Debug */,
-				1764FE2D28BC0A19004AAD5E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		1764FE3A28BC0A1E004AAD5E /* Build configuration list for PBXNativeTarget "CounterUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1764FE3B28BC0A1E004AAD5E /* Debug */,
 				1764FE3C28BC0A1E004AAD5E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		17D85FC028BBECA900C42970 /* Build configuration list for PBXNativeTarget "AuthenticationApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				17D85FBE28BBECA900C42970 /* Debug */,
-				17D85FBF28BBECA900C42970 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1192,15 +642,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17D8601C28BBF9F300C42970 /* Build configuration list for PBXNativeTarget "RootApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				17D8601D28BBF9F300C42970 /* Debug */,
-				17D8601E28BBF9F300C42970 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1208,15 +649,7 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Counter;
 		};
-		172DB19C29550DE7001BB2AD /* Authentication */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Authentication;
-		};
 		1764FE0A28BC067B004AAD5E /* Root */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Root;
-		};
-		17D8602828BBFAB700C42970 /* Root */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Root;
 		};

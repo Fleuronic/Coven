@@ -7,33 +7,33 @@
 		<key>Authentication App.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>3</integer>
 		</dict>
 		<key>Counter App.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>4</integer>
 		</dict>
 		<key>Example (Playground) 1.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>28</integer>
+			<integer>29</integer>
 		</dict>
 		<key>Example (Playground) 10.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>102</integer>
+			<integer>71</integer>
 		</dict>
 		<key>Example (Playground) 11.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>103</integer>
+			<integer>72</integer>
 		</dict>
 		<key>Example (Playground) 12.xcscheme</key>
 		<dict>
@@ -96,7 +96,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>29</integer>
+			<integer>30</integer>
 		</dict>
 		<key>Example (Playground) 20.xcscheme</key>
 		<dict>
@@ -131,56 +131,56 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>54</integer>
+			<integer>48</integer>
 		</dict>
 		<key>Example (Playground) 4.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>55</integer>
+			<integer>49</integer>
 		</dict>
 		<key>Example (Playground) 5.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>56</integer>
+			<integer>50</integer>
 		</dict>
 		<key>Example (Playground) 6.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>84</integer>
+			<integer>67</integer>
 		</dict>
 		<key>Example (Playground) 7.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>85</integer>
+			<integer>68</integer>
 		</dict>
 		<key>Example (Playground) 8.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>86</integer>
+			<integer>69</integer>
 		</dict>
 		<key>Example (Playground) 9.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>101</integer>
+			<integer>70</integer>
 		</dict>
 		<key>Example (Playground).xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>27</integer>
+			<integer>28</integer>
 		</dict>
 		<key>Graph (Playground) 1.xcscheme</key>
 		<dict>
@@ -360,7 +360,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>11</integer>
 		</dict>
 		<key>Playground (Playground) 10.xcscheme</key>
 		<dict>
@@ -437,7 +437,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>12</integer>
 		</dict>
 		<key>Playground (Playground) 20.xcscheme</key>
 		<dict>
@@ -514,7 +514,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>39</integer>
+			<integer>45</integer>
 		</dict>
 		<key>Playground (Playground) 30.xcscheme</key>
 		<dict>
@@ -591,7 +591,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>40</integer>
+			<integer>46</integer>
 		</dict>
 		<key>Playground (Playground) 40.xcscheme</key>
 		<dict>
@@ -668,7 +668,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>41</integer>
+			<integer>47</integer>
 		</dict>
 		<key>Playground (Playground) 50.xcscheme</key>
 		<dict>
@@ -745,7 +745,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>78</integer>
+			<integer>55</integer>
 		</dict>
 		<key>Playground (Playground) 60.xcscheme</key>
 		<dict>
@@ -773,14 +773,14 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>79</integer>
+			<integer>56</integer>
 		</dict>
 		<key>Playground (Playground) 8.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>80</integer>
+			<integer>57</integer>
 		</dict>
 		<key>Playground (Playground) 9.xcscheme</key>
 		<dict>
@@ -794,7 +794,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>10</integer>
 		</dict>
 		<key>Playground-iOS (Playground) 1.xcscheme</key>
 		<dict>
@@ -1165,42 +1165,42 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>48</integer>
+			<integer>42</integer>
 		</dict>
 		<key>ReactiveCocoa-iOS (Playground) 4.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>49</integer>
+			<integer>43</integer>
 		</dict>
 		<key>ReactiveCocoa-iOS (Playground) 5.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>50</integer>
+			<integer>44</integer>
 		</dict>
 		<key>ReactiveCocoa-iOS (Playground) 6.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>63</integer>
+			<integer>61</integer>
 		</dict>
 		<key>ReactiveCocoa-iOS (Playground) 7.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>64</integer>
+			<integer>62</integer>
 		</dict>
 		<key>ReactiveCocoa-iOS (Playground) 8.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>65</integer>
+			<integer>63</integer>
 		</dict>
 		<key>ReactiveCocoa-iOS (Playground) 9.xcscheme</key>
 		<dict>
@@ -1249,42 +1249,42 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>45</integer>
+			<integer>36</integer>
 		</dict>
 		<key>ReactiveCocoa-macOS (Playground) 4.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>46</integer>
+			<integer>40</integer>
 		</dict>
 		<key>ReactiveCocoa-macOS (Playground) 5.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>47</integer>
+			<integer>41</integer>
 		</dict>
 		<key>ReactiveCocoa-macOS (Playground) 6.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>66</integer>
+			<integer>64</integer>
 		</dict>
 		<key>ReactiveCocoa-macOS (Playground) 7.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>67</integer>
+			<integer>65</integer>
 		</dict>
 		<key>ReactiveCocoa-macOS (Playground) 8.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>68</integer>
+			<integer>66</integer>
 		</dict>
 		<key>ReactiveCocoa-macOS (Playground) 9.xcscheme</key>
 		<dict>
@@ -1333,42 +1333,42 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>42</integer>
+			<integer>37</integer>
 		</dict>
 		<key>ReactiveCocoa-tvOS (Playground) 4.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>43</integer>
+			<integer>38</integer>
 		</dict>
 		<key>ReactiveCocoa-tvOS (Playground) 5.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>44</integer>
+			<integer>39</integer>
 		</dict>
 		<key>ReactiveCocoa-tvOS (Playground) 6.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>69</integer>
+			<integer>58</integer>
 		</dict>
 		<key>ReactiveCocoa-tvOS (Playground) 7.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>70</integer>
+			<integer>59</integer>
 		</dict>
 		<key>ReactiveCocoa-tvOS (Playground) 8.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>71</integer>
+			<integer>60</integer>
 		</dict>
 		<key>ReactiveCocoa-tvOS (Playground) 9.xcscheme</key>
 		<dict>
@@ -1389,7 +1389,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>13</integer>
 		</dict>
 		<key>ReactiveSwift (Playground) 10.xcscheme</key>
 		<dict>
@@ -1466,7 +1466,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>14</integer>
 		</dict>
 		<key>ReactiveSwift (Playground) 20.xcscheme</key>
 		<dict>
@@ -1501,42 +1501,42 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>33</integer>
+			<integer>27</integer>
 		</dict>
 		<key>ReactiveSwift (Playground) 4.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>34</integer>
+			<integer>31</integer>
 		</dict>
 		<key>ReactiveSwift (Playground) 5.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>35</integer>
+			<integer>32</integer>
 		</dict>
 		<key>ReactiveSwift (Playground) 6.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>51</integer>
+			<integer>49</integer>
 		</dict>
 		<key>ReactiveSwift (Playground) 7.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>52</integer>
+			<integer>50</integer>
 		</dict>
 		<key>ReactiveSwift (Playground) 8.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>53</integer>
+			<integer>51</integer>
 		</dict>
 		<key>ReactiveSwift (Playground) 9.xcscheme</key>
 		<dict>
@@ -1550,14 +1550,14 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>9</integer>
 		</dict>
 		<key>ReactiveSwift-UIExamples (Playground) 1.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>16</integer>
 		</dict>
 		<key>ReactiveSwift-UIExamples (Playground) 10.xcscheme</key>
 		<dict>
@@ -1634,7 +1634,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>17</integer>
 		</dict>
 		<key>ReactiveSwift-UIExamples (Playground) 20.xcscheme</key>
 		<dict>
@@ -1669,42 +1669,42 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>36</integer>
+			<integer>33</integer>
 		</dict>
 		<key>ReactiveSwift-UIExamples (Playground) 4.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>37</integer>
+			<integer>34</integer>
 		</dict>
 		<key>ReactiveSwift-UIExamples (Playground) 5.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>38</integer>
+			<integer>35</integer>
 		</dict>
 		<key>ReactiveSwift-UIExamples (Playground) 6.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>48</integer>
+			<integer>52</integer>
 		</dict>
 		<key>ReactiveSwift-UIExamples (Playground) 7.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>49</integer>
+			<integer>53</integer>
 		</dict>
 		<key>ReactiveSwift-UIExamples (Playground) 8.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>50</integer>
+			<integer>54</integer>
 		</dict>
 		<key>ReactiveSwift-UIExamples (Playground) 9.xcscheme</key>
 		<dict>
@@ -1718,12 +1718,33 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>15</integer>
 		</dict>
 		<key>Root App.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>2</integer>
+		</dict>
+		<key>Rx (Playground) 1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
+		<key>Rx (Playground) 2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
+		<key>Rx (Playground).xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>SQLite (Playground) 1.xcscheme</key>
 		<dict>

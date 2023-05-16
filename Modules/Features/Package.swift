@@ -14,56 +14,24 @@ let package = Package(
 		.library(
 			name: "Counter",
 			targets: ["Counter"]
-		),
-		.library(
-			name: "Authentication",
-			targets: ["Authentication"]
 		)
 	],
 	dependencies: [
-		.package(name: "Models", path: "../Models"),
-		.package(name: "Services", path: "../Services"),
-		.package(name: "Presentation", path: "../Presentation"),
-		.package(url: "https://github.com/square/workflow-swift", from: "1.0.0-rc.1"),
-		.package(url: "https://github.com/Fleuronic/WorkflowContainers", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Ergo", branch: "main"),
-		.package(url: "https://github.com/Fleuronic/Geometric", branch: "main"),
-		.package(url: "https://github.com/Fleuronic/Telemetric", branch: "main")
+		.package(url: "https://github.com/Fleuronic/WorkflowContainers", branch: "main")
 	],
 	targets: [
 		.target(
 			name: "Root",
 			dependencies: [
-				"Counter",
-				"Authentication"
+				"Counter"
 			]
 		),
 		.target(
 			name: "Counter",
 			dependencies: [
-				"Geometric",
-				"Presentation",
+				"Ergo",
 				"WorkflowContainers",
-				.product(name: "ErgoSwiftUI", package: "Ergo")
-			]
-		),
-		.target(
-			name: "Authentication",
-			dependencies: [
-				"Geometric",
-				"Telemetric",
-				"Presentation",
-				"WorkflowContainers",
-				.product(name: "ErgoUIKit", package: "Ergo"),
-				.product(name: "Coven", package: "Models"),
-				.product(name: "CovenService", package: "Services")
-			]
-		),
-		.testTarget(
-			name: "RootTests",
-			dependencies: [
-				"Root",
-				.product(name: "WorkflowTesting", package: "workflow-swift"),
 			]
 		)
 	]

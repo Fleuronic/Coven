@@ -1,60 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "caesura",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Caesura",
-      "state" : {
-        "branch" : "main",
-        "revision" : "23165de4336b18fea558721a7982b11a2ff18888"
-      }
-    },
-    {
-      "identity" : "catena",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Catena",
-      "state" : {
-        "branch" : "main",
-        "revision" : "6fdb628d6ea348e3c45bb25ae3ec0ccf6b43aa09"
-      }
-    },
-    {
-      "identity" : "catenary",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Catenary",
-      "state" : {
-        "branch" : "main",
-        "revision" : "2f87e36baa2e0148c3b2e4d56a03f5a793b24d3e"
-      }
-    },
-    {
-      "identity" : "catenoid",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Catenoid",
-      "state" : {
-        "branch" : "main",
-        "revision" : "80b5a19e0650219928f7df5353ff683c09304e60"
-      }
-    },
-    {
-      "identity" : "collectionconcurrencykit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/JohnSundell/CollectionConcurrencyKit.git",
-      "state" : {
-        "revision" : "b4f23e24b5a1bff301efc5e70871083ca029ff95",
-        "version" : "0.2.0"
-      }
-    },
-    {
-      "identity" : "differ",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/tonyarnold/Differ.git",
-      "state" : {
-        "revision" : "5520fda947f1f9777a806389c2ba587219bc0538",
-        "version" : "1.4.6"
-      }
-    },
-    {
       "identity" : "dynamiccolor",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/yannickl/DynamicColor",
@@ -66,7 +12,7 @@
     {
       "identity" : "enumkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/gringoireDM/EnumKit.git",
+      "location" : "https://github.com/gringoireDM/EnumKit",
       "state" : {
         "revision" : "ae639dfac5c7116abb64c5f62124915f627140e4",
         "version" : "1.1.3"
@@ -78,25 +24,7 @@
       "location" : "https://github.com/Fleuronic/Ergo",
       "state" : {
         "branch" : "main",
-        "revision" : "75a7b60712fae2188f3bf452a81ec14a415aa1ed"
-      }
-    },
-    {
-      "identity" : "geometric",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Geometric",
-      "state" : {
-        "branch" : "main",
-        "revision" : "23750936d4b2037d6dce76ed4a00c1d6fa1d7d8e"
-      }
-    },
-    {
-      "identity" : "identity",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/JohnSundell/Identity",
-      "state" : {
-        "revision" : "c3c9102e8d5c2cfcc44a8c7c4bbb7cf3f7c12be9",
-        "version" : "0.3.0"
+        "revision" : "134a28184430e554cb2193a48c350ccde5c5fb11"
       }
     },
     {
@@ -109,39 +37,12 @@
       }
     },
     {
-      "identity" : "layoutless",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/DeclarativeHub/Layoutless",
-      "state" : {
-        "revision" : "50ae5ab4cb9bf676c1901f4ba0f267f27e68d0a7",
-        "version" : "0.4.3"
-      }
-    },
-    {
       "identity" : "metric",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Metric",
+      "location" : "https://github.com/Fleuronic/Metric.git",
       "state" : {
         "branch" : "main",
         "revision" : "93d7e56a8dd665d877c0caeba71db049fc04ae12"
-      }
-    },
-    {
-      "identity" : "persistdb",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/PersistDB",
-      "state" : {
-        "branch" : "master",
-        "revision" : "e9ee082e3da39e3e3f7eacf95a6302ffb5c64b94"
-      }
-    },
-    {
-      "identity" : "reactivecocoa",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ReactiveCocoa/ReactiveCocoa",
-      "state" : {
-        "revision" : "8a5b07b18c6abb8e12fb845bf742675dc4914ed8",
-        "version" : "12.0.0"
       }
     },
     {
@@ -149,35 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ReactiveCocoa/ReactiveSwift.git",
       "state" : {
-        "branch" : "swift-concurrency",
-        "revision" : "3d40187c982346352d0adbe6b38e0e3d53fddc95"
-      }
-    },
-    {
-      "identity" : "schemata",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Schemata",
-      "state" : {
-        "branch" : "master",
-        "revision" : "781162892f5f9da4a155a25dc47ff948e26b3960"
-      }
-    },
-    {
-      "identity" : "sociableweaver",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/NicholasBellucci/SociableWeaver.git",
-      "state" : {
-        "revision" : "dd8368fcf1f8fef5d672ea64775dc6f7b02d7a92",
-        "version" : "0.1.12"
-      }
-    },
-    {
-      "identity" : "telemetric",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Telemetric",
-      "state" : {
-        "branch" : "main",
-        "revision" : "bd1b0f99be080c97c56b2f06b78b5bf081de5ed9"
+        "revision" : "c43bae3dac73fdd3cb906bd5a1914686ca71ed3c",
+        "version" : "6.7.0"
       }
     },
     {

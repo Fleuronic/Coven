@@ -1,7 +1,5 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Assets.Strings
-
 public enum Counter {}
 
 // MARK: -
@@ -13,16 +11,7 @@ public extension Counter {
 	}
 }
 
-// MARK: -
-public extension Counter.Screen {
-	typealias Strings = Assets.Strings.Counter
-}
-
 extension Counter.Screen {
-//	var valueText: ScreenString {
-//		{ $0.value(value) }
-//	}
-
 	var valueText: String {
 		"The value is \(value)"
 	}
