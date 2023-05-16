@@ -10,8 +10,8 @@ public extension Counter {
 }
 
 // MARK: -
-extension Counter.View: Bodied {
-	public func body(with screen: Counter.Screen) -> some View {
+extension Counter.View: ScreenBacked {
+	public func body(backedBy screen: Counter.Screen) -> some View {
 		VStack {
 			Text(screen.valueText)
 			Button(action: screen.increment) {
