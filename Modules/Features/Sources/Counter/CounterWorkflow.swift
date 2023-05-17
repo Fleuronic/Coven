@@ -7,36 +7,45 @@ import Ergo
 
 public extension Counter {
 	struct Workflow {
-		public init() {}
+		private let screenWrapper: ScreenWrapper
+
+		public init(screenWrapper: @escaping ScreenWrapper) {
+			self.screenWrapper = screenWrapper
+		}
 	}
 }
 
 // MARK: -
 extension Counter.Workflow: Workflow {
-	public typealias Output = Never
+	public typealias Output = Void
+	public typealias ScreenWrapper = (Counter.Screen) -> AnyScreen
 
-	public func makeInitialState() -> Int {
-		0
-	}
+	public func makeInitialState() -> Int { 0 }
 
-	public func render(state: Int, context: RenderContext<Self>) -> AnyScreen {
+	public func render(
+		state value: Int,
+		context: RenderContext<Self>
+	) -> BackStack.Item {
 		context.render { (sink: Sink<Action>) in
-			BackStack.Screen(
-				items: [
-					.init(
-						screen: Counter.Screen(
-							value: state,
-							increment: { sink.send(.increment) },
-							decrement: { sink.send(.decrement) }
-						),
-						barContent: .init(title: "Counter",
-							rightItem: .init(
-								content: .text("Reset"),
-								handler: { sink.send(.reset) }
-							)
-						)
+			.init(
+				screen: screenWrapper(
+					Counter.Screen(
+						value: value,
+						increment: { sink.send(.increment) },
+						decrement: { sink.send(.decrement) }
 					)
-				]
+				),
+				barContent: .init(
+					title: "Counter",
+					leftItem: .init(
+						content: .back(title: nil),
+						handler: { sink.send(.finish) }
+					),
+					rightItem: .init(
+						content: .text("Reset"),
+						handler: { sink.send(.reset) }
+					)
+				)
 			)
 		}
 	}
@@ -48,6 +57,7 @@ private extension Counter.Workflow {
 		case increment
 		case decrement
 		case reset
+		case finish
 	}
 }
 
@@ -55,14 +65,16 @@ private extension Counter.Workflow {
 extension Counter.Workflow.Action: WorkflowAction {
 	typealias WorkflowType = Counter.Workflow
 
-	func apply(toState state: inout Int) -> Never? {
+	func apply(toState value: inout Int) -> Void? {
 		switch self {
 		case .increment:
-			state += 1
+			value += 1
 		case .decrement:
-			state -= 1
+			value -= 1
 		case .reset:
-			state = 0
+			value = 0
+		case .finish:
+			return ()
 		}
 		return nil
 	}

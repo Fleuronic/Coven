@@ -1,17 +1,17 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import SwiftUI
-import Ergo
+import ErgoSwiftUI
 
-public extension Counter {
+public extension Counter.SwiftUI {
 	struct View {
 		public init() {}
 	}
 }
 
 // MARK: -
-extension Counter.View: ScreenBacked {
-	public func body(backedBy screen: Counter.Screen) -> some View {
+extension Counter.SwiftUI.View: ScreenBackedView {
+	public func body(backedBy screen: Counter.SwiftUI.Screen) -> some View {
 		VStack {
 			Text(screen.valueText)
 			Button(action: screen.increment) {
@@ -24,8 +24,7 @@ extension Counter.View: ScreenBacked {
 	}
 }
 
-
 // MARK: -
-extension Counter.Screen: PublishedScreen {
-	public typealias View = Counter.View
+extension Counter.SwiftUI.Screen: PublishedScreen {
+	public typealias View = Counter.SwiftUI.View
 }

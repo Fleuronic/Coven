@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "WelcomeApp"
-               BuildableName = "WelcomeApp"
-               BlueprintName = "WelcomeApp"
-               ReferencedContainer = "container:Packages/Apps">
+               BlueprintIdentifier = "Root"
+               BuildableName = "Root"
+               BlueprintName = "Root"
+               ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Welcome"
-            BuildableName = "Welcome"
-            BlueprintName = "Welcome"
-            ReferencedContainer = "container:Modules/Components">
+            BlueprintIdentifier = "Root"
+            BuildableName = "Root"
+            BlueprintName = "Root"
+            ReferencedContainer = "container:">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -43,10 +43,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1764FE2028BC0A19004AAD5E"
-               BuildableName = "AuthenticationUITests.xctest"
-               BlueprintName = "AuthenticationUITests"
-               ReferencedContainer = "container:Coven.xcodeproj">
+               BlueprintIdentifier = "RootTests"
+               BuildableName = "RootTests"
+               BlueprintName = "RootTests"
+               ReferencedContainer = "container:">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -61,34 +61,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "17D85FAC28BBECA800C42970"
-            BuildableName = "AuthenticationApp.app"
-            BlueprintName = "AuthenticationApp"
-            ReferencedContainer = "container:Coven.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-AppleLanguages (eo)"
-            isEnabled = "NO">
-         </CommandLineArgument>
-      </CommandLineArguments>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "initialPassword"
-            value = "password"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "initialUsername"
-            value = "jordanekay"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -99,10 +71,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "WelcomeApp"
-            BuildableName = "WelcomeApp"
-            BlueprintName = "WelcomeApp"
-            ReferencedContainer = "container:Packages/Apps">
+            BlueprintIdentifier = "Root"
+            BuildableName = "Root"
+            BlueprintName = "Root"
+            ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -3,140 +3,75 @@
 import Workflow
 import WorkflowUI
 import WorkflowContainers
-import CovenAPI
+import EnumKit
 
+import enum Models.Demo
 import enum Counter.Counter
-import enum Authentication.Authentication
-import struct Coven.Credentials
-import struct Coven.User
-import struct Coven.Account
-import protocol CovenService.LaunchSpec
-import protocol CovenService.LoginSpec
-import protocol CovenService.CredentialsSpec
 
-public enum Root {}
-
-// MARK: -
 public extension Root {
-	struct Workflow<
-		LaunchService: LaunchSpec,
-		LoginService: LoginSpec,
-		CredentialsService: CredentialsSpec
-	> where
-		LoginService.LoginResult == Login.Result,
-		CredentialsService.VerificationResult == Coven.Credentials.Verification.Result {
-		private let launchService: LaunchService
-		private let loginService: LoginService
-		private let credentialsService: CredentialsService
-		private let initialCredentials: Credentials
-
-		public init(
-			launchService: LaunchService,
-			loginService: LoginService,
-			credentialsService: CredentialsService,
-			initialCredentials: Credentials
-		) {
-			self.launchService = launchService
-			self.loginService = loginService
-			self.credentialsService = credentialsService
-			self.initialCredentials = initialCredentials
-		}
+	struct Workflow {
+		public init() {}
 	}
 }
 
 // MARK: -
 extension Root.Workflow {
-	enum Action {
-		case authenticate
-		case deauthenticate
-		case activate(Account.Identified.ID)
+	enum Action: CaseAccessible {
+		case demo(Demo)
+		case finishDemo
 	}
 }
 
 // MARK: -
 extension Root.Workflow: Workflow {
-	public typealias Rendering = AnyScreen
+	public func makeInitialState() -> Demo? { nil }
 
-	public enum State {
-		case launch
-		case main
-		case authentication
-	}
-
-	public func makeInitialState() -> State {
-		.launch
-	}
-
-	public func render(state: State, context: RenderContext<Self>) -> Rendering {
-		switch state {
-		case .launch:
-			return launchScreen(in: context)
-		case .main:
-			return mainScreen(in: context)
-		case .authentication:
-			return authenticationScreen(in: context)
+	public func render(
+		state selectedDemo: Demo?,
+		context: RenderContext<Self>
+	) -> BackStack.Screen<AnyScreen> {
+		context.render { (sink: Sink<Action>) in
+			.init(
+				items: [
+					.init(
+						screen: Root.Screen(
+							selectedDemo: selectedDemo,
+							demoSelected: { demo in
+								demo.map { sink.send(.demo($0)) }
+							}
+						).asAnyScreen(),
+						barContent: .init(title: "Workflow Demo")
+					),
+					selectedDemo
+						.map(screenWrapper)
+						.map(Counter.Workflow.init)?
+						.mapOutput { Action.finishDemo }
+						.rendered(in: context)
+				]
+			)
 		}
 	}
 }
 
-// MARK: -
 private extension Root.Workflow {
-	func launchScreen(in context: RenderContext<Self>) -> AnyScreen {
-		let workflow = Root.Launch.Workflow(
-			service: launchService
-		)
-
-		return workflow
-			.mapOutput(authenticationAction)
-			.rendered(in: context)
-			.asAnyScreen()
-	}
-
-	func mainScreen(in context: RenderContext<Self>) -> AnyScreen {
-		let workflow = Counter.Workflow()
-
-		return workflow
-			.mapOutput { Action.deauthenticate }
-			.rendered(in: context)
-			.asAnyScreen()
-	}
-
-	func authenticationScreen(in context: RenderContext<Self>) -> AnyScreen {
-		let workflow = Authentication.Workflow(
-			loginService: loginService,
-			credentialsService: credentialsService,
-			initialCredentials: initialCredentials
-		)
-
-		return workflow
-			.mapOutput(Action.activate)
-			.rendered(in: context)
-			.asAnyScreen()
-	}
-
-	func authenticationAction(for output: Root.Launch.Workflow<LaunchService>.Output) -> Action {
-		switch output {
-		case .unauthenticated:
-			return .authenticate
-		case let .authenticated(accountID):
-			return .activate(accountID)
+	func screenWrapper(for demo: Demo) -> (Counter.Screen) -> AnyScreen {
+		switch demo {
+		case .swiftUI:
+			return Counter.SwiftUI.Screen.wrap
+		case .uiKit(false):
+			return Counter.UIKit.Screen.wrap
+		case .uiKit(true):
+			return Counter.DeclarativeUIKit.Screen.wrap
 		}
 	}
 }
 
 // MARK: -
 extension Root.Workflow.Action: WorkflowAction {
-	typealias WorkflowType = Root.Workflow<LaunchService, LoginService, CredentialsService>
+	public typealias WorkflowType = Root.Workflow
 
-	func apply(toState state: inout WorkflowType.State) -> Never? {
-		switch self {
-		case .authenticate:
-			state = .authentication
-		case .deauthenticate:
-			state = .authentication
-		case .activate:
-			state = .main
-		}
+	public func apply(toState selectedDemo: inout Demo?) -> Never? {
+		selectedDemo = associatedValue()
 		return nil
 	}
 }

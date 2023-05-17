@@ -11,6 +11,7 @@ public extension Counter {
 	}
 }
 
+// MARK: -
 extension Counter.Screen {
 	var valueText: String {
 		"The value is \(value)"
