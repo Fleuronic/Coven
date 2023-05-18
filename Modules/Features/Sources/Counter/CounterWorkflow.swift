@@ -36,7 +36,7 @@ extension Counter.Workflow: Workflow {
 		context.render { (sink: Sink<Action>) in
 			.init(
 				screen: screenWrapper(
-					Counter.Screen(
+					.init(
 						value: value,
 						increment: { sink.send(.increment) },
 						decrement: { sink.send(.decrement) }
@@ -50,6 +50,7 @@ extension Counter.Workflow: Workflow {
 					),
 					rightItem: .init(
 						content: .text("Reset"),
+						isEnabled: value != 0,
 						handler: { sink.send(.reset) }
 					)
 				)
