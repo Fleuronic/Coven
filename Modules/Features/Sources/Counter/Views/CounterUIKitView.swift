@@ -9,38 +9,28 @@ public extension Counter.UIKit {
 		private let valueLabel: UILabel
 		private let incrementButton: UIButton
 		private let decrementButton: UIButton
+		private let increment: () -> Void
+		private let decrement: () -> Void
 
-		// MARK: UpdatedView
+		// MARK: UpdatingView
 		public init(screen: Screen) {
 			valueLabel = .init()
-			incrementButton = .init(
-				type: .system,
-				primaryAction: .init { _ in screen.increment() }
-			)
-			decrementButton = .init(
-				type: .system,
-				primaryAction: .init { _ in screen.decrement() }
-			)
-			stackView = .init(
-				arrangedSubviews: [
-					valueLabel,
-					incrementButton,
-					decrementButton
-				]
-			)
-			stackView.axis = .vertical
-			stackView.translatesAutoresizingMaskIntoConstraints = false
+			incrementButton = .init(type: .system)
+			decrementButton = .init(type: .system)
+			stackView = .init(arrangedSubviews: [valueLabel, incrementButton, decrementButton])
+			increment = screen.increment
+			decrement = screen.decrement
 
 			super.init(frame: .zero)
-			update(with: screen)
+
+			incrementButton.addTarget(self, action: #selector(incrementButtonTapped), for: .touchUpInside)
+			decrementButton.addTarget(self, action: #selector(decrementButtonTapped), for: .touchUpInside)
 
 			addSubview(stackView)
-			NSLayoutConstraint.activate(
-				[
-					stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-					stackView.centerYAnchor.constraint(equalTo: centerYAnchor)
-				]
-			)
+			stackView.axis = .vertical
+			stackView.translatesAutoresizingMaskIntoConstraints = false
+			stackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+			stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
 		}
 
 		// MARK: NSCoding
@@ -51,8 +41,8 @@ public extension Counter.UIKit {
 }
 
 // MARK: -
-extension Counter.UIKit.View: UpdatedView {
-	// MARK: UpdatedView
+extension Counter.UIKit.View: Updating {
+	// MARK: UpdatingView
 	public func update(with screen: Counter.UIKit.Screen) {
 		valueLabel.text = screen.valueText
 		incrementButton.setTitle(screen.incrementTitle, for: .normal)
@@ -61,6 +51,17 @@ extension Counter.UIKit.View: UpdatedView {
 }
 
 // MARK: -
-extension Counter.UIKit.Screen: UpdatedScreen {
+private extension Counter.UIKit.View {
+	@objc func incrementButtonTapped() {
+		increment()
+	}
+
+	@objc func decrementButtonTapped() {
+		decrement()
+	}
+}
+
+// MARK: -
+extension Counter.UIKit.Screen: UpdatingScreen {
 	public typealias View = Counter.UIKit.View
 }

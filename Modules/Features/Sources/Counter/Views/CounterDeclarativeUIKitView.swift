@@ -1,7 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import UIKit
-import Geometric
 import Telemetric
 import Layoutless
 import ErgoDeclarativeUIKit
@@ -11,7 +10,7 @@ public extension Counter.DeclarativeUIKit {
 }
 
 // MARK: -
-extension Counter.DeclarativeUIKit.View: ReactiveView {
+extension Counter.DeclarativeUIKit.View: LayoutProvider {
 	public typealias Screen = Counter.DeclarativeUIKit.Screen
 
 	public func layout(with screen: some ScreenProxy<Counter.DeclarativeUIKit.Screen>) -> AnyLayout {
@@ -29,6 +28,6 @@ extension Counter.DeclarativeUIKit.View: ReactiveView {
 }
 
 // MARK: -
-extension Counter.DeclarativeUIKit.Screen: ReactiveScreen {
+extension Counter.DeclarativeUIKit.Screen: LayoutBackingScreen {
 	public typealias View = Counter.DeclarativeUIKit.View
 }

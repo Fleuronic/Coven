@@ -43,8 +43,7 @@ extension Root.Workflow: Workflow {
 						barContent: .init(title: "Workflow Demo")
 					),
 					selectedDemo
-						.map(screenWrapper)
-						.map(Counter.Workflow.init)?
+						.map(counterWorkflow)?
 						.mapOutput { Action.finishDemo }
 						.rendered(in: context)
 				]
@@ -54,15 +53,22 @@ extension Root.Workflow: Workflow {
 }
 
 private extension Root.Workflow {
-	func screenWrapper(for demo: Demo) -> (Counter.Screen) -> AnyScreen {
-		switch demo {
-		case .swiftUI:
-			return Counter.SwiftUI.Screen.wrap
-		case .uiKit(false):
-			return Counter.UIKit.Screen.wrap
-		case .uiKit(true):
-			return Counter.DeclarativeUIKit.Screen.wrap
-		}
+	func counterWorkflow(for demo: Demo) -> Counter.Workflow {
+		let screenWrapper = {
+			switch demo {
+			case .swiftUI:
+				return Counter.SwiftUI.Screen.wrap
+			case .uiKit(false):
+				return Counter.UIKit.Screen.wrap
+			case .uiKit(true):
+				return Counter.DeclarativeUIKit.Screen.wrap
+			}
+		}()
+
+		return .init(
+			demo: demo,
+			screenWrapper: screenWrapper
+		)
 	}
 }
 

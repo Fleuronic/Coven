@@ -5,11 +5,18 @@ import WorkflowUI
 import WorkflowContainers
 import Ergo
 
+import enum Models.Demo
+
 public extension Counter {
 	struct Workflow {
+		private let demo: Demo
 		private let screenWrapper: ScreenWrapper
 
-		public init(screenWrapper: @escaping ScreenWrapper) {
+		public init(
+			demo: Demo,
+			screenWrapper: @escaping ScreenWrapper
+		) {
+			self.demo = demo
 			self.screenWrapper = screenWrapper
 		}
 	}
@@ -36,7 +43,7 @@ extension Counter.Workflow: Workflow {
 					)
 				),
 				barContent: .init(
-					title: "Counter",
+					title: title,
 					leftItem: .init(
 						content: .back(title: nil),
 						handler: { sink.send(.finish) }
@@ -58,6 +65,10 @@ private extension Counter.Workflow {
 		case decrement
 		case reset
 		case finish
+	}
+
+	var title: String {
+		"\(demo.name) Counter Demo"
 	}
 }
 

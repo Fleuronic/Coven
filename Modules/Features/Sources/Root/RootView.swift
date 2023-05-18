@@ -10,8 +10,8 @@ public extension Root {
 }
 
 // MARK: -
-extension Root.View: ScreenBackedView {
-	public func body(backedBy screen: Root.Screen) -> some View {
+extension Root.View: BodyProvider {
+	public func body(with screen: Root.Screen) -> some View {
 		List(
 			screen.demos,
 			selection: .init(
@@ -23,6 +23,6 @@ extension Root.View: ScreenBackedView {
 }
 
 // MARK: -
-extension Root.Screen: PublishedScreen {
+extension Root.Screen: BodyBackingScreen {
 	public typealias View = Root.View
 }
