@@ -34,6 +34,7 @@ let package = Package(
 		.target(
 			name: "Counter",
 			dependencies: [
+				"Models",
 				"ErgoUIKit",
 				"ErgoSwiftUI",
 				"ErgoDeclarativeUIKit",
