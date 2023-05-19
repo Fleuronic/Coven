@@ -1,6 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Ergo
+import protocol Ergo.WrappedScreen
 
 public extension Counter {
 	enum SwiftUI {}

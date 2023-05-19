@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1742EFCB2A13D08400E07F06 /* Root in Frameworks */ = {isa = PBXBuildFile; productRef = 1742EFCA2A13D08400E07F06 /* Root */; };
-		1764FE0B28BC067B004AAD5E /* Root in Frameworks */ = {isa = PBXBuildFile; productRef = 1764FE0A28BC067B004AAD5E /* Root */; };
-		1764FE4828BC1FF1004AAD5E /* AppFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */; };
 		17D00CBE29FC8E4E00325B4E /* RootApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D00CB829FC8DCB00325B4E /* RootApp.swift */; };
 		17D00CBF29FC8E5200325B4E /* RootAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D00CBA29FC8DD100325B4E /* RootAppDelegate.swift */; };
 		17D00CC429FD426A00325B4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787621728C0F81A0079A32C /* AppDelegate.swift */; };
@@ -19,7 +17,6 @@
 		17209CD329BBC8D800C224A6 /* RootApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RootApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1758E7D82A151FB500E284CC /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Models; path = Modules/Models; sourceTree = "<group>"; };
 		1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlowTests.swift; sourceTree = "<group>"; };
-		1764FE7328BC6C59004AAD5E /* IntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1787621728C0F81A0079A32C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17D00CB729FC79D900325B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17D00CB829FC8DCB00325B4E /* RootApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootApp.swift; sourceTree = "<group>"; };
@@ -28,14 +25,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1764FDFE28BC05FD004AAD5E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1764FE0B28BC067B004AAD5E /* Root in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		17D85FDF28BBF5C700C42970 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,7 +42,6 @@
 				1749DCCE28BB886300C4AFC9 /* Modules */,
 				17D85FEB28BBF62100C42970 /* Apps */,
 				1764FE4D28BC2908004AAD5E /* Tests */,
-				1764FE7328BC6C59004AAD5E /* IntegrationTests.xctest */,
 				17209CD329BBC8D800C224A6 /* RootApp.app */,
 			);
 			sourceTree = "<group>";
@@ -121,26 +109,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1764FE0028BC05FD004AAD5E /* IntegrationTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1764FE0528BC05FD004AAD5E /* Build configuration list for PBXNativeTarget "IntegrationTests" */;
-			buildPhases = (
-				1764FDFD28BC05FD004AAD5E /* Sources */,
-				1764FDFE28BC05FD004AAD5E /* Frameworks */,
-				1764FDFF28BC05FD004AAD5E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = IntegrationTests;
-			packageProductDependencies = (
-				1764FE0A28BC067B004AAD5E /* Root */,
-			);
-			productName = IntegrationTests;
-			productReference = 1764FE7328BC6C59004AAD5E /* IntegrationTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		17D85FDA28BBF5C700C42970 /* RootApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17D85FE228BBF5C700C42970 /* Build configuration list for PBXNativeTarget "RootApp" */;
@@ -168,14 +136,8 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1330;
-				TargetAttributes = {
-					1764FE0028BC05FD004AAD5E = {
-						CreatedOnToolsVersion = 14.0;
-						LastSwiftMigration = 1400;
-					};
-				};
 			};
 			buildConfigurationList = 170B0CF828A6DDF40033029D /* Build configuration list for PBXProject "Coven" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -193,19 +155,11 @@
 			projectRoot = "";
 			targets = (
 				17D85FDA28BBF5C700C42970 /* RootApp */,
-				1764FE0028BC05FD004AAD5E /* IntegrationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1764FDFF28BC05FD004AAD5E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		17D85FE128BBF5C700C42970 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,14 +170,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1764FDFD28BC05FD004AAD5E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1764FE4828BC1FF1004AAD5E /* AppFlowTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		17D85FDC28BBF5C700C42970 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,53 +299,6 @@
 			};
 			name = Release;
 		};
-		1764FE0628BC05FD004AAD5E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.TodoIntegrationTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		1764FE0728BC05FD004AAD5E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.TodoIntegrationTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		17D85FE328BBF5C700C42970 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -478,15 +377,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1764FE0528BC05FD004AAD5E /* Build configuration list for PBXNativeTarget "IntegrationTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1764FE0628BC05FD004AAD5E /* Debug */,
-				1764FE0728BC05FD004AAD5E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		17D85FE228BBF5C700C42970 /* Build configuration list for PBXNativeTarget "RootApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -500,10 +390,6 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		1742EFCA2A13D08400E07F06 /* Root */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Root;
-		};
-		1764FE0A28BC067B004AAD5E /* Root */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Root;
 		};

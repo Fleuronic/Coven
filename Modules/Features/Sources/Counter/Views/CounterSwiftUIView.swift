@@ -11,7 +11,11 @@ public extension Counter.SwiftUI {
 
 // MARK: -
 extension Counter.SwiftUI.View: BodyProvider {
-	public func body(with screen: Counter.SwiftUI.Screen) -> some View {
+	// MARK: ScreenBacked
+	public typealias Screen = Counter.SwiftUI.Screen
+
+	// MARK: BodyProvider
+	public func body(with screen: Screen) -> some View {
 		VStack {
 			Text(screen.valueText)
 			Button(action: screen.increment) {
@@ -26,5 +30,6 @@ extension Counter.SwiftUI.View: BodyProvider {
 
 // MARK: -
 extension Counter.SwiftUI.Screen: BodyBackingScreen {
+	// MARK: BodyBackingScreen
 	public typealias View = Counter.SwiftUI.View
 }

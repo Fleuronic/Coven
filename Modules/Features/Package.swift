@@ -39,6 +39,14 @@ let package = Package(
 				"ErgoDeclarativeUIKit",
 				"WorkflowContainers"
 			]
+		),
+		.testTarget(
+			name: "RootTests",
+			dependencies: ["Root"]
+		),
+		.testTarget(
+			name: "CounterTests",
+			dependencies: ["Counter"]
 		)
 	]
 )

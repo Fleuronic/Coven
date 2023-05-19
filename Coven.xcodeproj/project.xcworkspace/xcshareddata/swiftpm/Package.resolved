@@ -24,7 +24,7 @@
       "location" : "https://github.com/Fleuronic/Ergo",
       "state" : {
         "branch" : "main",
-        "revision" : "5d9a6ce79adf79e548addfa87d4e29b79f69ca47"
+        "revision" : "40b0bced455f29ffd9b6f96d3b2dd2152c589412"
       }
     },
     {
@@ -33,7 +33,7 @@
       "location" : "https://github.com/Fleuronic/ErgoDeclarativeUIKit",
       "state" : {
         "branch" : "main",
-        "revision" : "915bb8034ef140ba5b6ac1524e6e5cadc41046cf"
+        "revision" : "c8423cc0fa8efe5b4bc45b0bdf5427fb596e60ab"
       }
     },
     {
@@ -42,7 +42,7 @@
       "location" : "https://github.com/Fleuronic/ErgoSwiftUI",
       "state" : {
         "branch" : "main",
-        "revision" : "1e1e6e85f7d9f2fef045ac70f4b89fca89187d86"
+        "revision" : "e2c2c6f2ebb27c2d145d75bca625e53b20b161b5"
       }
     },
     {
@@ -51,7 +51,7 @@
       "location" : "https://github.com/Fleuronic/ErgoUIKit",
       "state" : {
         "branch" : "main",
-        "revision" : "828b3203dd94e130e162e976ecacada17392efdd"
+        "revision" : "8b99a73c35464f48ce21c46c1761b574f5ccc63b"
       }
     },
     {

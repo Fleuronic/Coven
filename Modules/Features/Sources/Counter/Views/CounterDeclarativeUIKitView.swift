@@ -13,7 +13,7 @@ public extension Counter.DeclarativeUIKit {
 extension Counter.DeclarativeUIKit.View: LayoutProvider {
 	public typealias Screen = Counter.DeclarativeUIKit.Screen
 
-	public func layout(with screen: some ScreenProxy<Counter.DeclarativeUIKit.Screen>) -> AnyLayout {
+	public func layout(with screen: some ScreenProxy<Screen>) -> AnyLayout {
 		UIStackView.vertical.layout {
 			UILabel.default
 				.text(screen.valueText)

@@ -12,6 +12,9 @@ public extension Counter.UIKit {
 		private let increment: () -> Void
 		private let decrement: () -> Void
 
+		// MARK: NSCoding
+		required init(coder: NSCoder) { fatalError() }
+
 		// MARK: UpdatingView
 		public init(screen: Screen) {
 			valueLabel = .init()
@@ -32,18 +35,16 @@ public extension Counter.UIKit {
 			stackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
 			stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
 		}
-
-		// MARK: NSCoding
-		required init(coder: NSCoder) {
-			fatalError()
-		}
 	}
 }
 
 // MARK: -
 extension Counter.UIKit.View: Updating {
+	// MARK: ScreenBacked
+	public typealias Screen = Counter.UIKit.Screen
+
 	// MARK: UpdatingView
-	public func update(with screen: Counter.UIKit.Screen) {
+	public func update(with screen: Screen) {
 		valueLabel.text = screen.valueText
 		incrementButton.setTitle(screen.incrementTitle, for: .normal)
 		decrementButton.setTitle(screen.decrementTitle, for: .normal)
@@ -63,5 +64,6 @@ private extension Counter.UIKit.View {
 
 // MARK: -
 extension Counter.UIKit.Screen: UpdatingScreen {
+	// MARK: UpdatingScreen
 	public typealias View = Counter.UIKit.View
 }
