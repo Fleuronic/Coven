@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "97C8273A-146B-4CFE-B82D-EA33DB2D6FC0",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "DemoTests",
+        "name" : "DemoTests"
+      }
+    }
+  ],
+  "version" : 1
+}

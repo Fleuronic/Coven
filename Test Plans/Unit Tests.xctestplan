@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "6F90816B-C441-4CBA-92E4-4D7A64AD9F6A",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/Features",
+        "identifier" : "CounterTests",
+        "name" : "CounterTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/Features",
+        "identifier" : "RootTests",
+        "name" : "RootTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/Models",
+        "identifier" : "DemoTests",
+        "name" : "DemoTests"
+      }
+    }
+  ],
+  "version" : 1
+}

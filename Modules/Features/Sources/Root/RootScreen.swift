@@ -1,6 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Models.Demo
+import enum Demo.Demo
 
 public enum Root {}
 

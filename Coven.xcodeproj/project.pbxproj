@@ -18,10 +18,14 @@
 		1758E7D82A151FB500E284CC /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Models; path = Modules/Models; sourceTree = "<group>"; };
 		1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlowTests.swift; sourceTree = "<group>"; };
 		1787621728C0F81A0079A32C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		17AD6D8B2A195E12005095A1 /* Demo Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Demo Tests.xctestplan"; sourceTree = "<group>"; };
 		17D00CB729FC79D900325B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17D00CB829FC8DCB00325B4E /* RootApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootApp.swift; sourceTree = "<group>"; };
 		17D00CBA29FC8DD100325B4E /* RootAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAppDelegate.swift; sourceTree = "<group>"; };
 		17D85FC328BBED8200C42970 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Features; path = Modules/Features; sourceTree = "<group>"; };
+		17FC53172A18428000EB29D2 /* Counter Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Counter Tests.xctestplan"; sourceTree = "<group>"; };
+		17FC53182A1842AE00EB29D2 /* Unit Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Unit Tests.xctestplan"; sourceTree = "<group>"; };
+		17FD73982A1841750084703A /* Root Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Root Tests.xctestplan"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,8 +44,9 @@
 			isa = PBXGroup;
 			children = (
 				1749DCCE28BB886300C4AFC9 /* Modules */,
-				17D85FEB28BBF62100C42970 /* Apps */,
 				1764FE4D28BC2908004AAD5E /* Tests */,
+				17FD73972A18416F0084703A /* Test Plans */,
+				17D85FEB28BBF62100C42970 /* Apps */,
 				17209CD329BBC8D800C224A6 /* RootApp.app */,
 			);
 			sourceTree = "<group>";
@@ -104,6 +109,17 @@
 			children = (
 			);
 			path = "UI Tests";
+			sourceTree = "<group>";
+		};
+		17FD73972A18416F0084703A /* Test Plans */ = {
+			isa = PBXGroup;
+			children = (
+				17FC53182A1842AE00EB29D2 /* Unit Tests.xctestplan */,
+				17AD6D8B2A195E12005095A1 /* Demo Tests.xctestplan */,
+				17FD73982A1841750084703A /* Root Tests.xctestplan */,
+				17FC53172A18428000EB29D2 /* Counter Tests.xctestplan */,
+			);
+			path = "Test Plans";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

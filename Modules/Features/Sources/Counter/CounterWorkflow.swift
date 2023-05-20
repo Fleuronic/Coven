@@ -4,7 +4,7 @@ import Workflow
 import WorkflowUI
 import WorkflowContainers
 
-import enum Models.Demo
+import enum Demo.Demo
 
 public extension Counter {
 	struct Workflow {

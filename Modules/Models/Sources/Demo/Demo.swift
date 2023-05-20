@@ -5,6 +5,7 @@ public enum Demo: Hashable {
 	case uiKit(declarative: Bool)
 }
 
+// MARK: -
 public extension Demo {
 	var name: String {
 		switch self {
@@ -16,6 +17,8 @@ public extension Demo {
 	}
 }
 
+// MARK: -
 extension Demo: Identifiable {
+	// MARK: Identifiable
 	public var id: Self { self }
 }

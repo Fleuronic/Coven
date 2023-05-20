@@ -5,7 +5,7 @@ import WorkflowUI
 import WorkflowContainers
 import EnumKit
 
-import enum Models.Demo
+import enum Demo.Demo
 import enum Counter.Counter
 
 public extension Root {

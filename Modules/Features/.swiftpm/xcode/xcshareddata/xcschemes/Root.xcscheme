@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Counter"
-               BuildableName = "Counter"
-               BlueprintName = "Counter"
+               BlueprintIdentifier = "Root"
+               BuildableName = "Root"
+               BlueprintName = "Root"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:../../Test Plans/Counter Tests.xctestplan"
+            reference = "container:../../Test Plans/Root Tests.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
@@ -54,9 +54,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Counter"
-            BuildableName = "Counter"
-            BlueprintName = "Counter"
+            BlueprintIdentifier = "Root"
+            BuildableName = "Root"
+            BlueprintName = "Root"
             ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>
