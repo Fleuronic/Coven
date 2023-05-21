@@ -59,14 +59,17 @@ extension Counter.Workflow: Workflow {
 }
 
 // MARK: -
-private extension Counter.Workflow {
+extension Counter.Workflow {
 	enum Action {
 		case increment
 		case decrement
 		case reset
 		case finish
 	}
+}
 
+// MARK: -
+private extension Counter.Workflow {
 	var title: String {
 		"\(demo.name) Counter Demo"
 	}
@@ -74,6 +77,7 @@ private extension Counter.Workflow {
 
 // MARK: -
 extension Counter.Workflow.Action: WorkflowAction {
+	// MARK: WorkflowAction
 	typealias WorkflowType = Counter.Workflow
 
 	func apply(toState value: inout Int) -> Void? {

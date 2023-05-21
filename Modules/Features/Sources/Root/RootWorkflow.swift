@@ -6,8 +6,12 @@ import WorkflowContainers
 import EnumKit
 
 import enum Demo.Demo
+import enum DemoList.DemoList
 import enum Counter.Counter
 
+public enum Root {}
+
+// MARK: -
 public extension Root {
 	struct Workflow {
 		public init() {}
@@ -16,9 +20,9 @@ public extension Root {
 
 // MARK: -
 extension Root.Workflow {
-	enum Action: CaseAccessible {
-		case demo(Demo)
-		case finishDemo
+	enum Action: CaseAccessible, Equatable {
+		case showDemoList
+		case showCounterDemo(Demo)
 	}
 }
 
@@ -33,18 +37,12 @@ extension Root.Workflow: Workflow {
 		context.render { (sink: Sink<Action>) in
 			.init(
 				items: [
-					.init(
-						screen: Root.Screen(
-							selectedDemo: selectedDemo,
-							demoSelected: { demo in
-								demo.map { sink.send(.demo($0)) }
-							}
-						).asAnyScreen(),
-						barContent: .init(title: "Workflow Demo")
-					),
+					DemoList.Workflow()
+						.mapOutput(Action.showCounterDemo)
+						.rendered(in: context),
 					selectedDemo
 						.map(counterWorkflow)?
-						.mapOutput { Action.finishDemo }
+						.mapOutput { Action.showDemoList }
 						.rendered(in: context)
 				]
 			)
@@ -52,6 +50,7 @@ extension Root.Workflow: Workflow {
 	}
 }
 
+// MARK: -
 private extension Root.Workflow {
 	func counterWorkflow(for demo: Demo) -> Counter.Workflow {
 		let screenWrapper = {

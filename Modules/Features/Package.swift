@@ -12,6 +12,10 @@ let package = Package(
 			targets: ["Root"]
 		),
 		.library(
+			name: "DemoList",
+			targets: ["DemoList"]
+		),
+		.library(
 			name: "Counter",
 			targets: ["Counter"]
 		)
@@ -21,14 +25,23 @@ let package = Package(
 		.package(url: "https://github.com/Fleuronic/ErgoSwiftUI", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/ErgoUIKit", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/ErgoDeclarativeUIKit", branch: "main"),
-		.package(url: "https://github.com/Fleuronic/WorkflowContainers", branch: "main")
+		.package(url: "https://github.com/Fleuronic/WorkflowContainers", branch: "main"),
+		.package(url: "https://github.com/square/workflow-swift", from: "1.0.0")
 	],
 	targets: [
 		.target(
 			name: "Root",
 			dependencies: [
-				"Demo",
+				"DemoList",
 				"Counter"
+			]
+		),
+		.target(
+			name: "DemoList",
+			dependencies: [
+				"Demo",
+				"ErgoSwiftUI",
+				"WorkflowContainers"
 			]
 		),
 		.target(
@@ -43,11 +56,24 @@ let package = Package(
 		),
 		.testTarget(
 			name: "RootTests",
-			dependencies: ["Root"]
+			dependencies: [
+				"Root",
+				.product(name: "WorkflowTesting", package: "workflow-swift")
+			]
+		),
+		.testTarget(
+			name: "DemoListTests",
+			dependencies: [
+				"DemoList",
+				.product(name: "WorkflowTesting", package: "workflow-swift")
+			]
 		),
 		.testTarget(
 			name: "CounterTests",
-			dependencies: ["Counter"]
+			dependencies: [
+				"Counter",
+				.product(name: "WorkflowTesting", package: "workflow-swift")
+			]
 		)
 	]
 )

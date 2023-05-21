@@ -2,18 +2,21 @@
 
 import enum Demo.Demo
 
-public enum Root {}
+public typealias DemoList = Demo.List
+
+public extension Demo {
+	enum List {}
+}
 
 // MARK: -
-public extension Root {
+public extension DemoList {
 	struct Screen {
-		let selectedDemo: Demo?
-		let demoSelected: (Demo?) -> Void
+		let selectDemo: (Demo) -> Void
 	}
 }
 
 // MARK: -
-extension Root.Screen {
+extension DemoList.Screen {
 	var demos: [Demo] {
 		[
 			.swiftUI,

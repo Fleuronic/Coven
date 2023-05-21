@@ -3,4 +3,54 @@
    uuid = "5E704B0F-B0A7-4967-B7DC-71F7584ED4B3"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C96F65D-F160-4B08-9A8D-11AC4FDDE54B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Library/Developer/Xcode/DerivedData/Coven-bqyyjiwlaiqyizdrjnyllzidftne/SourcePackages/checkouts/workflow-swift/WorkflowTesting/Sources/Internal/RenderTester+TestContext.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "render(workflow:key:outputMap:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6C96F65D-F160-4B08-9A8D-11AC4FDDE54B - e368451925882e25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WorkflowTesting.RenderTester.TestContext.render&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0 == &#x3c4;_1_1.WorkflowType, &#x3c4;_1_0: Workflow.Workflow, &#x3c4;_1_1: Workflow.WorkflowAction&gt;(workflow: &#x3c4;_1_0, key: Swift.String, outputMap: (&#x3c4;_1_0.Output) -&gt; &#x3c4;_1_1) -&gt; &#x3c4;_1_0.Rendering"
+                  moduleName = "RootTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordan/Library/Developer/Xcode/DerivedData/Coven-bqyyjiwlaiqyizdrjnyllzidftne/SourcePackages/checkouts/workflow-swift/WorkflowTesting/Sources/Internal/RenderTester+TestContext.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "932">
+               </Location>
+               <Location
+                  uuid = "6C96F65D-F160-4B08-9A8D-11AC4FDDE54B - 77396cd07ca648d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (WorkflowTesting.RenderTester&lt;&#x3c4;_0_0&gt;.ExpectedWorkflow&lt;&#x3c4;_1_0&gt;) -&gt; Swift.Bool in WorkflowTesting.RenderTester.TestContext.render&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0 == &#x3c4;_1_1.WorkflowType, &#x3c4;_1_0: Workflow.Workflow, &#x3c4;_1_1: Workflow.WorkflowAction&gt;(workflow: &#x3c4;_1_0, key: Swift.String, outputMap: (&#x3c4;_1_0.Output) -&gt; &#x3c4;_1_1) -&gt; &#x3c4;_1_0.Rendering"
+                  moduleName = "RootTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordan/Library/Developer/Xcode/DerivedData/Coven-bqyyjiwlaiqyizdrjnyllzidftne/SourcePackages/checkouts/workflow-swift/WorkflowTesting/Sources/Internal/RenderTester+TestContext.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

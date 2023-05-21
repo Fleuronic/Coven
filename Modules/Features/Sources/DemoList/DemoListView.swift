@@ -3,31 +3,33 @@
 import SwiftUI
 import ErgoSwiftUI
 
-public extension Root {
+import enum Demo.Demo
+
+public extension DemoList {
 	struct View {
 		public init() {}
 	}
 }
 
 // MARK: -
-extension Root.View: BodyProvider {
+extension DemoList.View: BodyProvider {
 	// MARK: ScreenBacked
-	public typealias Screen = Root.Screen
+	public typealias Screen = DemoList.Screen
 
 	// MARK: BodyProvider
 	public func body(with screen: Screen) -> some View {
 		List(
 			screen.demos,
 			selection: .init(
-				get: { screen.selectedDemo },
-				set: screen.demoSelected
+				get: { nil },
+				set: { $0.map(screen.selectDemo) }
 			)
 		) { demo in Text(demo.name) }
 	}
 }
 
 // MARK: -
-extension Root.Screen: BodyBackingScreen {
+extension DemoList.Screen: BodyBackingScreen {
 	// MARK: BodyBackingScreen
-	public typealias View = Root.View
+	public typealias View = DemoList.View
 }

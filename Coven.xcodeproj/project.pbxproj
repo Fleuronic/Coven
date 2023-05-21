@@ -15,6 +15,7 @@
 
 /* Begin PBXFileReference section */
 		17209CD329BBC8D800C224A6 /* RootApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RootApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		175048902A19772D00BF2F3C /* Demo List Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Demo List Tests.xctestplan"; sourceTree = "<group>"; };
 		1758E7D82A151FB500E284CC /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Models; path = Modules/Models; sourceTree = "<group>"; };
 		1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlowTests.swift; sourceTree = "<group>"; };
 		1787621728C0F81A0079A32C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 				17FC53182A1842AE00EB29D2 /* Unit Tests.xctestplan */,
 				17AD6D8B2A195E12005095A1 /* Demo Tests.xctestplan */,
 				17FD73982A1841750084703A /* Root Tests.xctestplan */,
+				175048902A19772D00BF2F3C /* Demo List Tests.xctestplan */,
 				17FC53172A18428000EB29D2 /* Counter Tests.xctestplan */,
 			);
 			path = "Test Plans";
