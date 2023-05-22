@@ -11,8 +11,10 @@ public extension Counter.DeclarativeUIKit {
 
 // MARK: -
 extension Counter.DeclarativeUIKit.View: LayoutProvider {
+	// MARK: ScreenBacked
 	public typealias Screen = Counter.DeclarativeUIKit.Screen
 
+	// MARK: LayoutProvider
 	public func layout(with screen: some ScreenProxy<Screen>) -> AnyLayout {
 		UIStackView.vertical.layout {
 			UILabel.default

@@ -115,11 +115,11 @@
 		17FD73972A18416F0084703A /* Test Plans */ = {
 			isa = PBXGroup;
 			children = (
-				17FC53182A1842AE00EB29D2 /* Unit Tests.xctestplan */,
 				17AD6D8B2A195E12005095A1 /* Demo Tests.xctestplan */,
 				17FD73982A1841750084703A /* Root Tests.xctestplan */,
 				175048902A19772D00BF2F3C /* Demo List Tests.xctestplan */,
 				17FC53172A18428000EB29D2 /* Counter Tests.xctestplan */,
+				17FC53182A1842AE00EB29D2 /* Unit Tests.xctestplan */,
 			);
 			path = "Test Plans";
 			sourceTree = "<group>";

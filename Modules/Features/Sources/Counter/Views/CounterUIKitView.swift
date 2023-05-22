@@ -15,7 +15,7 @@ public extension Counter.UIKit {
 		// MARK: NSCoding
 		required init(coder: NSCoder) { fatalError() }
 
-		// MARK: UpdatingView
+		// MARK: Updating
 		public init(screen: Screen) {
 			valueLabel = .init()
 			incrementButton = .init(type: .system)
@@ -43,7 +43,7 @@ extension Counter.UIKit.View: Updating {
 	// MARK: ScreenBacked
 	public typealias Screen = Counter.UIKit.Screen
 
-	// MARK: UpdatingView
+	// MARK: Updating
 	public func update(with screen: Screen) {
 		valueLabel.text = screen.valueText
 		incrementButton.setTitle(screen.incrementTitle, for: .normal)

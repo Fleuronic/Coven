@@ -32,6 +32,13 @@
         "identifier" : "DemoTests",
         "name" : "DemoTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/Features",
+        "identifier" : "DemoListTests",
+        "name" : "DemoListTests"
+      }
     }
   ],
   "version" : 1
