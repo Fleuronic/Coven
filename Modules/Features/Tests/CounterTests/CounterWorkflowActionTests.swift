@@ -24,8 +24,7 @@ final class CounterWorkflowActionTests: XCTestCase {
 
 	func testReset() {
 		Counter.Workflow.Action
-			.tester(withState: 0)
-			.send(action: .increment)
+			.tester(withState: 5)
 			.send(action: .reset)
 			.assert(state: 0)
 			.assertNoOutput()

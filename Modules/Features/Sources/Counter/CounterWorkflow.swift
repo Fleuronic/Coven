@@ -9,14 +9,19 @@ import enum Demo.Demo
 public extension Counter {
 	struct Workflow {
 		private let demo: Demo
-		private let screenWrapper: ScreenWrapper
+		private let screenWrapper: (Counter.Screen) -> AnyScreen
 
-		public init(
-			demo: Demo,
-			screenWrapper: @escaping ScreenWrapper
-		) {
+		public init(demo: Demo) {
 			self.demo = demo
-			self.screenWrapper = screenWrapper
+
+			switch demo {
+			case .swiftUI:
+				screenWrapper = Counter.SwiftUI.Screen.wrap
+			case .uiKit(false):
+				screenWrapper = Counter.UIKit.Screen.wrap
+			case .uiKit(true):
+				screenWrapper = Counter.DeclarativeUIKit.Screen.wrap
+			}
 		}
 	}
 }
@@ -24,7 +29,6 @@ public extension Counter {
 // MARK: -
 extension Counter.Workflow: Workflow {
 	public typealias Output = Void
-	public typealias ScreenWrapper = (Counter.Screen) -> AnyScreen
 
 	public func makeInitialState() -> Int { 0 }
 

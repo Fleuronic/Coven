@@ -2,6 +2,7 @@
 
 import XCTest
 import WorkflowTesting
+import EnumKit
 
 import enum Demo.Demo
 
@@ -28,12 +29,8 @@ final class DemoListWorkflowRenderingTests: XCTestCase {
 		DemoList.Workflow()
 			.renderTester()
 			.render { item in
-				switch item.barVisibility {
-				case let .visible(barContent):
-					XCTAssertEqual(barContent.title, "Workflow Demo")
-				default:
-					XCTFail()
-				}
+				let barContent = item.barVisibility.associatedValue() as Bar.Content?
+				XCTAssertEqual(barContent?.title, "Workflow Demo")
 			}
 	}
 
@@ -49,3 +46,6 @@ final class DemoListWorkflowRenderingTests: XCTestCase {
 			.assert(action: DemoList.Workflow.Action.demo(demo))
 	}
 }
+
+// MARK: -
+extension Bar.Visibility: CaseAccessible {}

@@ -41,33 +41,12 @@ extension Root.Workflow: Workflow {
 						.mapOutput(Action.showCounterDemo)
 						.rendered(in: context),
 					selectedDemo
-						.map(counterWorkflow)?
+						.map(Counter.Workflow.init)?
 						.mapOutput { Action.showDemoList }
 						.rendered(in: context)
 				]
 			)
 		}
-	}
-}
-
-// MARK: -
-private extension Root.Workflow {
-	func counterWorkflow(for demo: Demo) -> Counter.Workflow {
-		let screenWrapper = {
-			switch demo {
-			case .swiftUI:
-				return Counter.SwiftUI.Screen.wrap
-			case .uiKit(false):
-				return Counter.UIKit.Screen.wrap
-			case .uiKit(true):
-				return Counter.DeclarativeUIKit.Screen.wrap
-			}
-		}()
-
-		return .init(
-			demo: demo,
-			screenWrapper: screenWrapper
-		)
 	}
 }
 

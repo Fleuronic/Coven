@@ -31,5 +31,6 @@ extension Counter.DeclarativeUIKit.View: LayoutProvider {
 
 // MARK: -
 extension Counter.DeclarativeUIKit.Screen: LayoutBackingScreen {
+	// MARK: LayoutBackingScreen
 	public typealias View = Counter.DeclarativeUIKit.View
 }
