@@ -26,23 +26,20 @@ final class DemoListWorkflowRenderingTests: XCTestCase {
 	}
 
 	func testRenderingBarContent() throws {
-		DemoList.Workflow()
+		try DemoList.Workflow()
 			.renderTester()
 			.render { item in
-				let barContent = item.barVisibility.associatedValue() as Bar.Content?
-				XCTAssertEqual(barContent?.title, "Workflow Demo")
+				let barContent = try XCTUnwrap(item.barVisibility[expecting: Bar.Content.self])
+				XCTAssertEqual(barContent.title, "Workflow Demo")
 			}
 	}
 
 	func testRenderingSelectDemo() throws {
 		let demo = Demo.swiftUI
 
-		try DemoList.Workflow()
+		DemoList.Workflow()
 			.renderTester()
-			.render { item in
-				let screen = try XCTUnwrap(item.screen.wrappedScreen as? DemoList.Screen)
-				screen.selectDemo(demo)
-			}
+			.render { ($0.screen.wrappedScreen as? DemoList.Screen)?.selectDemo(demo) }
 			.assert(action: DemoList.Workflow.Action.demo(demo))
 	}
 }

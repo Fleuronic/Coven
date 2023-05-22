@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:../../Test Plans/Counter Tests.xctestplan"
+            reference = "container:../../Test Plans/Features/Counter/Counter Tests.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>

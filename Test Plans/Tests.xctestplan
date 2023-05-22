@@ -1,7 +1,7 @@
 {
   "configurations" : [
     {
-      "id" : "EE8E126C-FE7D-44AA-9A2C-AE14E40517E6",
+      "id" : "60FB8CDC-9FDB-429F-804E-D03BE4890E04",
       "name" : "Configuration 1",
       "options" : {
 
@@ -9,7 +9,7 @@
     }
   ],
   "defaultOptions" : {
-
+    "testTimeoutsEnabled" : true
   },
   "testTargets" : [
     {
@@ -28,6 +28,13 @@
     },
     {
       "target" : {
+        "containerPath" : "container:Coven.xcodeproj",
+        "identifier" : "17127D892A1BCB2F00BE46CE",
+        "name" : "RootUITests"
+      }
+    },
+    {
+      "target" : {
         "containerPath" : "container:Modules\/Features",
         "identifier" : "DemoListTests",
         "name" : "DemoListTests"
@@ -38,6 +45,13 @@
         "containerPath" : "container:Modules\/Features",
         "identifier" : "CounterTests",
         "name" : "CounterTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Coven.xcodeproj",
+        "identifier" : "17127D5B2A1BBCF500BE46CE",
+        "name" : "IntegrationTests"
       }
     }
   ],
