@@ -34,6 +34,7 @@
 		17127D852A1BCAE600BE46CE /* UI tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "UI tests.xctestplan"; sourceTree = "<group>"; };
 		17127D8A2A1BCB2F00BE46CE /* RootUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RootUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17127D962A1BD5D200BE46CE /* Root UI Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Root UI Tests.xctestplan"; sourceTree = "<group>"; };
+		17127DB12A1C008700BE46CE /* Snapshot Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Snapshot Tests.xctestplan"; sourceTree = "<group>"; };
 		17209CD329BBC8D800C224A6 /* RootApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RootApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		175048902A19772D00BF2F3C /* Demo List Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Demo List Tests.xctestplan"; sourceTree = "<group>"; };
 		1758E7D82A151FB500E284CC /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Models; path = Modules/Models; sourceTree = "<group>"; };
@@ -207,6 +208,7 @@
 				17127D732A1BC8F400BE46CE /* Tests.xctestplan */,
 				17FC53182A1842AE00EB29D2 /* Unit Tests.xctestplan */,
 				17127D852A1BCAE600BE46CE /* UI tests.xctestplan */,
+				17127DB12A1C008700BE46CE /* Snapshot Tests.xctestplan */,
 				17127D572A1BBCBE00BE46CE /* Integration Tests.xctestplan */,
 				17127D9A2A1BD64900BE46CE /* Models */,
 				17127D972A1BD60700BE46CE /* Features */,

@@ -1,0 +1,39 @@
+{
+  "configurations" : [
+    {
+      "id" : "58978336-5235-4326-9B4B-E8D38A55A404",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "CounterWorkflowActionTests",
+        "CounterWorkflowRenderingTests"
+      ],
+      "target" : {
+        "containerPath" : "container:Modules\/Features",
+        "identifier" : "CounterTests",
+        "name" : "CounterTests"
+      }
+    },
+    {
+      "skippedTests" : [
+        "DemoListWorkflowActionTests",
+        "DemoListWorkflowRenderingTests"
+      ],
+      "target" : {
+        "containerPath" : "container:Modules\/Features",
+        "identifier" : "DemoListTests",
+        "name" : "DemoListTests"
+      }
+    }
+  ],
+  "version" : 1
+}
