@@ -11,7 +11,27 @@ import enum Demo.Demo
 @testable import enum Counter.Counter
 @testable import struct WorkflowUI.AnyScreen
 
-final class RootWorkflowRenderingTests: XCTestCase {
+final class RootWorkflowTests: XCTestCase {
+	func testShowCounterDemo() {
+		let demo = Demo.swiftUI
+
+		Root.Workflow.Action
+			.tester(withState: nil)
+			.send(action: .showCounterDemo(demo))
+			.assert(state: demo)
+			.assertNoOutput()
+	}
+
+	func testShowDemoList() {
+		let demo = Demo.swiftUI
+
+		Root.Workflow.Action
+			.tester(withState: demo)
+			.send(action: .showDemoList)
+			.assert(state: nil)
+			.assertNoOutput()
+	}
+
 	func testDemoListRendering() throws {
 		Root.Workflow()
 			.renderTester()

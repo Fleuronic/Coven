@@ -10,10 +10,17 @@
 		17127D632A1BBD1100BE46CE /* AppFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */; };
 		17127D722A1BBF0300BE46CE /* Root in Frameworks */ = {isa = PBXBuildFile; productRef = 17127D712A1BBF0300BE46CE /* Root */; };
 		17127D952A1BCC4B00BE46CE /* RootUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17127D7A2A1BCA1900BE46CE /* RootUITests.swift */; };
+		17169A0B2A1D589A00D80EBB /* CounterSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17169A0A2A1D589A00D80EBB /* CounterSnapshotTests.swift */; };
+		17169A112A1D59D400D80EBB /* DemoListSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17169A102A1D59D400D80EBB /* DemoListSnapshotTests.swift */; };
 		1742EFCB2A13D08400E07F06 /* Root in Frameworks */ = {isa = PBXBuildFile; productRef = 1742EFCA2A13D08400E07F06 /* Root */; };
 		17D00CBE29FC8E4E00325B4E /* RootApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D00CB829FC8DCB00325B4E /* RootApp.swift */; };
 		17D00CBF29FC8E5200325B4E /* RootAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D00CBA29FC8DD100325B4E /* RootAppDelegate.swift */; };
 		17D00CC429FD426A00325B4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787621728C0F81A0079A32C /* AppDelegate.swift */; };
+		17E283542A1D60FE00146E0B /* Counter in Frameworks */ = {isa = PBXBuildFile; productRef = 17E283532A1D60FE00146E0B /* Counter */; };
+		17E283562A1D610600146E0B /* DemoList in Frameworks */ = {isa = PBXBuildFile; productRef = 17E283552A1D610600146E0B /* DemoList */; };
+		17E2835F2A1D633700146E0B /* ErgoSwiftUITesting in Frameworks */ = {isa = PBXBuildFile; productRef = 17E2835E2A1D633700146E0B /* ErgoSwiftUITesting */; };
+		17E283622A1D634D00146E0B /* ErgoUIKitTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 17E283612A1D634D00146E0B /* ErgoUIKitTesting */; };
+		17E283652A1D63C200146E0B /* ErgoDeclarativeUIKitTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 17E283642A1D63C200146E0B /* ErgoDeclarativeUIKitTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,9 @@
 		17127D8A2A1BCB2F00BE46CE /* RootUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RootUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17127D962A1BD5D200BE46CE /* Root UI Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Root UI Tests.xctestplan"; sourceTree = "<group>"; };
 		17127DB12A1C008700BE46CE /* Snapshot Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Snapshot Tests.xctestplan"; sourceTree = "<group>"; };
+		17169A032A1D588700D80EBB /* SnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17169A0A2A1D589A00D80EBB /* CounterSnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CounterSnapshotTests.swift; path = "Tests/Snapshot Tests/CounterSnapshotTests.swift"; sourceTree = SOURCE_ROOT; };
+		17169A102A1D59D400D80EBB /* DemoListSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListSnapshotTests.swift; sourceTree = "<group>"; };
 		17209CD329BBC8D800C224A6 /* RootApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RootApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		175048902A19772D00BF2F3C /* Demo List Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Demo List Tests.xctestplan"; sourceTree = "<group>"; };
 		1758E7D82A151FB500E284CC /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Models; path = Modules/Models; sourceTree = "<group>"; };
@@ -45,6 +55,13 @@
 		17D00CB829FC8DCB00325B4E /* RootApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootApp.swift; sourceTree = "<group>"; };
 		17D00CBA29FC8DD100325B4E /* RootAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAppDelegate.swift; sourceTree = "<group>"; };
 		17D85FC328BBED8200C42970 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Features; path = Modules/Features; sourceTree = "<group>"; };
+		17E283662A1D648700146E0B /* ErgoUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ErgoUIKit; path = ../Ergo/Submodules/ErgoUIKit; sourceTree = "<group>"; };
+		17E283672A1D648700146E0B /* ErgoDeclarativeUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ErgoDeclarativeUIKit; path = ../Ergo/Submodules/ErgoDeclarativeUIKit; sourceTree = "<group>"; };
+		17E283682A1D648700146E0B /* ErgoSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ErgoSwiftUI; path = ../Ergo/Submodules/ErgoSwiftUI; sourceTree = "<group>"; };
+		17E2836B2A1D730200146E0B /* CounterUIKitView.Snapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CounterUIKitView.Snapshot.png; sourceTree = "<group>"; };
+		17E2836C2A1D730200146E0B /* CounterSwiftUIView.Snapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CounterSwiftUIView.Snapshot.png; sourceTree = "<group>"; };
+		17E2836D2A1D730200146E0B /* CounterDeclarativeUIKitView.Snapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CounterDeclarativeUIKitView.Snapshot.png; sourceTree = "<group>"; };
+		17E2836E2A1D746E00146E0B /* DemoListView.Snapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DemoListView.Snapshot.png; sourceTree = "<group>"; };
 		17FC53172A18428000EB29D2 /* Counter Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Counter Tests.xctestplan"; sourceTree = "<group>"; };
 		17FC53182A1842AE00EB29D2 /* Unit Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Unit Tests.xctestplan"; sourceTree = "<group>"; };
 		17FD73982A1841750084703A /* Root Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Root Tests.xctestplan"; sourceTree = "<group>"; };
@@ -66,6 +83,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		17169A002A1D588700D80EBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17E283542A1D60FE00146E0B /* Counter in Frameworks */,
+				17E283622A1D634D00146E0B /* ErgoUIKitTesting in Frameworks */,
+				17E283562A1D610600146E0B /* DemoList in Frameworks */,
+				17E2835F2A1D633700146E0B /* ErgoSwiftUITesting in Frameworks */,
+				17E283652A1D63C200146E0B /* ErgoDeclarativeUIKitTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		17D85FDF28BBF5C700C42970 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,6 +109,9 @@
 		170B0CF428A6DDF40033029D = {
 			isa = PBXGroup;
 			children = (
+				17E283672A1D648700146E0B /* ErgoDeclarativeUIKit */,
+				17E283682A1D648700146E0B /* ErgoSwiftUI */,
+				17E283662A1D648700146E0B /* ErgoUIKit */,
 				1749DCCE28BB886300C4AFC9 /* Modules */,
 				1764FE4D28BC2908004AAD5E /* Tests */,
 				17FD73972A18416F0084703A /* Test Plans */,
@@ -87,6 +119,7 @@
 				17209CD329BBC8D800C224A6 /* RootApp.app */,
 				17127D8A2A1BCB2F00BE46CE /* RootUITests.xctest */,
 				17127D5C2A1BBCF500BE46CE /* IntegrationTests.xctest */,
+				17169A032A1D588700D80EBB /* SnapshotTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,12 +174,30 @@
 			path = Counter;
 			sourceTree = "<group>";
 		};
-		17127D9D2A1BDB6B00BE46CE /* Features */ = {
+		17169A122A1D5A1600D80EBB /* Integration Tests */ = {
 			isa = PBXGroup;
 			children = (
-				17D85FF928BBF7A000C42970 /* Root */,
+				1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */,
 			);
-			path = Features;
+			path = "Integration Tests";
+			sourceTree = "<group>";
+		};
+		17169A132A1D5A2700D80EBB /* UI Tests */ = {
+			isa = PBXGroup;
+			children = (
+				17127D7A2A1BCA1900BE46CE /* RootUITests.swift */,
+			);
+			path = "UI Tests";
+			sourceTree = "<group>";
+		};
+		17169A142A1D5A2B00D80EBB /* Snapshot Tests */ = {
+			isa = PBXGroup;
+			children = (
+				17E283692A1D6F3500146E0B /* Resources */,
+				17169A102A1D59D400D80EBB /* DemoListSnapshotTests.swift */,
+				17169A0A2A1D589A00D80EBB /* CounterSnapshotTests.swift */,
+			);
+			path = "Snapshot Tests";
 			sourceTree = "<group>";
 		};
 		1749DCCE28BB886300C4AFC9 /* Modules */ = {
@@ -161,8 +212,9 @@
 		1764FE4D28BC2908004AAD5E /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */,
-				17127D9D2A1BDB6B00BE46CE /* Features */,
+				17169A132A1D5A2700D80EBB /* UI Tests */,
+				17169A142A1D5A2B00D80EBB /* Snapshot Tests */,
+				17169A122A1D5A1600D80EBB /* Integration Tests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -194,12 +246,15 @@
 			path = Apps;
 			sourceTree = "<group>";
 		};
-		17D85FF928BBF7A000C42970 /* Root */ = {
+		17E283692A1D6F3500146E0B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				17127D7A2A1BCA1900BE46CE /* RootUITests.swift */,
+				17E2836E2A1D746E00146E0B /* DemoListView.Snapshot.png */,
+				17E2836D2A1D730200146E0B /* CounterDeclarativeUIKitView.Snapshot.png */,
+				17E2836C2A1D730200146E0B /* CounterSwiftUIView.Snapshot.png */,
+				17E2836B2A1D730200146E0B /* CounterUIKitView.Snapshot.png */,
 			);
-			path = Root;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		17FD73972A18416F0084703A /* Test Plans */ = {
@@ -257,6 +312,30 @@
 			productReference = 17127D8A2A1BCB2F00BE46CE /* RootUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		17169A022A1D588700D80EBB /* SnapshotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17169A092A1D588700D80EBB /* Build configuration list for PBXNativeTarget "SnapshotTests" */;
+			buildPhases = (
+				171699FF2A1D588700D80EBB /* Sources */,
+				17169A002A1D588700D80EBB /* Frameworks */,
+				17169A012A1D588700D80EBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnapshotTests;
+			packageProductDependencies = (
+				17E283532A1D60FE00146E0B /* Counter */,
+				17E283552A1D610600146E0B /* DemoList */,
+				17E2835E2A1D633700146E0B /* ErgoSwiftUITesting */,
+				17E283612A1D634D00146E0B /* ErgoUIKitTesting */,
+				17E283642A1D63C200146E0B /* ErgoDeclarativeUIKitTesting */,
+			);
+			productName = SnapshotTests;
+			productReference = 17169A032A1D588700D80EBB /* SnapshotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		17D85FDA28BBF5C700C42970 /* RootApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17D85FE228BBF5C700C42970 /* Build configuration list for PBXNativeTarget "RootApp" */;
@@ -294,6 +373,9 @@
 						CreatedOnToolsVersion = 14.3.1;
 						TestTargetID = 17D85FDA28BBF5C700C42970;
 					};
+					17169A022A1D588700D80EBB = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 170B0CF828A6DDF40033029D /* Build configuration list for PBXProject "Coven" */;
@@ -306,6 +388,9 @@
 			);
 			mainGroup = 170B0CF428A6DDF40033029D;
 			packageReferences = (
+				17E2835D2A1D633700146E0B /* XCRemoteSwiftPackageReference "ErgoSwiftUI" */,
+				17E283602A1D634D00146E0B /* XCRemoteSwiftPackageReference "ErgoUIKit" */,
+				17E283632A1D63C200146E0B /* XCRemoteSwiftPackageReference "ErgoDeclarativeUIKit" */,
 			);
 			productRefGroup = 170B0CF428A6DDF40033029D;
 			projectDirPath = "";
@@ -314,6 +399,7 @@
 				17D85FDA28BBF5C700C42970 /* RootApp */,
 				17127D892A1BCB2F00BE46CE /* RootUITests */,
 				17127D5B2A1BBCF500BE46CE /* IntegrationTests */,
+				17169A022A1D588700D80EBB /* SnapshotTests */,
 			);
 		};
 /* End PBXProject section */
@@ -327,6 +413,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		17127D882A1BCB2F00BE46CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17169A012A1D588700D80EBB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -356,6 +449,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				17127D952A1BCC4B00BE46CE /* RootUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		171699FF2A1D588700D80EBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17169A112A1D59D400D80EBB /* DemoListSnapshotTests.swift in Sources */,
+				17169A0B2A1D589A00D80EBB /* CounterSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +668,40 @@
 			};
 			name = Release;
 		};
+		17169A072A1D588700D80EBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.SnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17169A082A1D588700D80EBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.SnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		17D85FE328BBF5C700C42970 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -662,6 +798,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		17169A092A1D588700D80EBB /* Build configuration list for PBXNativeTarget "SnapshotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17169A072A1D588700D80EBB /* Debug */,
+				17169A082A1D588700D80EBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		17D85FE228BBF5C700C42970 /* Build configuration list for PBXNativeTarget "RootApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -673,6 +818,33 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		17E2835D2A1D633700146E0B /* XCRemoteSwiftPackageReference "ErgoSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Fleuronic/ErgoSwiftUI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		17E283602A1D634D00146E0B /* XCRemoteSwiftPackageReference "ErgoUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Fleuronic/ErgoUIKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		17E283632A1D63C200146E0B /* XCRemoteSwiftPackageReference "ErgoDeclarativeUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Fleuronic/ErgoDeclarativeUIKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		17127D712A1BBF0300BE46CE /* Root */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -681,6 +853,29 @@
 		1742EFCA2A13D08400E07F06 /* Root */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Root;
+		};
+		17E283532A1D60FE00146E0B /* Counter */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Counter;
+		};
+		17E283552A1D610600146E0B /* DemoList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DemoList;
+		};
+		17E2835E2A1D633700146E0B /* ErgoSwiftUITesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17E2835D2A1D633700146E0B /* XCRemoteSwiftPackageReference "ErgoSwiftUI" */;
+			productName = ErgoSwiftUITesting;
+		};
+		17E283612A1D634D00146E0B /* ErgoUIKitTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17E283602A1D634D00146E0B /* XCRemoteSwiftPackageReference "ErgoUIKit" */;
+			productName = ErgoUIKitTesting;
+		};
+		17E283642A1D63C200146E0B /* ErgoDeclarativeUIKitTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17E283632A1D63C200146E0B /* XCRemoteSwiftPackageReference "ErgoDeclarativeUIKit" */;
+			productName = ErgoDeclarativeUIKitTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

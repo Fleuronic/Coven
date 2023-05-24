@@ -2,6 +2,7 @@
 
 import UIKit
 import ErgoUIKit
+import ErrorAssertions
 
 public extension Counter.UIKit {
 	final class View: UIView {

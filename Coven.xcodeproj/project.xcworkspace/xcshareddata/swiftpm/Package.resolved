@@ -28,30 +28,12 @@
       }
     },
     {
-      "identity" : "ergodeclarativeuikit",
+      "identity" : "errorassertions",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/ErgoDeclarativeUIKit",
+      "location" : "https://github.com/SlaunchaMan/ErrorAssertions.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "c8423cc0fa8efe5b4bc45b0bdf5427fb596e60ab"
-      }
-    },
-    {
-      "identity" : "ergoswiftui",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/ErgoSwiftUI",
-      "state" : {
-        "branch" : "main",
-        "revision" : "e2c2c6f2ebb27c2d145d75bca625e53b20b161b5"
-      }
-    },
-    {
-      "identity" : "ergouikit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/ErgoUIKit",
-      "state" : {
-        "branch" : "main",
-        "revision" : "8b99a73c35464f48ce21c46c1761b574f5ccc63b"
+        "revision" : "fe2b592844372f361f2a33bbbce6a48481b6c79e",
+        "version" : "0.4.0"
       }
     },
     {
@@ -118,12 +100,30 @@
       }
     },
     {
+      "identity" : "swiftui-introspect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/siteline/SwiftUI-Introspect.git",
+      "state" : {
+        "revision" : "5b3f3996c7a2a84d5f4ba0e03cd7d584154778f2",
+        "version" : "0.3.1"
+      }
+    },
+    {
       "identity" : "telemetric",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Fleuronic/Telemetric",
       "state" : {
         "branch" : "main",
         "revision" : "6c137a7a587192a136725d63061b5ab02966497b"
+      }
+    },
+    {
+      "identity" : "viewinspector",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nalexn/ViewInspector",
+      "state" : {
+        "branch" : "0.9.7",
+        "revision" : "e42529aa0b6ff57393ab52540f6006f3a709ee00"
       }
     },
     {

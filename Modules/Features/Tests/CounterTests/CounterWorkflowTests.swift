@@ -10,7 +10,38 @@ import enum Demo.Demo
 @testable import enum Counter.Counter
 @testable import struct WorkflowUI.AnyScreen
 
-final class CounterWorkflowRenderingTests: XCTestCase {
+final class CounterWorkflowTests: XCTestCase {
+	func testIncrement() {
+		Counter.Workflow.Action
+			.tester(withState: 0)
+			.send(action: .increment)
+			.assert(state: 1)
+			.assertNoOutput()
+	}
+
+	func testDecrement() {
+		Counter.Workflow.Action
+			.tester(withState: 0)
+			.send(action: .decrement)
+			.assert(state: -1)
+			.assertNoOutput()
+	}
+
+	func testReset() {
+		Counter.Workflow.Action
+			.tester(withState: 5)
+			.send(action: .reset)
+			.assert(state: 0)
+			.assertNoOutput()
+	}
+
+	func testFinish() {
+		Counter.Workflow.Action
+			.tester(withState: 0)
+			.send(action: .finish)
+			.verifyOutput { XCTAssert($0 == ()) }
+	}
+
 	func testRenderingScreen() throws {
 		try Counter.Workflow(demo: .swiftUI)
 			.renderTester()

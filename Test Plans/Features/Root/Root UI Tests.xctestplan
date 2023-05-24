@@ -14,7 +14,7 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:Coven.xcodeproj",
+        "containerPath" : "container:..\/..\/Coven.xcodeproj",
         "identifier" : "17127D892A1BCB2F00BE46CE",
         "name" : "RootUITests"
       }

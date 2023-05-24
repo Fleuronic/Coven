@@ -10,7 +10,16 @@ import enum Demo.Demo
 @testable import enum DemoList.DemoList
 @testable import struct WorkflowUI.AnyScreen
 
-final class DemoListWorkflowRenderingTests: XCTestCase {
+final class DemoListWorkflowTests: XCTestCase {
+	func testDemo() {
+		let demo = Demo.swiftUI
+
+		DemoList.Workflow.Action
+			.tester(withState: ())
+			.send(action: .demo(demo))
+			.assert(output: demo)
+	}
+
 	func testRenderingScreen() throws {
 		let swiftUIDemo = Demo.swiftUI
 		let uiKitDemo = Demo.uiKit(declarative: false)

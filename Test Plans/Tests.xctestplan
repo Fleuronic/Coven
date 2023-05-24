@@ -53,6 +53,13 @@
         "identifier" : "17127D5B2A1BBCF500BE46CE",
         "name" : "IntegrationTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Coven.xcodeproj",
+        "identifier" : "17169A022A1D588700D80EBB",
+        "name" : "SnapshotTests"
+      }
     }
   ],
   "version" : 1

@@ -13,25 +13,10 @@
   },
   "testTargets" : [
     {
-      "skippedTests" : [
-        "CounterWorkflowActionTests",
-        "CounterWorkflowRenderingTests"
-      ],
       "target" : {
-        "containerPath" : "container:Modules\/Features",
-        "identifier" : "CounterTests",
-        "name" : "CounterTests"
-      }
-    },
-    {
-      "skippedTests" : [
-        "DemoListWorkflowActionTests",
-        "DemoListWorkflowRenderingTests"
-      ],
-      "target" : {
-        "containerPath" : "container:Modules\/Features",
-        "identifier" : "DemoListTests",
-        "name" : "DemoListTests"
+        "containerPath" : "container:Coven.xcodeproj",
+        "identifier" : "17169A022A1D588700D80EBB",
+        "name" : "SnapshotTests"
       }
     }
   ],
