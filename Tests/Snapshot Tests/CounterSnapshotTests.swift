@@ -7,7 +7,7 @@ import ErgoDeclarativeUIKitTesting
 
 @testable import enum Counter.Counter
 
-final class CounterViewSnapshotTests: XCTestCase {
+final class CounterSnapshotTests: XCTestCase {
 	func testSwiftUIView() {
 		assertView(
 			ofType: Counter.SwiftUI.View.self,

@@ -27,9 +27,6 @@
       }
     },
     {
-      "skippedTests" : [
-        "DemoListViewSnapshotTests"
-      ],
       "target" : {
         "containerPath" : "container:Modules\/Features",
         "identifier" : "DemoListTests",
@@ -37,9 +34,6 @@
       }
     },
     {
-      "skippedTests" : [
-        "CounterViewSnapshotTests"
-      ],
       "target" : {
         "containerPath" : "container:Modules\/Features",
         "identifier" : "CounterTests",

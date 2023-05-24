@@ -1,35 +1,33 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import SwiftUI
-import ErgoSwiftUI
+import UIKit
+import Geometric
+import Telemetric
+import Layoutless
+import ErgoDeclarativeUIKit
 
 import enum Demo.Demo
 
 public extension DemoList {
-	struct View {
-		public init() {}
-	}
+    class View: UIView {}
 }
 
 // MARK: -
-extension DemoList.View: BodyProvider {
+extension DemoList.View: LayoutProvider {
 	// MARK: ScreenBacked
 	public typealias Screen = DemoList.Screen
 
-	// MARK: BodyProvider
-	public func body(with screen: Screen) -> some View {
-		List(
-			screen.demos,
-			selection: .init(
-				get: { nil },
-				set: { $0.map(screen.selectDemo) }
-			)
-		) { demo in Text(demo.name) }
-	}
+    // MARK: LayoutProvider
+    public func layout(with screen: some ScreenProxy<Screen>) -> AnyLayout {
+        UITableView.style(.insetGrouped)
+            .items(screen.demos, text: \.name)
+            .selected(screen.selectDemo)
+            .fillingParent()
+    }
 }
 
 // MARK: -
-extension DemoList.Screen: BodyBackingScreen {
-	// MARK: BodyBackingScreen
+extension DemoList.Screen: LayoutBackingScreen {
+	// MARK: LayoutBackingScreen
 	public typealias View = DemoList.View
 }

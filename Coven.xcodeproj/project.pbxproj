@@ -55,16 +55,13 @@
 		17D00CB829FC8DCB00325B4E /* RootApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootApp.swift; sourceTree = "<group>"; };
 		17D00CBA29FC8DD100325B4E /* RootAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAppDelegate.swift; sourceTree = "<group>"; };
 		17D85FC328BBED8200C42970 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Features; path = Modules/Features; sourceTree = "<group>"; };
-		17E283662A1D648700146E0B /* ErgoUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ErgoUIKit; path = ../Ergo/Submodules/ErgoUIKit; sourceTree = "<group>"; };
-		17E283672A1D648700146E0B /* ErgoDeclarativeUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ErgoDeclarativeUIKit; path = ../Ergo/Submodules/ErgoDeclarativeUIKit; sourceTree = "<group>"; };
-		17E283682A1D648700146E0B /* ErgoSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ErgoSwiftUI; path = ../Ergo/Submodules/ErgoSwiftUI; sourceTree = "<group>"; };
 		17E2836B2A1D730200146E0B /* CounterUIKitView.Snapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CounterUIKitView.Snapshot.png; sourceTree = "<group>"; };
 		17E2836C2A1D730200146E0B /* CounterSwiftUIView.Snapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CounterSwiftUIView.Snapshot.png; sourceTree = "<group>"; };
 		17E2836D2A1D730200146E0B /* CounterDeclarativeUIKitView.Snapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CounterDeclarativeUIKitView.Snapshot.png; sourceTree = "<group>"; };
-		17E2836E2A1D746E00146E0B /* DemoListView.Snapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DemoListView.Snapshot.png; sourceTree = "<group>"; };
 		17FC53172A18428000EB29D2 /* Counter Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Counter Tests.xctestplan"; sourceTree = "<group>"; };
 		17FC53182A1842AE00EB29D2 /* Unit Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Unit Tests.xctestplan"; sourceTree = "<group>"; };
 		17FD73982A1841750084703A /* Root Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Root Tests.xctestplan"; sourceTree = "<group>"; };
+		442A16AA2A1FB8E40024B82C /* DemoListView.Snapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DemoListView.Snapshot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +106,6 @@
 		170B0CF428A6DDF40033029D = {
 			isa = PBXGroup;
 			children = (
-				17E283672A1D648700146E0B /* ErgoDeclarativeUIKit */,
-				17E283682A1D648700146E0B /* ErgoSwiftUI */,
-				17E283662A1D648700146E0B /* ErgoUIKit */,
 				1749DCCE28BB886300C4AFC9 /* Modules */,
 				1764FE4D28BC2908004AAD5E /* Tests */,
 				17FD73972A18416F0084703A /* Test Plans */,
@@ -249,7 +243,7 @@
 		17E283692A1D6F3500146E0B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				17E2836E2A1D746E00146E0B /* DemoListView.Snapshot.png */,
+				442A16AA2A1FB8E40024B82C /* DemoListView.Snapshot.png */,
 				17E2836D2A1D730200146E0B /* CounterDeclarativeUIKitView.Snapshot.png */,
 				17E2836C2A1D730200146E0B /* CounterSwiftUIView.Snapshot.png */,
 				17E2836B2A1D730200146E0B /* CounterUIKitView.Snapshot.png */,

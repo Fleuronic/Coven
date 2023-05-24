@@ -28,6 +28,33 @@
       }
     },
     {
+      "identity" : "ergodeclarativeuikit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/ErgoDeclarativeUIKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2f286bd5ecf4835cdf13b0736056888ec3990039"
+      }
+    },
+    {
+      "identity" : "ergoswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/ErgoSwiftUI",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4b6ff3ab0f02cb2d7dbf0a16a5087962215918db"
+      }
+    },
+    {
+      "identity" : "ergouikit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/ErgoUIKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e42e13bdbd7ed80aa7cc82f4b8ec1023b9eaf813"
+      }
+    },
+    {
       "identity" : "errorassertions",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SlaunchaMan/ErrorAssertions.git",
@@ -42,7 +69,7 @@
       "location" : "https://github.com/Fleuronic/Geometric",
       "state" : {
         "branch" : "main",
-        "revision" : "5f3eaf7f1a6814079f441445c16d9d765f00fb71"
+        "revision" : "22c55a44fd68e2dd00ea7ad62bce68ed4d06003f"
       }
     },
     {
@@ -82,6 +109,15 @@
       }
     },
     {
+      "identity" : "reactivedatasources",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/ReactiveDataSources",
+      "state" : {
+        "branch" : "master",
+        "revision" : "618c79932ea0476e2a926dba480b9f96e3c70159"
+      }
+    },
+    {
       "identity" : "reactiveswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ReactiveCocoa/ReactiveSwift.git",
@@ -100,21 +136,12 @@
       }
     },
     {
-      "identity" : "swiftui-introspect",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/siteline/SwiftUI-Introspect.git",
-      "state" : {
-        "revision" : "5b3f3996c7a2a84d5f4ba0e03cd7d584154778f2",
-        "version" : "0.3.1"
-      }
-    },
-    {
       "identity" : "telemetric",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Fleuronic/Telemetric",
       "state" : {
         "branch" : "main",
-        "revision" : "6c137a7a587192a136725d63061b5ab02966497b"
+        "revision" : "5363128a446a837f15a5d272baa41df105a432d8"
       }
     },
     {

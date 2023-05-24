@@ -1,11 +1,11 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import XCTest
-import ErgoSwiftUITesting
+import ErgoDeclarativeUIKitTesting
 
 @testable import enum DemoList.DemoList
 
-final class DemoListViewSnapshotTests: XCTestCase {
+final class DemoListSnapshotTests: XCTestCase {
 	func testView() {
 		assertView(
 			ofType: DemoList.View.self,
@@ -15,4 +15,3 @@ final class DemoListViewSnapshotTests: XCTestCase {
 		)
 	}
 }
-

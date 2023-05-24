@@ -21,10 +21,10 @@ extension Counter.DeclarativeUIKit.View: LayoutProvider {
 				.text(screen.valueText)
 			UIButton.default
 				.title(screen.incrementTitle)
-				.action(screen.increment)
+				.tapped(screen.increment)
 			UIButton.default
 				.title(screen.decrementTitle)
-				.action(screen.decrement)
+				.tapped(screen.decrement)
 		}.centeringInParent()
 	}
 }

@@ -27,7 +27,6 @@ let package = Package(
 		.package(url: "https://github.com/Fleuronic/ErgoDeclarativeUIKit", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/WorkflowContainers", branch: "main"),
 		.package(url: "https://github.com/square/workflow-swift", from: "1.0.0"),
-		.package(url: "https://github.com/siteline/SwiftUI-Introspect.git", from: "0.3.1"),
 		.package(url: "https://github.com/nalexn/ViewInspector", branch: "0.9.7"),
 		.package(url: "https://github.com/SlaunchaMan/ErrorAssertions.git", from: "0.2.0")
 	],
@@ -43,7 +42,7 @@ let package = Package(
 			name: "DemoList",
 			dependencies: [
 				"Demo",
-				"ErgoSwiftUI",
+                "ErgoDeclarativeUIKit",
 				"WorkflowContainers"
 			]
 		),
@@ -69,10 +68,8 @@ let package = Package(
 			name: "DemoListTests",
 			dependencies: [
 				"DemoList",
-				"ViewInspector",
-				.product(name: "Introspect", package: "SwiftUI-Introspect"),
 				.product(name: "WorkflowTesting", package: "workflow-swift"),
-				.product(name: "ErgoSwiftUITesting", package: "ErgoSwiftUI")
+                .product(name: "ErgoDeclarativeUIKitTesting", package: "ErgoUIKit")
 			]
 		),
 		.testTarget(

@@ -18,7 +18,7 @@ public extension Counter.SwiftUI {
 			self.screen = screen
 		}
 
-		subscript<T>(dynamicMember keyPath: KeyPath<Counter.Screen, T>) -> T {
+		subscript<Value>(dynamicMember keyPath: KeyPath<Counter.Screen, Value>) -> Value {
 			screen[keyPath: keyPath]
 		}
 	}
@@ -34,7 +34,7 @@ public extension Counter.UIKit {
 			self.screen = screen
 		}
 
-		subscript<T>(dynamicMember keyPath: KeyPath<Counter.Screen, T>) -> T {
+		subscript<Value>(dynamicMember keyPath: KeyPath<Counter.Screen, Value>) -> Value {
 			screen[keyPath: keyPath]
 		}
 	}
@@ -50,7 +50,7 @@ public extension Counter.DeclarativeUIKit {
 			self.screen = screen
 		}
 
-		subscript<T>(dynamicMember keyPath: KeyPath<Counter.Screen, T>) -> T {
+		subscript<Value>(dynamicMember keyPath: KeyPath<Counter.Screen, Value>) -> Value {
 			screen[keyPath: keyPath]
 		}
 	}
