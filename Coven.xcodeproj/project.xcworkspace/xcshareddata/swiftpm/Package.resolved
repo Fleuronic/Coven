@@ -24,7 +24,7 @@
       "location" : "https://github.com/Fleuronic/Ergo",
       "state" : {
         "branch" : "main",
-        "revision" : "40b0bced455f29ffd9b6f96d3b2dd2152c589412"
+        "revision" : "5c2402cddbd50cf4411c53239d9115c5013aa8fa"
       }
     },
     {
@@ -96,7 +96,7 @@
       "location" : "https://github.com/Fleuronic/Metric",
       "state" : {
         "branch" : "main",
-        "revision" : "317fb1aaf580b40582f950c39acbd9b79cf98ada"
+        "revision" : "34a6b5646ae7c131157efc2ecd0f2f1ee63e61a8"
       }
     },
     {
@@ -156,10 +156,10 @@
     {
       "identity" : "workflow-swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/square/workflow-swift",
+      "location" : "https://github.com/Fleuronic/workflow-swift",
       "state" : {
-        "revision" : "c8ac380348fde689cd96491fb2dd1d72f3c01e43",
-        "version" : "1.3.1"
+        "branch" : "main",
+        "revision" : "a011407f8512a9f03ffa143be1968112908770c5"
       }
     },
     {
@@ -168,7 +168,7 @@
       "location" : "https://github.com/Fleuronic/WorkflowContainers",
       "state" : {
         "branch" : "main",
-        "revision" : "87baa4289549cd44c115ebd6e3983e21535e7c10"
+        "revision" : "252c07b12b9e3ca67775a1e49630a7672de988fd"
       }
     }
   ],
