@@ -11,17 +11,7 @@ public extension Demo {
 // MARK: -
 public extension DemoList {
 	struct Screen {
+        let demos: [Demo]
 		let selectDemo: (Demo) -> Void
-	}
-}
-
-// MARK: -
-extension DemoList.Screen {
-	var demos: [Demo] {
-		[
-			.swiftUI,
-			.uiKit(declarative: false),
-			.uiKit(declarative: true)
-		]
 	}
 }

@@ -20,8 +20,8 @@ extension DemoList.View: LayoutProvider {
     // MARK: LayoutProvider
     public func layout(with screen: some ScreenProxy<Screen>) -> AnyLayout {
         UITableView.style(.insetGrouped)
-            .selected(screen.selectDemo)
             .items(screen.demos, text: \.name)
+            .itemSelected(screen.selectDemo)
             .fillingParent()
     }
 }
