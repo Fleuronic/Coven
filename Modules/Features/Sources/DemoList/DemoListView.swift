@@ -20,7 +20,7 @@ extension DemoList.View: LayoutProvider {
     // MARK: LayoutProvider
     public func layout(with screen: some ScreenProxy<Screen>) -> AnyLayout {
         UITableView.style(.insetGrouped)
-            .items(screen.demos, text: \.name)
+            .items(screen.demos, text: \.name, loading: screen.isUpdatingDemos)
             .itemSelected(screen.selectDemo)
             .fillingParent()
     }

@@ -9,11 +9,7 @@ import enum Demo.Demo
 
 public extension DemoList {
 	struct Workflow {
-        fileprivate let initialDemos: [Demo]
-        
-        public init(initialDemos: [Demo]) {
-            self.initialDemos = initialDemos
-        }
+        public init() {}
 	}
 }
 
@@ -39,7 +35,7 @@ extension DemoList.Workflow: Workflow {
     
     public func makeInitialState() -> State {
         .init(
-            demos: initialDemos,
+            demos: Demo.allCases,
             updateWorker: .ready(to: updateDemos)
         )
     }
@@ -53,14 +49,15 @@ extension DemoList.Workflow: Workflow {
                 screen: Alert.Screen(
                     baseScreen: DemoList.Screen(
                         demos: state.demos,
-                        selectDemo: { sink.send(.demo($0)) }
+                        selectDemo: { sink.send(.demo($0)) },
+                        isUpdatingDemos: state.isUpdatingDemos
                     ),
                     alert: state.alert
                 ).asAnyScreen(),
 				barContent: .init(
                     title: "Workflow Demo",
                     rightItem: .init(
-                        content: state.isUpdatingDemos ? .spinner : .text("Update"),
+                        content: .text("Update"),
                         isEnabled: !state.isUpdatingDemos,
                         handler: { sink.send(.updateDemos) }
                     )
@@ -82,12 +79,9 @@ private extension DemoList.Workflow {
     func updateDemos() async -> Result<[Demo], Error> {
         do {
             try await Task.sleep(nanoseconds: .updateTime)
-            return Bool.random() ?
-                .success(Demo.allCases.shuffled()) :
-                .failure(.loadError)
+            return Bool.random() ? .success(Demo.allCases) : .failure(.loadError)
         } catch {
-            return
-                .failure(.sleepError(error))
+            return .failure(.sleepError(error))
         }
     }
 }

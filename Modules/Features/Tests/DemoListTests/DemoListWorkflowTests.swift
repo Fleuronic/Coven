@@ -15,7 +15,7 @@ final class DemoListWorkflowTests: XCTestCase {
 		let demo = Demo.swiftUI
 
 		DemoList.Workflow.Action
-			.tester(withState: ())
+            .tester(withState: DemoList.Workflow().makeInitialState())
 			.send(action: .demo(demo))
 			.assert(output: demo)
 	}

@@ -13,5 +13,6 @@ public extension DemoList {
 	struct Screen {
         let demos: [Demo]
 		let selectDemo: (Demo) -> Void
+        let isUpdatingDemos: Bool
 	}
 }

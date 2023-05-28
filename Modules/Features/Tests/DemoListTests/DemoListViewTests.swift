@@ -14,16 +14,20 @@ final class DemoListViewTests: XCTestCase {
 		let swiftUIDemoExpectation = expectation(description: "swiftUIDemo")
 		let uiKitDemoExpectation = expectation(description: "uiKitDemo")
 		let declarativeUIKitDemoExpectation = expectation(description: "declarativeUIKit")
-		let screen = DemoList.Screen { demo in
-			switch demo {
-			case .swiftUI:
-				swiftUIDemoExpectation.fulfill()
-			case .uiKit(declarative: false):
-				uiKitDemoExpectation.fulfill()
-			case .uiKit(declarative: true):
-				declarativeUIKitDemoExpectation.fulfill()
-			}
-		}
+		let screen = DemoList.Screen(
+            demos: Demo.allCases,
+            selectDemo: { demo in
+                switch demo {
+                case .swiftUI:
+                    swiftUIDemoExpectation.fulfill()
+                case .uiKit(declarative: false):
+                    uiKitDemoExpectation.fulfill()
+                case .uiKit(declarative: true):
+                    declarativeUIKitDemoExpectation.fulfill()
+                }
+            },
+            isUpdatingDemos: false
+        )
 
         let viewController = LayoutViewController<DemoList.View>(
             screen: screen,
@@ -40,7 +44,8 @@ final class DemoListViewTests: XCTestCase {
 
 		for (index, demo) in screen.demos.enumerated() {
             let cell = tableView.cellForRow(at: .init(row: index, section: 0))
-            XCTAssertEqual(cell?.textLabel?.text, demo.name)
+            let configuration = try XCTUnwrap(cell?.contentConfiguration as? UIListContentConfiguration)
+            XCTAssertEqual(configuration.text, demo.name)
 			screen.selectDemo(demo)
 		}
 
