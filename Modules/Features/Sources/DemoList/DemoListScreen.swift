@@ -11,8 +11,8 @@ public extension Demo {
 // MARK: -
 public extension DemoList {
 	struct Screen {
-        let demos: [Demo]
+		let demos: [Demo]
 		let selectDemo: (Demo) -> Void
-        let isUpdatingDemos: Bool
+		let isUpdatingDemos: Bool
 	}
 }

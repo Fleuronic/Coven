@@ -38,12 +38,12 @@ final class RootWorkflowTests: XCTestCase {
 			.expectWorkflow(
 				type: DemoList.Workflow.self,
 				producingRendering: .init(
-                    screen: DemoList.Screen(
-                        demos: Demo.allCases,
-                        selectDemo: { _ in },
-                        isUpdatingDemos: false
-                    ).asAnyScreen()
-                )
+					screen: DemoList.Screen(
+						demos: Demo.allCases,
+						selectDemo: { _ in },
+						isUpdatingDemos: false
+					).asAnyScreen()
+				)
 			)
 			.render { screen in
 				XCTAssertEqual(screen.items.count, 1)
@@ -61,12 +61,12 @@ final class RootWorkflowTests: XCTestCase {
 			.expectWorkflow(
 				type: DemoList.Workflow.self,
 				producingRendering: .init(
-                    screen: DemoList.Screen(
-                        demos: Demo.allCases,
-                        selectDemo: { _ in },
-                        isUpdatingDemos: false
-                    ).asAnyScreen()
-                ),
+					screen: DemoList.Screen(
+						demos: Demo.allCases,
+						selectDemo: { _ in },
+						isUpdatingDemos: false
+					).asAnyScreen()
+				),
 				producingOutput: demo
 			)
 			.render { screen in
@@ -85,12 +85,12 @@ final class RootWorkflowTests: XCTestCase {
 			.expectWorkflow(
 				type: DemoList.Workflow.self,
 				producingRendering: .init(
-                    screen: DemoList.Screen(
-                        demos: Demo.allCases,
-                        selectDemo: { _ in },
-                        isUpdatingDemos: false
-                    ).asAnyScreen()
-                )
+					screen: DemoList.Screen(
+						demos: Demo.allCases,
+						selectDemo: { _ in },
+						isUpdatingDemos: false
+					).asAnyScreen()
+				)
 			)
 			.expectWorkflow(
 				type: Counter.Workflow.self,
@@ -119,12 +119,12 @@ final class RootWorkflowTests: XCTestCase {
 			.expectWorkflow(
 				type: DemoList.Workflow.self,
 				producingRendering: .init(
-                    screen: DemoList.Screen(
-                        demos: Demo.allCases,
-                        selectDemo: { _ in },
-                        isUpdatingDemos: false
-                    ).asAnyScreen()
-                )
+					screen: DemoList.Screen(
+						demos: Demo.allCases,
+						selectDemo: { _ in },
+						isUpdatingDemos: false
+					).asAnyScreen()
+				)
 			)
 			.expectWorkflow(
 				type: Counter.Workflow.self,
@@ -153,12 +153,12 @@ final class RootWorkflowTests: XCTestCase {
 			.expectWorkflow(
 				type: DemoList.Workflow.self,
 				producingRendering: .init(
-                    screen: DemoList.Screen(
-                        demos: Demo.allCases,
-                        selectDemo: { _ in },
-                        isUpdatingDemos: false
-                    ).asAnyScreen()
-                )
+					screen: DemoList.Screen(
+						demos: Demo.allCases,
+						selectDemo: { _ in },
+						isUpdatingDemos: false
+					).asAnyScreen()
+				)
 			)
 			.expectWorkflow(
 				type: Counter.Workflow.self,
@@ -187,12 +187,12 @@ final class RootWorkflowTests: XCTestCase {
 			.expectWorkflow(
 				type: DemoList.Workflow.self,
 				producingRendering: .init(
-                    screen: DemoList.Screen(
-                        demos: Demo.allCases,
-                        selectDemo: { _ in },
-                        isUpdatingDemos: false
-                    ).asAnyScreen()
-                )
+					screen: DemoList.Screen(
+						demos: Demo.allCases,
+						selectDemo: { _ in },
+						isUpdatingDemos: false
+					).asAnyScreen()
+				)
 			)
 			.expectWorkflow(
 				type: Counter.Workflow.self,

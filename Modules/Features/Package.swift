@@ -42,7 +42,7 @@ let package = Package(
 			name: "DemoList",
 			dependencies: [
 				"Demo",
-                "ErgoDeclarativeUIKit",
+				"ErgoDeclarativeUIKit",
 				"WorkflowContainers"
 			]
 		),
@@ -69,7 +69,7 @@ let package = Package(
 			dependencies: [
 				"DemoList",
 				.product(name: "WorkflowTesting", package: "workflow-swift"),
-                .product(name: "ErgoDeclarativeUIKitTesting", package: "ErgoUIKit")
+				.product(name: "ErgoDeclarativeUIKitTesting", package: "ErgoUIKit")
 			]
 		),
 		.testTarget(

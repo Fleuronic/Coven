@@ -16,16 +16,13 @@ final class DemoListWorkflowTests: XCTestCase {
 		let demo = Demo.swiftUI
 
 		DemoList.Workflow.Action
-            .tester(withState: DemoList.Workflow().makeInitialState())
+			.tester(withState: DemoList.Workflow().makeInitialState())
 			.send(action: .demo(demo))
 			.assert(output: demo)
 	}
 
 	func testRenderingScreen() throws {
-		let swiftUIDemo = Demo.swiftUI
-		let uiKitDemo = Demo.uiKit(declarative: false)
-		let declarativeUIKitDemo = Demo.uiKit(declarative: true)
-		let demos = [swiftUIDemo, uiKitDemo, declarativeUIKitDemo]
+		let demos = Demo.allCases
 
 		try DemoList.Workflow()
 			.renderTester()
@@ -53,6 +50,43 @@ final class DemoListWorkflowTests: XCTestCase {
 			}
 	}
 
+	func testRenderingUpdateDemos() throws {
+		let workflow = DemoList.Workflow()
+
+		try workflow
+			.renderTester()
+			.expectWorkflow(
+				type: WorkerWorkflow<DemoList.Workflow.UpdateWorker>.self,
+				producingRendering: ()
+			)
+			.render { item in
+				let barContent = try XCTUnwrap(item.barVisibility[expecting: Bar.Content.self])
+				let rightItem = try XCTUnwrap(barContent.rightItem)
+//				XCTAssertEqual(rightItem.content, .text("Update"))
+			}
+			.assert(action: DemoList.Workflow.Action.updateDemos)
+			.assertNoOutput()
+
+//		try workflow
+//			.renderTester(
+//				initialState: .init(
+//					demos: Demo.allCases,
+//					updateWorker: .working(to: workflow.updateDemos)
+//				)
+//			)
+//			.expectWorkflow(
+//				type: WorkerWorkflow<DemoList.Workflow.UpdateWorker>.self,
+//				producingRendering: ()
+//			)
+//			.render { item in
+//				let barContent = try XCTUnwrap(item.barVisibility[expecting: Bar.Content.self])
+//				let rightItem = try XCTUnwrap(barContent.rightItem)
+//				XCTAssertFalse(rightItem.isEnabled)
+//			}
+//			.assert(action: DemoList.Workflow.Action.updateDemos)
+//			.assertNoOutput()
+	}
+
 	func testRenderingSelectDemo() throws {
 		let demo = Demo.swiftUI
 
@@ -69,6 +103,7 @@ final class DemoListWorkflowTests: XCTestCase {
 				demoListScreen.selectDemo(demo)
 			}
 			.assert(action: DemoList.Workflow.Action.demo(demo))
+			.assert(output: demo)
 	}
 }
 

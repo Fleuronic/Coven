@@ -16,37 +16,33 @@ final class DemoListViewTests: XCTestCase {
 		let uiKitDemoExpectation = expectation(description: "uiKitDemo")
 		let declarativeUIKitDemoExpectation = expectation(description: "declarativeUIKit")
 		let screen = DemoList.Screen(
-            demos: Demo.allCases,
-            selectDemo: { demo in
-                switch demo {
-                case .swiftUI:
-                    swiftUIDemoExpectation.fulfill()
-                case .uiKit(declarative: false):
-                    uiKitDemoExpectation.fulfill()
-                case .uiKit(declarative: true):
-                    declarativeUIKitDemoExpectation.fulfill()
-                }
-            },
-            isUpdatingDemos: false
-        )
+			demos: Demo.allCases,
+			selectDemo: { demo in
+				switch demo {
+				case .swiftUI:
+					swiftUIDemoExpectation.fulfill()
+				case .uiKit(declarative: false):
+					uiKitDemoExpectation.fulfill()
+				case .uiKit(declarative: true):
+					declarativeUIKitDemoExpectation.fulfill()
+				}
+			},
+			isUpdatingDemos: false
+		)
 
-        let viewController = LayoutViewController<DemoList.View>(
-            screen: screen,
-            environment: .empty
-        )
+		let viewController = LayoutViewController<DemoList.View>(
+			screen: screen,
+			environment: .empty
+		)
 
-        let window = UIWindow()
-        window.rootViewController = viewController
-        window.makeKeyAndVisible()
-        
-        let view = try viewController.view.subview(0)
-        let tableView = try view.tableView(0)
-        tableView.frame = window.bounds
+		let view = try viewController.view.subview(0)
+		let tableView = try view.tableView(0)
+		tableView.frame = UIWindow().bounds
 
 		for (index, demo) in screen.demos.enumerated() {
-            let cell = tableView.cellForRow(at: .init(row: index, section: 0))
-            let configuration = try XCTUnwrap(cell?.contentConfiguration as? UIListContentConfiguration)
-            XCTAssertEqual(configuration.text, demo.name)
+			let cell = tableView.cellForRow(at: .init(row: index, section: 0))
+			let configuration = try XCTUnwrap(cell?.contentConfiguration as? UIListContentConfiguration)
+			XCTAssertEqual(configuration.text, demo.name)
 			screen.selectDemo(demo)
 		}
 
@@ -65,20 +61,13 @@ final class DemoListViewTests: XCTestCase {
 			environment: .empty
 		)
 
-		let window = UIWindow()
-		window.rootViewController = viewController
-		window.makeKeyAndVisible()
-
 		let view = try viewController.view.subview(0)
 		let tableView = try view.tableView(0)
-		tableView.frame = window.bounds
+		tableView.frame = UIWindow().bounds
 
-			let cell = tableView.cellForRow(at: .init(row: 0, section: 0))
-			let configuration = try XCTUnwrap(cell?.contentConfiguration as? UIListContentConfiguration)
-			XCTAssertEqual(configuration.text, demo.name)
-			screen.selectDemo(demo)
-		}
-
-		wait(for: [swiftUIDemoExpectation, uiKitDemoExpectation, declarativeUIKitDemoExpectation])
+		let cell = tableView.cellForRow(at: .init(row: 0, section: 0))
+		let loadingCell = try XCTUnwrap(cell as? UITableView.LoadingCell)
+		let spinner = try XCTUnwrap(loadingCell.contentView.activityIndicatorView(0))
+		XCTAssert(spinner.isAnimating)
 	}
 }

@@ -12,10 +12,10 @@ class DemoListScreenTests: XCTestCase {
 		var selectedDemo: Demo? = nil
 
 		let screen = DemoList.Screen(
-            demos: Demo.allCases,
-            selectDemo: { selectedDemo = $0 },
-            isUpdatingDemos: false
-        )
+			demos: Demo.allCases,
+			selectDemo: { selectedDemo = $0 },
+			isUpdatingDemos: false
+		)
 
 		screen.selectDemo(demo)
 		XCTAssertEqual(demo, selectedDemo)

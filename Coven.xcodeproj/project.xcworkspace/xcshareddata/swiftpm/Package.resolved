@@ -51,7 +51,7 @@
       "location" : "https://github.com/Fleuronic/ErgoUIKit",
       "state" : {
         "branch" : "main",
-        "revision" : "e42e13bdbd7ed80aa7cc82f4b8ec1023b9eaf813"
+        "revision" : "75ff472831941f68483533cb2e5580b468711797"
       }
     },
     {
@@ -141,7 +141,7 @@
       "location" : "https://github.com/Fleuronic/Telemetric",
       "state" : {
         "branch" : "main",
-        "revision" : "d33aa2f8c0b49c23cd1cd40fc6904552c133a4fa"
+        "revision" : "0f7757eedc013b1e163e19a32fddcb6a53de4488"
       }
     },
     {

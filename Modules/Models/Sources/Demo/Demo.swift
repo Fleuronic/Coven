@@ -24,12 +24,12 @@ extension Demo: Identifiable {
 }
 
 extension Demo: CaseIterable {
-    // MARK: CaseIterable
-    public static var allCases: [Demo] {
-        [
-            .swiftUI,
-            .uiKit(declarative: false),
-            .uiKit(declarative: true)
-        ]
-    }
+	// MARK: CaseIterable
+	public static var allCases: [Demo] {
+		[
+			.swiftUI,
+			.uiKit(declarative: false),
+			.uiKit(declarative: true)
+		]
+	}
 }

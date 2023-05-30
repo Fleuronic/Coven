@@ -37,7 +37,7 @@ extension Root.Workflow: Workflow {
 		context.render { (sink: Sink<Action>) in
 			.init(
 				items: [
-                    DemoList.Workflow()
+					DemoList.Workflow()
 						.mapOutput(Action.showCounterDemo)
 						.rendered(in: context),
 					selectedDemo
