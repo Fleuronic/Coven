@@ -63,6 +63,8 @@
 		17FC53172A18428000EB29D2 /* Counter Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Counter Tests.xctestplan"; sourceTree = "<group>"; };
 		17FC53182A1842AE00EB29D2 /* Unit Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Unit Tests.xctestplan"; sourceTree = "<group>"; };
 		17FD73982A1841750084703A /* Root Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Root Tests.xctestplan"; sourceTree = "<group>"; };
+		4438B4622A263331005622A5 /* WorkflowContainers */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = WorkflowContainers; path = ../WorkflowContainers; sourceTree = "<group>"; };
+		4438B4632A265716005622A5 /* Ergo */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Ergo; path = ../Ergo; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,8 @@
 		170B0CF428A6DDF40033029D = {
 			isa = PBXGroup;
 			children = (
+				4438B4632A265716005622A5 /* Ergo */,
+				4438B4622A263331005622A5 /* WorkflowContainers */,
 				1749DCCE28BB886300C4AFC9 /* Modules */,
 				1764FE4D28BC2908004AAD5E /* Tests */,
 				17FD73972A18416F0084703A /* Test Plans */,
@@ -117,6 +121,7 @@
 				17169A032A1D588700D80EBB /* SnapshotTests.xctest */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		17127D972A1BD60700BE46CE /* Features */ = {
 			isa = PBXGroup;
