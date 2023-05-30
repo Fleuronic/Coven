@@ -15,9 +15,10 @@ import enum Demo.Demo
 final class DemoListWorkflowTests: XCTestCase {
 	func testDemo() {
 		let demo = Demo.swiftUI
-
+        let state = DemoList.Workflow().makeInitialState()
+        
 		DemoList.Workflow.Action
-			.tester(withState: DemoList.Workflow().makeInitialState())
+			.tester(withState: state)
 			.send(action: .demo(demo))
 			.assert(output: demo)
 	}
@@ -193,6 +194,25 @@ final class DemoListWorkflowTests: XCTestCase {
             .startWithValues { result in
                 switch result {
                 case .failure(.loadError):
+                    expectation.fulfill()
+                default:
+                    break
+                }
+            }
+        
+        wait(for: [expectation])
+    }
+    
+    func testUpdateWorkerFailureSleepError() throws {
+        let workflow = DemoList.Workflow()
+        let expectation = expectation(description: "UpdateDemos")
+        
+        DemoList.Workflow.UpdateWorker
+            .working(to: workflow.updateDemos)
+            .run()
+            .startWithValues { result in
+                switch result {
+                case let .failure(.sleepError(error)):
                     expectation.fulfill()
                 default:
                     break

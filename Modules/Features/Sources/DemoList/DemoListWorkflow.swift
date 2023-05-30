@@ -4,12 +4,18 @@ import Ergo
 import Workflow
 import WorkflowUI
 import WorkflowContainers
+import DemoAPI
 
 import enum Demo.Demo
+import protocol DemoService.LoadingSpec
 
 public extension DemoList {
-	struct Workflow {
-		public init() {}
+    struct Workflow<Service: LoadingSpec> where Service.DemoLoadingResult == Demo.LoadingResult {
+        private let service: Service
+        
+        public init(service: Service) {
+            self.service = service
+        }
 	}
 }
 
@@ -20,37 +26,24 @@ extension DemoList.Workflow {
 		case demo(Demo)
 		case updateDemos
 	}
-
-	enum Error: Swift.Error {
-		case loadError
-		case sleepError(Swift.Error)
-	}
-
-	func updateDemos() async -> Result<[Demo], Error> {
-		do {
-			try await Task.sleep(nanoseconds: .updateTime)
-			return Bool.random() ? .success(Demo.allCases) : .failure(.loadError)
-		} catch {
-			return .failure(.sleepError(error))
-		}
-	}
 }
 
 // MARK: -
 extension DemoList.Workflow: Workflow {
 	public typealias Output = Demo
 	
-	typealias UpdateWorker = Worker<Void, Result<[Demo], Error>>
+    typealias UpdateWorker = Worker<Void, Demo.LoadingResult>
 	
-	public struct State {
+    public struct State {
 		var demos: [Demo]
 		let updateWorker: UpdateWorker
 	}
 	
 	public func makeInitialState() -> State {
-		.init(
+        let updateDemos = service.loadDemos
+		return .init(
 			demos: Demo.allCases,
-			updateWorker: .ready(to: updateDemos)
+            updateWorker: .ready(to: updateDemos)
 		)
 	}
 
@@ -111,7 +104,7 @@ private extension DemoList.Workflow.State {
 
 // MARK: -
 extension DemoList.Workflow.Action: WorkflowAction {
-	public typealias WorkflowType = DemoList.Workflow
+	public typealias WorkflowType = DemoList.Workflow<Service>
 
 	public func apply(toState state: inout WorkflowType.State) -> Demo? {
 		switch self {
@@ -126,8 +119,4 @@ extension DemoList.Workflow.Action: WorkflowAction {
 		}
 		return nil
 	}
-}
-
-private extension UInt64 {
-	static let updateTime: Self = 500_000_000
 }

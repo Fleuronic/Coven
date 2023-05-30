@@ -4,17 +4,23 @@ import Workflow
 import WorkflowUI
 import WorkflowContainers
 import EnumKit
+import DemoAPI
 
 import enum Demo.Demo
 import enum DemoList.DemoList
 import enum Counter.Counter
+import protocol DemoService.LoadingSpec
 
 public enum Root {}
 
 // MARK: -
 public extension Root {
-	struct Workflow {
-		public init() {}
+    struct Workflow<DemoService: LoadingSpec> where DemoService.DemoLoadingResult == Demo.LoadingResult {
+        private let demoService: DemoService
+        
+        public init(demoService: DemoService) {
+            self.demoService = demoService
+        }
 	}
 }
 
@@ -37,7 +43,7 @@ extension Root.Workflow: Workflow {
 		context.render { (sink: Sink<Action>) in
 			.init(
 				items: [
-					DemoList.Workflow()
+                    DemoList.Workflow(service: demoService)
 						.mapOutput(Action.showCounterDemo)
 						.rendered(in: context),
 					selectedDemo
@@ -52,7 +58,7 @@ extension Root.Workflow: Workflow {
 
 // MARK: -
 extension Root.Workflow.Action: WorkflowAction {
-	public typealias WorkflowType = Root.Workflow
+	public typealias WorkflowType = Root.Workflow<DemoService>
 
 	public func apply(toState selectedDemo: inout Demo?) -> Never? {
 		selectedDemo = associatedValue()

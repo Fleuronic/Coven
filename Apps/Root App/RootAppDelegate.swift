@@ -5,6 +5,7 @@ import Workflow
 import WorkflowUI
 
 import enum Root.Root
+import struct DemoAPI.API
 
 extension Root.App {
 	@UIApplicationMain
@@ -16,8 +17,10 @@ extension Root.App {
 // MARK: -
 extension Root.App.Delegate: AppDelegate {
 	// MARK: AppDelegate
-	var workflow: Root.Workflow {
-		.init()
+	var workflow: Root.Workflow<API> {
+		.init(
+			demoService: API()
+		)
 	}
 
 	// MARK: UIApplicationDelegate
