@@ -7,6 +7,7 @@ import ErgoUIKitTesting
 import enum Demo.Demo
 
 @testable import ErgoDeclarativeUIKit
+@testable import Telemetric
 @testable import enum DemoList.DemoList
 
 final class DemoListViewTests: XCTestCase {
@@ -46,6 +47,35 @@ final class DemoListViewTests: XCTestCase {
             let cell = tableView.cellForRow(at: .init(row: index, section: 0))
             let configuration = try XCTUnwrap(cell?.contentConfiguration as? UIListContentConfiguration)
             XCTAssertEqual(configuration.text, demo.name)
+			screen.selectDemo(demo)
+		}
+
+		wait(for: [swiftUIDemoExpectation, uiKitDemoExpectation, declarativeUIKitDemoExpectation])
+	}
+
+	func testViewLoading() throws {
+		let screen = DemoList.Screen(
+			demos: Demo.allCases,
+			selectDemo: { _ in },
+			isUpdatingDemos: true
+		)
+
+		let viewController = LayoutViewController<DemoList.View>(
+			screen: screen,
+			environment: .empty
+		)
+
+		let window = UIWindow()
+		window.rootViewController = viewController
+		window.makeKeyAndVisible()
+
+		let view = try viewController.view.subview(0)
+		let tableView = try view.tableView(0)
+		tableView.frame = window.bounds
+
+			let cell = tableView.cellForRow(at: .init(row: 0, section: 0))
+			let configuration = try XCTUnwrap(cell?.contentConfiguration as? UIListContentConfiguration)
+			XCTAssertEqual(configuration.text, demo.name)
 			screen.selectDemo(demo)
 		}
 

@@ -50,6 +50,8 @@
 		1758E7D82A151FB500E284CC /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Models; path = Modules/Models; sourceTree = "<group>"; };
 		1764FE4728BC1FF1004AAD5E /* AppFlowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlowTests.swift; sourceTree = "<group>"; };
 		1787621728C0F81A0079A32C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		179AF1912A2592BA00871C82 /* DemoListView.Snapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DemoListView.Snapshot.png; sourceTree = "<group>"; };
+		179AF1922A2592BA00871C82 /* DemoListViewLoading.Snapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DemoListViewLoading.Snapshot.png; sourceTree = "<group>"; };
 		17AD6D8B2A195E12005095A1 /* Demo Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Demo Tests.xctestplan"; sourceTree = "<group>"; };
 		17D00CB729FC79D900325B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17D00CB829FC8DCB00325B4E /* RootApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootApp.swift; sourceTree = "<group>"; };
@@ -61,7 +63,6 @@
 		17FC53172A18428000EB29D2 /* Counter Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Counter Tests.xctestplan"; sourceTree = "<group>"; };
 		17FC53182A1842AE00EB29D2 /* Unit Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Unit Tests.xctestplan"; sourceTree = "<group>"; };
 		17FD73982A1841750084703A /* Root Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Root Tests.xctestplan"; sourceTree = "<group>"; };
-		442A16AA2A1FB8E40024B82C /* DemoListView.Snapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DemoListView.Snapshot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +244,8 @@
 		17E283692A1D6F3500146E0B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				442A16AA2A1FB8E40024B82C /* DemoListView.Snapshot.png */,
+				179AF1912A2592BA00871C82 /* DemoListView.Snapshot.png */,
+				179AF1922A2592BA00871C82 /* DemoListViewLoading.Snapshot.png */,
 				17E2836D2A1D730200146E0B /* CounterDeclarativeUIKitView.Snapshot.png */,
 				17E2836C2A1D730200146E0B /* CounterSwiftUIView.Snapshot.png */,
 				17E2836B2A1D730200146E0B /* CounterUIKitView.Snapshot.png */,

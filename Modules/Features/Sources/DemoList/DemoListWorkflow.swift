@@ -20,13 +20,18 @@ extension DemoList.Workflow {
         case demo(Demo)
         case updateDemos
 	}
+
+	enum Error: Swift.Error {
+		case loadError
+		case sleepError(Swift.Error)
+	}
 }
 
 // MARK: -
 extension DemoList.Workflow: Workflow {
 	public typealias Output = Demo
     
-    fileprivate typealias UpdateWorker = Worker<Void, Result<[Demo], Error>>
+    typealias UpdateWorker = Worker<Void, Result<[Demo], Error>>
     
     public struct State {
         fileprivate var demos: [Demo]
@@ -71,11 +76,6 @@ extension DemoList.Workflow: Workflow {
 
 // MARK: -
 private extension DemoList.Workflow {
-    enum Error: Swift.Error {
-        case loadError
-        case sleepError(Swift.Error)
-    }
-    
     func updateDemos() async -> Result<[Demo], Error> {
         do {
             try await Task.sleep(nanoseconds: .updateTime)

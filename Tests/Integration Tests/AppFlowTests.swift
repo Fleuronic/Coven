@@ -17,7 +17,7 @@ final class AppFlowTests: XCTestCase {
 
 	func testAppFlow() throws {
 		// Start at Demo List
-		try verifyShowing(DemoList.Screen.self)
+		try verifyShowing(Alert.Screen<DemoList.Screen>.self)
 
 		// Show SwiftUI Counter Demo
 		try select(.swiftUI)
@@ -35,7 +35,7 @@ final class AppFlowTests: XCTestCase {
 		try finishDemo()
 
 		// Finish at Demo List
-		try verifyShowing(DemoList.Screen.self)
+		try verifyShowing(Alert.Screen<DemoList.Screen>.self)
 	}
 }
 
@@ -47,7 +47,8 @@ private extension AppFlowTests {
 
 	func select(_ demo: Demo) throws {
 		let item = try XCTUnwrap(screen.items.last)
-		let screen = try XCTUnwrap(item.screen.wrappedScreen as? DemoList.Screen)
+		let alertScreen = try XCTUnwrap(item.screen.wrappedScreen as? Alert.Screen<DemoList.Screen>)
+		let screen = alertScreen.baseScreen
 		screen.selectDemo(demo)
 	}
 

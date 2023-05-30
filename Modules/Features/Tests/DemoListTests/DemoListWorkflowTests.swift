@@ -7,6 +7,7 @@ import EnumKit
 import enum Demo.Demo
 
 @testable import WorkflowContainers
+@testable import WorkflowReactiveSwift
 @testable import enum DemoList.DemoList
 @testable import struct WorkflowUI.AnyScreen
 
@@ -28,8 +29,13 @@ final class DemoListWorkflowTests: XCTestCase {
 
 		try DemoList.Workflow()
 			.renderTester()
+			.expectWorkflow(
+				type: WorkerWorkflow<DemoList.Workflow.UpdateWorker>.self,
+				producingRendering: ()
+			)
 			.render { item in
-				let screen = try XCTUnwrap(item.screen.wrappedScreen as? DemoList.Screen)
+				let alertScreen = try XCTUnwrap(item.screen.wrappedScreen as? Alert.Screen<DemoList.Screen>)
+				let screen = alertScreen.baseScreen
 				XCTAssertEqual(screen.demos, demos)
 			}
 	}
@@ -37,6 +43,10 @@ final class DemoListWorkflowTests: XCTestCase {
 	func testRenderingBarContent() throws {
 		try DemoList.Workflow()
 			.renderTester()
+			.expectWorkflow(
+				type: WorkerWorkflow<DemoList.Workflow.UpdateWorker>.self,
+				producingRendering: ()
+			)
 			.render { item in
 				let barContent = try XCTUnwrap(item.barVisibility[expecting: Bar.Content.self])
 				XCTAssertEqual(barContent.title, "Workflow Demo")
@@ -46,9 +56,18 @@ final class DemoListWorkflowTests: XCTestCase {
 	func testRenderingSelectDemo() throws {
 		let demo = Demo.swiftUI
 
-		DemoList.Workflow()
+		try DemoList.Workflow()
 			.renderTester()
-			.render { ($0.screen.wrappedScreen as? DemoList.Screen)?.selectDemo(demo) }
+			.expectWorkflow(
+				type: WorkerWorkflow<DemoList.Workflow.UpdateWorker>.self,
+				producingRendering: ()
+			)
+			.render { backStackScreen in
+				let wrappedScreen = backStackScreen.screen.wrappedScreen
+				let alertScreen = try XCTUnwrap(wrappedScreen as? Alert.Screen<DemoList.Screen>)
+				let demoListScreen = alertScreen.baseScreen
+				demoListScreen.selectDemo(demo)
+			}
 			.assert(action: DemoList.Workflow.Action.demo(demo))
 	}
 }
