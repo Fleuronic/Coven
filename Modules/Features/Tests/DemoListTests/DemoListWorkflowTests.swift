@@ -5,6 +5,7 @@ import WorkflowTesting
 import EnumKit
 
 import enum Demo.Demo
+import protocol DemoService.LoadingSpec
 
 @testable import Ergo
 @testable import WorkflowContainers
@@ -15,209 +16,229 @@ import enum Demo.Demo
 final class DemoListWorkflowTests: XCTestCase {
 	func testDemo() {
 		let demo = Demo.swiftUI
-        let state = DemoList.Workflow().makeInitialState()
         
-		DemoList.Workflow.Action
-			.tester(withState: state)
-			.send(action: .demo(demo))
-			.assert(output: demo)
+		DemoList.Workflow.Action.tester(
+            withState: DemoList.Workflow(
+                service: MockAPI(
+                    result: .success(Demo.allCases)
+                )
+            )
+            .makeInitialState()
+        )
+		.send(action: .demo(demo))
+		.assert(output: demo)
 	}
 
     func testShowDemos() {
         let demos = Demo.allCases
-        let workflow = DemoList.Workflow()
+        let api = MockAPI(result: .success(demos))
+        let updateDemos = api.loadDemos
         
-        DemoList.Workflow.Action
-            .tester(withState: workflow.makeInitialState())
-            .send(action: .show(demos))
-            .verifyState { XCTAssertEqual($0.demos, demos) }
-            .assertNoOutput()
+        DemoList.Workflow.Action.tester(
+            withState: DemoList.Workflow(
+                service: api
+            ).makeInitialState()
+        )
+        .send(action: .show(demos))
+        .verifyState { XCTAssertEqual($0.demos, demos) }
+        .assertNoOutput()
         
-        DemoList.Workflow.Action
-            .tester(
-                withState: .init(
-                    demos: demos,
-                    updateWorker: .ready(to: workflow.updateDemos)
-                )
+        DemoList.Workflow<MockAPI>.Action.tester(
+            withState: .init(
+                demos: demos,
+                updateWorker: .ready(to: updateDemos)
             )
-            .send(action: .show(nil))
-            .verifyState { XCTAssertEqual($0.demos, demos) }
-            .assertNoOutput()
+        )
+        .send(action: .show(nil))
+        .verifyState { XCTAssertEqual($0.demos, demos) }
+        .assertNoOutput()
     }
     
     func testUpdateDemos() {
-        DemoList.Workflow.Action
-            .tester(withState: DemoList.Workflow().makeInitialState())
-            .send(action: .updateDemos)
-            .verifyState { XCTAssert($0.updateWorker.isWorking) }
-            .assertNoOutput()
+        DemoList.Workflow.Action.tester(
+            withState: DemoList.Workflow(
+                service: MockAPI(
+                    result: .success(Demo.allCases)
+                )
+            ).makeInitialState()
+        )
+        .send(action: .updateDemos)
+        .verifyState { XCTAssert($0.updateWorker.isWorking) }
+        .assertNoOutput()
     }
 
 	func testRenderingScreen() throws {
 		let demos = Demo.allCases
 
-		try DemoList.Workflow()
-			.renderTester()
-			.expectWorkflow(
-				type: WorkerWorkflow<DemoList.Workflow.UpdateWorker>.self,
-				producingRendering: ()
-			)
-			.render { item in
-				let alertScreen = try XCTUnwrap(item.screen.wrappedScreen as? Alert.Screen<DemoList.Screen>)
-				let screen = alertScreen.baseScreen
-				XCTAssertEqual(screen.demos, demos)
-                
-                let barContent = try XCTUnwrap(item.barVisibility[expecting: Bar.Content.self])
-                XCTAssertEqual(barContent.title, "Workflow Demo")
-			}
-            .verifyState { state in
-                XCTAssertEqual(state.demos, demos)
-                XCTAssertTrue(state.updateWorker.isReady)
-            }
+		try DemoList.Workflow(
+            service: MockAPI(
+                result: .success(demos)
+            )
+        )
+		.renderTester()
+		.expectWorkflow(
+			type: WorkerWorkflow<DemoList.Workflow<MockAPI>.UpdateWorker>.self,
+			producingRendering: ()
+		)
+		.render { item in
+			let alertScreen = try XCTUnwrap(item.screen.wrappedScreen as? Alert.Screen<DemoList.Screen>)
+			let screen = alertScreen.baseScreen
+			XCTAssertEqual(screen.demos, demos)
+            
+            let barContent = try XCTUnwrap(item.barVisibility[expecting: Bar.Content.self])
+            XCTAssertEqual(barContent.title, "Workflow Demo")
+		}
+        .verifyState { state in
+            XCTAssertEqual(state.demos, demos)
+            XCTAssertTrue(state.updateWorker.isReady)
+        }
 	}
 
     func testRenderingUpdateDemos() throws {
-        let workflow = DemoList.Workflow()
+        let api = MockAPI(result: .success(Demo.allCases))
+        let workflow = DemoList.Workflow(service: api)
+        let updateDemos = api.loadDemos
         
-        try workflow
-            .renderTester()
-            .expectWorkflow(
-                type: WorkerWorkflow<DemoList.Workflow.UpdateWorker>.self,
-                producingRendering: ()
-            )
-            .render { item in
-                let barContent = try XCTUnwrap(item.barVisibility[expecting: Bar.Content.self])
-                let rightItem = try XCTUnwrap(barContent.rightItem)
-                XCTAssertEqual(rightItem.content, .text("Update"))
-                rightItem.handler()
-            }
-            .assert(action: DemoList.Workflow.Action.updateDemos)
-            .assertNoOutput()
+        try workflow.renderTester().expectWorkflow(
+            type: WorkerWorkflow<DemoList.Workflow<MockAPI>.UpdateWorker>.self,
+            producingRendering: ()
+        )
+        .render { item in
+            let barContent = try XCTUnwrap(item.barVisibility[expecting: Bar.Content.self])
+            let rightItem = try XCTUnwrap(barContent.rightItem)
+            XCTAssertEqual(rightItem.content, .text("Update"))
+            rightItem.handler()
+        }
+        .assert(action: DemoList.Workflow.Action.updateDemos)
+        .assertNoOutput()
         
-        try workflow
-            .renderTester(
-                initialState: .init(
-                    demos: Demo.allCases,
-                    updateWorker: .working(to: workflow.updateDemos)
-                )
+        try workflow.renderTester(
+            initialState: .init(
+                demos: Demo.allCases,
+                updateWorker: .working(to: updateDemos)
             )
-            .expectWorkflow(
-                type: WorkerWorkflow<DemoList.Workflow.UpdateWorker>.self,
-                producingRendering: ()
-            )
-            .render { item in
-                let barContent = try XCTUnwrap(item.barVisibility[expecting: Bar.Content.self])
-                let rightItem = try XCTUnwrap(barContent.rightItem)
-                XCTAssertFalse(rightItem.isEnabled)
-            }
-            .assertNoOutput()
+        )
+        .expectWorkflow(
+            type: WorkerWorkflow<DemoList.Workflow<MockAPI>.UpdateWorker>.self,
+            producingRendering: ()
+        )
+        .render { item in
+            let barContent = try XCTUnwrap(item.barVisibility[expecting: Bar.Content.self])
+            let rightItem = try XCTUnwrap(barContent.rightItem)
+            XCTAssertFalse(rightItem.isEnabled)
+        }
+        .assertNoOutput()
     }
 
 	func testRenderingSelectDemo() throws {
 		let demo = Demo.swiftUI
 
-		try DemoList.Workflow()
-			.renderTester()
-			.expectWorkflow(
-				type: WorkerWorkflow<DemoList.Workflow.UpdateWorker>.self,
-				producingRendering: ()
-			)
-			.render { backStackScreen in
-				let wrappedScreen = backStackScreen.screen.wrappedScreen
-				let alertScreen = try XCTUnwrap(wrappedScreen as? Alert.Screen<DemoList.Screen>)
-				let demoListScreen = alertScreen.baseScreen
-				demoListScreen.selectDemo(demo)
-			}
-			.assert(action: DemoList.Workflow.Action.demo(demo))
-			.assert(output: demo)
+		try DemoList.Workflow(
+            service: MockAPI(
+                result: .success(Demo.allCases)
+            )
+        )
+		.renderTester()
+		.expectWorkflow(
+			type: WorkerWorkflow<DemoList.Workflow<MockAPI>.UpdateWorker>.self,
+			producingRendering: ()
+		)
+		.render { backStackScreen in
+			let wrappedScreen = backStackScreen.screen.wrappedScreen
+			let alertScreen = try XCTUnwrap(wrappedScreen as? Alert.Screen<DemoList.Screen>)
+			let demoListScreen = alertScreen.baseScreen
+			demoListScreen.selectDemo(demo)
+		}
+		.assert(action: DemoList.Workflow.Action.demo(demo))
+		.assert(output: demo)
 	}
     
     func testRenderingAlert() throws {
-        let workflow = DemoList.Workflow()
+        let api = MockAPI(result: .failure(.loadError))
+        let updateDemos = api.loadDemos
 
-        try DemoList.Workflow()
-            .renderTester(
-                initialState: .init(
-                    demos: Demo.allCases,
-                    updateWorker: .init(
-                        state: .failed(.loadError),
-                        return: workflow.updateDemos
-                    )
+        try DemoList.Workflow(service: api) .renderTester(
+            initialState: .init(
+                demos: Demo.allCases,
+                updateWorker: .init(
+                    state: .failed(.loadError),
+                    return: updateDemos
                 )
             )
-            .expectWorkflow(
-                type: WorkerWorkflow<DemoList.Workflow.UpdateWorker>.self,
-                producingRendering: ()
-            )
-            .render { backStackScreen in
-                let wrappedScreen = backStackScreen.screen.wrappedScreen
-                let alertScreen = try XCTUnwrap(wrappedScreen as? Alert.Screen<DemoList.Screen>)
-                let alert = try XCTUnwrap(alertScreen.alert)
-                XCTAssertEqual(alert.title, "Update Error")
-                XCTAssertEqual(alert.message, "The demos could not be updated. Please try again later.")
-                
-                let dismissAction = try XCTUnwrap(alert.actions.first)
-                XCTAssertEqual(dismissAction.title, "Dismiss")
-                dismissAction.handler()
-            }
-            .verifyState { XCTAssert($0.updateWorker.isReady) }
-            .assertNoAction()
-            .assertNoOutput()
+        )
+        .expectWorkflow(
+            type: WorkerWorkflow<DemoList.Workflow<MockAPI>.UpdateWorker>.self,
+            producingRendering: ()
+        )
+        .render { backStackScreen in
+            let wrappedScreen = backStackScreen.screen.wrappedScreen
+            let alertScreen = try XCTUnwrap(wrappedScreen as? Alert.Screen<DemoList.Screen>)
+            let alert = try XCTUnwrap(alertScreen.alert)
+            XCTAssertEqual(alert.title, "Update Error")
+            XCTAssertEqual(alert.message, "The demos could not be updated. Please try again later.")
+            
+            let dismissAction = try XCTUnwrap(alert.actions.first)
+            XCTAssertEqual(dismissAction.title, "Dismiss")
+            dismissAction.handler()
+        }
+        .verifyState { XCTAssert($0.updateWorker.isReady) }
+        .assertNoAction()
+        .assertNoOutput()
     }
     
     func testUpdateWorkerSuccess() throws {
-        let workflow = DemoList.Workflow()
+        let result = Demo.LoadingResult.success(Demo.allCases)
+        let api = MockAPI(result: result)
+        let updateDemos = api.loadDemos
         let expectation = expectation(description: "UpdateDemos")
+        let worker = DemoList.Workflow<MockAPI>.UpdateWorker.working(to: updateDemos)
         
-        DemoList.Workflow.UpdateWorker
-            .working(to: workflow.updateDemos)
-            .run()
-            .startWithValues { result in
-                switch result {
-                case .success(Demo.allCases):
-                    expectation.fulfill()
-                default:
-                    break
-                }
+        worker.run().startWithValues { result in
+            switch result {
+            case .success(Demo.allCases):
+                expectation.fulfill()
+            default:
+                break
             }
+        }
         
         wait(for: [expectation])
     }
     
     func testUpdateWorkerFailureLoadError() throws {
-        let workflow = DemoList.Workflow()
+        let result = Demo.LoadingResult.failure(.loadError)
+        let api = MockAPI(result: result)
+        let updateDemos = api.loadDemos
         let expectation = expectation(description: "UpdateDemos")
+        let worker = DemoList.Workflow<MockAPI>.UpdateWorker.working(to: updateDemos)
         
-        DemoList.Workflow.UpdateWorker
-            .working(to: workflow.updateDemos)
-            .run()
-            .startWithValues { result in
-                switch result {
-                case .failure(.loadError):
-                    expectation.fulfill()
-                default:
-                    break
-                }
+        worker.run().startWithValues { result in
+            switch result {
+            case .failure(.loadError):
+                expectation.fulfill()
+            default:
+                break
             }
+        }
         
         wait(for: [expectation])
     }
     
     func testUpdateWorkerFailureSleepError() throws {
-        let workflow = DemoList.Workflow()
+        let result = Demo.LoadingResult.failure(.sleepError(NSError()))
+        let api = MockAPI(result: result)
+        let updateDemos = api.loadDemos
         let expectation = expectation(description: "UpdateDemos")
-        
-        DemoList.Workflow.UpdateWorker
-            .working(to: workflow.updateDemos)
-            .run()
-            .startWithValues { result in
-                switch result {
-                case let .failure(.sleepError(error)):
-                    expectation.fulfill()
-                default:
-                    break
-                }
+        let worker = DemoList.Workflow<MockAPI>.UpdateWorker.working(to: updateDemos)
+
+        worker.run().startWithValues { value in
+            switch value {
+            case result:
+                expectation.fulfill()
+            default:
+                break
             }
+        }
         
         wait(for: [expectation])
     }
@@ -225,3 +246,10 @@ final class DemoListWorkflowTests: XCTestCase {
 
 // MARK: -
 extension Bar.Visibility: CaseAccessible {}
+
+// MARK: -
+private struct MockAPI: LoadingSpec {
+    let result: Demo.LoadingResult
+    
+    func loadDemos() async -> Demo.LoadingResult { result }
+}

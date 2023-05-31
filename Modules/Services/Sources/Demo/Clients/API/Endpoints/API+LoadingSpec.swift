@@ -1,3 +1,5 @@
+// Copyright © Fleuronic LLC. All rights reserved.
+
 import enum Demo.Demo
 import protocol DemoService.LoadingSpec
 

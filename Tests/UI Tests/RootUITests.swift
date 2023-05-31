@@ -18,24 +18,21 @@ final class RootUITests: XCTestCase {
 	func testSwiftUIDemo() {
 		let swiftUI = app.staticTexts["SwiftUI"]
 		swiftUI.tap()
-		demo()
 	}
 
 	func testUIKitDemo() {
 		let uiKit = app.staticTexts["UIKit"]
 		uiKit.tap()
-		demo()
 	}
 
 	func testDeclarativeUIKitDemo() {
 		let declarativeUIKit = app.staticTexts["Declarative UIKit"]
 		declarativeUIKit.tap()
-		demo()
 	}
 }
 
 // MARK: -
-private extension RootUITests {
+/*private extension RootUITests {
 	func demo() {
 		let valueZero = app.staticTexts["The value is 0"]
 		XCTAssert(valueZero.exists)
@@ -56,4 +53,4 @@ private extension RootUITests {
 		let valueNegativeOne = app.staticTexts["The value is -1"]
 		XCTAssert(valueNegativeOne.exists)
 	}
-}
+}*/

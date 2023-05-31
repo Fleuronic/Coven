@@ -21,6 +21,14 @@
 		17E2835F2A1D633700146E0B /* ErgoSwiftUITesting in Frameworks */ = {isa = PBXBuildFile; productRef = 17E2835E2A1D633700146E0B /* ErgoSwiftUITesting */; };
 		17E283622A1D634D00146E0B /* ErgoUIKitTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 17E283612A1D634D00146E0B /* ErgoUIKitTesting */; };
 		17E283652A1D63C200146E0B /* ErgoDeclarativeUIKitTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 17E283642A1D63C200146E0B /* ErgoDeclarativeUIKitTesting */; };
+		44A6BC242A279FF600F35724 /* DemoListAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BC232A279FA500F35724 /* DemoListAppDelegate.swift */; };
+		44A6BC252A279FF900F35724 /* DemoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BC222A279F6100F35724 /* DemoListApp.swift */; };
+		44A6BC282A27B1B800F35724 /* CounterAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BC272A27B19800F35724 /* CounterAppDelegate.swift */; };
+		44A6BC292A27B1BB00F35724 /* CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BC262A27B19600F35724 /* CounterApp.swift */; };
+		44C66B782A26A03700765B6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787621728C0F81A0079A32C /* AppDelegate.swift */; };
+		44C66B862A26A04500765B6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787621728C0F81A0079A32C /* AppDelegate.swift */; };
+		44C66B932A26A05B00765B6A /* DemoList in Frameworks */ = {isa = PBXBuildFile; productRef = 44C66B922A26A05B00765B6A /* DemoList */; };
+		44C66B952A26A07300765B6A /* Counter in Frameworks */ = {isa = PBXBuildFile; productRef = 44C66B942A26A07300765B6A /* Counter */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +73,15 @@
 		17FD73982A1841750084703A /* Root Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Root Tests.xctestplan"; sourceTree = "<group>"; };
 		4438B4622A263331005622A5 /* WorkflowContainers */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = WorkflowContainers; path = ../WorkflowContainers; sourceTree = "<group>"; };
 		4438B4632A265716005622A5 /* Ergo */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Ergo; path = ../Ergo; sourceTree = "<group>"; };
+		44A6BC1F2A27903600F35724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = "Apps/Demo List App/Resources/Info.plist"; sourceTree = SOURCE_ROOT; };
+		44A6BC212A279E4B00F35724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44A6BC222A279F6100F35724 /* DemoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListApp.swift; sourceTree = "<group>"; };
+		44A6BC232A279FA500F35724 /* DemoListAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListAppDelegate.swift; sourceTree = "<group>"; };
+		44A6BC262A27B19600F35724 /* CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterApp.swift; sourceTree = "<group>"; };
+		44A6BC272A27B19800F35724 /* CounterAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppDelegate.swift; sourceTree = "<group>"; };
 		44C66B742A266BD500765B6A /* Services */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Services; path = Modules/Services; sourceTree = "<group>"; };
+		44C66B812A26A03700765B6A /* DemoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44C66B8F2A26A04500765B6A /* CounterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +120,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		44C66B7B2A26A03700765B6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44C66B932A26A05B00765B6A /* DemoList in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44C66B892A26A04500765B6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44C66B952A26A07300765B6A /* Counter in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -120,6 +152,9 @@
 				17127D8A2A1BCB2F00BE46CE /* RootUITests.xctest */,
 				17127D5C2A1BBCF500BE46CE /* IntegrationTests.xctest */,
 				17169A032A1D588700D80EBB /* SnapshotTests.xctest */,
+				44C66B812A26A03700765B6A /* DemoListApp.app */,
+				44C66B8F2A26A04500765B6A /* CounterApp.app */,
+				44C66B912A26A05B00765B6A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 1;
@@ -244,6 +279,8 @@
 			children = (
 				1787621728C0F81A0079A32C /* AppDelegate.swift */,
 				17D00CB529FC79C200325B4E /* Root App */,
+				44C66B962A26A07B00765B6A /* Demo List App */,
+				44C66B972A26A08100765B6A /* Counter App */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -272,6 +309,49 @@
 				17127D972A1BD60700BE46CE /* Features */,
 			);
 			path = "Test Plans";
+			sourceTree = "<group>";
+		};
+		44A6BC1D2A278FBA00F35724 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44A6BC212A279E4B00F35724 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		44A6BC1E2A278FC000F35724 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44A6BC1F2A27903600F35724 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		44C66B912A26A05B00765B6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44C66B962A26A07B00765B6A /* Demo List App */ = {
+			isa = PBXGroup;
+			children = (
+				44A6BC1D2A278FBA00F35724 /* Resources */,
+				44A6BC222A279F6100F35724 /* DemoListApp.swift */,
+				44A6BC232A279FA500F35724 /* DemoListAppDelegate.swift */,
+			);
+			path = "Demo List App";
+			sourceTree = "<group>";
+		};
+		44C66B972A26A08100765B6A /* Counter App */ = {
+			isa = PBXGroup;
+			children = (
+				44A6BC1E2A278FC000F35724 /* Resources */,
+				44A6BC262A27B19600F35724 /* CounterApp.swift */,
+				44A6BC272A27B19800F35724 /* CounterAppDelegate.swift */,
+			);
+			path = "Counter App";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +439,46 @@
 			productReference = 17209CD329BBC8D800C224A6 /* RootApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		44C66B752A26A03700765B6A /* DemoListApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44C66B7E2A26A03700765B6A /* Build configuration list for PBXNativeTarget "DemoListApp" */;
+			buildPhases = (
+				44C66B772A26A03700765B6A /* Sources */,
+				44C66B7B2A26A03700765B6A /* Frameworks */,
+				44C66B7D2A26A03700765B6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DemoListApp;
+			packageProductDependencies = (
+				44C66B922A26A05B00765B6A /* DemoList */,
+			);
+			productName = WelcomeApp;
+			productReference = 44C66B812A26A03700765B6A /* DemoListApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		44C66B832A26A04500765B6A /* CounterApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44C66B8C2A26A04500765B6A /* Build configuration list for PBXNativeTarget "CounterApp" */;
+			buildPhases = (
+				44C66B852A26A04500765B6A /* Sources */,
+				44C66B892A26A04500765B6A /* Frameworks */,
+				44C66B8B2A26A04500765B6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CounterApp;
+			packageProductDependencies = (
+				44C66B942A26A07300765B6A /* Counter */,
+			);
+			productName = WelcomeApp;
+			productReference = 44C66B8F2A26A04500765B6A /* CounterApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -400,6 +520,8 @@
 			projectRoot = "";
 			targets = (
 				17D85FDA28BBF5C700C42970 /* RootApp */,
+				44C66B752A26A03700765B6A /* DemoListApp */,
+				44C66B832A26A04500765B6A /* CounterApp */,
 				17127D892A1BCB2F00BE46CE /* RootUITests */,
 				17127D5B2A1BBCF500BE46CE /* IntegrationTests */,
 				17169A022A1D588700D80EBB /* SnapshotTests */,
@@ -430,6 +552,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		17D85FE128BBF5C700C42970 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44C66B7D2A26A03700765B6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44C66B8B2A26A04500765B6A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -471,6 +607,26 @@
 				17D00CC429FD426A00325B4E /* AppDelegate.swift in Sources */,
 				17D00CBE29FC8E4E00325B4E /* RootApp.swift in Sources */,
 				17D00CBF29FC8E5200325B4E /* RootAppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44C66B772A26A03700765B6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44C66B782A26A03700765B6A /* AppDelegate.swift in Sources */,
+				44A6BC242A279FF600F35724 /* DemoListAppDelegate.swift in Sources */,
+				44A6BC252A279FF900F35724 /* DemoListApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44C66B852A26A04500765B6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44A6BC292A27B1BB00F35724 /* CounterApp.swift in Sources */,
+				44C66B862A26A04500765B6A /* AppDelegate.swift in Sources */,
+				44A6BC282A27B1B800F35724 /* CounterAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,6 +927,138 @@
 			};
 			name = Release;
 		};
+		44C66B7F2A26A03700765B6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Apps/Demo List App/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Demo List App";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.DemoListApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		44C66B802A26A03700765B6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Apps/Demo List App/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Demo List App";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.DemoListApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		44C66B8D2A26A04500765B6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Apps/Counter App/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Counter App";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.CounterApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		44C66B8E2A26A04500765B6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Apps/Counter App/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Counter App";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.CounterApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -815,6 +1103,24 @@
 			buildConfigurations = (
 				17D85FE328BBF5C700C42970 /* Debug */,
 				17D85FE428BBF5C700C42970 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44C66B7E2A26A03700765B6A /* Build configuration list for PBXNativeTarget "DemoListApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44C66B7F2A26A03700765B6A /* Debug */,
+				44C66B802A26A03700765B6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44C66B8C2A26A04500765B6A /* Build configuration list for PBXNativeTarget "CounterApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44C66B8D2A26A04500765B6A /* Debug */,
+				44C66B8E2A26A04500765B6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -879,6 +1185,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 17E283632A1D63C200146E0B /* XCRemoteSwiftPackageReference "ErgoDeclarativeUIKit" */;
 			productName = ErgoDeclarativeUIKitTesting;
+		};
+		44C66B922A26A05B00765B6A /* DemoList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DemoList;
+		};
+		44C66B942A26A07300765B6A /* Counter */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Counter;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

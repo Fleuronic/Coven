@@ -47,6 +47,7 @@ extension Root.Workflow: Workflow {
 						.mapOutput(Action.showCounterDemo)
 						.rendered(in: context),
 					selectedDemo
+                        .map { ($0, fromList: true) }
 						.map(Counter.Workflow.init)?
 						.mapOutput { Action.showDemoList }
 						.rendered(in: context)

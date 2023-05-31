@@ -9,10 +9,15 @@ import enum Demo.Demo
 public extension Counter {
 	struct Workflow {
 		private let demo: Demo
+        private let fromList: Bool
 		private let screenWrapper: (Counter.Screen) -> AnyScreen
 
-		public init(demo: Demo) {
+		public init(
+            demo: Demo,
+            fromList: Bool
+        ) {
 			self.demo = demo
+            self.fromList = fromList
 
 			switch demo {
 			case .swiftUI:
@@ -47,10 +52,10 @@ extension Counter.Workflow: Workflow {
 				),
 				barContent: .init(
 					title: title,
-					leftItem: .init(
-						content: .back(title: nil),
-						handler: { sink.send(.finish) }
-					),
+                    leftItem: fromList ? .init(
+                        content: .back(title: nil),
+                        handler: { sink.send(.finish) }
+                    ) : nil,
 					rightItem: .init(
 						content: .text("Reset"),
 						isEnabled: value != 0,

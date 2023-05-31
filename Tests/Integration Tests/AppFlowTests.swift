@@ -6,6 +6,7 @@ import EnumKit
 
 import enum Demo.Demo
 import enum Root.Root
+import struct DemoAPI.API
 
 @testable import WorkflowUI
 @testable import WorkflowContainers
@@ -13,7 +14,11 @@ import enum Root.Root
 @testable import enum Counter.Counter
 
 final class AppFlowTests: XCTestCase {
-	private let workflowHost = WorkflowHost(workflow: Root.Workflow())
+	private let workflowHost = WorkflowHost(
+		workflow: Root.Workflow(
+			demoService: API()
+		)
+	)
 
 	func testAppFlow() throws {
 		// Start at Demo List

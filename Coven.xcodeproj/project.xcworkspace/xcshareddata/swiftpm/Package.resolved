@@ -19,15 +19,6 @@
       }
     },
     {
-      "identity" : "ergo",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Ergo",
-      "state" : {
-        "branch" : "main",
-        "revision" : "1ed3d06f4f6d24e5a59366c65954b9d50cbf84f1"
-      }
-    },
-    {
       "identity" : "ergodeclarativeuikit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Fleuronic/ErgoDeclarativeUIKit",
@@ -160,15 +151,6 @@
       "state" : {
         "branch" : "main",
         "revision" : "a011407f8512a9f03ffa143be1968112908770c5"
-      }
-    },
-    {
-      "identity" : "workflowcontainers",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/WorkflowContainers",
-      "state" : {
-        "branch" : "main",
-        "revision" : "5cf693473408242e637954984ad362a7f236ab2c"
       }
     }
   ],
