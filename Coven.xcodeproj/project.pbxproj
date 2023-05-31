@@ -21,10 +21,15 @@
 		17E2835F2A1D633700146E0B /* ErgoSwiftUITesting in Frameworks */ = {isa = PBXBuildFile; productRef = 17E2835E2A1D633700146E0B /* ErgoSwiftUITesting */; };
 		17E283622A1D634D00146E0B /* ErgoUIKitTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 17E283612A1D634D00146E0B /* ErgoUIKitTesting */; };
 		17E283652A1D63C200146E0B /* ErgoDeclarativeUIKitTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 17E283642A1D63C200146E0B /* ErgoDeclarativeUIKitTesting */; };
+		447EB9692A27F0EC007709CA /* DemoListAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447EB9682A27F0EC007709CA /* DemoListAppEnvironment.swift */; };
+		447EB96B2A27FDDB007709CA /* CounterAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447EB96A2A27FDDB007709CA /* CounterAppEnvironment.swift */; };
 		44A6BC242A279FF600F35724 /* DemoListAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BC232A279FA500F35724 /* DemoListAppDelegate.swift */; };
 		44A6BC252A279FF900F35724 /* DemoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BC222A279F6100F35724 /* DemoListApp.swift */; };
 		44A6BC282A27B1B800F35724 /* CounterAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BC272A27B19800F35724 /* CounterAppDelegate.swift */; };
 		44A6BC292A27B1BB00F35724 /* CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BC262A27B19600F35724 /* CounterApp.swift */; };
+		44A6BC492A27B99F00F35724 /* DemoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BC482A27B99F00F35724 /* DemoListUITests.swift */; };
+		44A6BC4B2A27B9AD00F35724 /* CounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BC4A2A27B9AD00F35724 /* CounterUITests.swift */; };
+		44AB8A682A27CAF5006FF3D0 /* MockDemoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB8A662A27CAC2006FF3D0 /* MockDemoAPI.swift */; };
 		44C66B782A26A03700765B6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787621728C0F81A0079A32C /* AppDelegate.swift */; };
 		44C66B862A26A04500765B6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787621728C0F81A0079A32C /* AppDelegate.swift */; };
 		44C66B932A26A05B00765B6A /* DemoList in Frameworks */ = {isa = PBXBuildFile; productRef = 44C66B922A26A05B00765B6A /* DemoList */; };
@@ -38,6 +43,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 17D85FDA28BBF5C700C42970;
 			remoteInfo = RootApp;
+		};
+		44A6BC342A27B8F200F35724 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 170B0CF528A6DDF40033029D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44C66B752A26A03700765B6A;
+			remoteInfo = DemoListApp;
+		};
+		44A6BC432A27B92900F35724 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 170B0CF528A6DDF40033029D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44C66B832A26A04500765B6A;
+			remoteInfo = CounterApp;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -71,14 +90,21 @@
 		17FC53172A18428000EB29D2 /* Counter Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Counter Tests.xctestplan"; sourceTree = "<group>"; };
 		17FC53182A1842AE00EB29D2 /* Unit Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Unit Tests.xctestplan"; sourceTree = "<group>"; };
 		17FD73982A1841750084703A /* Root Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Root Tests.xctestplan"; sourceTree = "<group>"; };
-		4438B4622A263331005622A5 /* WorkflowContainers */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = WorkflowContainers; path = ../WorkflowContainers; sourceTree = "<group>"; };
-		4438B4632A265716005622A5 /* Ergo */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Ergo; path = ../Ergo; sourceTree = "<group>"; };
+		447EB9682A27F0EC007709CA /* DemoListAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListAppEnvironment.swift; sourceTree = "<group>"; };
+		447EB96A2A27FDDB007709CA /* CounterAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppEnvironment.swift; sourceTree = "<group>"; };
 		44A6BC1F2A27903600F35724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = "Apps/Demo List App/Resources/Info.plist"; sourceTree = SOURCE_ROOT; };
 		44A6BC212A279E4B00F35724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44A6BC222A279F6100F35724 /* DemoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListApp.swift; sourceTree = "<group>"; };
 		44A6BC232A279FA500F35724 /* DemoListAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListAppDelegate.swift; sourceTree = "<group>"; };
 		44A6BC262A27B19600F35724 /* CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterApp.swift; sourceTree = "<group>"; };
 		44A6BC272A27B19800F35724 /* CounterAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppDelegate.swift; sourceTree = "<group>"; };
+		44A6BC2E2A27B8F200F35724 /* DemoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		44A6BC3D2A27B92900F35724 /* CounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		44A6BC482A27B99F00F35724 /* DemoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListUITests.swift; sourceTree = "<group>"; };
+		44A6BC4A2A27B9AD00F35724 /* CounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterUITests.swift; sourceTree = "<group>"; };
+		44A6BC4C2A27BA5D00F35724 /* Counter UI Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Counter UI Tests.xctestplan"; sourceTree = "<group>"; };
+		44A6BC4D2A27BA6D00F35724 /* Demo List UI Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Demo List UI Tests.xctestplan"; sourceTree = "<group>"; };
+		44AB8A662A27CAC2006FF3D0 /* MockDemoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDemoAPI.swift; sourceTree = "<group>"; };
 		44C66B742A266BD500765B6A /* Services */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Services; path = Modules/Services; sourceTree = "<group>"; };
 		44C66B812A26A03700765B6A /* DemoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C66B8F2A26A04500765B6A /* CounterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +146,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		44A6BC2B2A27B8F200F35724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44A6BC3A2A27B92900F35724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		44C66B7B2A26A03700765B6A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -142,19 +182,18 @@
 		170B0CF428A6DDF40033029D = {
 			isa = PBXGroup;
 			children = (
-				4438B4632A265716005622A5 /* Ergo */,
-				4438B4622A263331005622A5 /* WorkflowContainers */,
 				1749DCCE28BB886300C4AFC9 /* Modules */,
+				17D85FEB28BBF62100C42970 /* Apps */,
 				1764FE4D28BC2908004AAD5E /* Tests */,
 				17FD73972A18416F0084703A /* Test Plans */,
-				17D85FEB28BBF62100C42970 /* Apps */,
 				17209CD329BBC8D800C224A6 /* RootApp.app */,
-				17127D8A2A1BCB2F00BE46CE /* RootUITests.xctest */,
-				17127D5C2A1BBCF500BE46CE /* IntegrationTests.xctest */,
-				17169A032A1D588700D80EBB /* SnapshotTests.xctest */,
 				44C66B812A26A03700765B6A /* DemoListApp.app */,
 				44C66B8F2A26A04500765B6A /* CounterApp.app */,
-				44C66B912A26A05B00765B6A /* Frameworks */,
+				17127D8A2A1BCB2F00BE46CE /* RootUITests.xctest */,
+				44A6BC2E2A27B8F200F35724 /* DemoListUITests.xctest */,
+				44A6BC3D2A27B92900F35724 /* CounterUITests.xctest */,
+				17127D5C2A1BBCF500BE46CE /* IntegrationTests.xctest */,
+				17169A032A1D588700D80EBB /* SnapshotTests.xctest */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 1;
@@ -182,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				175048902A19772D00BF2F3C /* Demo List Tests.xctestplan */,
+				44A6BC4D2A27BA6D00F35724 /* Demo List UI Tests.xctestplan */,
 			);
 			path = "Demo List";
 			sourceTree = "<group>";
@@ -206,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				17FC53172A18428000EB29D2 /* Counter Tests.xctestplan */,
+				44A6BC4C2A27BA5D00F35724 /* Counter UI Tests.xctestplan */,
 			);
 			path = Counter;
 			sourceTree = "<group>";
@@ -222,6 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				17127D7A2A1BCA1900BE46CE /* RootUITests.swift */,
+				44A6BC482A27B99F00F35724 /* DemoListUITests.swift */,
+				44A6BC4A2A27B9AD00F35724 /* CounterUITests.swift */,
 			);
 			path = "UI Tests";
 			sourceTree = "<group>";
@@ -327,18 +370,21 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		44C66B912A26A05B00765B6A /* Frameworks */ = {
+		44AB8A652A27CAB9006FF3D0 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				44AB8A662A27CAC2006FF3D0 /* MockDemoAPI.swift */,
 			);
-			name = Frameworks;
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		44C66B962A26A07B00765B6A /* Demo List App */ = {
 			isa = PBXGroup;
 			children = (
+				44AB8A652A27CAB9006FF3D0 /* Mocks */,
 				44A6BC1D2A278FBA00F35724 /* Resources */,
 				44A6BC222A279F6100F35724 /* DemoListApp.swift */,
+				447EB9682A27F0EC007709CA /* DemoListAppEnvironment.swift */,
 				44A6BC232A279FA500F35724 /* DemoListAppDelegate.swift */,
 			);
 			path = "Demo List App";
@@ -349,6 +395,7 @@
 			children = (
 				44A6BC1E2A278FC000F35724 /* Resources */,
 				44A6BC262A27B19600F35724 /* CounterApp.swift */,
+				447EB96A2A27FDDB007709CA /* CounterAppEnvironment.swift */,
 				44A6BC272A27B19800F35724 /* CounterAppDelegate.swift */,
 			);
 			path = "Counter App";
@@ -439,6 +486,42 @@
 			productReference = 17209CD329BBC8D800C224A6 /* RootApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		44A6BC2D2A27B8F200F35724 /* DemoListUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44A6BC362A27B8F200F35724 /* Build configuration list for PBXNativeTarget "DemoListUITests" */;
+			buildPhases = (
+				44A6BC2A2A27B8F200F35724 /* Sources */,
+				44A6BC2B2A27B8F200F35724 /* Frameworks */,
+				44A6BC2C2A27B8F200F35724 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44A6BC352A27B8F200F35724 /* PBXTargetDependency */,
+			);
+			name = DemoListUITests;
+			productName = DemoListUITests;
+			productReference = 44A6BC2E2A27B8F200F35724 /* DemoListUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		44A6BC3C2A27B92900F35724 /* CounterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44A6BC452A27B92900F35724 /* Build configuration list for PBXNativeTarget "CounterUITests" */;
+			buildPhases = (
+				44A6BC392A27B92900F35724 /* Sources */,
+				44A6BC3A2A27B92900F35724 /* Frameworks */,
+				44A6BC3B2A27B92900F35724 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44A6BC442A27B92900F35724 /* PBXTargetDependency */,
+			);
+			name = CounterUITests;
+			productName = CounterUITests;
+			productReference = 44A6BC3D2A27B92900F35724 /* CounterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		44C66B752A26A03700765B6A /* DemoListApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44C66B7E2A26A03700765B6A /* Build configuration list for PBXNativeTarget "DemoListApp" */;
@@ -499,6 +582,16 @@
 					17169A022A1D588700D80EBB = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
+					44A6BC2D2A27B8F200F35724 = {
+						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
+						TestTargetID = 44C66B752A26A03700765B6A;
+					};
+					44A6BC3C2A27B92900F35724 = {
+						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
+						TestTargetID = 44C66B832A26A04500765B6A;
+					};
 				};
 			};
 			buildConfigurationList = 170B0CF828A6DDF40033029D /* Build configuration list for PBXProject "Coven" */;
@@ -523,6 +616,8 @@
 				44C66B752A26A03700765B6A /* DemoListApp */,
 				44C66B832A26A04500765B6A /* CounterApp */,
 				17127D892A1BCB2F00BE46CE /* RootUITests */,
+				44A6BC2D2A27B8F200F35724 /* DemoListUITests */,
+				44A6BC3C2A27B92900F35724 /* CounterUITests */,
 				17127D5B2A1BBCF500BE46CE /* IntegrationTests */,
 				17169A022A1D588700D80EBB /* SnapshotTests */,
 			);
@@ -552,6 +647,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		17D85FE128BBF5C700C42970 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44A6BC2C2A27B8F200F35724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44A6BC3B2A27B92900F35724 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -610,13 +719,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		44A6BC2A2A27B8F200F35724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44A6BC492A27B99F00F35724 /* DemoListUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44A6BC392A27B92900F35724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44A6BC4B2A27B9AD00F35724 /* CounterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		44C66B772A26A03700765B6A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44AB8A682A27CAF5006FF3D0 /* MockDemoAPI.swift in Sources */,
 				44C66B782A26A03700765B6A /* AppDelegate.swift in Sources */,
 				44A6BC242A279FF600F35724 /* DemoListAppDelegate.swift in Sources */,
 				44A6BC252A279FF900F35724 /* DemoListApp.swift in Sources */,
+				447EB9692A27F0EC007709CA /* DemoListAppEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +753,7 @@
 			files = (
 				44A6BC292A27B1BB00F35724 /* CounterApp.swift in Sources */,
 				44C66B862A26A04500765B6A /* AppDelegate.swift in Sources */,
+				447EB96B2A27FDDB007709CA /* CounterAppEnvironment.swift in Sources */,
 				44A6BC282A27B1B800F35724 /* CounterAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,6 +765,16 @@
 			isa = PBXTargetDependency;
 			target = 17D85FDA28BBF5C700C42970 /* RootApp */;
 			targetProxy = 17127D902A1BCB2F00BE46CE /* PBXContainerItemProxy */;
+		};
+		44A6BC352A27B8F200F35724 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44C66B752A26A03700765B6A /* DemoListApp */;
+			targetProxy = 44A6BC342A27B8F200F35724 /* PBXContainerItemProxy */;
+		};
+		44A6BC442A27B92900F35724 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44C66B832A26A04500765B6A /* CounterApp */;
+			targetProxy = 44A6BC432A27B92900F35724 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -927,6 +1065,86 @@
 			};
 			name = Release;
 		};
+		44A6BC372A27B8F200F35724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.DemoListUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DemoListApp;
+			};
+			name = Debug;
+		};
+		44A6BC382A27B8F200F35724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.DemoListUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DemoListApp;
+			};
+			name = Release;
+		};
+		44A6BC462A27B92900F35724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HF9G95Z7YK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.CounterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CounterApp;
+			};
+			name = Debug;
+		};
+		44A6BC472A27B92900F35724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HF9G95Z7YK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fleuronic.CounterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CounterApp;
+			};
+			name = Release;
+		};
 		44C66B7F2A26A03700765B6A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1103,6 +1321,24 @@
 			buildConfigurations = (
 				17D85FE328BBF5C700C42970 /* Debug */,
 				17D85FE428BBF5C700C42970 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44A6BC362A27B8F200F35724 /* Build configuration list for PBXNativeTarget "DemoListUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44A6BC372A27B8F200F35724 /* Debug */,
+				44A6BC382A27B8F200F35724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44A6BC452A27B92900F35724 /* Build configuration list for PBXNativeTarget "CounterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44A6BC462A27B92900F35724 /* Debug */,
+				44A6BC472A27B92900F35724 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

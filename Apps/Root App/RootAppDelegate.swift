@@ -18,9 +18,7 @@ extension Root.App {
 extension Root.App.Delegate: AppDelegate {
 	// MARK: AppDelegate
 	var workflow: Root.Workflow<API> {
-		.init(
-			demoService: API()
-		)
+		.init(demoService: API())
 	}
 
 	// MARK: UIApplicationDelegate

@@ -14,10 +14,12 @@ extension API: LoadingSpec {
     }
 }
 
+// MARK: -
 public extension Demo {
     typealias LoadingResult = Swift.Result<[Demo], API.Error>
 }
 
+// MARK: -
 private extension UInt64 {
     static let updateTime: Self = 500_000_000
 }

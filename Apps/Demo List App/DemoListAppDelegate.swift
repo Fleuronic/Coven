@@ -13,6 +13,8 @@ extension DemoList.App {
 	@UIApplicationMain
 	final class Delegate: UIResponder {
 		var window: UIWindow?
+		
+		@Environment(.canUpdateDemos) private var canUpdateDemos
 	}
 }
 
@@ -21,7 +23,8 @@ extension DemoList.App.Delegate: AppDelegate {
 	// MARK: AppDelegate
 	var workflow: AnyWorkflow<AnyScreen, Demo> {
 		DemoList.Workflow(
-			service: API()
+			service: mockAPI,
+			canSelectDemos: false
 		).mapRendering { item in
 			BackStack.Screen(items: [item]).asAnyScreen()
 		}
@@ -31,5 +34,14 @@ extension DemoList.App.Delegate: AppDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 		window = makeWindow()
 		return true
+	}
+}
+
+// MARK: -
+private extension DemoList.App.Delegate {
+	var mockAPI: MockDemoAPI {
+		.init(
+			result: self.canUpdateDemos ? .success(Demo.allCases) : .failure(.loadError)
+		)
 	}
 }

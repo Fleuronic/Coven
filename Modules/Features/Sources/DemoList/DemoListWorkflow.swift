@@ -12,9 +12,21 @@ import protocol DemoService.LoadingSpec
 public extension DemoList {
     struct Workflow<Service: LoadingSpec> where Service.DemoLoadingResult == Demo.LoadingResult {
         private let service: Service
+        private let canSelectDemos: Bool
         
         public init(service: Service) {
+            self.init(
+                service: service,
+                canSelectDemos: true
+            )
+        }
+        
+        public init(
+            service: Service,
+            canSelectDemos: Bool
+        ) {
             self.service = service
+            self.canSelectDemos = canSelectDemos
         }
 	}
 }
@@ -57,6 +69,7 @@ extension DemoList.Workflow: Workflow {
 					baseScreen: DemoList.Screen(
 						demos: state.demos,
 						selectDemo: { sink.send(.demo($0)) },
+                        canSelectDemo: { _ in canSelectDemos },
 						isUpdatingDemos: state.isUpdatingDemos
 					),
 					alert: state.alert
@@ -83,15 +96,23 @@ private extension DemoList.Workflow.State {
 	}
 	
 	var alert: Alert? {
-		updateWorker.errorContext
-			.map(\.1)
-			.map(makeAlert)
+        updateWorker.errorContext.map(makeAlert)
 	}
 	
-	func makeAlert(dismissHandler: @escaping () -> Void) -> Alert {
+	func makeAlert(
+        error: Demo.LoadingResult.Failure,
+        dismissHandler: @escaping () -> Void
+    ) -> Alert {
 		.init(
 			title: "Update Error",
-			message: "The demos could not be updated. Please try again later.",
+            message: {
+                switch error {
+                case .loadError:
+                    return "The demos could not be updated. Please try again later."
+                case let .sleepError(error):
+                    return error.localizedDescription
+                }
+            }(),
 			actions: [
 				.init(
 					title: "Dismiss",

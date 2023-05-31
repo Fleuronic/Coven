@@ -3,54 +3,37 @@
 import XCTest
 
 final class RootUITests: XCTestCase {
-	private let app = XCUIApplication()
-
-	override func setUpWithError() throws {
-		continueAfterFailure = false
+	func testDemos() {
+		let app = XCUIApplication()
 		app.launch()
-	}
-
-	func testTitle() {
-		let titleText = app.staticTexts["Workflow Demo"]
-		XCTAssert(titleText.exists)
-	}
-
-	func testSwiftUIDemo() {
+		
 		let swiftUI = app.staticTexts["SwiftUI"]
 		swiftUI.tap()
-	}
+		
+		let swiftUITitle = app.staticTexts["SwiftUI Counter Demo"]
+		XCTAssert(swiftUITitle.exists)
+		returnToDemoList(in: app)
 
-	func testUIKitDemo() {
 		let uiKit = app.staticTexts["UIKit"]
 		uiKit.tap()
-	}
+		
+		let uiKitTitle = app.staticTexts["UIKit Counter Demo"]
+		XCTAssert(uiKitTitle.exists)
+		returnToDemoList(in: app)
 
-	func testDeclarativeUIKitDemo() {
 		let declarativeUIKit = app.staticTexts["Declarative UIKit"]
 		declarativeUIKit.tap()
+		
+		let declarativeUIKitTitle = app.staticTexts["Declarative UIKit Counter Demo"]
+		XCTAssert(declarativeUIKitTitle.exists)
+		returnToDemoList(in: app)
 	}
 }
 
 // MARK: -
-/*private extension RootUITests {
-	func demo() {
-		let valueZero = app.staticTexts["The value is 0"]
-		XCTAssert(valueZero.exists)
-
-		let incrementButton = app.buttons["+"]
-		incrementButton.tap()
-
-		let valueOne = app.staticTexts["The value is 1"]
-		XCTAssert(valueOne.exists)
-
-		let resetButton = app.buttons["Reset"]
-		resetButton.tap()
-		XCTAssert(valueZero.exists)
-
-		let decrementButton = app.buttons["-"]
-		decrementButton.tap()
-
-		let valueNegativeOne = app.staticTexts["The value is -1"]
-		XCTAssert(valueNegativeOne.exists)
+private extension RootUITests {
+	func returnToDemoList(in app: XCUIApplication) {
+		let backButton = app.navigationBars.buttons.element(boundBy: 0)
+		backButton.tap()
 	}
-}*/
+}

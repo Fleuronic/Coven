@@ -19,7 +19,7 @@ final class DemoListWorkflowTests: XCTestCase {
         
 		DemoList.Workflow.Action.tester(
             withState: DemoList.Workflow(
-                service: MockAPI(
+                service: MockDemoAPI(
                     result: .success(Demo.allCases)
                 )
             )
@@ -31,7 +31,7 @@ final class DemoListWorkflowTests: XCTestCase {
 
     func testShowDemos() {
         let demos = Demo.allCases
-        let api = MockAPI(result: .success(demos))
+        let api = MockDemoAPI(result: .success(demos))
         let updateDemos = api.loadDemos
         
         DemoList.Workflow.Action.tester(
@@ -43,7 +43,7 @@ final class DemoListWorkflowTests: XCTestCase {
         .verifyState { XCTAssertEqual($0.demos, demos) }
         .assertNoOutput()
         
-        DemoList.Workflow<MockAPI>.Action.tester(
+        DemoList.Workflow<MockDemoAPI>.Action.tester(
             withState: .init(
                 demos: demos,
                 updateWorker: .ready(to: updateDemos)
@@ -57,7 +57,7 @@ final class DemoListWorkflowTests: XCTestCase {
     func testUpdateDemos() {
         DemoList.Workflow.Action.tester(
             withState: DemoList.Workflow(
-                service: MockAPI(
+                service: MockDemoAPI(
                     result: .success(Demo.allCases)
                 )
             ).makeInitialState()
@@ -71,13 +71,13 @@ final class DemoListWorkflowTests: XCTestCase {
 		let demos = Demo.allCases
 
 		try DemoList.Workflow(
-            service: MockAPI(
+            service: MockDemoAPI(
                 result: .success(demos)
             )
         )
 		.renderTester()
 		.expectWorkflow(
-			type: WorkerWorkflow<DemoList.Workflow<MockAPI>.UpdateWorker>.self,
+			type: WorkerWorkflow<DemoList.Workflow<MockDemoAPI>.UpdateWorker>.self,
 			producingRendering: ()
 		)
 		.render { item in
@@ -95,12 +95,12 @@ final class DemoListWorkflowTests: XCTestCase {
 	}
 
     func testRenderingUpdateDemos() throws {
-        let api = MockAPI(result: .success(Demo.allCases))
+        let api = MockDemoAPI(result: .success(Demo.allCases))
         let workflow = DemoList.Workflow(service: api)
         let updateDemos = api.loadDemos
         
         try workflow.renderTester().expectWorkflow(
-            type: WorkerWorkflow<DemoList.Workflow<MockAPI>.UpdateWorker>.self,
+            type: WorkerWorkflow<DemoList.Workflow<MockDemoAPI>.UpdateWorker>.self,
             producingRendering: ()
         )
         .render { item in
@@ -119,7 +119,7 @@ final class DemoListWorkflowTests: XCTestCase {
             )
         )
         .expectWorkflow(
-            type: WorkerWorkflow<DemoList.Workflow<MockAPI>.UpdateWorker>.self,
+            type: WorkerWorkflow<DemoList.Workflow<MockDemoAPI>.UpdateWorker>.self,
             producingRendering: ()
         )
         .render { item in
@@ -134,13 +134,13 @@ final class DemoListWorkflowTests: XCTestCase {
 		let demo = Demo.swiftUI
 
 		try DemoList.Workflow(
-            service: MockAPI(
+            service: MockDemoAPI(
                 result: .success(Demo.allCases)
             )
         )
 		.renderTester()
 		.expectWorkflow(
-			type: WorkerWorkflow<DemoList.Workflow<MockAPI>.UpdateWorker>.self,
+			type: WorkerWorkflow<DemoList.Workflow<MockDemoAPI>.UpdateWorker>.self,
 			producingRendering: ()
 		)
 		.render { backStackScreen in
@@ -154,7 +154,7 @@ final class DemoListWorkflowTests: XCTestCase {
 	}
     
     func testRenderingAlert() throws {
-        let api = MockAPI(result: .failure(.loadError))
+        let api = MockDemoAPI(result: .failure(.loadError))
         let updateDemos = api.loadDemos
 
         try DemoList.Workflow(service: api) .renderTester(
@@ -167,7 +167,7 @@ final class DemoListWorkflowTests: XCTestCase {
             )
         )
         .expectWorkflow(
-            type: WorkerWorkflow<DemoList.Workflow<MockAPI>.UpdateWorker>.self,
+            type: WorkerWorkflow<DemoList.Workflow<MockDemoAPI>.UpdateWorker>.self,
             producingRendering: ()
         )
         .render { backStackScreen in
@@ -188,10 +188,10 @@ final class DemoListWorkflowTests: XCTestCase {
     
     func testUpdateWorkerSuccess() throws {
         let result = Demo.LoadingResult.success(Demo.allCases)
-        let api = MockAPI(result: result)
+        let api = MockDemoAPI(result: result)
         let updateDemos = api.loadDemos
         let expectation = expectation(description: "UpdateDemos")
-        let worker = DemoList.Workflow<MockAPI>.UpdateWorker.working(to: updateDemos)
+        let worker = DemoList.Workflow<MockDemoAPI>.UpdateWorker.working(to: updateDemos)
         
         worker.run().startWithValues { result in
             switch result {
@@ -207,10 +207,10 @@ final class DemoListWorkflowTests: XCTestCase {
     
     func testUpdateWorkerFailureLoadError() throws {
         let result = Demo.LoadingResult.failure(.loadError)
-        let api = MockAPI(result: result)
+        let api = MockDemoAPI(result: result)
         let updateDemos = api.loadDemos
         let expectation = expectation(description: "UpdateDemos")
-        let worker = DemoList.Workflow<MockAPI>.UpdateWorker.working(to: updateDemos)
+        let worker = DemoList.Workflow<MockDemoAPI>.UpdateWorker.working(to: updateDemos)
         
         worker.run().startWithValues { result in
             switch result {
@@ -226,10 +226,10 @@ final class DemoListWorkflowTests: XCTestCase {
     
     func testUpdateWorkerFailureSleepError() throws {
         let result = Demo.LoadingResult.failure(.sleepError(NSError()))
-        let api = MockAPI(result: result)
+        let api = MockDemoAPI(result: result)
         let updateDemos = api.loadDemos
         let expectation = expectation(description: "UpdateDemos")
-        let worker = DemoList.Workflow<MockAPI>.UpdateWorker.working(to: updateDemos)
+        let worker = DemoList.Workflow<MockDemoAPI>.UpdateWorker.working(to: updateDemos)
 
         worker.run().startWithValues { value in
             switch value {
@@ -248,7 +248,7 @@ final class DemoListWorkflowTests: XCTestCase {
 extension Bar.Visibility: CaseAccessible {}
 
 // MARK: -
-private struct MockAPI: LoadingSpec {
+private struct MockDemoAPI: LoadingSpec {
     let result: Demo.LoadingResult
     
     func loadDemos() async -> Demo.LoadingResult { result }

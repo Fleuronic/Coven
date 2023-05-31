@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "ergo",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Ergo",
+      "state" : {
+        "branch" : "main",
+        "revision" : "73055dde79a60d79a400624dd263bc54a19e913a"
+      }
+    },
+    {
       "identity" : "ergodeclarativeuikit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Fleuronic/ErgoDeclarativeUIKit",
@@ -132,7 +141,7 @@
       "location" : "https://github.com/Fleuronic/Telemetric",
       "state" : {
         "branch" : "main",
-        "revision" : "0f7757eedc013b1e163e19a32fddcb6a53de4488"
+        "revision" : "64c2ad3241bb56a843d561494628244e75679bc6"
       }
     },
     {
@@ -151,6 +160,15 @@
       "state" : {
         "branch" : "main",
         "revision" : "a011407f8512a9f03ffa143be1968112908770c5"
+      }
+    },
+    {
+      "identity" : "workflowcontainers",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/WorkflowContainers",
+      "state" : {
+        "branch" : "main",
+        "revision" : "19e0de86200a7e2d73ca6921781f1f7f27ba69d2"
       }
     }
   ],

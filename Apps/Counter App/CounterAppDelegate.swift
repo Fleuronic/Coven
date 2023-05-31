@@ -8,9 +8,10 @@ import WorkflowContainers
 import enum Counter.Counter
 
 extension Counter.App {
-	@UIApplicationMain
-	final class Delegate: UIResponder {
+	@UIApplicationMain final class Delegate: UIResponder {
 		var window: UIWindow?
+		
+		@Environment(.demo) private var demo
 	}
 }
 
@@ -19,8 +20,8 @@ extension Counter.App.Delegate: AppDelegate {
 	// MARK: AppDelegate
 	var workflow: AnyWorkflow<AnyScreen, Void> {
 		Counter.Workflow(
-			demo: .swiftUI,
-			fromList: false
+			demo: demo,
+			fromSource: false
 		).mapRendering { item in
 			BackStack.Screen(items: [item]).asAnyScreen()
 		}
