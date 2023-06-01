@@ -27,6 +27,7 @@ final class DemoListViewTests: XCTestCase {
 					declarativeUIKitDemoExpectation.fulfill()
 				}
 			},
+            canSelectDemo: { _ in true },
 			isUpdatingDemos: false
 		)
 
@@ -34,10 +35,14 @@ final class DemoListViewTests: XCTestCase {
 			screen: screen,
 			environment: .empty
 		)
+        
+        let window = UIWindow()
+        window.rootViewController = viewController
+        window.makeKeyAndVisible()
 
 		let view = try viewController.view.subview(0)
 		let tableView = try view.tableView(0)
-		tableView.frame = UIWindow().bounds
+		tableView.frame = window.bounds
 
 		for (index, demo) in screen.demos.enumerated() {
 			let cell = tableView.cellForRow(at: .init(row: index, section: 0))
@@ -53,6 +58,7 @@ final class DemoListViewTests: XCTestCase {
 		let screen = DemoList.Screen(
 			demos: Demo.allCases,
 			selectDemo: { _ in },
+            canSelectDemo: { _ in false },
 			isUpdatingDemos: true
 		)
 
@@ -61,10 +67,14 @@ final class DemoListViewTests: XCTestCase {
 			environment: .empty
 		)
 
+        let window = UIWindow()
+        window.rootViewController = viewController
+        window.makeKeyAndVisible()
+        
 		let view = try viewController.view.subview(0)
 		let tableView = try view.tableView(0)
-		tableView.frame = UIWindow().bounds
-
+        tableView.frame = window.bounds
+        
 		let cell = tableView.cellForRow(at: .init(row: 0, section: 0))
 		let loadingCell = try XCTUnwrap(cell as? UITableView.LoadingCell)
 		let spinner = try XCTUnwrap(loadingCell.contentView.activityIndicatorView(0))

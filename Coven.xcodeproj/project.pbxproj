@@ -90,6 +90,7 @@
 		17FC53172A18428000EB29D2 /* Counter Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Counter Tests.xctestplan"; sourceTree = "<group>"; };
 		17FC53182A1842AE00EB29D2 /* Unit Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Unit Tests.xctestplan"; sourceTree = "<group>"; };
 		17FD73982A1841750084703A /* Root Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Root Tests.xctestplan"; sourceTree = "<group>"; };
+		4441A2532A2843AC004D1E14 /* Demo Service Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Demo Service Tests.xctestplan"; sourceTree = "<group>"; };
 		447EB9682A27F0EC007709CA /* DemoListAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListAppEnvironment.swift; sourceTree = "<group>"; };
 		447EB96A2A27FDDB007709CA /* CounterAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppEnvironment.swift; sourceTree = "<group>"; };
 		44A6BC1F2A27903600F35724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = "Apps/Demo List App/Resources/Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -349,9 +350,26 @@
 				17127DB12A1C008700BE46CE /* Snapshot Tests.xctestplan */,
 				17127D572A1BBCBE00BE46CE /* Integration Tests.xctestplan */,
 				17127D9A2A1BD64900BE46CE /* Models */,
+				4441A2512A284377004D1E14 /* Services */,
 				17127D972A1BD60700BE46CE /* Features */,
 			);
 			path = "Test Plans";
+			sourceTree = "<group>";
+		};
+		4441A2512A284377004D1E14 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4441A2522A284380004D1E14 /* Demo */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4441A2522A284380004D1E14 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				4441A2532A2843AC004D1E14 /* Demo Service Tests.xctestplan */,
+			);
+			path = Demo;
 			sourceTree = "<group>";
 		};
 		44A6BC1D2A278FBA00F35724 /* Resources */ = {

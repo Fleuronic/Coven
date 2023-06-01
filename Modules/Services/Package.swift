@@ -30,6 +30,11 @@ let package = Package(
 			name: "DemoAPI",
 			dependencies: ["DemoService"],
 			path: "Sources/Demo/Clients/API"
-		)
+		),
+        .testTarget(
+            name: "DemoAPITests",
+            dependencies: ["DemoAPI"],
+            path: "Tests/Demo/Clients/API"
+        )
 	]
 )

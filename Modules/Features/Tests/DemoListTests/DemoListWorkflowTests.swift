@@ -69,11 +69,13 @@ final class DemoListWorkflowTests: XCTestCase {
 
 	func testRenderingScreen() throws {
 		let demos = Demo.allCases
+        let canSelectDemo = true
 
 		try DemoList.Workflow(
             service: MockDemoAPI(
                 result: .success(demos)
-            )
+            ),
+            canSelectDemos: canSelectDemo
         )
 		.renderTester()
 		.expectWorkflow(
@@ -85,6 +87,10 @@ final class DemoListWorkflowTests: XCTestCase {
 			let screen = alertScreen.baseScreen
 			XCTAssertEqual(screen.demos, demos)
             
+            for demo in demos {
+                XCTAssertEqual(screen.canSelectDemo(demo), canSelectDemo)
+            }
+
             let barContent = try XCTUnwrap(item.barVisibility[expecting: Bar.Content.self])
             XCTAssertEqual(barContent.title, "Workflow Demo")
 		}
@@ -153,15 +159,39 @@ final class DemoListWorkflowTests: XCTestCase {
 		.assert(output: demo)
 	}
     
-    func testRenderingAlert() throws {
-        let api = MockDemoAPI(result: .failure(.loadError))
+    func testRenderingCanSelectDemo() throws {
+        let demo = Demo.swiftUI
+
+        try DemoList.Workflow(
+            service: MockDemoAPI(
+                result: .success(Demo.allCases)
+            )
+        )
+        .renderTester()
+        .expectWorkflow(
+            type: WorkerWorkflow<DemoList.Workflow<MockDemoAPI>.UpdateWorker>.self,
+            producingRendering: ()
+        )
+        .render { backStackScreen in
+            let wrappedScreen = backStackScreen.screen.wrappedScreen
+            let alertScreen = try XCTUnwrap(wrappedScreen as? Alert.Screen<DemoList.Screen>)
+            let demoListScreen = alertScreen.baseScreen
+            demoListScreen.selectDemo(demo)
+        }
+        .assert(action: DemoList.Workflow.Action.demo(demo))
+        .assert(output: demo)
+    }
+
+    func testRenderingAlertLoadError() throws {
+        let error = Demo.LoadingResult.Error.loadError
+        let api = MockDemoAPI(result: .failure(error))
         let updateDemos = api.loadDemos
 
         try DemoList.Workflow(service: api) .renderTester(
             initialState: .init(
                 demos: Demo.allCases,
                 updateWorker: .init(
-                    state: .failed(.loadError),
+                    state: .failed(error),
                     return: updateDemos
                 )
             )
@@ -176,6 +206,49 @@ final class DemoListWorkflowTests: XCTestCase {
             let alert = try XCTUnwrap(alertScreen.alert)
             XCTAssertEqual(alert.title, "Update Error")
             XCTAssertEqual(alert.message, "The demos could not be updated. Please try again later.")
+            
+            let dismissAction = try XCTUnwrap(alert.actions.first)
+            XCTAssertEqual(dismissAction.title, "Dismiss")
+            dismissAction.handler()
+        }
+        .verifyState { XCTAssert($0.updateWorker.isReady) }
+        .assertNoAction()
+        .assertNoOutput()
+    }
+    
+    func testRenderingAlertSleepError() throws {
+        let sleepErrorMessage = "Unable to sleep — have you tried less caffeine?"
+        let underlyingError = NSError(
+            domain: "DemoAPI.API.Error",
+            code: 0,
+            userInfo: [
+                NSLocalizedDescriptionKey: sleepErrorMessage
+            ]
+        )
+
+        let error = Demo.LoadingResult.Error.sleepError(underlyingError)
+        let api = MockDemoAPI(result: .failure(error))
+        let updateDemos = api.loadDemos
+
+        try DemoList.Workflow(service: api) .renderTester(
+            initialState: .init(
+                demos: Demo.allCases,
+                updateWorker: .init(
+                    state: .failed(error),
+                    return: updateDemos
+                )
+            )
+        )
+        .expectWorkflow(
+            type: WorkerWorkflow<DemoList.Workflow<MockDemoAPI>.UpdateWorker>.self,
+            producingRendering: ()
+        )
+        .render { backStackScreen in
+            let wrappedScreen = backStackScreen.screen.wrappedScreen
+            let alertScreen = try XCTUnwrap(wrappedScreen as? Alert.Screen<DemoList.Screen>)
+            let alert = try XCTUnwrap(alertScreen.alert)
+            XCTAssertEqual(alert.title, "Update Error")
+            XCTAssertEqual(alert.message, sleepErrorMessage)
             
             let dismissAction = try XCTUnwrap(alert.actions.first)
             XCTAssertEqual(dismissAction.title, "Dismiss")

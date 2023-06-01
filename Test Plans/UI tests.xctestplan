@@ -18,6 +18,20 @@
         "identifier" : "17127D892A1BCB2F00BE46CE",
         "name" : "RootUITests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Coven.xcodeproj",
+        "identifier" : "44A6BC2D2A27B8F200F35724",
+        "name" : "DemoListUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Coven.xcodeproj",
+        "identifier" : "44A6BC3C2A27B92900F35724",
+        "name" : "CounterUITests"
+      }
     }
   ],
   "version" : 1

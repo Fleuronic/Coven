@@ -12,10 +12,8 @@ extension DemoList.App {
 			self.key = key
 		}
 
-		var wrappedValue: Bool {
-			ProcessInfo.processInfo.environment[key.rawValue].map {
-				$0 == "true"
-			} ?? true
+		var wrappedValue: String? {
+			ProcessInfo.processInfo.environment[key.rawValue]
 		}
 	}
 }
@@ -24,5 +22,6 @@ extension DemoList.App {
 extension DemoList.App.Environment {
 	enum Key: String {
 		case canUpdateDemos
+		case updateDuration
 	}
 }

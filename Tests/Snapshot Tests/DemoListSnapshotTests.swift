@@ -15,6 +15,7 @@ final class DemoListSnapshotTests: XCTestCase {
 			backedBy: .init(
 				demos: Demo.allCases,
 				selectDemo: { _ in },
+				canSelectDemo: { _ in false },
 				isUpdatingDemos: false
 			),
 			matchesSnapshotIn: #filePath
@@ -28,6 +29,7 @@ final class DemoListSnapshotTests: XCTestCase {
 			backedBy: .init(
 				demos: Demo.allCases,
 				selectDemo: { _ in },
+				canSelectDemo: { _ in false },
 				isUpdatingDemos: true
 			),
 			matchesSnapshotIn: #filePath

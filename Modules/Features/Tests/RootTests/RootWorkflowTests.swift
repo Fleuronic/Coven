@@ -44,6 +44,7 @@ final class RootWorkflowTests: XCTestCase {
 				screen: DemoList.Screen(
 					demos: Demo.allCases,
 					selectDemo: { _ in },
+                    canSelectDemo: { _ in false },
 					isUpdatingDemos: false
 				).asAnyScreen()
 			)
@@ -67,6 +68,7 @@ final class RootWorkflowTests: XCTestCase {
 					screen: DemoList.Screen(
 						demos: Demo.allCases,
 						selectDemo: { _ in },
+                        canSelectDemo: { _ in false },
 						isUpdatingDemos: false
 					).asAnyScreen()
 				),
@@ -91,6 +93,7 @@ final class RootWorkflowTests: XCTestCase {
 					screen: DemoList.Screen(
 						demos: Demo.allCases,
 						selectDemo: { _ in },
+                        canSelectDemo: { _ in false },
 						isUpdatingDemos: false
 					).asAnyScreen()
 				)
@@ -125,6 +128,7 @@ final class RootWorkflowTests: XCTestCase {
 					screen: DemoList.Screen(
 						demos: Demo.allCases,
 						selectDemo: { _ in },
+                        canSelectDemo: { _ in false },
 						isUpdatingDemos: false
 					).asAnyScreen()
 				)
@@ -159,6 +163,7 @@ final class RootWorkflowTests: XCTestCase {
 					screen: DemoList.Screen(
 						demos: Demo.allCases,
 						selectDemo: { _ in },
+                        canSelectDemo: { _ in false },
 						isUpdatingDemos: false
 					).asAnyScreen()
 				)
@@ -193,6 +198,7 @@ final class RootWorkflowTests: XCTestCase {
 					screen: DemoList.Screen(
 						demos: Demo.allCases,
 						selectDemo: { _ in },
+                        canSelectDemo: { _ in false },
 						isUpdatingDemos: false
 					).asAnyScreen()
 				)

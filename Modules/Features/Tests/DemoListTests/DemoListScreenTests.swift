@@ -14,6 +14,7 @@ class DemoListScreenTests: XCTestCase {
 		let screen = DemoList.Screen(
 			demos: Demo.allCases,
 			selectDemo: { selectedDemo = $0 },
+            canSelectDemo: { _ in true },
 			isUpdatingDemos: false
 		)
 

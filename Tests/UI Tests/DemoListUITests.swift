@@ -20,6 +20,7 @@ final class DemoListUITests: XCTestCase {
 	
 	func testUpdateDemosSuccess() {
 		let app = XCUIApplication()
+		app.launchEnvironment = ["updateDuration": "0.5"]
 		app.launch()
 		
 		let updateButton = app.buttons["Update"]
@@ -36,7 +37,10 @@ final class DemoListUITests: XCTestCase {
 	
 	func testUpdateDemosFailure() {
 		let app = XCUIApplication()
-		app.launchEnvironment = ["canUpdateDemos": "false"]
+		app.launchEnvironment = [
+			"canUpdateDemos": "false",
+			"updateDuration": "0.5"
+		]
 		app.launch()
 		
 		let updateButton = app.buttons["Update"]

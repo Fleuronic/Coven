@@ -21,6 +21,13 @@
     },
     {
       "target" : {
+        "containerPath" : "container:Modules\/Services",
+        "identifier" : "DemoAPITests",
+        "name" : "DemoAPITests"
+      }
+    },
+    {
+      "target" : {
         "containerPath" : "container:Modules\/Features",
         "identifier" : "RootTests",
         "name" : "RootTests"

@@ -6,8 +6,8 @@ import protocol DemoService.LoadingSpec
 extension API: LoadingSpec {
     public func loadDemos() async -> Demo.LoadingResult {
         do {
-            try await Task.sleep(nanoseconds: .updateTime)
-            return Bool.random() ? .success(Demo.allCases) : .failure(.loadError)
+            try await sleep(.updateTime)
+            return randomBool() ? .success(Demo.allCases) : .failure(.loadError)
         } catch {
             return .failure(.sleepError(error))
         }
