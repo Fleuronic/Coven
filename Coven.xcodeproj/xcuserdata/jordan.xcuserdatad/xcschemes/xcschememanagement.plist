@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>CounterApp.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>DemoListApp.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Example (Playground) 1.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -1991,7 +2001,7 @@
 		<key>RootApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>5</integer>
 		</dict>
 		<key>Rx (Playground) 1.xcscheme</key>
 		<dict>
@@ -2099,6 +2109,16 @@
 			<true/>
 		</dict>
 		<key>17D85FDA28BBF5C700C42970</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>44C66B752A26A03700765B6A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>44C66B832A26A04500765B6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
